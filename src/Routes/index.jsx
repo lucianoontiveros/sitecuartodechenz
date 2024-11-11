@@ -19,23 +19,23 @@ export const router = createBrowserRouter([
         element: <Inicio />,
       },
       {
-        path: "/Comunidad",
+        path: "/Comunidad/",
         element: <Comunidad />,
       },
       {
-        path: "/Horarios",
+        path: "/Horarios/",
         element: <Horarios />,
       },
       {
-        path: "/Avisos",
+        path: "/Avisos/",
         element: <Avisos />,
       },
       {
-        path: "/Tutoriales",
+        path: "/Tutoriales/",
         element: <Tutoriales />,
       },
       {
-        path: "/Comandos",
+        path: "/Comandos/",
         element: <Comandos />,
       },
     ],

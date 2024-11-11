@@ -55,6 +55,13 @@ function Comandos_predefinidos_card() {
     { name: "!musica:", description: "Escuchando música🎧" },
     { name: "!matecocido:", description: "Tomando un matecocido🍵" },
     { name: "!planificando:", description: "Estoy planificando📅" },
+    { name: "!lectura:", description: "Está leyendo 📖" },
+    { name: "!cocinando:", description: "Está cocinando 🍳" },
+    { name: "!errores:", description: "Está revisando errores 👓" },
+    { name: "!instruyendo:", description: "Está instruyendo ✍🏻" },
+    { name: "!limpiando:", description: "Está limpiando 🗑️" },
+    { name: "!reporte:", description: "Está generando reportes 📑" },
+    { name: "!clases:", description: "En clases 🏫" },
   ];
 
   // Estado para manejar el mensaje de copia de cada comando
