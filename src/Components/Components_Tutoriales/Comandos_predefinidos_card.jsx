@@ -61,6 +61,7 @@ function Comandos_predefinidos_card() {
     { name: "!instruyendo:", description: "Está instruyendo ✍🏻" },
     { name: "!limpiando:", description: "Está limpiando 🗑️" },
     { name: "!reporte:", description: "Está generando reportes 📑" },
+    { name: "!subrayar:", description: "Está subrayando 📑" },
     { name: "!clases:", description: "En clases 🏫" },
   ];
 
