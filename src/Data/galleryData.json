@@ -254,5 +254,9 @@
   {
     "name": "verde",
     "image": "../Data/gallery/verde.png"
+  },
+  {
+    "name": "dale",
+    "image": "../Data/gallery/dale.png"
   }
 ]

@@ -120,6 +120,7 @@ import corazon from "../Data/gallery/corazon.png";
 import correperra from "../Data/gallery/correperra.png";
 import cucaracha from "../Data/gallery/cucaracha.png";
 import desayunar from "../Data/gallery/desayunar.png";
+import dale from "../Data/gallery/dale.png";
 
 const galleryImages = [
   { nombre: "devoraste", image: devoraste },
@@ -244,6 +245,7 @@ const galleryImages = [
   { nombre: "correperra", image: correperra },
   { nombre: "cucaracha", image: cucaracha },
   { nombre: "desayunar", image: desayunar },
+  { nombre: "dale", image: dale },
 ];
 
 export default galleryImages;
