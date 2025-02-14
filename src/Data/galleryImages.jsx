@@ -121,6 +121,10 @@ import correperra from "../Data/gallery/correperra.png";
 import cucaracha from "../Data/gallery/cucaracha.png";
 import desayunar from "../Data/gallery/desayunar.png";
 import dale from "../Data/gallery/dale.png";
+import quevas from "../Data/gallery/quevas.png";
+import wow from "../Data/gallery/wow.png";
+import nanana from "../Data/gallery/nanana.png";
+import alight from "../Data/gallery/alight.png";
 
 const galleryImages = [
   { nombre: "devoraste", image: devoraste },
@@ -246,6 +250,10 @@ const galleryImages = [
   { nombre: "cucaracha", image: cucaracha },
   { nombre: "desayunar", image: desayunar },
   { nombre: "dale", image: dale },
+  { nombre: "quevas", image: quevas },
+  { nombre: "wow", image: wow },
+  { nombre: "nanana", image: nanana },
+  { nombre: "alight", image: alight },
 ];
 
 export default galleryImages;

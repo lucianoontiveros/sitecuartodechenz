@@ -258,5 +258,17 @@
   {
     "name": "dale",
     "image": "../Data/gallery/dale.png"
+  },
+  {
+    "name": "quevas",
+    "image": "../Data/gallery/quevas.png"
+  },
+  {
+    "name": "nanana",
+    "image": "../Data/gallery/nanana.png"
+  },
+  {
+    "name": "alight",
+    "image": "../Data/gallery/alight.png"
   }
 ]
