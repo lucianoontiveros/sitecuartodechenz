@@ -270,5 +270,9 @@
   {
     "name": "alight",
     "image": "../Data/gallery/alight.png"
+  },
+  {
+    "name": "cuak",
+    "image": "../Data/gallery/cuak.png"
   }
 ]

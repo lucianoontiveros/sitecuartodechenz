@@ -125,6 +125,19 @@ import quevas from "../Data/gallery/quevas.png";
 import wow from "../Data/gallery/wow.png";
 import nanana from "../Data/gallery/nanana.png";
 import alight from "../Data/gallery/alight.png";
+import cuak from "../Data/gallery/cuak.png";
+import blackpink from "../Data/gallery/blackpink.png";
+import blackpinkritual from "../Data/gallery/blackpinkritual.png";
+import corchazo from "../Data/gallery/corchazo.png";
+import escucharon from "../Data/gallery/escucharon.png";
+import inthearea from "../Data/gallery/inthearea.png";
+import peta from "../Data/gallery/peta.png";
+import rosa from "../Data/gallery/rosa.png";
+import supertuna from "../Data/gallery/supertuna.png";
+import woo from "../Data/gallery/woo.png";
+import azul from "../Data/gallery/azul.png";
+import encara from "../Data/gallery/encara.png";
+import jungkook from "../Data/gallery/jungkook.png";
 
 const galleryImages = [
   { nombre: "devoraste", image: devoraste },
@@ -254,6 +267,19 @@ const galleryImages = [
   { nombre: "wow", image: wow },
   { nombre: "nanana", image: nanana },
   { nombre: "alight", image: alight },
+  { nombre: "cuak", image: cuak },
+  { nombre: "blackpink", image: blackpink },
+  { nombre: "blackpinkritual", image: blackpinkritual },
+  { nombre: "corchazo", image: corchazo },
+  { nombre: "escucharon", image: escucharon },
+  { nombre: "inthearea", image: inthearea },
+  { nombre: "peta", image: peta },
+  { nombre: "rosa", image: rosa },
+  { nombre: "supertuna", image: supertuna },
+  { nombre: "woo", image: woo },
+  { nombre: "azul", image: azul },
+  { nombre: "encara", image: encara },
+  { nombre: "jungkook", image: jungkook },
 ];
 
 export default galleryImages;
