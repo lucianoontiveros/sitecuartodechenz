@@ -1,9 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
+import Inicio from "../Pages/Inicio";
+import NotFound from "../Pages/NotFound";
 
 export const router = createBrowserRouter([
   {
     index: true,
-    element: <h1 className="text-2xl">Inicio</h1 >,
+    element: <Inicio />,
+    errorElement: <NotFound />,
   },
   {
     path: "/Comunidad/",
