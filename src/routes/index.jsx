@@ -1,5 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Inicio from "../Pages/Inicio";
+import Comandos from "../Pages/Comandos";
+import Sonidos from "../Pages/Sonidos";
 import NotFound from "../Pages/NotFound";
 
 export const router = createBrowserRouter([
@@ -9,8 +11,12 @@ export const router = createBrowserRouter([
     errorElement: <NotFound />,
   },
   {
-    path: "/Comunidad/",
-    element: <h1 className="text-2xl">Comunidad</h1 >,
+    path: "/comandos/",
+    element: <Comandos />,
+  },
+  {
+    path: "/sonidos/",
+    element: <Sonidos />,
   },
   {
     path: "/Horarios/",
@@ -23,9 +29,5 @@ export const router = createBrowserRouter([
   {
     path: "/Tutoriales/",
     element: <h1 className="text-2xl">Tutoriales</h1 >,
-  },
-  {
-    path: "/Comandos/",
-    element: <h1 className="text-2xl">Comandos</h1 >,
   },
  ])

@@ -1,4 +1,4 @@
-import { useRouteError } from "react-router-dom";
+import { useRouteError, Link } from "react-router-dom";
 
 const NotFound = () => {
     const error = useRouteError();
@@ -9,6 +9,7 @@ console.log(error)
             <p>La página que estás buscando no existe.</p>
             <p>Por favor, verifica la URL y vuelve a intentarlo.</p>  
             <p>{error.statusText} || {error.message}</p>  
+            <Link to="/">Volver al inicio</Link>
         </div>
     )
 }
