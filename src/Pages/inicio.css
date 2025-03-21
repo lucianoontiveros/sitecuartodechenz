@@ -1,0 +1,32 @@
+/* Shared styles for all divs */
+.inicio_div1,
+.inicio_div2,
+.inicio_div3,
+.inicio_div4     {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    border: 1px solid white;
+}
+
+.inicio_container {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.inicio_div1 {
+    background-color: red;
+}
+
+.inicio_div2 {
+    background-color: green;
+}
+
+.inicio_div3 {
+    background-color: blue;
+}
+
+.inicio_div4 {
+    background-color: yellow;
+}

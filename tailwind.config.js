@@ -7,7 +7,6 @@ export default {
     "node_modules/flowbite-react/lib/esm/**/*.js",
   ],
   theme: {
-    base: "inline animate-spin text-gray-200",
     extend: {
       colors: {
         // Nombres personalizados para tus colores
@@ -71,32 +70,4 @@ export default {
       "spin-roll": "spin 1s linear infinite",
     },
   },
-  plugins: [
-    require("flowbite/plugin"),
-    function ({ addUtilities }) {
-      const extendUnderline = {
-        ".underline-green-200": {
-          textDecoration: "underline",
-          "text-decoration-thickness": "0.2em",
-          "text-decoration-color": "rgb(188 240 218 / var(--tw-text-opacity))",
-        },
-        ".underline-indigo-300": {
-          textDecoration: "underline",
-          "text-decoration-thickness": "0.3em",
-          "text-decoration-color": "rgb(180 198 252 / var(--tw-text-opacity))",
-        },
-        ".underline-mintGreen": {
-          textDecoration: "underline",
-          "text-decoration-thickness": "0.4em",
-          "text-decoration-color": "rgb(103 221 171 / var(--tw-text-opacity))",
-        },
-        ".underline-skyBlue": {
-          textDecoration: "underline",
-          "text-decoration-thickness": "0.5em",
-          "text-decoration-color": "rgb(128 218 235 / var(--tw-text-opacity))",
-        },
-      };
-      addUtilities(extendUnderline);
-    },
-  ],
 };
