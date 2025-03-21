@@ -1,13 +1,22 @@
 .layaout_container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 100% auto;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
 }
-    
-.div1 { grid-area: 1 / 1 / 2 / 2; background-color: black;}
-.div2 { grid-area: 2 / 1 / 3 / 2;  background-color:red;}
-.div3 { grid-area: 3 / 1 / 4 / 2; background-color: black;}
+
+.div1 { 
+    background-color: black;
+}
+
+.div2 { 
+    background-color: red;
+}
+
+.div3 { 
+    background-color: black;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}

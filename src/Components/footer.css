@@ -1,0 +1,9 @@
+.footer_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0B9B8A;
+    padding: 1rem;
+    position: sticky;
+    bottom: 0;
+}

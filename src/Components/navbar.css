@@ -4,6 +4,12 @@
     align-items: center;
     background-color: #0B9B8A;
     padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    margin-bottom: 2em;
+    transition: transform 0.3s ease-in-out;
 }
 
 .logo_container{
@@ -15,4 +21,9 @@
     margin: 0 1rem;
     color: white;
     text-decoration: none;
+}
+
+/* Add this class when scrolling */
+.navbar_container.scrolled {
+    transform: translateY(-100%);
 }
