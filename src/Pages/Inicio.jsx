@@ -1,7 +1,7 @@
 import "./inicio.css";
-import Aviso_img from "/img/Avisos_img.jsx";
-import Horario_img from "/img/Horario_img.jsx";
-import Comandos_img from "/img/Comandos_img.jsx";
+import Aviso_img from "../Components/img/Avisos_img.jsx";
+import Horario_img from "../Components/img/Horario_img.jsx";
+import Comandos_img from "../Components/img/Comandos_img.jsx";
 
 const Inicio = () => {
   return (
