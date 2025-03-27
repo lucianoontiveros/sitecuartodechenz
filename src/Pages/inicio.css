@@ -18,7 +18,7 @@
   font-weight: 600;
   font-size: x-large;
   color: rgb(255, 255, 255);
-  font-size: 5rem;
+  font-size: 3rem;
 }
 
 .bar_icon {
@@ -45,7 +45,7 @@
   width: 15em;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -77,4 +77,28 @@
   background-position: center;
   background-size: cover;
   height: 100vh;
+}
+
+.slogan_container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slogan_container h4 {
+  padding: 1em;
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+}
+
+.slogan_container button {
+  color: black;
+  font-size: 1.3em;
+  font-weight: bold;
+  background-color: aquamarine;
+  text-align: center;
+  min-width: 10em;
+  border-radius: 1em;
 }

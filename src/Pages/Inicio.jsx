@@ -43,11 +43,11 @@ const Inicio = () => {
               <h3>COMANDOS</h3>
             </div>
           </div>
-          <div>
+          <div className="slogan_container">
             <h4>
-              Un espacio para estudiar y trabajar; El esfuerzo es tuyo, el
-              compromiso también, y nosotros seremos testigos de tus progresos
+              Sabemos lo que implica tu esfuerzo
             </h4>
+            <button>Chenz</button>
           </div>
         </section>
         <section className="img_section">
