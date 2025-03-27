@@ -46,7 +46,8 @@
 .router_section {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: centernpm ru;
 }
 
 .router_icon {
@@ -56,6 +57,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  margin: 1em 1em;
 }
 
 .router_icon h3 {
