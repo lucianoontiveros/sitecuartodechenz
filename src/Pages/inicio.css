@@ -22,9 +22,18 @@
 }
 
 .bar_icon {
+  margin-left: 1em;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-start;
+}
+
+.icon_bar_element {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0.1em 0.1em;
 }
 
 .img_section {
@@ -79,7 +88,7 @@
   height: 100vh;
 }
 
-.slogan_container{
+.slogan_container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -93,7 +102,7 @@
   font-size: 3rem;
 }
 
-.slogan_container button {
+.slogan_container a {
   color: black;
   font-size: 1.3em;
   font-weight: bold;
