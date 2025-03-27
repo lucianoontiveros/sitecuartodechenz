@@ -1,5 +1,5 @@
 import * as React from "react"
-const SvgComponent = (props) => (
+const Avisos_img = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={96}
@@ -7,7 +7,7 @@ const SvgComponent = (props) => (
     viewBox="0 0 24 24"
     {...props}
   >
-    <g
+    <g  
       fill="none"
       stroke="#fff"
       strokeLinecap="round"
@@ -75,4 +75,4 @@ const SvgComponent = (props) => (
     </path>
   </svg>
 )
-export default SvgComponent
+export default Avisos_img

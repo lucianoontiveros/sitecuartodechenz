@@ -1,5 +1,5 @@
 import * as React from "react"
-const SvgComponent = (props) => (
+const Horario_img = (props) => (
   <svg
   xmlns="http://www.w3.org/2000/svg"
   width={96}
@@ -71,4 +71,4 @@ const SvgComponent = (props) => (
   </g>
 </svg>
 )
-export default SvgComponent
+export default Horario_img
