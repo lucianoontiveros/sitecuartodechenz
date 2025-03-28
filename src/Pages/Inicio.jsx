@@ -45,32 +45,35 @@ const Inicio = () => {
               </a>
             </div>
           </div>
-          <div className="router_section">
-            <div className="router_icon">
-              <Avisos_img
-                width="20em"
-                height="20em"
-              />
-              <h3>AVISOS</h3>
+
+          <div className="inicio_banner">
+            <div className="router_section">
+              <div className="router_icon">
+                <Avisos_img
+                  width="20em"
+                  height="20em"
+                />
+                <h3>AVISOS</h3>
+              </div>
+              <div className="router_icon">
+                <Horario_img
+                  width="20em"
+                  height="20em"
+                />
+                <h3>HORARIO</h3>
+              </div>
+              <div className="router_icon">
+                <Comandos_img
+                  width="20em"
+                  height="20em"
+                />
+                <h3>COMANDOS</h3>
+              </div>
             </div>
-            <div className="router_icon">
-              <Horario_img
-                width="20em"
-                height="20em"
-              />
-              <h3>HORARIO</h3>
+            <div className="slogan_container">
+              <h4>Sabemos lo que implica tu esfuerzo</h4>
+              <a href="/">CHENZ</a>
             </div>
-            <div className="router_icon">
-              <Comandos_img
-                width="20em"
-                height="20em"
-              />
-              <h3>COMANDOS</h3>
-            </div>
-          </div>
-          <div className="slogan_container">
-            <h4>Sabemos lo que implica tu esfuerzo</h4>
-            <a href="/">CHENZ</a>
           </div>
         </section>
 
