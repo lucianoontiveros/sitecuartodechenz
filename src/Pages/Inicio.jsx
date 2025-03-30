@@ -6,6 +6,7 @@ import Icon_instagram from "../Components/img_icons/Icon_instagram.jsx";
 import Icon_tiktok from "../Components/img_icons/Icon_tiktok.jsx";
 import Icon_x from "../Components/img_icons/Icon_x.jsx";
 import Icon_youtube from "../Components/img_icons/Icon_youtube.jsx";
+import img_presentation from "/img_presentation.png";
 
 const Inicio = () => {
   return (
@@ -71,7 +72,7 @@ const Inicio = () => {
               </div>
             </div>
             <div className="slogan_container">
-              <h4>Sabemos lo que implica tu esfuerzo</h4>
+              <h4>SABEMOS LO QUE SIGNIFICA TU ESFUERZO</h4>
               <a href="/">CHENZ</a>
             </div>
           </div>
@@ -86,7 +87,32 @@ const Inicio = () => {
         </section>
       </div>
 
-      <div className="inicio_div2"> Presentacion </div>
+      <div className="presentation_container">
+        <div className="presentation_media">
+          <img
+            className="media_element"
+            src={img_presentation}
+            alt="imagen presentación"
+          />
+          <video
+            className="media_element"
+            src=""
+          ></video>
+        </div>
+        <div className="presentation_info">
+          <div className="presentation_text">
+            <h3>PRESENTACION</h3>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque
+              libero non ipsa dolores quibusdam id at error similique voluptatem
+              quis reprehenderit aliquid, in aliquam quia, nobis consequatur
+              voluptatum? Quas, quis?
+            </p>
+          </div>
+          <div className="presentation_card"></div>
+        </div>
+      </div>
+
       <div className="inicio_div3"> Contenido </div>
       <div className="inicio_div4"> Horario </div>
     </>
