@@ -113,12 +113,15 @@
 }
 
 .slogan_container a {
+  padding: 0.2em;
+  text-align: center;
   color: black;
-  font-size: 1.3em;
+  font-size: 1.5em;
+  font-weight: 900;
   font-weight: bold;
   background-color: aquamarine;
-  text-align: center;
-  min-width: 10em;
+  height: 2em;
+  min-width: 7em;
   border-radius: 1em;
 }
 
@@ -180,7 +183,7 @@
   border-radius: 2em;
   height: 3em;
   width: 100%;
-  background-color: aqua;
+  background-color: aquamarine;
 }
 
 .card {
