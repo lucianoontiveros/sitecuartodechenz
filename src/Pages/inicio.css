@@ -143,12 +143,11 @@
 
 .presentation_info {
   grid-area: 1 / 2 / 2 / 3;
-  background-color: blue;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1em;
+  padding: 1em 1em;
 }
 
 .media_element {
@@ -159,16 +158,41 @@
   border-radius: 2em;
 }
 
-.presentation_text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.presentation_info .text {
+  padding: 1em;
 }
 
-.presentation_text .presentation_card {
-  height: 27em;
-  width: 50em;
+.presentation_info .text h3 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+.presentation_info .text p {
+  font-size: 1.2em;
+}
+
+.presentation_info .text button {
+  font-size: 1.5em;
+  font-weight: 800;
+  color: black;
+  margin-top: 1em;
+  border-radius: 2em;
+  height: 3em;
+  width: 100%;
+  background-color: aqua;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card img {
+  background-repeat: no-repeat;
   background-size: cover;
-  margin: 1em 1em;
+  background-position: center;
+  height: 100%;
+  width: 50%;
   border-radius: 2em;
 }

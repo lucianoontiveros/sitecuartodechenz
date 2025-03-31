@@ -7,7 +7,7 @@ import Icon_tiktok from "../Components/img_icons/Icon_tiktok.jsx";
 import Icon_x from "../Components/img_icons/Icon_x.jsx";
 import Icon_youtube from "../Components/img_icons/Icon_youtube.jsx";
 import img_presentation from "/img_presentation.png";
-
+import img_card_presentation from "/img_card_presentation.png";
 const Inicio = () => {
   return (
     <>
@@ -94,13 +94,19 @@ const Inicio = () => {
             src={img_presentation}
             alt="imagen presentación"
           />
-          <video
+
+          <iframe
             className="media_element"
-            src=""
-          ></video>
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/WkmVQohDvK8?si=W-f1cllhDpDqLlIm"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          ></iframe>
         </div>
+
         <div className="presentation_info">
-          <div className="presentation_text">
+          <div className="media_element text">
             <h3>PRESENTACION</h3>
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque
@@ -109,7 +115,22 @@ const Inicio = () => {
               voluptatum? Quas, quis?
             </p>
           </div>
-          <div className="presentation_card"></div>
+          <div className="media_element card">
+            <img
+              src={img_card_presentation}
+              alt=""
+            />
+            <div className="media_element text">
+              <h3>ESTE ES EL TITULO DE LA TARJETA </h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio
+                modi, numquam rerum delectus inventore culpa et placeat dolore
+                dicta qui illo commodi distinctio atque id quidem iste minus
+                maxime expedita.
+              </p>
+              <button>UNETE</button>
+            </div>
+          </div>
         </div>
       </div>
 
