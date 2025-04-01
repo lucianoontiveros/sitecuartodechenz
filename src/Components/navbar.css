@@ -26,3 +26,16 @@
 .navbar_container.scrolled {
   transform: translateY(-100%);
 }
+
+.contariner_links {
+  margin-top: 6em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.contariner_links .link_items {
+  margin: 0.5em 0.5em;
+  font-size: larger;
+}
