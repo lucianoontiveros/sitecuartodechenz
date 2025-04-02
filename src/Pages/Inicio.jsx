@@ -8,9 +8,16 @@ import Icon_x from "../Components/img_icons/Icon_x.jsx";
 import Icon_youtube from "../Components/img_icons/Icon_youtube.jsx";
 import img_presentation from "/img_presentation.png";
 import img_card_presentation from "/img_card_presentation.png";
+import img_cuarto_1 from "/img_cuarto_1.jpeg";
+import img_cuarto_2 from "/img_cuarto_2.jpeg";
+import img_cuarto_4 from "/img_cuarto_4.jpeg";
+import card_1 from "/img_card_one.png";
+import card_2 from "/img_card_two.jpg";
+
 const Inicio = () => {
   return (
     <>
+      {/* Sección de Inicio  */}
       <div className="inicio_container">
         <section className="title_section">
           <div className="title_container">
@@ -73,11 +80,10 @@ const Inicio = () => {
             </div>
             <div className="slogan_container">
               <h4>SABEMOS LO QUE SIGNIFICA TU ESFUERZO</h4>
-              <a href="/">CHENZ</a>
+              <a href="/">MI CUARTO</a>
             </div>
           </div>
         </section>
-
         <section className="img_section">
           <img
             src="/img_inicio.png"
@@ -86,7 +92,7 @@ const Inicio = () => {
           />
         </section>
       </div>
-
+      {/* Presentación del canal  */}
       <div className="presentation_container">
         <div className="presentation_media">
           <img
@@ -133,9 +139,96 @@ const Inicio = () => {
           </div>
         </div>
       </div>
+      {/* Presentación del container   */}
+      <div className="contenido_conteiner">
+        <div class="contenido_item">
+          <img
+            className="img_contenido_element"
+            src={img_cuarto_1}
+            alt=""
+          />
+          <div className="contenido_element">
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Praesentium debitis inventore corrupti magnam temporibus dolores.
+              Impedit consequuntur voluptatum, quae animi corrupti iusto
+              accusamus voluptate, dolores eum itaque dolorem velit iste!
+            </p>
+          </div>
+        </div>
+        <div class="contenido_item_1">
+          <div className="contenido_element">
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Praesentium debitis inventore corrupti magnam temporibus dolores.
+              Impedit consequuntur voluptatum, quae animi corrupti iusto
+              accusamus voluptate, dolores eum itaque dolorem velit iste!
+            </p>
+          </div>
+          <img
+            className="img_contenido_element"
+            src={img_cuarto_2}
+            alt=""
+          />
+        </div>
+        <div class="contenido_item_2">
+          <img
+            className="img_contenido_element"
+            src={img_cuarto_4}
+            alt=""
+          />
+          <div className="contenido_element">
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Praesentium debitis inventore corrupti magnam temporibus dolores.
+              Impedit consequuntur voluptatum, quae animi corrupti iusto
+              accusamus voluptate, dolores eum itaque dolorem velit iste!
+            </p>
+          </div>
+        </div>
+      </div>
+      {/* Presentación en el horario   */}
+      <div className="horario_container">
+        <div className="horario_element_card">
+          <img
+            src={card_1}
+            alt=""
+          />
+          <div className="card_text"></div>
+        </div>
 
-      <div className="inicio_div3"> Contenido </div>
-      <div className="inicio_div4"> Horario </div>
+        <div className="horario_element_text">
+          <div className="text_elements">
+            <h3>HOLA LA PUTA MADRE</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat
+              nulla corporis eius pariatur doloribus laborum, voluptatem ex
+              commodi praesentium mollitia sequi quidem dolor voluptatibus
+              consectetur provident suscipit? Tempore, saepe odit.
+            </p>
+            <h5>Listado de horarios</h5>
+            <ul>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="horario_element_card_">
+          <img
+            src={card_2}
+            alt=""
+          />
+          <div className="card_text"></div>
+        </div>
+      </div>
     </>
   );
 };
