@@ -192,41 +192,91 @@ const Inicio = () => {
       </div>
       {/* Presentación en el horario   */}
       <div className="horario_container">
-        <div className="horario_element_card">
-          <img
-            src={card_1}
-            alt=""
-          />
-          <div className="card_text"></div>
-        </div>
-
-        <div className="horario_element_text">
-          <div className="text_elements">
-            <h3>HOLA LA PUTA MADRE</h3>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat
-              nulla corporis eius pariatur doloribus laborum, voluptatem ex
-              commodi praesentium mollitia sequi quidem dolor voluptatibus
-              consectetur provident suscipit? Tempore, saepe odit.
-            </p>
-            <h5>Listado de horarios</h5>
-            <ul>
-              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
-              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
-              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
-              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
-              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
-              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
-            </ul>
+        <div className="horario_card">
+          <div className="horario_element_card">
+            <img
+              src={card_1}
+              alt=""
+            />
+            <div className="card_text">
+              <h3>Directos por la mañana</h3>
+              <p>
+                Por las mañanas, Chenz ocupa sus horas trabajando, por la cual
+                la emisión se ejecuta automaticamente y en vivo. Manteniendo los
+                tiempos productivos y tus descansos, para no interrumpir tu
+                rutina.
+              </p>
+              <ul>
+                <li>Mayor enfoque</li>
+                <li>Gestion de tareas</li>
+                <li>comandos para interactuar</li>
+                <li>Timer !focus para usaurios</li>
+                <li>Escenas automáticas</li>
+                <li>Música en los descansos</li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div className="horario_element_card_">
-          <img
-            src={card_2}
-            alt=""
-          />
-          <div className="card_text"></div>
+        <div className="horario_element_text">
+          <div className="horario_card">
+            <div className="text_elements">
+              <h3>HOLA LA PUTA MADRE</h3>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Placeat nulla corporis eius pariatur doloribus laborum,
+                voluptatem ex commodi praesentium mollitia sequi quidem dolor
+                voluptatibus consectetur provident suscipit? Tempore, saepe
+                odit.
+              </p>
+              <h5>Listado de horarios</h5>
+              <ul>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+                </li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="horario_card">
+          <div className="horario_element_card">
+            <img
+              src={card_2}
+              alt=""
+            />
+            <div className="card_text">
+              <h3>Directos por la tarde</h3>
+              <p>
+                Por las tardes, Chenz se une a los directos, jugando e
+                interactuando durante los descansos hasta finalizar la
+                tranmisión.
+              </p>
+              <ul>
+                <li>Mayor enfoque</li>
+                <li>Gestion de tareas</li>
+                <li>comandos para interactuar</li>
+                <li>Timer !focus para usaurios</li>
+                <li>Escenas automáticas</li>
+                <li>Música en los descansos</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </>
