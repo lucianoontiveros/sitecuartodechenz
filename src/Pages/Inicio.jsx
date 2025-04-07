@@ -141,7 +141,7 @@ const Inicio = () => {
       </div>
       {/* Presentación del container   */}
       <div className="contenido_conteiner">
-        <div class="contenido_item">
+        <div className="contenido_item">
           <img
             className="img_contenido_element"
             src={img_cuarto_1}
@@ -157,7 +157,7 @@ const Inicio = () => {
             </p>
           </div>
         </div>
-        <div class="contenido_item_1">
+        <div className="contenido_item_1">
           <div className="contenido_element">
             <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
             <p>
@@ -173,7 +173,7 @@ const Inicio = () => {
             alt=""
           />
         </div>
-        <div class="contenido_item_2">
+        <div className="contenido_item_2">
           <img
             className="img_contenido_element"
             src={img_cuarto_4}
@@ -199,7 +199,7 @@ const Inicio = () => {
               alt=""
             />
             <div className="card_text">
-              <h3>Directos por la mañana</h3>
+              <h3>TURNO MADRUGADA - MAÑANA</h3>
               <p>
                 Por las mañanas, Chenz ocupa sus horas trabajando, por la cual
                 la emisión se ejecuta automaticamente y en vivo. Manteniendo los
@@ -221,7 +221,7 @@ const Inicio = () => {
         <div className="horario_element_text">
           <div className="horario_card">
             <div className="text_elements">
-              <h3>HOLA LA PUTA MADRE</h3>
+              <h3>HORARIOS POR PAIS</h3>
               <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Placeat nulla corporis eius pariatur doloribus laborum,
@@ -261,11 +261,11 @@ const Inicio = () => {
               alt=""
             />
             <div className="card_text">
-              <h3>Directos por la tarde</h3>
+              <h3>TURNO TARDE - NOCHE</h3>
               <p>
-                Por las tardes, Chenz se une a los directos, jugando e
-                interactuando durante los descansos hasta finalizar la
-                tranmisión.
+                Por las tardes, Chenz se une a los directos para continuar su
+                formación, jugando e interactuando durante los descansos, hasta
+                finalizar la tranmisión.
               </p>
               <ul>
                 <li>Mayor enfoque</li>
