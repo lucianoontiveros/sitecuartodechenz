@@ -170,15 +170,18 @@
 
 .presentation_info .text h3 {
   text-align: center;
-  font-size: 2em;
+  font-size: 1.5em;
   margin-bottom: 1em;
 }
 
 .presentation_info .text p {
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
-.presentation_info .text button {
+.presentation_info button {
+  text-align: center;
+  display: block;
+  align-self: center;
   font-size: 1.5em;
   font-weight: 800;
   color: black;
@@ -237,13 +240,13 @@
 }
 
 .contenido_element h3 {
-  font-size: 3em;
+  font-size: 1.5em;
   text-align: center;
   margin: 1em;
 }
 
 .contenido_element p {
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 .img_contenido_element {
@@ -283,8 +286,14 @@
 }
 
 .text_elements h3 {
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 10px;
+  text-align: center;
+}
+
+.text_elements h5 {
+  font-size: 2rem;
+  margin-top: 1em;
   text-align: center;
 }
 
@@ -298,7 +307,7 @@
 }
 
 .text_elements ul li {
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 .horario_element_card {

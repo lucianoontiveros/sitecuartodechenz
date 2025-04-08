@@ -12,7 +12,7 @@ import img_cuarto_1 from "/img_cuarto_1.jpeg";
 import img_cuarto_2 from "/img_cuarto_2.jpeg";
 import img_cuarto_4 from "/img_cuarto_4.jpeg";
 import card_1 from "/img_card_one.png";
-import card_2 from "/img_card_two.jpg";
+import card_2 from "/img_card_two.png";
 
 const Inicio = () => {
   return (
@@ -113,12 +113,21 @@ const Inicio = () => {
 
         <div className="presentation_info">
           <div className="media_element text">
-            <h3>PRESENTACION</h3>
+            <h3>UN ESPACIO DE ESTUDIO, TRABAJO Y MUCHO MÁS</h3>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque
-              libero non ipsa dolores quibusdam id at error similique voluptatem
-              quis reprehenderit aliquid, in aliquam quia, nobis consequatur
-              voluptatum? Quas, quis?
+              Bienvenidas personitas bellas a nuestro rincón de esfuerzo y
+              constancia. Este canal no es solo un lugar para estudiar o
+              trabajar; es un espacio donde tus propósitos encuentran compañía y
+              tus metas se convierten en inspiración para nuestra comunidad.
+              Aquí comparto mis horas de dedicación, mis proyectos, pensamientos
+              y esos pequeños momentos que logramos juntos. Estoy estudiando
+              programación de manera autodidacta y cada cosa que encuentres en
+              este espacio, está diseñado por cada contenido y actitudes que
+              logré incorporar a veces de estudio y práctica. Te agradecemos por
+              ser parte de esta travesía, ya sea que estés en la etapa más
+              intensa de tu día o en un respiro necesario. Aquí, juntos, somos
+              más fuertes, más enfocados y, sobre todo, más conectados. ¡Gracias
+              por acompañarme en este viaje de crecimiento y productividad!
             </p>
           </div>
           <div className="media_element card">
@@ -129,12 +138,21 @@ const Inicio = () => {
             <div className="media_element text">
               <h3>ESTE ES EL TITULO DE LA TARJETA </h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio
-                modi, numquam rerum delectus inventore culpa et placeat dolore
-                dicta qui illo commodi distinctio atque id quidem iste minus
-                maxime expedita.
+                ¡Únete a nuestra comunidad en Discord! Un espacio libre y
+                gratuito donde las reglas son simples: respeto y buena onda.
+                Aquí encontrarás a las increíbles personalidades de nuestra
+                comunidad listas para acompañarte en tus largas jornadas, ya sea
+                que estés transmitiendo en Twitch o simplemente necesites
+                compañía. ¡Te esperamos con los brazos abiertos!
               </p>
-              <button>UNETE</button>
+
+              <button
+                onClick={() =>
+                  window.open("https://discord.gg/UdU3wvpWu7", "_blank")
+                }
+              >
+                ÚNETE
+              </button>
             </div>
           </div>
         </div>
@@ -148,23 +166,54 @@ const Inicio = () => {
             alt=""
           />
           <div className="contenido_element">
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+            <h3>VERSIÓN PERSONALIZADA DEL MÉTODO POMODORO</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Praesentium debitis inventore corrupti magnam temporibus dolores.
-              Impedit consequuntur voluptatum, quae animi corrupti iusto
-              accusamus voluptate, dolores eum itaque dolorem velit iste!
+              En nuestras transmisiones, replicamos una versión personalizada
+              del método Pomodoro, con sesiones de 60 minutos de trabajo
+              concentrado y 10 minutos de descanso. Este enfoque fomenta la
+              productividad y el foco, ideal para aquellos que buscan optimizar
+              su tiempo.
+            </p>
+            <p>
+              Transmito de lunes a viernes, e incluso durante los fines de
+              semana, por lo que muchas veces encontrarás sesiones en las que
+              estaré trabajando en vivo. En estas transmisiones, los "pomos"
+              (momentos productivos y descansos) suceden automáticamente, aunque
+              no participe directamente en ellos.
+            </p>
+            <p>
+              Para facilitar tu experiencia, tendrás a tu disposición comandos
+              que te permitirán gestionar tus tareas, actividades y horarios a
+              tu manera. Además, al final de mi jornada laboral, me uno a la
+              comunidad para interactuar contigo en cada descanso, creando un
+              espacio de apoyo mutuo y crecimiento conjunto.
             </p>
           </div>
         </div>
         <div className="contenido_item_1">
           <div className="contenido_element">
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+            <h3>EL PODER DE LA LLUVIA EN TU PRODUCTIVIDAD.</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Praesentium debitis inventore corrupti magnam temporibus dolores.
-              Impedit consequuntur voluptatum, quae animi corrupti iusto
-              accusamus voluptate, dolores eum itaque dolorem velit iste!
+              En nuestros momentos productivos, el sonido de la lluvia toma
+              protagonismo. Este efecto sonoro no es una simple elección al
+              azar: está científicamente comprobado que los sonidos naturales,
+              como la lluvia, ayudan a reducir el estrés, mejorar la
+              concentración y promover un estado de calma ideal para el estudio
+              y el trabajo.
+            </p>
+            <p>
+              Lluvia actúa como un "ruido blanco" que bloquea distracciones
+              externas, creando un entorno sonoro equilibrado y relajante,
+              perfecto para entrar en tu zona de máxima concentración. Además,
+              está diseñado pensando en tu flexibilidad. Puedes combinar este
+              sonido ambiental con cualquier lista musical de tu preferencia
+              desde otra pestaña de tu navegador. ¡Funcionarán de maravilla
+              juntos, potenciando tu experiencia mientras avanzas en tus tareas!
+            </p>
+            <p>
+              Así, este espacio no solo busca acompañarte, sino también
+              ofrecerte herramientas prácticas y efectivas para que aproveches
+              al máximo cada momento productivo. 💡✨
             </p>
           </div>
           <img
@@ -180,12 +229,26 @@ const Inicio = () => {
             alt=""
           />
           <div className="contenido_element">
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+            <h3>COMANDOS PARA GESTIONAR TU PRODUCTIVIDAD</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Praesentium debitis inventore corrupti magnam temporibus dolores.
-              Impedit consequuntur voluptatum, quae animi corrupti iusto
-              accusamus voluptate, dolores eum itaque dolorem velit iste!
+              Nuestro canal está diseñado pensando en maximizar tu enfoque y
+              organización. Aquí encontrarás comandos que te permiten gestionar
+              tus tareas de manera sencilla y eficiente, crear listas
+              personalizadas para tus actividades y descubrir muchas
+              funcionalidades que se adaptan a tu ritmo de trabajo y estudio.
+            </p>
+            <p>
+              Estos comandos están desarrollados cuidadosamente para ayudarte a
+              mantener el control de tu jornada, priorizar tus objetivos y
+              optimizar tus tiempos. Desde organizar tus pendientes hasta
+              dividir tus actividades en bloques manejables, todo está pensado
+              en ti.
+            </p>
+            <p>
+              Únete a un espacio donde la productividad y la creatividad van de
+              la mano, respaldado por herramientas que harán que tus días sean
+              más enfocados y gratificantes. Este no es solo un canal: es tu
+              aliado en cada meta que te propongas alcanzar. 🚀
             </p>
           </div>
         </div>
@@ -221,7 +284,7 @@ const Inicio = () => {
         <div className="horario_element_text">
           <div className="horario_card">
             <div className="text_elements">
-              <h3>HORARIOS POR PAIS</h3>
+              <h3>NUESTROS HORARIOS</h3>
               <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Placeat nulla corporis eius pariatur doloribus laborum,
