@@ -298,7 +298,7 @@
 }
 
 .text_elements p {
-  font-size: 1.5em;
+  font-size: 1em;
   line-height: 1.5;
 }
 
@@ -307,6 +307,7 @@
 }
 
 .text_elements ul li {
+  text-align: center;
   font-size: 1.3em;
 }
 
@@ -355,6 +356,7 @@
 }
 
 .card_text p {
+  text-align: center;
   font-size: 1rem; /* Texto responsivo */
   line-height: 1.5;
 }

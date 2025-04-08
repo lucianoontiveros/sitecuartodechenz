@@ -262,12 +262,13 @@ const Inicio = () => {
               alt=""
             />
             <div className="card_text">
-              <h3>TURNO MADRUGADA - MAÑANA</h3>
+              <h3>TURNO MADRUGADA</h3>
               <p>
-                Por las mañanas, Chenz ocupa sus horas trabajando, por la cual
-                la emisión se ejecuta automaticamente y en vivo. Manteniendo los
-                tiempos productivos y tus descansos, para no interrumpir tu
-                rutina.
+                Por las mañanas, me dedico completamente a mi trabajo, por lo
+                que las transmisiones se ejecutan automáticamente, replicando un
+                entorno de productividad que respeta tus tiempos. Mantenemos los
+                intervalos de trabajo y descanso, asegurándonos de que puedas
+                continuar con tu rutina sin interrupciones.
               </p>
               <ul>
                 <li>Mayor enfoque</li>
@@ -286,32 +287,22 @@ const Inicio = () => {
             <div className="text_elements">
               <h3>NUESTROS HORARIOS</h3>
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Placeat nulla corporis eius pariatur doloribus laborum,
-                voluptatem ex commodi praesentium mollitia sequi quidem dolor
-                voluptatibus consectetur provident suscipit? Tempore, saepe
-                odit.
+                Este espacio está pensado para acompañarte mientras estudias o
+                trabajas, ofreciendo un ambiente de foco y constancia. Aunque no
+                esté presente en cada momento, sabes que estamos juntos en esta
+                jornada. Y al final de mi día laboral, estaré aquí para
+                interactuar contigo y compartir un descanso bien merecido.
               </p>
               <h5>Listado de horarios</h5>
               <ul>
-                <li>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
-                </li>
-                <li>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
-                </li>
-                <li>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
-                </li>
-                <li>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
-                </li>
-                <li>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
-                </li>
-                <li>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
-                </li>
+                <li>Hora en Argentina: 04:00 a 19:00 hs</li>
+                <li>España: 09:00 a 00:00 hs</li>
+                <li>México: 01:00 a 16:00 hs</li>
+                <li>Colombia: 02:00 a 17:00 hs</li>
+                <li>México: 01:00 a 16:00 hs</li>
+                <li>Honduras: 01:00 a 16:00 hs</li>
+                <li>Brasil: 04:00 a 19:00 hs</li>
+                <li>Estados Unidos (Este): 03:00 a 18:00 hs</li>
               </ul>
             </div>
           </div>
@@ -326,9 +317,11 @@ const Inicio = () => {
             <div className="card_text">
               <h3>TURNO TARDE - NOCHE</h3>
               <p>
-                Por las tardes, Chenz se une a los directos para continuar su
-                formación, jugando e interactuando durante los descansos, hasta
-                finalizar la tranmisión.
+                Por las tardes, me uno a los directos para continuar mi
+                formación, explorar nuevos aprendizajes y compartir momentos
+                interactivos con la comunidad. Durante los descansos, aprovecho
+                para conectarme contigo, creando un espacio único para
+                relajarnos juntos mientras avanzamos en nuestras metas.
               </p>
               <ul>
                 <li>Mayor enfoque</li>
