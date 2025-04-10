@@ -79,7 +79,7 @@ const Inicio = () => {
               </div>
             </div>
             <div className="slogan_container">
-              <h4>SABEMOS LO QUE SIGNIFICA TU ESFUERZO</h4>
+              <h4>SABEMOS EL SIGNIFICADO DE TU ESFUERZO</h4>
               <a href="/">MI CUARTO</a>
             </div>
           </div>
@@ -96,13 +96,13 @@ const Inicio = () => {
       <div className="presentation_container">
         <div className="presentation_media">
           <img
-            className="media_element"
+            className="media_element img"
             src={img_presentation}
             alt="imagen presentación"
           />
 
           <iframe
-            className="media_element"
+            className="media_element iframe"
             width="560"
             height="315"
             src="https://www.youtube.com/embed/WkmVQohDvK8?si=W-f1cllhDpDqLlIm"
@@ -113,7 +113,7 @@ const Inicio = () => {
 
         <div className="presentation_info">
           <div className="media_element text">
-            <h3>UN ESPACIO DE ESTUDIO, TRABAJO Y MUCHO MÁS</h3>
+            <h3>UN ESPACIO DE ESTUDIO Y TRABAJO</h3>
             <p>
               Bienvenidas personitas bellas a nuestro rincón de esfuerzo y
               constancia. Este canal no es solo un lugar para estudiar o
@@ -132,11 +132,12 @@ const Inicio = () => {
           </div>
           <div className="media_element card">
             <img
+              className="img"
               src={img_card_presentation}
               alt=""
             />
             <div className="media_element text">
-              <h3>ESTE ES EL TITULO DE LA TARJETA </h3>
+              <h3>NUESTRA COMUNIDAD A TU SERVICIO </h3>
               <p>
                 ¡Únete a nuestra comunidad en Discord! Un espacio libre y
                 gratuito donde las reglas son simples: respeto y buena onda.
@@ -161,7 +162,7 @@ const Inicio = () => {
       <div className="contenido_conteiner">
         <div className="contenido_item">
           <img
-            className="img_contenido_element"
+            className="img_contenido_element img"
             src={img_cuarto_1}
             alt=""
           />
@@ -217,14 +218,14 @@ const Inicio = () => {
             </p>
           </div>
           <img
-            className="img_contenido_element"
+            className="img_contenido_element img"
             src={img_cuarto_2}
             alt=""
           />
         </div>
         <div className="contenido_item_2">
           <img
-            className="img_contenido_element"
+            className="img_contenido_element img"
             src={img_cuarto_4}
             alt=""
           />
