@@ -94,25 +94,13 @@ const Inicio = () => {
       </div>
       {/* Presentación del canal  */}
       <div className="presentation_container">
-        <div className="presentation_media">
+        <div className="presentation_element">
           <img
             className="media_element img"
             src={img_presentation}
             alt="imagen presentación"
           />
-
-          <iframe
-            className="media_element iframe"
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/WkmVQohDvK8?si=W-f1cllhDpDqLlIm"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          ></iframe>
-        </div>
-
-        <div className="presentation_info">
-          <div className="media_element text">
+          <div className="presentation_element_text">
             <h3>UN ESPACIO DE ESTUDIO Y TRABAJO</h3>
             <p>
               Bienvenidas personitas bellas a nuestro rincón de esfuerzo y
@@ -130,13 +118,15 @@ const Inicio = () => {
               por acompañarme en este viaje de crecimiento y productividad!
             </p>
           </div>
-          <div className="media_element card">
+        </div>
+        <div className="presentation_element_">
+          <div className="presentation_element_card">
             <img
-              className="img"
+              className="border_element"
               src={img_card_presentation}
               alt=""
             />
-            <div className="media_element text">
+            <div className="presentation_element_text">
               <h3>NUESTRA COMUNIDAD A TU SERVICIO </h3>
               <p>
                 ¡Únete a nuestra comunidad en Discord! Un espacio libre y
@@ -156,8 +146,17 @@ const Inicio = () => {
               </button>
             </div>
           </div>
+          <iframe
+            className="media_element iframe"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/WkmVQohDvK8?si=W-f1cllhDpDqLlIm"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          ></iframe>
         </div>
       </div>
+
       {/* Presentación del container   */}
       <div className="contenido_conteiner">
         <div className="contenido_item">
