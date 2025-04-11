@@ -3,7 +3,7 @@
 
 .inicio_container {
   display: grid;
-  grid-template-columns: 1fr 30%;
+  grid-template-columns: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   margin-top: 56px;
@@ -169,7 +169,7 @@ presentation_element_ iframe {
 }
 .presentation_element_text button {
   border-radius: 1em;
-  height: 20%;
+  height: 3em;
   color: black;
   background-color: aquamarine;
   margin-top: 1em;
@@ -179,11 +179,18 @@ presentation_element_ iframe {
 .presentation_element_card {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-content: flex-start;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
 }
 
+.presentation_element_card .presentation_element_text {
+  width: 100%;
+}
 .presentation_element_card img {
+  border: 0.1em solid aquamarine;
+  border-radius: 2em;
+  border-radius: 2em;
   padding: 1em;
   height: 20em;
   width: 20em;
@@ -192,7 +199,7 @@ presentation_element_ iframe {
 .presentation_element_ iframe {
   padding: 1em;
   height: 30em;
-  width: 50em;
+  width: 40%;
   max-width: 1200px;
 }
 
@@ -380,7 +387,46 @@ presentation_element_ iframe {
   display: none;
 }
 
-@media (min-width: 601px) and (max-width: 1200px) {
+@media screen and (max-width: 768px) {
+  .inicio_container {
+    display: block;
+  }
+
+  .img_section {
+    display: none; /* Ocultamos la imagen en mobile */
+  }
+
+  .title_section {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+  }
+
+  .title_section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.4
+    ); /* Opcional: oscurece la imagen para que el texto se lea mejor */
+    z-index: 0;
+  }
+
+  .title_container,
+  .inicio_banner {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+@media (max-width: 1000px) {
   .inicio_container,
   .presentation_container {
     display: flex;
@@ -419,6 +465,7 @@ presentation_element_ iframe {
   .presentation_media .iframe {
     width: 100%;
   }
+
   /*  CONTENIDO  */
   .presentation_element {
     display: flex;
@@ -428,6 +475,7 @@ presentation_element_ iframe {
     flex-wrap: wrap;
     padding: 1em;
   }
+
   .presentation_element_card {
     display: flex;
     flex-direction: column;
@@ -440,8 +488,9 @@ presentation_element_ iframe {
     height: auto;
     width: 100%;
   }
+
   .presentation_element_card .presentation_element_text {
-    height: 20em;
+    min-height: 20em;
   }
 
   .presentation_element img,
