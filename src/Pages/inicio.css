@@ -451,6 +451,27 @@ presentation_element_ iframe {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin: 0;
+  }
+
+  .router_icon {
+    margin: 0;
+    padding: 0;
+  }
+
+  .router_section svg {
+    margin: 0;
+    padding: 0;
+    height: 7em;
+    width: 7em;
+  }
+
+  .router_section svg {
+    margin: 1em;
+  }
+
+  .slogan_container a {
+    display: none;
   }
 
   .slogan_container h4 {
