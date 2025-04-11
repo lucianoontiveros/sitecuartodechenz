@@ -127,7 +127,7 @@ const Inicio = () => {
               alt=""
             />
             <div className="presentation_element_text">
-              <h3>NUESTRA COMUNIDAD A TU SERVICIO </h3>
+              <h3>UNA COMUNIDAD A TU SERVICIO </h3>
               <p>
                 ¡Únete a nuestra comunidad en Discord! Un espacio libre y
                 gratuito donde las reglas son simples: respeto y buena onda.

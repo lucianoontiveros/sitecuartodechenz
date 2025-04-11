@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
 import "./navbar.css";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [onList, setOnlist] = useState("hidden");
+  const menuRef = useRef(null); // Referencia al menú
 
   const Links_elements = () => {
     return (
@@ -56,6 +57,21 @@ const Navbar = () => {
     toggleNavBar();
   };
 
+  // Detectar clic fuera del menú
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsOpen(false); // Cierra el menú si el clic es fuera del contenedor
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <>
       <nav>
@@ -78,7 +94,10 @@ const Navbar = () => {
         </div>
       </nav>
       {isOpen && (
-        <div className="toogle_navbar">
+        <div
+          className="toogle_navbar "
+          ref={menuRef}
+        >
           <div
             className={onList}
             onClick={close_toggleNabar}

@@ -185,7 +185,7 @@ presentation_element_ iframe {
 }
 
 .presentation_element_card .presentation_element_text {
-  width: 100%;
+  min-width: 50%;
 }
 .presentation_element_card img {
   border: 0.1em solid aquamarine;
@@ -199,7 +199,7 @@ presentation_element_ iframe {
 .presentation_element_ iframe {
   padding: 1em;
   height: 30em;
-  width: 40%;
+  width: 50em;
   max-width: 1200px;
 }
 
@@ -443,6 +443,10 @@ presentation_element_ iframe {
     height: 100%;
   }
 
+  .title_container h1 {
+    font-size: 2.5em;
+  }
+
   .router_section {
     display: flex;
     flex-direction: row;
@@ -450,11 +454,12 @@ presentation_element_ iframe {
   }
 
   .slogan_container h4 {
-    padding: 1em;
+    padding: 0.5em;
     font-weight: 300;
     color: rgb(255, 255, 255);
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-align: center;
+    margin: 2em 1em;
   }
 
   .img_section {
@@ -502,7 +507,7 @@ presentation_element_ iframe {
   }
 
   .presentation_element_ iframe {
-    padding: 1em;
+    margin: 1.5em;
     height: 20em;
     max-width: 90%;
   }

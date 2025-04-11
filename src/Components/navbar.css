@@ -28,14 +28,21 @@
 }
 
 .contariner_links {
-  margin-top: 6em;
+  position: fixed;
+  top: 50%;
+  left: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   text-align: center;
+  transform: translate(-50%, -50%);
+  border: 0.2em solid aquamarine;
+  border-radius: 1em;
+  min-width: 60%;
+  z-index: 100; /* Para que se muestre por encima del contenido */
 }
 
 .contariner_links .link_items {
+  margin: 1em 1em;
   margin: 0.5em 0.5em;
   font-size: larger;
 }
