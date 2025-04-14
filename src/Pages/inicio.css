@@ -225,6 +225,7 @@ presentation_element_ iframe {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .contenido_item {
@@ -382,12 +383,11 @@ presentation_element_ iframe {
 
 /*  RESPONSIVE */
 
-.contenido_conteiner,
 .horario_container {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .inicio_container {
     display: block;
   }
@@ -423,6 +423,15 @@ presentation_element_ iframe {
   .inicio_banner {
     position: relative;
     z-index: 2;
+  }
+
+  .img_contenido_element {
+    height: 15em;
+    width: 100%;
+  }
+
+  .presentation_element_text {
+    width: 90%;
   }
 }
 
@@ -492,7 +501,7 @@ presentation_element_ iframe {
     width: 100%;
   }
 
-  /*  CONTENIDO  */
+  /*  PRESENTECION  */
   .presentation_element {
     display: flex;
     flex-direction: column;
@@ -508,6 +517,36 @@ presentation_element_ iframe {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+  }
+
+  /*  CONTENIDO  */
+  contenido_conteiner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contenido_element {
+    margin-top: 1em;
+    padding: 1.5em;
+    height: 100%;
+    width: 100%;
+  }
+
+  .contenido_element h3 {
+    font-size: 1em;
+    text-align: center;
+  }
+
+  .contenido_item,
+  .contenido_item_1,
+  .contenido_item_2 {
+    height: auto;
+  }
+
+  .contenido_item_1 img {
+    order: -1;
   }
 
   .presentation_element_card img {
@@ -529,7 +568,7 @@ presentation_element_ iframe {
 
   .presentation_element_ iframe {
     margin: 1.5em;
-    height: 20em;
+    height: 30em;
     max-width: 90%;
   }
 }
