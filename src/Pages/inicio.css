@@ -620,18 +620,34 @@ presentation_element_ iframe {
     order: 1;
   }
 
+  .horario_element_text p {
+    font-size: 1em;
+  }
+
   .horario_element_card {
     display: flex;
     flex-direction: column;
+    height: 850px;
+    max-width: 100%;
+    width: 25em; /* Ajusta el ancho según tus necesidades */
+    margin: 10px;
+    text-align: center;
   }
 
-  .horario_card div,
-  .horario_card img {
-    border: none;
+  .horario_element_card img {
+    width: 100%;
+    height: auto;
+    border: 0.2em solid aquamarine;
+    border-radius: 8px; /* Bordes redondeados */
+  }
+
+  .card_text {
+    padding: 0x;
+    height: 100%;
   }
 
   .text_elements ul li {
-    text-align: center;
-    font-size: 1em;
+    text-align: start;
+    font-size: 0.8em;
   }
 }
