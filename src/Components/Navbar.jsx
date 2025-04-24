@@ -1,6 +1,9 @@
 import { NavLink } from "react-router-dom";
 import "./navbar.css";
 import { useState, useRef, useEffect } from "react";
+import Menu from "./img/menu";
+import OutMenu from "./img/OutMenu";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [onList, setOnlist] = useState("hidden");
@@ -88,7 +91,7 @@ const Navbar = () => {
           </div>
           <div className="md:hidden toogle_navbar">
             <button onClick={toggleNavBar}>
-              {isOpen ? "Activo" : "no activo"}
+              {isOpen ? <OutMenu /> : <Menu />}
             </button>
           </div>
         </div>

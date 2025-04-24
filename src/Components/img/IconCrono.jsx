@@ -1,0 +1,140 @@
+import * as React from "react";
+const SvgComponent = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={24}
+    height={24}
+  >
+    <g
+      fill="none"
+      stroke="#7fffd4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+    >
+      <path
+        strokeDasharray={64}
+        strokeDashoffset={64}
+        d="M12 3a9 9 0 1 1-.001 18.001A9 9 0 0 1 12 3Z"
+      >
+        <animate
+          fill="freeze"
+          attributeName="stroke-dashoffset"
+          dur="1.23s"
+          values="64;0"
+        />
+      </path>
+      <path
+        strokeDasharray={8}
+        strokeDashoffset={8}
+        d="M12 12H6.5"
+      >
+        <animate
+          fill="freeze"
+          attributeName="stroke-dashoffset"
+          begin="2.665s"
+          dur="0.41s"
+          values="8;0"
+        />
+        <animateTransform
+          fill="freeze"
+          attributeName="transform"
+          begin="2.665s"
+          dur="1.64s"
+          type="rotate"
+          values="0 12 12;165 12 12"
+        />
+      </path>
+    </g>
+    <g fill="#7fffd4">
+      <path
+        fill="none"
+        d="M12 21c-2.59 0-4.85-.21-6.06-2L12 21l6.06-2c-1.21 1.79-3.47 2-6.06 2Z"
+      >
+        <animate
+          fill="freeze"
+          attributeName="d"
+          begin="1.23s"
+          dur="0.82s"
+          values="M12 21C9.41 21 7.15 20.79 5.94 19L12 21L18.06 19C16.85 20.79 14.59 21 12 21Z;M12 16C9.41 16 7.15 17.21 5.94 19L12 21L18.06 19C16.85 17.21 14.59 16 12 16Z"
+        />
+        <set
+          fill="freeze"
+          attributeName="fill-opacity"
+          begin="1.23s"
+          to={1}
+        />
+      </path>
+      <circle
+        cx={7}
+        cy={12}
+        r={0}
+        transform="rotate(15 12 12)"
+      >
+        <animate
+          fill="freeze"
+          attributeName="r"
+          begin="1.845s"
+          dur="0.41s"
+          values="0;1"
+        />
+      </circle>
+      <circle
+        cx={7}
+        cy={12}
+        r={0}
+        transform="rotate(65 12 12)"
+      >
+        <animate
+          fill="freeze"
+          attributeName="r"
+          begin="1.947s"
+          dur="0.41s"
+          values="0;1"
+        />
+      </circle>
+      <circle
+        cx={7}
+        cy={12}
+        r={0}
+        transform="rotate(115 12 12)"
+      >
+        <animate
+          fill="freeze"
+          attributeName="r"
+          begin="2.05s"
+          dur="0.41s"
+          values="0;1"
+        />
+      </circle>
+      <circle
+        cx={7}
+        cy={12}
+        r={0}
+        transform="rotate(165 12 12)"
+      >
+        <animate
+          fill="freeze"
+          attributeName="r"
+          begin="2.152s"
+          dur="0.41s"
+          values="0;1"
+        />
+      </circle>
+      <circle
+        cx={12}
+        cy={12}
+        r={0}
+      >
+        <animate
+          fill="freeze"
+          attributeName="r"
+          begin="2.665s"
+          dur="0.41s"
+          values="0;2"
+        />
+      </circle>
+    </g>
+  </svg>
+);
+export default SvgComponent;

@@ -13,6 +13,11 @@ import img_cuarto_2 from "/img_cuarto_2.jpeg";
 import img_cuarto_4 from "/img_cuarto_4.jpeg";
 import card_1 from "/img_card_one.png";
 import card_2 from "/img_card_two.png";
+import IconHouse from "../Components/img/IconHouse.jsx";
+import IconCrono from "../Components/img/IconCrono.jsx";
+import IconCloud from "../Components/img/IconCloud.jsx";
+import IconMetrics from "../Components/img/IconMetrics.jsx";
+import IconTask from "../Components/img/IconTask.jsx";
 
 const Inicio = () => {
   return (
@@ -101,6 +106,7 @@ const Inicio = () => {
             alt="imagen presentación"
           />
           <div className="presentation_element_text">
+            <IconHouse />
             <h3>UN ESPACIO DE ESTUDIO Y TRABAJO</h3>
             <p>
               Bienvenidas personitas bellas a nuestro rincón de esfuerzo y
@@ -165,7 +171,9 @@ const Inicio = () => {
             src={img_cuarto_1}
             alt=""
           />
+
           <div className="contenido_element">
+            <IconCrono />
             <h3>VERSIÓN PERSONALIZADA DEL MÉTODO POMODORO</h3>
             <p>
               En nuestras transmisiones, replicamos una versión personalizada
@@ -192,6 +200,7 @@ const Inicio = () => {
         </div>
         <div className="contenido_item_1">
           <div className="contenido_element">
+            <IconCloud />
             <h3>EL PODER DE LA LLUVIA EN TU PRODUCTIVIDAD.</h3>
             <p>
               En nuestros momentos productivos, el sonido de la lluvia toma
@@ -229,6 +238,7 @@ const Inicio = () => {
             alt=""
           />
           <div className="contenido_element">
+            <IconMetrics />
             <h3>COMANDOS PARA GESTIONAR TU PRODUCTIVIDAD</h3>
             <p>
               Nuestro canal está diseñado pensando en maximizar tu enfoque y
@@ -271,12 +281,30 @@ const Inicio = () => {
                 continuar con tu rutina sin interrupciones.
               </p>
               <ul>
-                <li>Mayor enfoque</li>
-                <li>Gestion de tareas</li>
-                <li>comandos para interactuar</li>
-                <li>Timer !focus para usaurios</li>
-                <li>Escenas automáticas</li>
-                <li>Música en los descansos</li>
+                <li>
+                  <IconTask />
+                  Mayor enfoque
+                </li>
+                <li>
+                  <IconTask />
+                  Gestion de tareas
+                </li>
+                <li>
+                  <IconTask />
+                  comandos para interactuar
+                </li>
+                <li>
+                  <IconTask />
+                  Timer !focus para usaurios
+                </li>
+                <li>
+                  <IconTask />
+                  Escenas automáticas
+                </li>
+                <li>
+                  <IconTask />
+                  Música en los descansos
+                </li>
               </ul>
             </div>
           </div>
@@ -293,7 +321,7 @@ const Inicio = () => {
                 jornada. Y al final de mi día laboral, estaré aquí para
                 interactuar contigo y compartir un descanso bien merecido.
               </p>
-              <h5>Listado de horarios</h5>
+              <h5>EMISIONES DIARIAS</h5>
               <ul>
                 <li>Hora en Argentina: 04:00 a 19:00 hs</li>
                 <li>España: 09:00 a 00:00 hs</li>
@@ -318,18 +346,36 @@ const Inicio = () => {
               <h3>TURNO TARDE - NOCHE</h3>
               <p>
                 Por las tardes, me uno a los directos para continuar mi
-                formación, explorar nuevos aprendizajes y compartir momentos
+                formación, explorar nuevo contenido y compartir momentos
                 interactivos con la comunidad. Durante los descansos, aprovecho
                 para conectarme contigo, creando un espacio único para
-                relajarnos juntos mientras avanzamos en nuestras metas.
+                acompañarnos mientras avanzamos en nuestras metas.
               </p>
               <ul>
-                <li>Mayor enfoque</li>
-                <li>Gestion de tareas</li>
-                <li>comandos para interactuar</li>
-                <li>Timer !focus para usaurios</li>
-                <li>Escenas automáticas</li>
-                <li>Música en los descansos</li>
+                <li>
+                  <IconTask />
+                  Mayor enfoque
+                </li>
+                <li>
+                  <IconTask />
+                  Gestion de tareas
+                </li>
+                <li>
+                  <IconTask />
+                  comandos para interactuar
+                </li>
+                <li>
+                  <IconTask />
+                  Timer !focus para usaurios
+                </li>
+                <li>
+                  <IconTask />
+                  Escenas automáticas
+                </li>
+                <li>
+                  <IconTask />
+                  Música en los descansos
+                </li>
               </ul>
             </div>
           </div>
