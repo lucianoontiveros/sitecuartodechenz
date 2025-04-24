@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 import "./navbar.css";
 import { useState, useRef, useEffect } from "react";
-import Menu from "./img/menu";
-import OutMenu from "./img/OutMenu";
+import Menu from "./img/Menu.jsx";
+import OutMenu from "./img/OutMenu.jsx";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
