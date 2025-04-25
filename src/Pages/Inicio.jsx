@@ -106,8 +106,10 @@ const Inicio = () => {
             alt="imagen presentación"
           />
           <div className="presentation_element_text">
-            <IconHouse />
-            <h3>UN ESPACIO DE ESTUDIO Y TRABAJO</h3>
+            <div className="tittle_and_icon">
+              <IconHouse />
+              <h3>UN ESPACIO DE ESTUDIO Y TRABAJO</h3>
+            </div>
             <p>
               Bienvenidas personitas bellas a nuestro rincón de esfuerzo y
               constancia. Este canal no es solo un lugar para estudiar o
@@ -173,8 +175,10 @@ const Inicio = () => {
           />
 
           <div className="contenido_element">
-            <IconCrono />
-            <h3>VERSIÓN PERSONALIZADA DEL MÉTODO POMODORO</h3>
+            <div className="tittle_and_icon">
+              <IconCrono />
+              <h3>VERSIÓN PERSONALIZADA DEL MÉTODO POMODORO</h3>
+            </div>
             <p>
               En nuestras transmisiones, replicamos una versión personalizada
               del método Pomodoro, con sesiones de 60 minutos de trabajo
@@ -200,8 +204,10 @@ const Inicio = () => {
         </div>
         <div className="contenido_item_1">
           <div className="contenido_element">
-            <IconCloud />
-            <h3>EL PODER DE LA LLUVIA EN TU PRODUCTIVIDAD.</h3>
+            <div className="tittle_and_icon">
+              <IconCloud />
+              <h3>EL PODER DE LA LLUVIA EN TU PRODUCTIVIDAD.</h3>
+            </div>
             <p>
               En nuestros momentos productivos, el sonido de la lluvia toma
               protagonismo. Este efecto sonoro no es una simple elección al
@@ -238,8 +244,10 @@ const Inicio = () => {
             alt=""
           />
           <div className="contenido_element">
-            <IconMetrics />
-            <h3>COMANDOS PARA GESTIONAR TU PRODUCTIVIDAD</h3>
+            <div className="tittle_and_icon">
+              <IconMetrics />
+              <h3>COMANDOS PARA GESTIONAR TU PRODUCTIVIDAD</h3>
+            </div>
             <p>
               Nuestro canal está diseñado pensando en maximizar tu enfoque y
               organización. Aquí encontrarás comandos que te permiten gestionar

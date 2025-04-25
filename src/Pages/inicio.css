@@ -163,10 +163,17 @@ presentation_element_ iframe {
   height: auto;
 }
 
+.presentation_element_text .tittle_and_icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .presentation_element_text h3 {
   color: aquamarine;
   font-size: 1.3rem;
-  margin-bottom: 10px;
+  margin: 10px;
   text-align: center;
 }
 .presentation_element_text button {
@@ -243,15 +250,18 @@ presentation_element_ iframe {
 .contenido_element {
   display: flex;
   flex-direction: column;
-  margin-top: 1em;
+  margin: 1em;
   padding: 1em;
   height: 27em;
   width: 50em;
 }
 
-.contenido_element svg {
-  margin-top: 1em;
-  align-self: center;
+div .tittle_and_icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: auto;
 }
 
 .contenido_element h3 {
@@ -318,6 +328,7 @@ img {
   font-size: 2rem;
   margin-top: 1em;
   text-align: center;
+  color: aquamarine;
 }
 
 .text_elements p {
@@ -482,6 +493,13 @@ img {
     padding: 1em;
   }
 
+  .presentation_element_tex .tittle_and_icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
   .presentation_element_card {
     display: flex;
     flex-direction: column;
@@ -506,7 +524,6 @@ img {
   }
 
   .contenido_element h3 {
-    text-align: center;
     font-size: 1.3em;
   }
 
@@ -621,6 +638,16 @@ img {
 
   .presentation_element_text {
     width: 90%;
+  }
+
+  div .tittle_and_icon,
+  .presentation_element_text .tittle_and_icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin: 0;
   }
 
   /*  HORARIO  */
