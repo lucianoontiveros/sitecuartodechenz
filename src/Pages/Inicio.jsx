@@ -65,7 +65,10 @@ const Inicio = () => {
               className="router_section"
               to="/avisos/"
             >
-              <NavLink className="router_icon">
+              <NavLink
+                className="router_icon"
+                to="/avisos/"
+              >
                 <Avisos_img
                   width="20em"
                   height="20em"
