@@ -18,6 +18,7 @@ import IconCrono from "../Components/img/IconCrono.jsx";
 import IconCloud from "../Components/img/IconCloud.jsx";
 import IconMetrics from "../Components/img/IconMetrics.jsx";
 import IconTask from "../Components/img/IconTask.jsx";
+import { NavLink } from "react-router-dom";
 
 const Inicio = () => {
   return (
@@ -30,28 +31,28 @@ const Inicio = () => {
             <div className="bar_icon">
               <a
                 className="icon_bar_element"
-                href="https://www.instagram.com/cuarto_de_chenz/"
+                href="https://www.instagram.com/luciano.a.ontiveros/"
                 target="_blank"
               >
                 <Icon_instagram />
               </a>
               <a
                 className="icon_bar_element"
-                href="https://www.tiktok.com/@cuarto_de_chenz"
+                href="https://www.tiktok.com/@cuartodechenz"
                 target="_blank"
               >
                 <Icon_tiktok />
               </a>
               <a
                 className="icon_bar_element"
-                href="https://x.com/cuartodechenz"
+                href="https://x.com/AgustnOntivero6"
                 target="_blank"
               >
                 <Icon_x />
               </a>
               <a
                 className="icon_bar_element"
-                href="https://www.youtube.com/@cuarto_de_chenz"
+                href="https://www.youtube.com/@cuartodechenz"
                 target="_blank"
               >
                 <Icon_youtube />
@@ -60,7 +61,10 @@ const Inicio = () => {
           </div>
 
           <div className="inicio_banner">
-            <div className="router_section">
+            <NavLink
+              className="router_section"
+              to="/avisos/"
+            >
               <div className="router_icon">
                 <Avisos_img
                   width="20em"
@@ -68,21 +72,27 @@ const Inicio = () => {
                 />
                 <h3>AVISOS</h3>
               </div>
-              <div className="router_icon">
+              <a
+                className="router_icon"
+                href="#horario"
+              >
                 <Horario_img
                   width="20em"
                   height="20em"
                 />
                 <h3>HORARIO</h3>
-              </div>
-              <div className="router_icon">
+              </a>
+              <NavLink
+                className="router_icon"
+                to="/comandos"
+              >
                 <Comandos_img
                   width="20em"
                   height="20em"
                 />
                 <h3>COMANDOS</h3>
-              </div>
-            </div>
+              </NavLink>
+            </NavLink>
             <div className="slogan_container">
               <h4>SABEMOS EL SIGNIFICADO DE TU ESFUERZO</h4>
               <a href="/">MI CUARTO</a>
@@ -318,7 +328,10 @@ const Inicio = () => {
           </div>
         </div>
 
-        <div className="horario_element_text">
+        <div
+          className="horario_element_text"
+          id="horario"
+        >
           <div className="horario_card">
             <div className="text_elements">
               <h3>NUESTROS HORARIOS</h3>

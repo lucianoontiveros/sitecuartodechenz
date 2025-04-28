@@ -29,6 +29,16 @@ const Navbar = () => {
               isActive ? "text-blue-500 font-bold underline" : "text-gray-500"
             }`
           }
+          to="/avisos"
+        >
+          AVISOS
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            `link_items ${
+              isActive ? "text-blue-500 font-bold underline" : "text-gray-500"
+            }`
+          }
           to="/comandos"
         >
           COMANDOS

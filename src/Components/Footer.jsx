@@ -11,28 +11,28 @@ const Footer = () => (
       <div className="bar_icon">
         <a
           className="icon_bar_element"
-          href="https://www.instagram.com/cuarto_de_chenz/"
+          href="https://www.instagram.com/luciano.a.ontiveros/"
           target="_blank"
         >
           <Icon_instagram />
         </a>
         <a
           className="icon_bar_element"
-          href="https://www.tiktok.com/@cuarto_de_chenz"
+          href="https://www.tiktok.com/@cuartodechenz"
           target="_blank"
         >
           <Icon_tiktok />
         </a>
         <a
           className="icon_bar_element"
-          href="https://x.com/cuartodechenz"
+          href="https://x.com/AgustnOntivero6"
           target="_blank"
         >
           <Icon_x />
         </a>
         <a
           className="icon_bar_element"
-          href="https://www.youtube.com/@cuarto_de_chenz"
+          href="https://www.youtube.com/@cuartodechenz"
           target="_blank"
         >
           <Icon_youtube />
