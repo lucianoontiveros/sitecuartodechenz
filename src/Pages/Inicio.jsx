@@ -61,17 +61,17 @@ const Inicio = () => {
           </div>
 
           <div className="inicio_banner">
-            <NavLink
+            <div
               className="router_section"
               to="/avisos/"
             >
-              <div className="router_icon">
+              <NavLink className="router_icon">
                 <Avisos_img
                   width="20em"
                   height="20em"
                 />
                 <h3>AVISOS</h3>
-              </div>
+              </NavLink>
               <a
                 className="router_icon"
                 href="#horario"
@@ -92,7 +92,7 @@ const Inicio = () => {
                 />
                 <h3>COMANDOS</h3>
               </NavLink>
-            </NavLink>
+            </div>
             <div className="slogan_container">
               <h4>SABEMOS EL SIGNIFICADO DE TU ESFUERZO</h4>
               <a href="/">MI CUARTO</a>
