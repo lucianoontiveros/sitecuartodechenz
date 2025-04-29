@@ -1,0 +1,300 @@
+.container_comandos {
+  margin: 10em 1em;
+}
+
+.title_container_comandos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.title_container_comandos h1 {
+  text-align: center;
+  font-size: 2em;
+}
+
+/* INDICE */
+
+.container_indice {
+  margin: 0;
+  padding: 0;
+}
+
+.container_indice_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container_indice_item img {
+  min-width: 10em;
+  min-height: 30em;
+  background-color: aquamarine;
+  border-radius: 2em;
+}
+
+.container_indice_item div {
+  margin-top: 1em;
+}
+
+.container_indice_item div h3 {
+  text-align: center;
+  font-size: 2em;
+  margin: 0.5em;
+}
+
+.container_indice_item div p {
+  padding: 0.4em;
+  margin-bottom: 1em;
+}
+
+/* COMANDO PARA TAREAS */
+
+.container_comandos_task_titles {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  margin: 3em;
+}
+
+.container_comandos_task_titles img {
+  margin: 0;
+  background-color: aquamarine;
+  min-width: 3em;
+  min-height: 3em;
+}
+
+.container_comandos_task_titles_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1em;
+  text-align: center;
+}
+
+.container_comandos_task_titles_text h3 {
+  font-size: 1.5em;
+  margin: 1em;
+}
+
+.container_comandos_task_titles_text p {
+  font-size: 1em;
+}
+
+.container_comandos_task_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid aquamarine;
+  padding: 1em;
+  border-radius: 2em;
+  margin: 2em 0;
+}
+
+.container_comandos_task_card div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 1em;
+}
+
+.container_comandos_task_card div h3 {
+  padding: 1em;
+  color: black;
+  background-color: aquamarine;
+  border-radius: 1em;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.container_comandos_task_card_list {
+  margin: 1em;
+}
+
+.container_comandos_task_card_list li {
+  display: flex;
+  flex-direction: column;
+}
+
+.container_comandos_task_card_list li span {
+  padding: 1em;
+  color: black;
+  background-color: aquamarine;
+  border-radius: 1em;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.container_comandos_task_card_list li p {
+  margin: 1em;
+}
+
+/* COMANDO PARA ACTIVITY */
+
+.container_comandos_activity_titles {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  margin: 3em;
+}
+
+.container_comandos_activity_titles img {
+  margin: 0;
+  background-color: aquamarine;
+  min-width: 3em;
+  min-height: 3em;
+}
+
+.container_comandos_activity_titles_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1em;
+  text-align: center;
+}
+
+.container_comandos_activity_titles_text h3 {
+  font-size: 1.5em;
+  margin: 1em;
+}
+
+.container_comandos_activity_titles_text p {
+  font-size: 1em;
+}
+
+.container_comandos_activity_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid aquamarine;
+  padding: 1em;
+  border-radius: 2em;
+  margin: 2em 0;
+}
+
+.container_comandos_activity_card div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 1em;
+}
+
+.container_comandos_activity_card div h3 {
+  padding: 1em;
+  color: black;
+  background-color: aquamarine;
+  border-radius: 1em;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.container_comandos_activity_card_list {
+  margin: 1em;
+}
+
+.container_comandos_activity_card_list li {
+  display: flex;
+  flex-direction: column;
+}
+
+.container_comandos_activity_card_list li span {
+  padding: 1em;
+  color: black;
+  background-color: aquamarine;
+  border-radius: 1em;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.container_comandos_activity_card_list li p {
+  margin: 1em;
+}
+
+/* COMANDO PARA USERS */
+
+.container_comandos_user_titles {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  margin: 3em;
+}
+
+.container_comandos_user_titles img {
+  margin: 0;
+  background-color: aquamarine;
+  min-width: 3em;
+  min-height: 3em;
+}
+
+.container_comandos_user_titles_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1em;
+  text-align: center;
+}
+
+.container_comandos_user_titles_text h3 {
+  font-size: 1.5em;
+  margin: 1em;
+}
+
+.container_comandos_user_titles_text p {
+  font-size: 1em;
+}
+
+.container_comandos_user_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid aquamarine;
+  padding: 1em;
+  border-radius: 2em;
+  margin: 2em 0;
+}
+
+.container_comandos_user_card div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 1em;
+}
+
+.container_comandos_user_card div h3 {
+  padding: 1em;
+  color: black;
+  background-color: aquamarine;
+  border-radius: 1em;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.container_comandos_user_card_list {
+  margin: 1em;
+}
+
+.container_comandos_user_card_list li {
+  display: flex;
+  flex-direction: column;
+}
+
+.container_comandos_user_card_list li span {
+  padding: 1em;
+  color: black;
+  background-color: aquamarine;
+  border-radius: 1em;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.container_comandos_user_card_list li p {
+  margin: 1em;
+}

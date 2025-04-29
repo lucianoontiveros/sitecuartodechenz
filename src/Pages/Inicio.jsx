@@ -98,7 +98,7 @@ const Inicio = () => {
             </div>
             <div className="slogan_container">
               <h4>SABEMOS EL SIGNIFICADO DE TU ESFUERZO</h4>
-              <a href="/">MI CUARTO</a>
+              <a href="#presentation">MI CUARTO</a>
             </div>
           </div>
         </section>
@@ -111,7 +111,10 @@ const Inicio = () => {
         </section>
       </div>
       {/* Presentación del canal  */}
-      <div className="presentation_container">
+      <div
+        className="presentation_container"
+        id="presentation"
+      >
         <div className="presentation_element">
           <img
             className="media_element img"
@@ -378,7 +381,7 @@ const Inicio = () => {
               <ul>
                 <li>
                   <IconTask />
-                  Mayor enfoque
+                  Interacciones en los descansos
                 </li>
                 <li>
                   <IconTask />
@@ -394,7 +397,7 @@ const Inicio = () => {
                 </li>
                 <li>
                   <IconTask />
-                  Escenas automáticas
+                  Juegos interactivos con el chat
                 </li>
                 <li>
                   <IconTask />
