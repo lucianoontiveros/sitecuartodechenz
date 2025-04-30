@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from "react";
 const Avisos_img = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -7,14 +7,18 @@ const Avisos_img = (props) => (
     viewBox="0 0 24 24"
     {...props}
   >
-    <g  
+    <g
       fill="none"
       stroke="#fff"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}
     >
-      <path strokeDasharray={72} strokeDashoffset={72} d="M12 3h7v18H5V3h7Z">
+      <path
+        strokeDasharray={72}
+        strokeDashoffset={72}
+        d="M12 3h7v18H5V3h7Z"
+      >
         <animate
           fill="freeze"
           attributeName="stroke-dashoffset"
@@ -36,7 +40,11 @@ const Avisos_img = (props) => (
           values="12;0"
         />
       </path>
-      <path strokeDasharray={4} strokeDashoffset={4} d="M9 10h3">
+      <path
+        strokeDasharray={4}
+        strokeDashoffset={4}
+        d="M9 10h3"
+      >
         <animate
           fill="freeze"
           attributeName="stroke-dashoffset"
@@ -45,7 +53,11 @@ const Avisos_img = (props) => (
           values="4;0"
         />
       </path>
-      <path strokeDasharray={6} strokeDashoffset={6} d="M9 13h5">
+      <path
+        strokeDasharray={6}
+        strokeDashoffset={6}
+        d="M9 13h5"
+      >
         <animate
           fill="freeze"
           attributeName="stroke-dashoffset"
@@ -54,7 +66,11 @@ const Avisos_img = (props) => (
           values="6;0"
         />
       </path>
-      <path strokeDasharray={8} strokeDashoffset={8} d="M9 16h6">
+      <path
+        strokeDasharray={8}
+        strokeDashoffset={8}
+        d="M9 16h6"
+      >
         <animate
           fill="freeze"
           attributeName="stroke-dashoffset"
@@ -64,7 +80,10 @@ const Avisos_img = (props) => (
         />
       </path>
     </g>
-    <path fill="none" d="M6 4h4v2h4V4h4v16H6V4Z">
+    <path
+      fill="none"
+      d="M6 4h4v2h4V4h4v16H6V4Z"
+    >
       <animate
         fill="freeze"
         attributeName="fill-opacity"
@@ -74,5 +93,5 @@ const Avisos_img = (props) => (
       />
     </path>
   </svg>
-)
-export default Avisos_img
+);
+export default Avisos_img;

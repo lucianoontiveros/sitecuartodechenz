@@ -3,6 +3,12 @@ import Icon_instagram from "../Components/img_icons/Icon_instagram.jsx";
 import Icon_tiktok from "../Components/img_icons/Icon_tiktok.jsx";
 import Icon_x from "../Components/img_icons/Icon_x.jsx";
 import Icon_youtube from "../Components/img_icons/Icon_youtube.jsx";
+import card_comando_tareas from "/card_comandos_1.png";
+import card_comando_activities from "/card_comandos_2.png";
+import card_comando_userdata from "/card_comandos_3.png";
+import IconList from "../Components/img/IconList.jsx";
+import IconActivities from "../Components/img/IconActivities.jsx";
+import IconDataUser from "../Components/img/IconDataUser.jsx";
 
 const Comandos = () => {
   return (
@@ -42,11 +48,12 @@ const Comandos = () => {
         </div>
       </section>
 
+      {/* induce */}
       <section className="container_indice">
         <div className="container_indice_item">
           {" "}
           <img
-            src=""
+            src={card_comando_tareas}
             alt=""
           />{" "}
           <div>
@@ -82,7 +89,7 @@ const Comandos = () => {
         <div className="container_indice_item">
           {" "}
           <img
-            src=""
+            src={card_comando_activities}
             alt=""
           />{" "}
           <div>
@@ -118,7 +125,7 @@ const Comandos = () => {
         <div className="container_indice_item">
           {" "}
           <img
-            src=""
+            src={card_comando_userdata}
             alt=""
           />{" "}
           <div>
@@ -153,13 +160,10 @@ const Comandos = () => {
       </section>
 
       {/* Comandos de tareas   */}
-      <section className="container_comandos_task">
-        <div className="container_comandos_task_titles">
-          <img
-            src=""
-            alt=""
-          />
-          <div className="container_comandos_task_titles_text">
+      <section className="container_comandos">
+        <div className="container_comandos_titles">
+          <IconList />
+          <div className="container_comandos_titles_text">
             <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit..</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia.
@@ -167,11 +171,11 @@ const Comandos = () => {
           </div>
         </div>
 
-        <div className="container_comandos_task_card">
+        <div className="container_comandos_card">
           <div>
             <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h3>
           </div>
-          <ul className="container_comandos_task_card_list">
+          <ul className="container_comandos_card_list">
             <li>
               <span>Lorem ipsum dolor.</span>
               <p>
@@ -229,11 +233,11 @@ const Comandos = () => {
           </ul>
         </div>
 
-        <div className="container_comandos_task_card">
+        <div className="container_comandos_card">
           <div>
             <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h3>
           </div>
-          <ul className="container_comandos_task_card_list">
+          <ul className="container_comandos_card_list">
             <li>
               <span>Lorem ipsum dolor.</span>
               <p>
@@ -291,11 +295,11 @@ const Comandos = () => {
           </ul>
         </div>
 
-        <div className="container_comandos_task_card">
+        <div className="container_comandos_card">
           <div>
             <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h3>
           </div>
-          <ul className="container_comandos_task_card_list">
+          <ul className="container_comandos_card_list">
             <li>
               <span>Lorem ipsum dolor.</span>
               <p>
@@ -355,13 +359,10 @@ const Comandos = () => {
       </section>
 
       {/* Comandos de actividades   */}
-      <section className="container_comandos_activity">
-        <div className="container_comandos_activity_titles">
-          <img
-            src=""
-            alt=""
-          />
-          <div className="container_comandos_activity_titles_text">
+      <section className="container_comandos">
+        <div className="container_comandos_titles">
+          <IconActivities />
+          <div className="container_comandos_titles_text">
             <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit..</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia.
@@ -369,11 +370,11 @@ const Comandos = () => {
           </div>
         </div>
 
-        <div className="container_comandos_activity_card">
+        <div className="container_comandos_card">
           <div>
             <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h3>
           </div>
-          <ul className="container_comandos_activity_card_list">
+          <ul className="container_comandos_card_list">
             <li>
               <span>Lorem ipsum dolor.</span>
               <p>
@@ -431,11 +432,11 @@ const Comandos = () => {
           </ul>
         </div>
 
-        <div className="container_comandos_activity_card">
+        <div className="container_comandos_card">
           <div>
             <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h3>
           </div>
-          <ul className="container_comandos_activity_card_list">
+          <ul className="container_comandos_card_list">
             <li>
               <span>Lorem ipsum dolor.</span>
               <p>
@@ -493,11 +494,11 @@ const Comandos = () => {
           </ul>
         </div>
 
-        <div className="container_comandos_activity_card">
+        <div className="container_comandos_card">
           <div>
             <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h3>
           </div>
-          <ul className="container_comandos_activity_card_list">
+          <ul className="container_comandos_card_list">
             <li>
               <span>Lorem ipsum dolor.</span>
               <p>
@@ -557,13 +558,10 @@ const Comandos = () => {
       </section>
 
       {/* Comandos de actividades   */}
-      <section className="container_comandos_user">
-        <div className="container_comandos_user_titles">
-          <img
-            src=""
-            alt=""
-          />
-          <div className="container_comandos_user_titles_text">
+      <section className="container_comandos">
+        <div className="container_comandos_titles">
+          <IconDataUser />
+          <div className="container_comandos_titles_text">
             <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit..</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia.
@@ -571,11 +569,11 @@ const Comandos = () => {
           </div>
         </div>
 
-        <div className="container_comandos_user_card">
+        <div className="container_comandos_card">
           <div>
             <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h3>
           </div>
-          <ul className="container_comandos_user_card_list">
+          <ul className="container_comandos_card_list">
             <li>
               <span>Lorem ipsum dolor.</span>
               <p>
@@ -633,11 +631,11 @@ const Comandos = () => {
           </ul>
         </div>
 
-        <div className="container_comandos_user_card">
+        <div className="container_comandos_card">
           <div>
             <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h3>
           </div>
-          <ul className="container_comandos_user_card_list">
+          <ul className="container_comandos_card_list">
             <li>
               <span>Lorem ipsum dolor.</span>
               <p>
@@ -695,11 +693,11 @@ const Comandos = () => {
           </ul>
         </div>
 
-        <div className="container_comandos_user_card">
+        <div className="container_comandos_card">
           <div>
             <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h3>
           </div>
-          <ul className="container_comandos_user_card_list">
+          <ul className="container_comandos_card_list">
             <li>
               <span>Lorem ipsum dolor.</span>
               <p>

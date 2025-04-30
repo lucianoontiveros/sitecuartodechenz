@@ -1,0 +1,143 @@
+import React from "react";
+
+const IconList = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={24}
+      height={24}
+      viewBox="0 0 24 24"
+    >
+      <g
+        fill="#7fffd4"
+        fillOpacity={0}
+        stroke="#7fffd4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1}
+      >
+        <path
+          strokeDasharray={12}
+          strokeDashoffset={12}
+          d="M3.5 5c0 -0.83 0.67 -1.5 1.5 -1.5c0.83 0 1.5 0.67 1.5 1.5c0 0.83 -0.67 1.5 -1.5 1.5c-0.83 0 -1.5 -0.67 -1.5 -1.5Z"
+        >
+          <animate
+            fill="freeze"
+            attributeName="fill-opacity"
+            begin="3.485s"
+            dur="1.025s"
+            values="0;1"
+          ></animate>
+          <animate
+            fill="freeze"
+            attributeName="stroke-dashoffset"
+            dur="0.41s"
+            values="12;0"
+          ></animate>
+        </path>
+        <path
+          strokeDasharray={12}
+          strokeDashoffset={12}
+          d="M3.5 12c0 -0.83 0.67 -1.5 1.5 -1.5c0.83 0 1.5 0.67 1.5 1.5c0 0.83 -0.67 1.5 -1.5 1.5c-0.83 0 -1.5 -0.67 -1.5 -1.5Z"
+        >
+          <animate
+            fill="freeze"
+            attributeName="fill-opacity"
+            begin="4.715s"
+            dur="1.025s"
+            values="0;1"
+          ></animate>
+          <animate
+            fill="freeze"
+            attributeName="stroke-dashoffset"
+            begin="1.23s"
+            dur="0.41s"
+            values="12;0"
+          ></animate>
+        </path>
+        <path
+          strokeDasharray={12}
+          strokeDashoffset={12}
+          d="M3.5 19c0 -0.83 0.67 -1.5 1.5 -1.5c0.83 0 1.5 0.67 1.5 1.5c0 0.83 -0.67 1.5 -1.5 1.5c-0.83 0 -1.5 -0.67 -1.5 -1.5Z"
+        >
+          <animate
+            fill="freeze"
+            attributeName="fill-opacity"
+            begin="5.945s"
+            dur="1.025s"
+            values="0;1"
+          ></animate>
+          <animate
+            fill="freeze"
+            attributeName="stroke-dashoffset"
+            begin="2.46s"
+            dur="0.41s"
+            values="12;0"
+          ></animate>
+        </path>
+        <path
+          strokeDasharray={28}
+          strokeDashoffset={28}
+          d="M9.5 5c0 -0.83 0.67 -1.5 1.5 -1.5h8c0.83 0 1.5 0.67 1.5 1.5c0 0.83 -0.67 1.5 -1.5 1.5h-8c-0.83 0 -1.5 -0.67 -1.5 -1.5Z"
+        >
+          <animate
+            fill="freeze"
+            attributeName="fill-opacity"
+            begin="3.895s"
+            dur="1.025s"
+            values="0;1"
+          ></animate>
+          <animate
+            fill="freeze"
+            attributeName="stroke-dashoffset"
+            begin="0.41s"
+            dur="0.82s"
+            values="28;0"
+          ></animate>
+        </path>
+        <path
+          strokeDasharray={28}
+          strokeDashoffset={28}
+          d="M9.5 12c0 -0.83 0.67 -1.5 1.5 -1.5h8c0.83 0 1.5 0.67 1.5 1.5c0 0.83 -0.67 1.5 -1.5 1.5h-8c-0.83 0 -1.5 -0.67 -1.5 -1.5Z"
+        >
+          <animate
+            fill="freeze"
+            attributeName="fill-opacity"
+            begin="5.125s"
+            dur="1.025s"
+            values="0;1"
+          ></animate>
+          <animate
+            fill="freeze"
+            attributeName="stroke-dashoffset"
+            begin="1.64s"
+            dur="0.82s"
+            values="28;0"
+          ></animate>
+        </path>
+        <path
+          strokeDasharray={28}
+          strokeDashoffset={28}
+          d="M9.5 19c0 -0.83 0.67 -1.5 1.5 -1.5h8c0.83 0 1.5 0.67 1.5 1.5c0 0.83 -0.67 1.5 -1.5 1.5h-8c-0.83 0 -1.5 -0.67 -1.5 -1.5Z"
+        >
+          <animate
+            fill="freeze"
+            attributeName="fill-opacity"
+            begin="6.355s"
+            dur="1.025s"
+            values="0;1"
+          ></animate>
+          <animate
+            fill="freeze"
+            attributeName="stroke-dashoffset"
+            begin="2.87s"
+            dur="0.82s"
+            values="28;0"
+          ></animate>
+        </path>
+      </g>
+    </svg>
+  );
+};
+
+export default IconList;
