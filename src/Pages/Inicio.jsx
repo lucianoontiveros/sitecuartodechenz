@@ -381,7 +381,7 @@ const Inicio = () => {
               <ul>
                 <li>
                   <IconTask />
-                  Interacciones en los descansos
+                  Mi presencia durante el resto de la tarde
                 </li>
                 <li>
                   <IconTask />
