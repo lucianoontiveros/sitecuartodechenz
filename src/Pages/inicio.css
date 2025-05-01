@@ -177,7 +177,7 @@ presentation_element_ iframe {
 }
 
 .presentation_element_text p {
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 .presentation_element_text button {
   border-radius: 1em;
@@ -276,7 +276,7 @@ div .tittle_and_icon {
 
 .contenido_element p {
   margin-bottom: 1em;
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
 img {
@@ -650,13 +650,6 @@ img {
     margin: 0px 2px;
     height: 15em;
     width: 90%;
-    padding: 0px;
-  }
-
-  .presentation_element_text {
-    background-color: tomato;
-    width: 100%;
-    margin: 0px;
     padding: 0px;
   }
 
