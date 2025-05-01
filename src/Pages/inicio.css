@@ -606,6 +606,13 @@ img {
     display: block;
   }
 
+  .inicio_container,
+  .contenido_conteiner,
+  .horario_container {
+    padding: 0;
+    margin: 0;
+  }
+
   .img_section {
     display: none; /* Ocultamos la imagen en mobile */
   }
@@ -643,10 +650,14 @@ img {
     margin: 0px 2px;
     height: 15em;
     width: 90%;
+    padding: 0px;
   }
 
   .presentation_element_text {
-    width: 90%;
+    background-color: tomato;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
   }
 
   .presentation_element_text h3 {
