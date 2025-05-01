@@ -57,31 +57,20 @@ const Comandos = () => {
             alt=""
           />{" "}
           <div>
-            <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h3>
+            <h3>GESTIÓN INTELIGENTE DE TAREAS</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde
-              dolores inventore praesentium soluta saepe est ea, sunt, at totam
-              cumque voluptatem minus delectus autem? Adipisci sint vitae harum
-              repellat perferendis. Exercitationem, dolorum voluptates? Ab,
-              voluptatem itaque adipisci enim pariatur eius quasi ipsam minima,
-              illo assumenda saepe quia nam dolor impedit, officia est soluta
-              veritatis repellendus rerum blanditiis magnam rem perferendis.
-              Officia iure modi maiores ea consequatur architecto ducimus, illo
-              commodi maxime obcaecati alias magnam numquam. Officiis harum
-              itaque distinctio odit, quas voluptatibus ipsum aliquid ab
-              aspernatur, nesciunt tempore cumque vero. Tempora officiis aliquam
-              sint amet? Corporis reprehenderit id accusamus omnis, blanditiis
-              eum asperiores corrupti quaerat doloribus vel accusantium dolorem
-              placeat eos sapiente ex totam eligendi vero pariatur a
-              praesentium! Sint. Quidem veritatis officia nam velit, voluptates
-              debitis corporis earum nesciunt ratione exercitationem amet non
-              laborum assumenda. Neque totam aspernatur nostrum mollitia
-              corporis quas dolores? Asperiores praesentium deleniti aspernatur
-              facilis eligendi. Inventore earum voluptatum accusamus odit,
-              voluptates quidem nostrum aspernatur! Omnis ea provident,
-              reprehenderit facilis, mollitia, qui nesciunt iure fuga quis
-              debitis hic! Deleniti, provident! Earum temporibus quam ipsam
-              iusto laudantium.
+              ✅ 📌 Tomar el control de tus pendientes nunca fue tan fácil. A
+              través de comandos simples, puedes gestionar tu lista de tareas
+              sin distracciones ni complicaciones. ✍️ Agrega nuevas actividades
+              con rapidez, 🛠️ edita los detalles cuando lo necesites, ✅ marca
+              tareas como completadas para llevar un seguimiento preciso y 🗑️
+              elimina aquellas que ya no sean relevantes. ¿Necesitas un sistema
+              que se adapte a tu ritmo de vida? ¡Aquí lo tienes! Cada tarea
+              puede ser registrada y manipulada en segundos, permitiéndote
+              enfocarte en lo que realmente importa. ⏳ Con esta función,
+              transformarás el caos en productividad, estructurando tu día de
+              manera eficiente sin perder tiempo en procesos tediosos. La
+              organización está al alcance de un comando. 🚀
             </p>
           </div>
         </div>
@@ -93,31 +82,22 @@ const Comandos = () => {
             alt=""
           />{" "}
           <div>
-            <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h3>
+            <h3>COMPARTE LO QUE ESTÁS HACIENDO</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde
-              dolores inventore praesentium soluta saepe est ea, sunt, at totam
-              cumque voluptatem minus delectus autem? Adipisci sint vitae harum
-              repellat perferendis. Exercitationem, dolorum voluptates? Ab,
-              voluptatem itaque adipisci enim pariatur eius quasi ipsam minima,
-              illo assumenda saepe quia nam dolor impedit, officia est soluta
-              veritatis repellendus rerum blanditiis magnam rem perferendis.
-              Officia iure modi maiores ea consequatur architecto ducimus, illo
-              commodi maxime obcaecati alias magnam numquam. Officiis harum
-              itaque distinctio odit, quas voluptatibus ipsum aliquid ab
-              aspernatur, nesciunt tempore cumque vero. Tempora officiis aliquam
-              sint amet? Corporis reprehenderit id accusamus omnis, blanditiis
-              eum asperiores corrupti quaerat doloribus vel accusantium dolorem
-              placeat eos sapiente ex totam eligendi vero pariatur a
-              praesentium! Sint. Quidem veritatis officia nam velit, voluptates
-              debitis corporis earum nesciunt ratione exercitationem amet non
-              laborum assumenda. Neque totam aspernatur nostrum mollitia
-              corporis quas dolores? Asperiores praesentium deleniti aspernatur
-              facilis eligendi. Inventore earum voluptatum accusamus odit,
-              voluptates quidem nostrum aspernatur! Omnis ea provident,
-              reprehenderit facilis, mollitia, qui nesciunt iure fuga quis
-              debitis hic! Deleniti, provident! Earum temporibus quam ipsam
-              iusto laudantium.
+              💡 La comunidad está viva y en constante movimiento, y ahora
+              puedes ser parte de esa dinámica compartiendo en tiempo real lo
+              que estás haciendo. ⏳ Con un solo comando, puedes anunciar si
+              estás 📖 leyendo, 📚 estudiando, 🍳 cocinando, 😴 descansando o 💼
+              trabajando, entre muchas otras actividades. ¿Por qué es importante
+              esto? 🤝 Porque te permite conectar con personas que están en
+              situaciones similares, generar conversaciones interesantes y hacer
+              que tu presencia en la comunidad sea más auténtica. 💬 ¿Te
+              imaginas una red donde todos intercambian lo que están haciendo en
+              el momento, generando una interacción fluida y espontánea? 🌐 Aquí
+              es posible. Con esta función, no solo te expresas, sino que
+              también descubres qué está pasando en la comunidad de una manera
+              rápida y entretenida. ✨ ¡Ser parte de la conversación nunca fue
+              tan accesible!
             </p>
           </div>
         </div>
@@ -129,31 +109,22 @@ const Comandos = () => {
             alt=""
           />{" "}
           <div>
-            <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h3>
+            <h3>PERSONALIZA TU PERFIL</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde
-              dolores inventore praesentium soluta saepe est ea, sunt, at totam
-              cumque voluptatem minus delectus autem? Adipisci sint vitae harum
-              repellat perferendis. Exercitationem, dolorum voluptates? Ab,
-              voluptatem itaque adipisci enim pariatur eius quasi ipsam minima,
-              illo assumenda saepe quia nam dolor impedit, officia est soluta
-              veritatis repellendus rerum blanditiis magnam rem perferendis.
-              Officia iure modi maiores ea consequatur architecto ducimus, illo
-              commodi maxime obcaecati alias magnam numquam. Officiis harum
-              itaque distinctio odit, quas voluptatibus ipsum aliquid ab
-              aspernatur, nesciunt tempore cumque vero. Tempora officiis aliquam
-              sint amet? Corporis reprehenderit id accusamus omnis, blanditiis
-              eum asperiores corrupti quaerat doloribus vel accusantium dolorem
-              placeat eos sapiente ex totam eligendi vero pariatur a
-              praesentium! Sint. Quidem veritatis officia nam velit, voluptates
-              debitis corporis earum nesciunt ratione exercitationem amet non
-              laborum assumenda. Neque totam aspernatur nostrum mollitia
-              corporis quas dolores? Asperiores praesentium deleniti aspernatur
-              facilis eligendi. Inventore earum voluptatum accusamus odit,
-              voluptates quidem nostrum aspernatur! Omnis ea provident,
-              reprehenderit facilis, mollitia, qui nesciunt iure fuga quis
-              debitis hic! Deleniti, provident! Earum temporibus quam ipsam
-              iusto laudantium.
+              🏷️ 🆙 Tu identidad es única, y ahora puedes reflejarla dentro de
+              la comunidad con información que te define. 🇦🇷 Registra tu
+              nacionalidad, 🎂 fecha de cumpleaños, 📖 carrera o estudios
+              actuales, e incluso 🔗 tu perfil de Instagram para que otros
+              puedan conocerte mejor y conectar contigo de manera auténtica. 💡
+              Compartir estos detalles permite fortalecer relaciones dentro de
+              la comunidad, crear redes con personas de intereses similares y
+              potenciar tu presencia en un entorno colaborativo. 🤝 La comunidad
+              es un espacio donde cada usuario aporta algo valioso, y tu perfil
+              personalizado es la puerta de entrada para nuevas conexiones. 🌟
+              Ya sea que busques amistades, compañeros de estudio o simplemente
+              compartir quién eres, esta función te permite hacerlo de manera
+              sencilla y efectiva. 🏆 ¡Haz que tu perfil cobre vida con cada
+              detalle que agregues!
             </p>
           </div>
         </div>
@@ -164,9 +135,10 @@ const Comandos = () => {
         <div className="container_comandos_titles">
           <IconList />
           <div className="container_comandos_titles_text">
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit..</h3>
+            <h3>Gestión Inteligente de Tareas.</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia.
+              Organiza tu día con comandos simples: agrega, modifica, completa o
+              elimina tus tareas en segundos.{" "}
             </p>
           </div>
         </div>
@@ -363,9 +335,10 @@ const Comandos = () => {
         <div className="container_comandos_titles">
           <IconActivities />
           <div className="container_comandos_titles_text">
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit..</h3>
+            <h3>Comparte lo que estás haciendo</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia.
+              Haz que la comunidad sepa en qué estás trabajando o disfrutando
+              con comandos instantáneos.
             </p>
           </div>
         </div>
@@ -562,9 +535,10 @@ const Comandos = () => {
         <div className="container_comandos_titles">
           <IconDataUser />
           <div className="container_comandos_titles_text">
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit..</h3>
+            <h3>Personaliza tu perfil</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia.
+              Dale vida a tu presencia en la comunidad registrando tu
+              nacionalidad, cumpleaños, estudios y redes sociales.
             </p>
           </div>
         </div>

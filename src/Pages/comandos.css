@@ -159,4 +159,42 @@
     background-color: aquamarine;
     border-radius: 2em;
   }
+
+  .container_indice_item div h3 {
+    color: aquamarine;
+    text-align: center;
+    font-size: 2.2em;
+    margin: 1em;
+  }
+
+  .container_indice_item div p {
+    padding: 0.6em;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
+
+  .container_comandos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2em 0.3em;
+  }
+
+  .container_comandos_titles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: flex-end;
+    width: 100%;
+  }
+
+  .container_comandos_card {
+    display: flex;
+    flex-direction: row;
+    max-width: 36em;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2em;
+  }
 }
