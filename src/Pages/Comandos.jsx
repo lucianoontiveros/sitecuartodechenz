@@ -143,82 +143,55 @@ const Comandos = () => {
           </div>
         </div>
 
-        <div className="container_comandos_card">
+        <div className="container_comandos_card                                                                                                                                                                                                                                                                                         ">
           <div>
-            <h3>COMANDOS PARA ADMINISTRAR TAREAS</h3>
+            <h3>AGREGAR TAREAS</h3>
           </div>
           <ul className="container_comandos_card_list">
             <li>
-              <span>!tarea + más la descripción de la tarea</span>
+              <span>
+                📝 !tarea / !add / !task / !t + descripción de la tarea
+              </span>
               <p>
-                Ingresando el comando junto con su correspondiente descripción,
-                la misma quedará registrada y un mensaje vía chat avisará que se
-                complió con la petición.
+                Estos comandos te permiten agregar una nueva tarea con una
+                descripción personalizada. Si prefieres una forma más breve,
+                podés usar la versión corta <strong>!t</strong>. El sistema
+                permite un máximo de <strong>10 tareas</strong> por usuario. Si
+                intentás superar ese límite, recibirás un mensaje de
+                advertencia.
+              </p>
+              <p>
+                These commands allow you to add a new task with a custom
+                description. For a shorter version, you can use{" "}
+                <strong>!t</strong>. The task limit is{" "}
+                <strong>10 per user</strong>. If you try to exceed it, a warning
+                will be shown.
+              </p>
+              <p>
+                <strong>Ejemplo / Example:</strong>{" "}
+                <code>!tarea Esta es la descripción de la nueva tarea</code>
               </p>
             </li>
+
             <li>
-              <span>!lista</span>
+              <span>
+                🧾 Agregar múltiples tareas: !tarea / !add / !task / !t +
+                descripción 1 ; descripción 2 ; descripción 3
+              </span>
               <p>
-                Ingresando este comando se desplegará en pantalla la lista de
-                tareas y también se expondrá en el chat. De no tener tareas
-                registradas habrá un aviso informando la situación.
+                También es posible agregar varias tareas en un solo mensaje
+                separándolas con punto y coma (<strong>;</strong>). Cada tarea
+                será procesada de forma individual, siempre que no superes el
+                límite total de 10 tareas.
               </p>
-            </li>
-            <li>
-              <span>!marcar + ID</span>
               <p>
-                Ingresando el comando más el ID la tarea vinculada se marca como
-                realizada.
+                You can also add multiple tasks at once by separating each one
+                with a semicolon (<strong>;</strong>). Each task will be handled
+                individually, as long as you don’t exceed the 10-task limit.
               </p>
-            </li>
-            <li>
-              <span>!eliminar + ID</span>
               <p>
-                Ingresando el comando más el ID la tarea vinculada se elimina.
-              </p>
-            </li>
-            <li>
-              <span>!task + task description</span>
-              <p>
-                By entering the command and then the description the task will
-                be logged and the log will be displayed on the screen and in the
-                chat.
-              </p>
-            </li>
-            <li>
-              <span>!list</span>
-              <p>
-                Displays on screen and in the chat the list of pending tasks. If
-                no task is registered, a message via chat will inform that there
-                are no activities.
-              </p>
-            </li>
-            <li>
-              <span>!delete + ID</span>
-              <p>
-                Entering the command and adding the ID will allow you to delete
-                the linked task.
-              </p>
-            </li>
-            <li>
-              <span>!check + ID</span>
-              <p>
-                Entering the command to the chat and adding the corresponding ID
-                will allow you to mark your task as done.
-              </p>
-            </li>
-            <li>
-              <span>!clear</span>
-              <p>
-                Ingresando este comando se borran todas las tareas. / Entering
-                this command deletes all tasks.
-              </p>
-            </li>
-            <li>
-              <span>!pickup</span>
-              <p>
-                ingresando este comando se marcan todas las tareas. / by
-                entering this command all tasks are marked.
+                <strong>Ejemplo / Example:</strong>{" "}
+                <code>!add Comprar pan; Llamar al médico; Enviar informe</code>
               </p>
             </li>
           </ul>
@@ -226,61 +199,46 @@ const Comandos = () => {
 
         <div className="container_comandos_card">
           <div>
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h3>
+            <h3>REVISAR LISTA Y MARCAR </h3>
           </div>
           <ul className="container_comandos_card_list">
             <li>
-              <span>Lorem ipsum dolor.</span>
+              <span>📋 !lista / !list</span>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
+                Este comando muestra en pantalla y en el chat todas las tareas
+                pendientes que tenés en tu lista...
+              </p>
+              <p>
+                This command displays all your pending tasks on screen and in
+                the chat...
+              </p>
+              <p>
+                <strong>Ejemplo / Example:</strong> <code>!list</code>
               </p>
             </li>
+
             <li>
-              <span>Lorem ipsum dolor.</span>
+              <span>✅ !marcar / !check / !v + ID de tarea</span>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
+                Marca una tarea como <strong>realizada</strong> usando su ID...
+              </p>
+              <p>
+                Marks a task as <strong>completed</strong> using its ID...
+              </p>
+              <p>
+                <strong>Ejemplo / Example:</strong> <code>!check 4</code>
               </p>
             </li>
+
             <li>
-              <span>Lorem ipsum dolor.</span>
+              <span>🚀 !realizadas / !pickup</span>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
+                Marca todas tus tareas pendientes como realizadas en un solo
+                paso...
               </p>
-            </li>
-            <li>
-              <span>Lorem ipsum dolor.</span>
+              <p>Marks all your pending tasks as completed at once...</p>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
-            </li>
-            <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
-            </li>
-            <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
+                <strong>Ejemplo / Example:</strong> <code>!pickup</code>
               </p>
             </li>
           </ul>
@@ -288,61 +246,52 @@ const Comandos = () => {
 
         <div className="container_comandos_card">
           <div>
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h3>
+            <h3>MODIFICAR Y ELIMINAR TAREAS</h3>
           </div>
           <ul className="container_comandos_card_list">
             <li>
-              <span>Lorem ipsum dolor.</span>
+              <span>
+                ✏️ !modificar / !cambiar / !change + ID + nueva descripción
+              </span>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
+                Este comando te permite <strong>editar o actualizar</strong> una
+                tarea...
+              </p>
+              <p>
+                Use this command to <strong>edit or update</strong> a task...
+              </p>
+              <p>
+                <strong>Ejemplo / Example:</strong>{" "}
+                <code>!modificar s3u Estudiar capítulo 5 de matemáticas</code>
               </p>
             </li>
+
             <li>
-              <span>Lorem ipsum dolor.</span>
+              <span>🗑️ !eliminar / !borrar / !delete / !x + ID de tarea</span>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
+                Este comando se utiliza para <strong>quitar una tarea</strong>{" "}
+                de tu lista...
+              </p>
+              <p>
+                This command is used to <strong>remove</strong> a task...
+              </p>
+              <p>
+                <strong>Ejemplo / Example:</strong> <code>!delete 2</code>
               </p>
             </li>
+
             <li>
-              <span>Lorem ipsum dolor.</span>
+              <span>🔥 !clear / !borrartodo</span>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
+                Con este comando podés <strong>eliminar todas</strong> las
+                tareas de tu lista...
               </p>
-            </li>
-            <li>
-              <span>Lorem ipsum dolor.</span>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
+                This command allows you to <strong>delete all</strong> your
+                tasks...
               </p>
-            </li>
-            <li>
-              <span>Lorem ipsum dolor.</span>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
-            </li>
-            <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
+                <strong>Ejemplo / Example:</strong> <code>!clear</code>
               </p>
             </li>
           </ul>
@@ -351,11 +300,12 @@ const Comandos = () => {
 
       {/* Comandos de actividades   */}
       <section className="container_comandos">
+        {/* Comandos de actividades   */}
         <div className="container_comandos_titles">
           <IconActivities />
           <div className="container_comandos_titles_text">
             <h3>Comparte lo que estás haciendo</h3>
-            <p>
+            <p className="container_comandos_card_p">
               Haz que la comunidad sepa en qué estás trabajando o disfrutando
               con comandos instantáneos.
             </p>
@@ -363,193 +313,250 @@ const Comandos = () => {
         </div>
 
         <div className="container_comandos_card">
+          {/* PRODUCTIVIDAD */}
           <div>
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h3>
+            <h3>Productividad</h3>
           </div>
-          <ul className="container_comandos_card_list">
+          <p>
+            Actividades relacionadas con el estudio, trabajo, planificación y
+            gestión del tiempo. Esta categoría reúne momentos donde se busca
+            avanzar en tareas intelectuales, cumplir metas o mantener el orden
+            del día.
+          </p>
+          <ul className="container_comandos_card_list ul_activities">
             <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
+              <span>!agenda</span>
+              <p>Revisando Agenda 📒</p>
             </li>
             <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
+              <span>!administrando</span>
+              <p>Administrando 📑</p>
             </li>
             <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
+              <span>!tp</span>
+              <p>Trabajo práctico 📑</p>
             </li>
             <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
+              <span>!resumen</span>
+              <p>Haciendo Resumen 📑</p>
             </li>
             <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
+              <span>!call</span>
+              <p>En llamada 📱</p>
             </li>
             <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
+              <span>!reunión / !reunion</span>
+              <p>En reunión 📱</p>
+            </li>
+            <li>
+              <span>!revisando</span>
+              <p>Revisando contenido 💻</p>
+            </li>
+            <li>
+              <span>!estudiando</span>
+              <p>Estudiando 📓</p>
+            </li>
+            <li>
+              <span>!programando</span>
+              <p>Programando 💻</p>
+            </li>
+            <li>
+              <span>!trabajando</span>
+              <p>Trabajando 💻</p>
+            </li>
+            <li>
+              <span>!curso</span>
+              <p>Haciendo curso 💻</p>
+            </li>
+            <li>
+              <span>!mensajes</span>
+              <p>Revisando Mensajes 📩</p>
+            </li>
+            <li>
+              <span>!organizar</span>
+              <p>Organizando 🧮</p>
+            </li>
+            <li>
+              <span>!planificando</span>
+              <p>Estoy planificando 📅</p>
+            </li>
+            <li>
+              <span>!lectura</span>
+              <p>Está leyendo 📖</p>
+            </li>
+            <li>
+              <span>!errores</span>
+              <p>Está revisando errores 👓</p>
+            </li>
+            <li>
+              <span>!instruyendo</span>
+              <p>Está instruyendo ✍🏻</p>
+            </li>
+            <li>
+              <span>!reporte</span>
+              <p>Está generando reportes 📑</p>
+            </li>
+            <li>
+              <span>!subrayar</span>
+              <p>Está subrayando 📑</p>
+            </li>
+            <li>
+              <span>!clases</span>
+              <p>En clases 🏫</p>
+            </li>
+            <li>
+              <span>!desarrollando</span>
+              <p>Desarrollando 💻</p>
+            </li>
+            <li>
+              <span>!diseñando</span>
+              <p>Me encuentro diseñando 📐</p>
+            </li>
+            <li>
+              <span>!bitacora</span>
+              <p>Realizando mi bitácora diaria 🗒️</p>
             </li>
           </ul>
         </div>
 
         <div className="container_comandos_card">
+          {/* AUTOCUIDADO */}
           <div>
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h3>
+            <h3>Autocuidado</h3>
           </div>
-          <ul className="container_comandos_card_list">
+          <p className="container_comandos_card_p">
+            Momentos esenciales del día a día que todos compartimos: comida,
+            higiene y autocuidado.
+          </p>
+          <ul className="container_comandos_card_list ul_activities">
             <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
+              <span>!baño</span>
+              <p>En el baño 🚽</p>
             </li>
             <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
+              <span>!ducha</span>
+              <p>Duchándose 🛀🏻</p>
             </li>
             <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
+              <span>!paseo</span>
+              <p>Dando un paseo 🌳</p>
             </li>
             <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
+              <span>!calentar</span>
+              <p>Calentando 🫖</p>
             </li>
             <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
+              <span>!meditar</span>
+              <p>Meditando 🧘🏻‍♀️</p>
             </li>
             <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
+              <span>!siesta</span>
+              <p>Mimiendo 🛌🏻</p>
+            </li>
+            <li>
+              <span>!dormir</span>
+              <p>Mimiendo 🛌🏻</p>
+            </li>
+            <li>
+              <span>!dientes</span>
+              <p>Cepillando dientes 🪥</p>
+            </li>
+            <li>
+              <span>!estirar</span>
+              <p>Estirando 🧎🏻‍♂️‍➡️</p>
+            </li>
+            <li>
+              <span>!lavadora</span>
+              <p>Lavando 👕</p>
+            </li>
+            <li>
+              <span>!limpiando</span>
+              <p>Está limpiando 🗑️</p>
             </li>
           </ul>
         </div>
 
         <div className="container_comandos_card">
+          {/* OCIO */}
           <div>
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h3>
+            <h3>Ocio</h3>
           </div>
-          <ul className="container_comandos_card_list">
+          <p className="container_comandos_card_p">
+            Momentos esenciales del día a día que todos compartimos: comida,
+            higiene y autocuidado.
+          </p>
+          <ul className="container_comandos_card_list ul_activities">
             <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
+              <span>!almorzar</span>
+              <p>Almorzando 🍽️</p>
             </li>
             <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
+              <span>!desayunar</span>
+              <p>Desayunando 🍵</p>
             </li>
             <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
+              <span>!merendar</span>
+              <p>Merendando 🍪</p>
             </li>
             <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
+              <span>!cenar</span>
+              <p>Cenando 🍽️</p>
             </li>
             <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
+              <span>!fruta</span>
+              <p>Comiendo fruta 🍊</p>
             </li>
             <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
+              <span>!mate / !tereré / !terere</span>
+              <p>Tomando mate o tereré 🧉</p>
+            </li>
+            <li>
+              <span>!té / !te / !télimon / !telimon / !techai</span>
+              <p>Tomando un té 🍵</p>
+            </li>
+            <li>
+              <span>!café / !latte</span>
+              <p>Tomando café ☕</p>
+            </li>
+            <li>
+              <span>!matecocido</span>
+              <p>Tomando un mate cocido 🍵</p>
+            </li>
+            <li>
+              <span>!cocina / !cocinando</span>
+              <p>En la cocina 🍳</p>
+            </li>
+            <li>
+              <span>!compras</span>
+              <p>Comprando 🛒</p>
+            </li>
+            <li>
+              <span>!serie</span>
+              <p>Mirando serie 📺</p>
+            </li>
+            <li>
+              <span>!jugando</span>
+              <p>Jugando 🎮</p>
+            </li>
+            <li>
+              <span>!musica</span>
+              <p>Escuchando música 🎧</p>
+            </li>
+            <li>
+              <span>!crochet</span>
+              <p>Mi momento del Crochet llegó 🧶</p>
+            </li>
+            <li>
+              <span>!volví / !volvi</span>
+              <p>Regresando ☝🏻</p>
             </li>
           </ul>
         </div>
       </section>
 
-      {/* Comandos de actividades   */}
+      {/* Comandos de user data
+       */}
+
       <section className="container_comandos">
         <div className="container_comandos_titles">
           <IconDataUser />

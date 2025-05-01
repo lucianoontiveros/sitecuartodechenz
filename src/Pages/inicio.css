@@ -617,6 +617,13 @@ img {
     display: none; /* Ocultamos la imagen en mobile */
   }
 
+  .slogan_container h4 {
+    color: aquamarine;
+    margin: 0.5em;
+    font-weight: 400;
+    font-size: 1.2em;
+  }
+
   .title_section {
     position: relative;
     background-size: cover;

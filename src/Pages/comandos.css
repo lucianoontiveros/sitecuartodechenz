@@ -115,6 +115,11 @@
   margin: 1em;
 }
 
+.container_comandos_card_p {
+  min-height: 8em;
+  padding: 1em;
+  text-align: start;
+}
 .container_comandos_card_list li {
   display: flex;
   flex-direction: column;
@@ -127,10 +132,17 @@
   border-radius: 1em;
   font-size: 1em;
   font-weight: 600;
+  min-width: 10em;
+  width: auto;
 }
 
 .container_comandos_card_list li p {
   margin: 1em;
+}
+
+.ul_activities {
+  margin: 1em 0em;
+  width: 100%;
 }
 
 @media (min-width: 700px) {
@@ -193,10 +205,41 @@
 
   .container_comandos_card {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: flex-start;
     max-width: 36em;
-    justify-content: center;
     flex-wrap: wrap;
-    margin: 2em;
+    padding: 1em;
+    border-radius: 2em;
+    margin: 2em 1em;
+  }
+
+  .container_comandos_card_p {
+    padding: 1em;
+    text-align: start;
+  }
+
+  .ul_activities {
+    margin: 1em 0em;
+  }
+
+  .ul_activities li {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    margin: 1em 0em;
+    width: 100%;
+    max-height: 4em;
+  }
+
+  .ul_activities span {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 3.1em;
+    width: 13em;
+  }
+  .ul_activities li p {
+    padding: 0;
   }
 }
