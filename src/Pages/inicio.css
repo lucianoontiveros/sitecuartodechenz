@@ -160,7 +160,6 @@ presentation_element_ iframe {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: auto;
 }
 
 .presentation_element_text .tittle_and_icon {
@@ -172,9 +171,13 @@ presentation_element_ iframe {
 
 .presentation_element_text h3 {
   color: aquamarine;
-  font-size: 1.3rem;
+  font-size: 2rem;
   margin: 10px;
   text-align: center;
+}
+
+.presentation_element_text p {
+  font-size: 1.2em;
 }
 .presentation_element_text button {
   border-radius: 1em;
@@ -191,11 +194,9 @@ presentation_element_ iframe {
   justify-content: space-between;
   align-content: center;
   align-items: center;
+  width: 100%;
 }
 
-.presentation_element_card .presentation_element_text {
-  min-width: 50%;
-}
 .presentation_element_card img {
   border: 0.1em solid aquamarine;
   border-radius: 1em;
@@ -253,8 +254,7 @@ presentation_element_ iframe {
 .contenido_element {
   display: flex;
   flex-direction: column;
-  margin: 1em;
-  padding: 1em;
+  margin: 1em 0em;
   height: 27em;
   width: 50em;
 }
@@ -493,7 +493,8 @@ img {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 1em;
+    padding: 1em 0em;
+    min-width: 100%;
   }
 
   .presentation_element_tex .tittle_and_icon {
@@ -503,12 +504,17 @@ img {
     align-items: center;
   }
 
+  .presentation_element_tex h3 {
+    font-size: 1em;
+  }
+
   .presentation_element_card {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    padding: 0em;
   }
 
   /*  CONTENIDO  */
@@ -643,6 +649,23 @@ img {
     width: 90%;
   }
 
+  .presentation_element_text h3 {
+    font-size: 1.2em;
+  }
+
+  .presentation_element_text p {
+    font-size: 1em;
+  }
+
+  /*  HORARIO  */
+  .contenido_element h3 {
+    font-size: 1.2em;
+  }
+
+  .contenido_element p {
+    font-size: 1em;
+  }
+
   div .tittle_and_icon,
   .presentation_element_text .tittle_and_icon {
     display: flex;
@@ -674,7 +697,7 @@ img {
 
   .horario_element_card img {
     align-self: center;
-    width: 90%;
+    width: auto;
     height: auto;
     border: 0.2em solid aquamarine;
     border-radius: 8px 8px 0 0; /* Bordes redondeados */

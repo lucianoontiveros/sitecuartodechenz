@@ -36,13 +36,14 @@
 }
 
 .container_indice_item div {
-  margin-top: 1em;
+  margin: 2em 0em;
 }
 
 .container_indice_item div h3 {
+  color: aquamarine;
   text-align: center;
-  font-size: 2em;
-  margin: 0.5em;
+  font-size: 1.2em;
+  margin: 1em;
 }
 
 .container_indice_item div p {
@@ -57,7 +58,7 @@
   flex-direction: column;
   justify-content: end;
   align-items: center;
-  margin: 3em;
+  margin: 0.5em;
 }
 
 .container_comandos_titles svg {
@@ -187,6 +188,7 @@
     justify-content: center;
     align-self: flex-end;
     width: 100%;
+    margin: 3em;
   }
 
   .container_comandos_card {
