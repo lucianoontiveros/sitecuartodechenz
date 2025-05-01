@@ -145,61 +145,80 @@ const Comandos = () => {
 
         <div className="container_comandos_card">
           <div>
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h3>
+            <h3>COMANDOS PARA ADMINISTRAR TAREAS</h3>
           </div>
           <ul className="container_comandos_card_list">
             <li>
-              <span>Lorem ipsum dolor.</span>
+              <span>!tarea + más la descripción de la tarea</span>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
+                Ingresando el comando junto con su correspondiente descripción,
+                la misma quedará registrada y un mensaje vía chat avisará que se
+                complió con la petición.
               </p>
             </li>
             <li>
-              <span>Lorem ipsum dolor.</span>
+              <span>!lista</span>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
+                Ingresando este comando se desplegará en pantalla la lista de
+                tareas y también se expondrá en el chat. De no tener tareas
+                registradas habrá un aviso informando la situación.
               </p>
             </li>
             <li>
-              <span>Lorem ipsum dolor.</span>
+              <span>!marcar + ID</span>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
+                Ingresando el comando más el ID la tarea vinculada se marca como
+                realizada.
               </p>
             </li>
             <li>
-              <span>Lorem ipsum dolor.</span>
+              <span>!eliminar + ID</span>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
+                Ingresando el comando más el ID la tarea vinculada se elimina.
               </p>
             </li>
             <li>
-              <span>Lorem ipsum dolor.</span>
+              <span>!task + task description</span>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
+                By entering the command and then the description the task will
+                be logged and the log will be displayed on the screen and in the
+                chat.
               </p>
             </li>
             <li>
-              <span>Lorem ipsum dolor.</span>
+              <span>!list</span>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
+                Displays on screen and in the chat the list of pending tasks. If
+                no task is registered, a message via chat will inform that there
+                are no activities.
+              </p>
+            </li>
+            <li>
+              <span>!delete + ID</span>
+              <p>
+                Entering the command and adding the ID will allow you to delete
+                the linked task.
+              </p>
+            </li>
+            <li>
+              <span>!check + ID</span>
+              <p>
+                Entering the command to the chat and adding the corresponding ID
+                will allow you to mark your task as done.
+              </p>
+            </li>
+            <li>
+              <span>!clear</span>
+              <p>
+                Ingresando este comando se borran todas las tareas. / Entering
+                this command deletes all tasks.
+              </p>
+            </li>
+            <li>
+              <span>!pickup</span>
+              <p>
+                ingresando este comando se marcan todas las tareas. / by
+                entering this command all tasks are marked.
               </p>
             </li>
           </ul>
