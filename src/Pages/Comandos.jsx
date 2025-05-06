@@ -226,7 +226,7 @@ const Comandos = () => {
                 Marks a task as <strong>completed</strong> using its ID...
               </p>
               <p>
-                <strong>Ejemplo / Example:</strong> <code>!check 4</code>
+                <strong>Ejemplo / Example:</strong> <code>!check 4tf</code>
               </p>
             </li>
 
@@ -276,7 +276,7 @@ const Comandos = () => {
                 This command is used to <strong>remove</strong> a task...
               </p>
               <p>
-                <strong>Ejemplo / Example:</strong> <code>!delete 2</code>
+                <strong>Ejemplo / Example:</strong> <code>!delete 2ce</code>
               </p>
             </li>
 
@@ -312,22 +312,18 @@ const Comandos = () => {
           </div>
         </div>
 
+        {/* PRODUCTIVIDAD */}
         <div className="container_comandos_card">
-          {/* PRODUCTIVIDAD */}
           <div>
             <h3>Productividad</h3>
           </div>
           <p>
-            Actividades relacionadas con el estudio, trabajo, planificación y
-            gestión del tiempo. Esta categoría reúne momentos donde se busca
-            avanzar en tareas intelectuales, cumplir metas o mantener el orden
-            del día.
+            Actividades enfocadas en el desarrollo intelectual, profesional o
+            académico. Esta categoría abarca momentos dedicados al estudio, el
+            trabajo, la creación de contenido, la solución de problemas o el
+            avance hacia metas concretas.
           </p>
           <ul className="container_comandos_card_list ul_activities">
-            <li>
-              <span>!agenda</span>
-              <p>Revisando Agenda 📒</p>
-            </li>
             <li>
               <span>!administrando</span>
               <p>Administrando 📑</p>
@@ -339,18 +335,6 @@ const Comandos = () => {
             <li>
               <span>!resumen</span>
               <p>Haciendo Resumen 📑</p>
-            </li>
-            <li>
-              <span>!call</span>
-              <p>En llamada 📱</p>
-            </li>
-            <li>
-              <span>!reunión / !reunion</span>
-              <p>En reunión 📱</p>
-            </li>
-            <li>
-              <span>!revisando</span>
-              <p>Revisando contenido 💻</p>
             </li>
             <li>
               <span>!estudiando</span>
@@ -369,26 +353,6 @@ const Comandos = () => {
               <p>Haciendo curso 💻</p>
             </li>
             <li>
-              <span>!mensajes</span>
-              <p>Revisando Mensajes 📩</p>
-            </li>
-            <li>
-              <span>!organizar</span>
-              <p>Organizando 🧮</p>
-            </li>
-            <li>
-              <span>!planificando</span>
-              <p>Estoy planificando 📅</p>
-            </li>
-            <li>
-              <span>!lectura</span>
-              <p>Está leyendo 📖</p>
-            </li>
-            <li>
-              <span>!errores</span>
-              <p>Está revisando errores 👓</p>
-            </li>
-            <li>
               <span>!instruyendo</span>
               <p>Está instruyendo ✍🏻</p>
             </li>
@@ -401,32 +365,34 @@ const Comandos = () => {
               <p>Está subrayando 📑</p>
             </li>
             <li>
-              <span>!clases</span>
-              <p>En clases 🏫</p>
-            </li>
-            <li>
-              <span>!desarrollando</span>
-              <p>Desarrollando 💻</p>
+              <span>!errores</span>
+              <p>Está revisando errores 👓</p>
             </li>
             <li>
               <span>!diseñando</span>
               <p>Me encuentro diseñando 📐</p>
             </li>
             <li>
-              <span>!bitacora</span>
-              <p>Realizando mi bitácora diaria 🗒️</p>
+              <span>!desarrollando</span>
+              <p>Desarrollando 💻</p>
+            </li>
+            <li>
+              <span>!lectura</span>
+              <p>Está leyendo 📖</p>
             </li>
           </ul>
         </div>
 
+        {/* AUTOCUIDADO */}
         <div className="container_comandos_card">
-          {/* AUTOCUIDADO */}
           <div>
             <h3>Autocuidado</h3>
           </div>
           <p className="container_comandos_card_p">
-            Momentos esenciales del día a día que todos compartimos: comida,
-            higiene y autocuidado.
+            Prácticas relacionadas con el bienestar físico y mental. Incluye
+            higiene personal, descanso, relajación, movimiento consciente y
+            cualquier actividad que favorezca el equilibrio y el cuidado de uno
+            mismo.
           </p>
           <ul className="container_comandos_card_list ul_activities">
             <li>
@@ -441,10 +407,7 @@ const Comandos = () => {
               <span>!paseo</span>
               <p>Dando un paseo 🌳</p>
             </li>
-            <li>
-              <span>!calentar</span>
-              <p>Calentando 🫖</p>
-            </li>
+
             <li>
               <span>!meditar</span>
               <p>Meditando 🧘🏻‍♀️</p>
@@ -476,16 +439,21 @@ const Comandos = () => {
           </ul>
         </div>
 
+        {/* COMIDA */}
         <div className="container_comandos_card">
-          {/* OCIO */}
           <div>
-            <h3>Ocio</h3>
+            <h3>Comida e infusiones </h3>
           </div>
           <p className="container_comandos_card_p">
-            Momentos esenciales del día a día que todos compartimos: comida,
-            higiene y autocuidado.
+            Espacios dedicados a la alimentación y al disfrute de infusiones o
+            bebidas calientes. Incluye momentos de preparación, consumo o pausas
+            reconfortantes para recargar energía.
           </p>
           <ul className="container_comandos_card_list ul_activities">
+            <li>
+              <span>!calentar</span>
+              <p>Calentando 🫖</p>
+            </li>
             <li>
               <span>!almorzar</span>
               <p>Almorzando 🍽️</p>
@@ -526,10 +494,94 @@ const Comandos = () => {
               <span>!cocina / !cocinando</span>
               <p>En la cocina 🍳</p>
             </li>
+          </ul>
+        </div>
+
+        {/* ORGANIZACION */}
+        <div className="container_comandos_card">
+          <div>
+            <h3>Organización</h3>
+          </div>
+          <p>
+            Tareas que ayudan a estructurar, planificar y revisar el día a día.
+            Esta categoría reúne actividades como organizar documentos,
+            actualizar agendas, planificar tareas o reflexionar sobre el
+            progreso personal.
+          </p>
+          <ul className="container_comandos_card_list ul_activities">
+            <li>
+              <span>!organizar</span>
+              <p>Organizando 🧮</p>
+            </li>
+            <li>
+              <span>!agenda</span>
+              <p>Revisando Agenda 📒</p>
+            </li>
+            <li>
+              <span>!bitacora</span>
+              <p>Realizando mi bitácora diaria 🗒️</p>
+            </li>
+            <li>
+              <span>!revisando</span>
+              <p>Revisando contenido 💻</p>
+            </li>
+            <li>
+              <span>!mensajes</span>
+              <p>Revisando Mensajes 📩</p>
+            </li>
+            <li>
+              <span>!planificando</span>
+              <p>Estoy planificando 📅</p>
+            </li>
+          </ul>
+        </div>
+
+        {/* EVENTOS */}
+        <div className="container_comandos_card">
+          <div>
+            <h3>Eventos</h3>
+          </div>
+          <p>
+            Momentos puntuales o compartidos con otros, como reuniones,
+            llamadas, clases o salidas. Representan instancias sincronizadas,
+            presenciales o virtuales, que requieren atención y participación
+            activa.
+          </p>
+          <ul className="container_comandos_card_list ul_activities">
+            <li>
+              <span>!call</span>
+              <p>En llamada 📱</p>
+            </li>
+            <li>
+              <span>!reunión / !reunion</span>
+              <p>En reunión 📱</p>
+            </li>
+            <li>
+              <span>!clases</span>
+              <p>En clases 🏫</p>
+            </li>
+            <li>
+              <span>!volví / !volvi</span>
+              <p>Regresando ☝🏻</p>
+            </li>
             <li>
               <span>!compras</span>
               <p>Comprando 🛒</p>
             </li>
+          </ul>
+        </div>
+
+        {/* OCIO */}
+        <div className="container_comandos_card">
+          <div>
+            <h3>Ocio</h3>
+          </div>
+          <p className="container_comandos_card_p">
+            Actividades recreativas para desconectar, disfrutar o estimular la
+            creatividad. Incluye momentos de entretenimiento, pasatiempos y
+            hobbies que ayudan a equilibrar la rutina.
+          </p>
+          <ul className="container_comandos_card_list ul_activities">
             <li>
               <span>!serie</span>
               <p>Mirando serie 📺</p>
@@ -545,10 +597,6 @@ const Comandos = () => {
             <li>
               <span>!crochet</span>
               <p>Mi momento del Crochet llegó 🧶</p>
-            </li>
-            <li>
-              <span>!volví / !volvi</span>
-              <p>Regresando ☝🏻</p>
             </li>
           </ul>
         </div>
@@ -569,190 +617,119 @@ const Comandos = () => {
           </div>
         </div>
 
+        {/* INFORMACION*/}
         <div className="container_comandos_card">
+          {" "}
           <div>
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h3>
-          </div>
+            {" "}
+            <h3>Agregar información</h3>{" "}
+          </div>{" "}
+          <p className="container_comandos_card_p">
+            {" "}
+            Usa estos comandos para contarnos más sobre ti: t nacionalidad, tu
+            carrera, tu fecha de nacimiento o tus redes sociales. Esto nos ayuda
+            a conocerte mejor y a generar vínculos dentro de la comunidad.{" "}
+          </p>{" "}
           <ul className="container_comandos_card_list">
+            {" "}
             <li>
-              <span>Lorem ipsum dolor.</span>
+              {" "}
+              <span>!nacionalidad + tu nacionalidad</span>{" "}
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
-            </li>
+                {" "}
+                Registra tu nacionalidad para que podamos saber de dónde eres y
+                celebrar la diversidad de la comunidad. Ejemplo:{" "}
+                <code>!nacionalidad Argentina</code>{" "}
+              </p>{" "}
+            </li>{" "}
             <li>
-              <span>Lorem ipsum dolor.</span>
+              {" "}
+              <span>!nacimiento + dd-mm</span>{" "}
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
-            </li>
+                {" "}
+                Guarda tu fecha de nacimiento (sin el año) para que podamos
+                identificar tu signo zodiacal y mostrarlo en tu perfil. Ejemplo:{" "}
+                <code>!nacimiento 10-09</code>{" "}
+              </p>{" "}
+            </li>{" "}
             <li>
-              <span>Lorem ipsum dolor.</span>
+              {" "}
+              <span>!estudiopara + tu carrera o área de estudio</span>{" "}
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
-            </li>
+                {" "}
+                Comparte con todos qué estás estudiando actualmente o en qué te
+                estás formando profesionalmente. Ejemplo:{" "}
+                <code>!estudiopara Medicina</code>{" "}
+              </p>{" "}
+            </li>{" "}
             <li>
-              <span>Lorem ipsum dolor.</span>
+              {" "}
+              <span>!opositopara + descripción de la oposición</span>{" "}
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
-            </li>
+                {" "}
+                Si estás preparando una oposición, puedes especificarla con este
+                comando para que otros lo sepan y puedan acompañarte. Ejemplo:{" "}
+                <code>!opositopara Auxilio Judicial</code>{" "}
+              </p>{" "}
+            </li>{" "}
             <li>
-              <span>Lorem ipsum dolor.</span>
+              {" "}
+              <span>!instagram + tu usuario</span>{" "}
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
-            </li>
-            <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
-            </li>
-          </ul>
+                {" "}
+                Añade tu cuenta de Instagram para que los demás puedan seguirte.
+                Ejemplo: <code>!instagram @miusuario</code>{" "}
+              </p>{" "}
+            </li>{" "}
+          </ul>{" "}
         </div>
 
+        {/* REVISAR INFORMACIÓNS*/}
         <div className="container_comandos_card">
+          {" "}
           <div>
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h3>
-          </div>
+            {" "}
+            <h3>Revisar perfil</h3>{" "}
+          </div>{" "}
+          <p className="container_comandos_card_p">
+            {" "}
+            Con estos comandos podrás ver tu perfil o consultar el de otros
+            miembros de la comunidad. Ideal para conectar, recordar qué estudia
+            alguien o simplemente conocernos mejor.{" "}
+          </p>{" "}
           <ul className="container_comandos_card_list">
+            {" "}
             <li>
-              <span>Lorem ipsum dolor.</span>
+              {" "}
+              <span>!datos</span>{" "}
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
-            </li>
+                {" "}
+                Consulta toda tu información personal registrada: nacionalidad,
+                fecha de nacimiento, estudios, signo zodiacal, etc.{" "}
+              </p>{" "}
+            </li>{" "}
             <li>
-              <span>Lorem ipsum dolor.</span>
+              {" "}
+              <span>!info + @usuario</span>{" "}
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
-            </li>
+                {" "}
+                Muestra los datos de otro usuario si este ya registró su
+                información previamente. Ejemplo: <code>
+                  !info @Pepita
+                </code>{" "}
+              </p>{" "}
+            </li>{" "}
             <li>
-              <span>Lorem ipsum dolor.</span>
+              {" "}
+              <span>!croqueta</span>{" "}
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
-            </li>
-            <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
-            </li>
-            <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
-            </li>
-            <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
-            </li>
-          </ul>
-        </div>
-
-        <div className="container_comandos_card">
-          <div>
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h3>
-          </div>
-          <ul className="container_comandos_card_list">
-            <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
-            </li>
-            <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
-            </li>
-            <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
-            </li>
-            <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
-            </li>
-            <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
-            </li>
-            <li>
-              <span>Lorem ipsum dolor.</span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Tempora voluptatibus nisi quae, optio ipsam illo nostrum hic
-                dicta nulla assumenda! Eaque, aperiam! Illo dolore quam quae
-                voluptas cumque harum molestiae.
-              </p>
-            </li>
-          </ul>
+                {" "}
+                Si tienes puntos de gestión disponibles, puedes usarlos para
+                darle una deliciosa croqueta a Brunito. 🐶 ¡Un mimo digital para
+                nuestra mascota comunitaria!{" "}
+              </p>{" "}
+            </li>{" "}
+          </ul>{" "}
         </div>
       </section>
     </div>

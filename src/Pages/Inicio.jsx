@@ -127,19 +127,18 @@ const Inicio = () => {
               <h3>UN ESPACIO DE ESTUDIO Y TRABAJO</h3>
             </div>
             <p>
-              Bienvenidas personitas bellas a nuestro rincón de esfuerzo y
-              constancia. Este canal no es solo un lugar para estudiar o
-              trabajar; es un espacio donde tus propósitos encuentran compañía y
-              tus metas se convierten en inspiración para nuestra comunidad.
-              Aquí comparto mis horas de dedicación, mis proyectos, pensamientos
-              y esos pequeños momentos que logramos juntos. Estoy estudiando
-              programación de manera autodidacta y cada cosa que encuentres en
-              este espacio, está diseñado por cada contenido y actitudes que
-              logré incorporar a veces de estudio y práctica. Te agradecemos por
-              ser parte de esta travesía, ya sea que estés en la etapa más
-              intensa de tu día o en un respiro necesario. Aquí, juntos, somos
-              más fuertes, más enfocados y, sobre todo, más conectados. ¡Gracias
-              por acompañarme en este viaje de crecimiento y productividad!
+              ¡Hola a todos y bienvenidos a este espacio de crecimiento y
+              dedicación! Aquí no solo estudiamos o trabajamos, sino que
+              compartimos nuestras metas y aspiraciones, formando una comunidad
+              que se apoya mutuamente. Cada proyecto, cada idea y cada instante
+              aquí reflejan mi aprendizaje autodidacta en programación, moldeado
+              por horas de estudio y práctica. Es un viaje que recorremos
+              juntos, en el que cada paso nos hace más fuertes, más enfocados y
+              más conectados. Gracias por estar aquí, por acompañarme en los
+              momentos de esfuerzo y en los respiros que nos recargan. Juntos
+              construimos un ambiente de motivación y productividad donde cada
+              logro es compartido. ¡Sigamos adelante en este viaje de
+              crecimiento!
             </p>
           </div>
         </div>
