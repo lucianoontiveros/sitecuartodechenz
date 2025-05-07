@@ -1,4 +1,5 @@
 import "./comandos.css";
+import { useState } from 'react';
 import Icon_instagram from "../Components/img_icons/Icon_instagram.jsx";
 import Icon_tiktok from "../Components/img_icons/Icon_tiktok.jsx";
 import Icon_x from "../Components/img_icons/Icon_x.jsx";
@@ -9,8 +10,10 @@ import card_comando_userdata from "/card_comandos_3.png";
 import IconList from "../Components/img/IconList.jsx";
 import IconActivities from "../Components/img/IconActivities.jsx";
 import IconDataUser from "../Components/img/IconDataUser.jsx";
+import CommandButton from "../Components/buttons/CommandButton";
 
 const Comandos = () => {
+
   return (
     <div className="container_comandos">
       {/* inicio  */}
@@ -149,9 +152,10 @@ const Comandos = () => {
           </div>
           <ul className="container_comandos_card_list">
             <li>
-              <span>
-                📝 !tarea / !add / !task / !t + descripción de la tarea
-              </span>
+              <CommandButton 
+                displayText="📝 !tarea + descripción"
+                command="!tarea |Borra aquÍ y escribe la descripción|"
+              />
               <p>
                 Estos comandos te permiten agregar una nueva tarea con una
                 descripción personalizada. Si prefieres una forma más breve,
@@ -174,10 +178,11 @@ const Comandos = () => {
             </li>
 
             <li>
-              <span>
-                🧾 Agregar múltiples tareas: !tarea / !add / !task / !t +
-                descripción 1 ; descripción 2 ; descripción 3
-              </span>
+              <CommandButton 
+                displayText="🧾 Agregar múltiples tareas: !tarea / !add / !task / !t +
+                descripción 1 ; descripción 2 ; descripción 3"
+                command="!add |Borra aquÍ y escribe la descripción 1| ; |Borra aquÍ y escribe la descripción 2| ; |Borra aquÍ y escribe la descripción 3: puedes agregar hasta 10, siempre que ingreses una punto y coma entre medio []|"
+              />
               <p>
                 También es posible agregar varias tareas en un solo mensaje
                 separándolas con punto y coma (<strong>;</strong>). Cada tarea
