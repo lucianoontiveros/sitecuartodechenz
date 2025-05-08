@@ -504,6 +504,13 @@ const Comandos = () => {
             </li>
             <li>
             <CommandButton 
+                displayText="!entrenar"
+                command="!entrenar"
+              />  
+              <p>Entrenando 👟</p>
+            </li>
+            <li>
+            <CommandButton 
                 displayText="!dientes"
                 command="!dientes"
               />  
@@ -560,10 +567,10 @@ const Comandos = () => {
             </li>
             <li>
             <CommandButton 
-                displayText="!almorzar"
-                command="!almorzar"
+                displayText="!cocina / !cocinando"
+                command="!cocina / !cocinando"
               />  
-              <p>Almorzando 🍽️</p>
+              <p>En la cocina 🍳</p>
             </li>
             <li>
             <CommandButton 
@@ -572,6 +579,14 @@ const Comandos = () => {
               />  
               <p>Desayunando 🍵</p>
             </li>
+            <li>
+            <CommandButton 
+                displayText="!almorzar"
+                command="!almorzar"
+              />  
+              <p>Almorzando 🍽️</p>
+            </li>
+           
             <li>
             <CommandButton 
                 displayText="!merendar"
@@ -595,24 +610,45 @@ const Comandos = () => {
             </li>
             <li>
             <CommandButton 
-                displayText="!mate / !tereré / !terere"
-                command="!mate / !tereré / !terere"
+                displayText="!mate"
+                command="!mate"
               />  
-              <p>Tomando mate o tereré 🧉</p>
+              <p>Tomando mate 🧉</p>
             </li>
             <li>
             <CommandButton 
-                displayText="!té / !te / !télimon / !telimon / !techai"
-                command="!té / !te / !télimon / !telimon / !techai"
+                displayText="!tereré / !terere"
+                command="!terere"
+              />  
+              <p>Tomando un tereré 🧉</p>
+            </li>
+            <li>
+            <CommandButton 
+                displayText="!techai"
+                command="!techai"
               />  
               <p>Tomando un té 🍵</p>
             </li>
             <li>
             <CommandButton 
-                displayText="!café / !latte"
-                command="!café / !latte"
+                displayText="!télimon / !telimon "
+                command="!telimon"
+              />  
+              <p>Tomando un té de limón🍵</p>
+            </li>
+            <li>
+            <CommandButton 
+                displayText="!café"
+                command="!café"
               />  
               <p>Tomando café ☕</p>
+            </li>
+            <li>
+            <CommandButton 
+                displayText="!latte"
+                command="!latte"
+              />  
+              <p>Tomando café con leche ☕</p>
             </li>
             <li>
             <CommandButton 
@@ -621,13 +657,7 @@ const Comandos = () => {
               />  
               <p>Tomando un mate cocido 🍵</p>
             </li>
-            <li>
-            <CommandButton 
-                displayText="!cocina / !cocinando"
-                command="!cocina / !cocinando"
-              />  
-              <p>En la cocina 🍳</p>
-            </li>
+            
           </ul>
         </div>
 
