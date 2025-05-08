@@ -843,7 +843,10 @@ const Comandos = () => {
             {" "}
             <li>
               {" "}
-              <span>!nacionalidad + tu nacionalidad</span>{" "}
+              <CommandButton 
+                displayText="!nacionalidad + tu nacionalidad"
+                command="!nacionalidad"
+              />  
               <p>
                 {" "}
                 Registra tu nacionalidad para que podamos saber de dónde eres y
@@ -852,8 +855,11 @@ const Comandos = () => {
               </p>{" "}
             </li>{" "}
             <li>
-              {" "}
-              <span>!nacimiento + dd-mm</span>{" "}
+              <CommandButton 
+                displayText="!nacimiento + dd-mm"
+                command="!nacimiento"
+              />  
+              
               <p>
                 {" "}
                 Guarda tu fecha de nacimiento (sin el año) para que podamos
@@ -862,8 +868,10 @@ const Comandos = () => {
               </p>{" "}
             </li>{" "}
             <li>
-              {" "}
-              <span>!estudiopara + tu carrera o área de estudio</span>{" "}
+              <CommandButton 
+                displayText="!estudiopara + tu carrera o área de estudio"
+                command="!estudiopara"
+              />  
               <p>
                 {" "}
                 Comparte con todos qué estás estudiando actualmente o en qué te
@@ -872,8 +880,10 @@ const Comandos = () => {
               </p>{" "}
             </li>{" "}
             <li>
-              {" "}
-              <span>!opositopara + descripción de la oposición</span>{" "}
+              <CommandButton 
+                displayText="!opositopara + descripción de la oposición"
+                command="!opositopara"
+              />  
               <p>
                 {" "}
                 Si estás preparando una oposición, puedes especificarla con este
@@ -882,8 +892,10 @@ const Comandos = () => {
               </p>{" "}
             </li>{" "}
             <li>
-              {" "}
-              <span>!instagram + tu usuario</span>{" "}
+              <CommandButton 
+                displayText="!instagram + tu usuario"
+                command="!instagram"
+              />  
               <p>
                 {" "}
                 Añade tu cuenta de Instagram para que los demás puedan seguirte.
@@ -909,8 +921,10 @@ const Comandos = () => {
           <ul className="container_comandos_card_list">
             {" "}
             <li>
-              {" "}
-              <span>!datos</span>{" "}
+              <CommandButton 
+                displayText="!datos"
+                command="!datos"
+              />  
               <p>
                 {" "}
                 Consulta toda tu información personal registrada: nacionalidad,
@@ -918,8 +932,10 @@ const Comandos = () => {
               </p>{" "}
             </li>{" "}
             <li>
-              {" "}
-              <span>!info + @usuario</span>{" "}
+              <CommandButton 
+                displayText="!info + @usuario"
+                command="!info"
+              />  
               <p>
                 {" "}
                 Muestra los datos de otro usuario si este ya registró su
@@ -929,8 +945,10 @@ const Comandos = () => {
               </p>{" "}
             </li>{" "}
             <li>
-              {" "}
-              <span>!croqueta</span>{" "}
+              <CommandButton 
+                displayText="!croqueta"
+                command="!croqueta"
+              />  
               <p>
                 {" "}
                 Si tienes puntos de gestión disponibles, puedes usarlos para
