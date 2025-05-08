@@ -196,7 +196,7 @@ const Comandos = () => {
               </p>
               <p>
                 <strong>Ejemplo / Example:</strong>{" "}
-                <code>!add Comprar pan; Llamar al médico; Enviar informe</code>
+                <code>!add Comprar pan; Llamar al médico; Enviar informe;</code>
               </p>
             </li>
           </ul>
@@ -208,7 +208,10 @@ const Comandos = () => {
           </div>
           <ul className="container_comandos_card_list">
             <li>
-              <span>📋 !lista / !list</span>
+            <CommandButton 
+                displayText="📋 !lista / !list"
+                command="!lista"
+              />
               <p>
                 Este comando muestra en pantalla y en el chat todas las tareas
                 pendientes que tenés en tu lista...
@@ -223,7 +226,10 @@ const Comandos = () => {
             </li>
 
             <li>
-              <span>✅ !marcar / !check / !v + ID de tarea</span>
+            <CommandButton 
+                displayText="✅ !marcar / !check / !v + ID de tarea"
+                command="!marcar [Borra aquí y escribe el ID de la tarea]"
+              />
               <p>
                 Marca una tarea como <strong>realizada</strong> usando su ID...
               </p>
@@ -236,7 +242,10 @@ const Comandos = () => {
             </li>
 
             <li>
-              <span>🚀 !realizadas / !pickup</span>
+            <CommandButton 
+                displayText="🚀 !realizadas / !pickup"
+                command="!realizadas"
+              />
               <p>
                 Marca todas tus tareas pendientes como realizadas en un solo
                 paso...
@@ -255,9 +264,11 @@ const Comandos = () => {
           </div>
           <ul className="container_comandos_card_list">
             <li>
-              <span>
-                ✏️ !modificar / !cambiar / !change + ID + nueva descripción
-              </span>
+            <CommandButton 
+                displayText="✏️ !modificar / !cambiar / !change + ID + nueva descripción"
+                command="!modificar [Borra aquí y escribe el ID de la tarea]"
+              />
+             
               <p>
                 Este comando te permite <strong>editar o actualizar</strong> una
                 tarea...
@@ -272,7 +283,10 @@ const Comandos = () => {
             </li>
 
             <li>
-              <span>🗑️ !eliminar / !borrar / !delete / !x + ID de tarea</span>
+            <CommandButton 
+                displayText="🗑️ !eliminar / !borrar / !delete / !x + ID de tarea"
+                command="!eliminar [Borra aquí y escribe el ID de la tarea]"
+              />
               <p>
                 Este comando se utiliza para <strong>quitar una tarea</strong>{" "}
                 de tu lista...
@@ -286,7 +300,10 @@ const Comandos = () => {
             </li>
 
             <li>
-              <span>🔥 !clear / !borrartodo</span>
+            <CommandButton 
+                displayText="🔥 !clear / !borrartodo"
+                command="!borrartodo"
+              />
               <p>
                 Con este comando podés <strong>eliminar todas</strong> las
                 tareas de tu lista...
