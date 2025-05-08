@@ -336,7 +336,7 @@ const Comandos = () => {
 
         {/* PRODUCTIVIDAD */}
         <div className="container_comandos_card">
-          <div>
+          <div>    
             <h3>Productividad</h3>
           </div>
           <p>
@@ -347,59 +347,101 @@ const Comandos = () => {
           </p>
           <ul className="container_comandos_card_list ul_activities">
             <li>
-              <span>!administrando</span>
+              <CommandButton 
+                displayText="!administrando"
+                command="!administrando"
+              />
               <p>Administrando 📑</p>
             </li>
             <li>
-              <span>!tp</span>
+              <CommandButton 
+                displayText="!tp"
+                command="!tp"
+              />
               <p>Trabajo práctico 📑</p>
             </li>
             <li>
-              <span>!resumen</span>
+              <CommandButton 
+                displayText="!resumen"
+                command="!resumen"
+              />
               <p>Haciendo Resumen 📑</p>
             </li>
             <li>
-              <span>!estudiando</span>
+              <CommandButton 
+                displayText="!estudiando"
+                command="!estudiando"
+              />
               <p>Estudiando 📓</p>
             </li>
             <li>
-              <span>!programando</span>
+              <CommandButton 
+                displayText="programando"
+                command="!programando"
+              />
               <p>Programando 💻</p>
             </li>
             <li>
-              <span>!trabajando</span>
+              <CommandButton 
+                displayText="!trabajando"
+                command="!trabajando"
+              />
               <p>Trabajando 💻</p>
             </li>
             <li>
-              <span>!curso</span>
+              <CommandButton 
+                displayText="!curso"
+                command="!curso"
+              />
               <p>Haciendo curso 💻</p>
             </li>
             <li>
-              <span>!instruyendo</span>
+              <CommandButton 
+                displayText="!instruyendo"
+                command="!instruyendo"
+              />
               <p>Está instruyendo ✍🏻</p>
             </li>
             <li>
-              <span>!reporte</span>
+              <CommandButton 
+                displayText="!reporte"
+                command="!reporte"
+              />
               <p>Está generando reportes 📑</p>
             </li>
             <li>
-              <span>!subrayar</span>
+              <CommandButton 
+                displayText="!subrayar"
+                command="!subrayar"
+              />
               <p>Está subrayando 📑</p>
             </li>
             <li>
-              <span>!errores</span>
+              <CommandButton 
+                displayText="!errores"
+                command="!errores"
+              />
               <p>Está revisando errores 👓</p>
             </li>
             <li>
-              <span>!diseñando</span>
+              <CommandButton 
+                displayText="!diseñando"
+                command="!diseñando"
+              />
               <p>Me encuentro diseñando 📐</p>
             </li>
             <li>
-              <span>!desarrollando</span>
+              <CommandButton 
+                displayText="!desarrollando"
+                command="!desarrollando"
+              />
               <p>Desarrollando 💻</p>
             </li>
             <li>
-              <span>!lectura</span>
+              <CommandButton 
+                displayText="!lectura"
+                command="!lectura"
+              />
               <p>Está leyendo 📖</p>
             </li>
           </ul>
@@ -418,45 +460,82 @@ const Comandos = () => {
           </p>
           <ul className="container_comandos_card_list ul_activities">
             <li>
-              <span>!baño</span>
+              <CommandButton 
+                displayText="!baño"
+                command="!baño"
+              />
               <p>En el baño 🚽</p>
             </li>
             <li>
-              <span>!ducha</span>
+            <CommandButton 
+                displayText="!ducha"
+                command="!ducha"
+              />  
               <p>Duchándose 🛀🏻</p>
             </li>
             <li>
-              <span>!paseo</span>
+            <CommandButton 
+                displayText="!paseo"
+                command="!paseo"
+              />  
               <p>Dando un paseo 🌳</p>
             </li>
 
             <li>
-              <span>!meditar</span>
+            <CommandButton 
+                displayText="!meditar"
+                command="!meditar"
+              />  
               <p>Meditando 🧘🏻‍♀️</p>
             </li>
             <li>
-              <span>!siesta</span>
+            <CommandButton 
+                displayText="!siesta"
+                command="!siesta"
+              />  
+              <p>Mimiendo siesta 🛌🏻</p>
+            </li>
+            <li>
+            <CommandButton 
+                displayText="!dormir"
+                command="!dormir"
+              />  
               <p>Mimiendo 🛌🏻</p>
             </li>
             <li>
-              <span>!dormir</span>
-              <p>Mimiendo 🛌🏻</p>
-            </li>
-            <li>
-              <span>!dientes</span>
+            <CommandButton 
+                displayText="!dientes"
+                command="!dientes"
+              />  
               <p>Cepillando dientes 🪥</p>
             </li>
             <li>
-              <span>!estirar</span>
+            <CommandButton 
+                displayText="!estirar"
+                command="!estirar"
+              />  
               <p>Estirando 🧎🏻‍♂️‍➡️</p>
             </li>
             <li>
-              <span>!lavadora</span>
+            <CommandButton 
+                displayText="!lavadora"
+                command="!lavadora"
+              />  
               <p>Lavando 👕</p>
             </li>
             <li>
-              <span>!limpiando</span>
+            <CommandButton 
+                displayText="!limpiando"
+                command="!limpiando"
+              />
               <p>Está limpiando 🗑️</p>
+            </li>
+            <li>
+            <CommandButton 
+                displayText="!baño"
+                command="!baño"
+              />
+              <p>En el baño 🚽</p>
             </li>
           </ul>
         </div>
@@ -473,47 +552,80 @@ const Comandos = () => {
           </p>
           <ul className="container_comandos_card_list ul_activities">
             <li>
-              <span>!calentar</span>
+            <CommandButton 
+                displayText="!calentar"
+                command="!calentar"
+              />  
               <p>Calentando 🫖</p>
             </li>
             <li>
-              <span>!almorzar</span>
+            <CommandButton 
+                displayText="!almorzar"
+                command="!almorzar"
+              />  
               <p>Almorzando 🍽️</p>
             </li>
             <li>
-              <span>!desayunar</span>
+            <CommandButton 
+                displayText="!desayunar"
+                command="!desayunar"
+              />  
               <p>Desayunando 🍵</p>
             </li>
             <li>
-              <span>!merendar</span>
+            <CommandButton 
+                displayText="!merendar"
+                command="!merendar"
+              />  
               <p>Merendando 🍪</p>
             </li>
             <li>
-              <span>!cenar</span>
+            <CommandButton 
+                displayText="!cenar"
+                command="!cenar"
+              />  
               <p>Cenando 🍽️</p>
             </li>
             <li>
-              <span>!fruta</span>
+            <CommandButton 
+                displayText="!fruta"
+                command="!fruta"
+              />  
               <p>Comiendo fruta 🍊</p>
             </li>
             <li>
-              <span>!mate / !tereré / !terere</span>
+            <CommandButton 
+                displayText="!mate / !tereré / !terere"
+                command="!mate / !tereré / !terere"
+              />  
               <p>Tomando mate o tereré 🧉</p>
             </li>
             <li>
-              <span>!té / !te / !télimon / !telimon / !techai</span>
+            <CommandButton 
+                displayText="!té / !te / !télimon / !telimon / !techai"
+                command="!té / !te / !télimon / !telimon / !techai"
+              />  
               <p>Tomando un té 🍵</p>
             </li>
             <li>
-              <span>!café / !latte</span>
+            <CommandButton 
+                displayText="!café / !latte"
+                command="!café / !latte"
+              />  
               <p>Tomando café ☕</p>
             </li>
             <li>
-              <span>!matecocido</span>
+            <CommandButton 
+                displayText="!matecocido"
+                command="!matecocido"
+              />  
               <p>Tomando un mate cocido 🍵</p>
             </li>
             <li>
-              <span>!cocina / !cocinando</span>
+            <CommandButton 
+                displayText="!cocina / !cocinando"
+                command="!cocina / !cocinando"
+              />  
               <p>En la cocina 🍳</p>
             </li>
           </ul>
@@ -532,27 +644,45 @@ const Comandos = () => {
           </p>
           <ul className="container_comandos_card_list ul_activities">
             <li>
-              <span>!organizar</span>
+            <CommandButton 
+                displayText="!organizar"
+                command="!organizar"
+              />  
               <p>Organizando 🧮</p>
             </li>
             <li>
-              <span>!agenda</span>
+            <CommandButton 
+                displayText="!agenda"
+                command="!agenda"
+              />  
               <p>Revisando Agenda 📒</p>
             </li>
             <li>
-              <span>!bitacora</span>
+            <CommandButton 
+                displayText="!bitacora"
+                command="!bitacora"
+              />  
               <p>Realizando mi bitácora diaria 🗒️</p>
             </li>
             <li>
-              <span>!revisando</span>
+            <CommandButton 
+                displayText="!revisando"
+                command="!revisando"
+              />
               <p>Revisando contenido 💻</p>
             </li>
             <li>
-              <span>!mensajes</span>
+            <CommandButton 
+                displayText="!mensajes"
+                command="!mensajes"
+              />  
               <p>Revisando Mensajes 📩</p>
             </li>
             <li>
-              <span>!planificando</span>
+            <CommandButton 
+                displayText="!planificando"
+                command="!planificando"
+              />  
               <p>Estoy planificando 📅</p>
             </li>
           </ul>
@@ -571,23 +701,38 @@ const Comandos = () => {
           </p>
           <ul className="container_comandos_card_list ul_activities">
             <li>
-              <span>!call</span>
+            <CommandButton 
+                displayText="!call"
+                command="!call"
+              />  
               <p>En llamada 📱</p>
             </li>
             <li>
-              <span>!reunión / !reunion</span>
+            <CommandButton 
+                displayText="!reunión / !reunion"
+                command="!reunión / !reunion"
+              />  
               <p>En reunión 📱</p>
             </li>
             <li>
-              <span>!clases</span>
+            <CommandButton 
+                displayText="!clases"
+                command="!clases"
+              />  
               <p>En clases 🏫</p>
             </li>
             <li>
-              <span>!volví / !volvi</span>
+            <CommandButton 
+                displayText="!volví / !volvi"
+                command="!volví / !volvi"
+              />  
               <p>Regresando ☝🏻</p>
             </li>
             <li>
-              <span>!compras</span>
+            <CommandButton 
+                displayText="!compras"
+                command="!compras"
+              />  
               <p>Comprando 🛒</p>
             </li>
           </ul>
@@ -605,19 +750,31 @@ const Comandos = () => {
           </p>
           <ul className="container_comandos_card_list ul_activities">
             <li>
-              <span>!serie</span>
+            <CommandButton 
+                displayText="!serie"
+                command="!serie"
+              />  
               <p>Mirando serie 📺</p>
             </li>
             <li>
-              <span>!jugando</span>
+            <CommandButton 
+                displayText="!jugando"
+                command="!jugando"
+              />  
               <p>Jugando 🎮</p>
             </li>
             <li>
-              <span>!musica</span>
+            <CommandButton 
+                displayText="!musica"
+                command="!musica"
+              />  
               <p>Escuchando música 🎧</p>
             </li>
             <li>
-              <span>!crochet</span>
+            <CommandButton 
+                displayText="!crochet"
+                command="!crochet"
+              />  
               <p>Mi momento del Crochet llegó 🧶</p>
             </li>
           </ul>
