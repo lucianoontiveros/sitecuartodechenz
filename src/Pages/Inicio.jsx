@@ -109,11 +109,13 @@ const Inicio = () => {
             className="img_inicio"
           />
         </section>
+        <div id="presentation"></div>
       </div>
+     
       {/* Presentación del canal  */}
       <div
         className="presentation_container"
-        id="presentation"
+       
       >
         <div className="presentation_element">
           <img
@@ -285,6 +287,7 @@ const Inicio = () => {
             </p>
           </div>
         </div>
+        <div id="horario"></div>
       </div>
       {/* Presentación en el horario   */}
       <div className="horario_container">
@@ -331,11 +334,12 @@ const Inicio = () => {
               </ul>
             </div>
           </div>
+          
         </div>
 
         <div
           className="horario_element_text"
-          id="horario"
+          
         >
           <div className="horario_card">
             <div className="text_elements">

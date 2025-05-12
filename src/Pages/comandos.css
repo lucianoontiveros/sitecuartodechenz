@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2em;
+  margin-bottom: 4em;
 }
 
 .title_container_comandos h1 {
@@ -59,6 +59,7 @@
   justify-content: end;
   align-items: center;
   margin: 0.5em;
+  
 }
 
 .container_comandos_titles svg {
@@ -172,7 +173,14 @@
   .title_container_comandos {
     margin: 10em;
   }
+
+  .title_container_comandos {
+    width: 100vh;
+
+  }
+
   .title_container_comandos h1 {
+    width: 100vh;
     text-align: center;
     font-size: 4em;
   }

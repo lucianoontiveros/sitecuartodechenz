@@ -53,13 +53,14 @@ const Comandos = () => {
 
       {/* induce */}
       <section className="container_indice">
-        <div className="container_indice_item">
+        <div className="container_indice_item" onClick={() => window.scrollTo({ top: document.getElementById('gestion-tareas').offsetTop, behavior: 'smooth' })}>
           {" "}
           <img
             src={card_comando_tareas}
             alt=""
+            onClick={() => window.scrollTo({ top: document.getElementById('gestion-tareas').offsetTop, behavior: 'smooth' })}
           />{" "}
-          <div>
+          <div onClick={() => window.scrollTo({ top: document.getElementById('gestion-tareas').offsetTop, behavior: 'smooth' })}>
             <h3>GESTIÓN INTELIGENTE DE TAREAS</h3>
             <p>
               ✅ 📌 Tomar el control de tus pendientes nunca fue tan fácil. A
@@ -78,13 +79,14 @@ const Comandos = () => {
           </div>
         </div>
 
-        <div className="container_indice_item">
+        <div className="container_indice_item" onClick={() => window.scrollTo({ top: document.getElementById('compartir-actividades').offsetTop, behavior: 'smooth' })}>
           {" "}
           <img
             src={card_comando_activities}
             alt=""
+            onClick={() => window.scrollTo({ top: document.getElementById('compartir-actividades').offsetTop, behavior: 'smooth' })}
           />{" "}
-          <div>
+          <div onClick={() => window.scrollTo({ top: document.getElementById('compartir-actividades').offsetTop, behavior: 'smooth' })}>
             <h3>COMPARTE LO QUE ESTÁS HACIENDO</h3>
             <p>
               💡 La comunidad está viva y en constante movimiento, y ahora
@@ -105,13 +107,14 @@ const Comandos = () => {
           </div>
         </div>
 
-        <div className="container_indice_item">
+        <div className="container_indice_item" onClick={() => window.scrollTo({ top: document.getElementById('personalizar-perfil').offsetTop, behavior: 'smooth' })}>
           {" "}
           <img
             src={card_comando_userdata}
             alt=""
+            onClick={() => window.scrollTo({ top: document.getElementById('personalizar-perfil').offsetTop, behavior: 'smooth' })}
           />{" "}
-          <div>
+          <div onClick={() => window.scrollTo({ top: document.getElementById('personalizar-perfil').offsetTop, behavior: 'smooth' })}>
             <h3>PERSONALIZA TU PERFIL</h3>
             <p>
               🏷️ 🆙 Tu identidad es única, y ahora puedes reflejarla dentro de
@@ -131,10 +134,11 @@ const Comandos = () => {
             </p>
           </div>
         </div>
+        <div id="gestion-tareas"></div>
       </section>
 
       {/* Comandos de tareas   */}
-      <section className="container_comandos">
+      <section className="container_comandos" >
         <div className="container_comandos_titles">
           <IconList />
           <div className="container_comandos_titles_text">
@@ -318,10 +322,12 @@ const Comandos = () => {
             </li>
           </ul>
         </div>
+      
       </section>
+      <div id="compartir-actividades"></div>
 
       {/* Comandos de actividades   */}
-      <section className="container_comandos">
+      <section className="container_comandos" >
         {/* Comandos de actividades   */}
         <div className="container_comandos_titles">
           <IconActivities />
@@ -811,10 +817,11 @@ const Comandos = () => {
         </div>
       </section>
 
+      <div id="personalizar-perfil"></div>
       {/* Comandos de user data
        */}
 
-      <section className="container_comandos">
+      <section className="container_comandos" >
         <div className="container_comandos_titles">
           <IconDataUser />
           <div className="container_comandos_titles_text">
