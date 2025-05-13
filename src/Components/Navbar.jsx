@@ -15,7 +15,7 @@ const Navbar = () => {
         <NavLink
           className={({ isActive }) =>
             `link_items ${
-              isActive ? "text-blue-500 font-bold underline" : "text-gray-500"
+              isActive ? "text-green-400 font-bold underline" : "text-gray-500"
             }`
           }
           to="/"
@@ -26,7 +26,7 @@ const Navbar = () => {
         <NavLink
           className={({ isActive }) =>
             `link_items ${
-              isActive ? "text-blue-500 font-bold underline" : "text-gray-500"
+              isActive ? "text-green-400 font-bold underline" : "text-gray-500"
             }`
           }
           to="/avisos"
@@ -36,7 +36,7 @@ const Navbar = () => {
         <NavLink
           className={({ isActive }) =>
             `link_items ${
-              isActive ? "text-blue-500 font-bold underline" : "text-gray-500"
+              isActive ? "text-green-400 font-bold underline" : "text-gray-500"
             }`
           }
           to="/comandos"
@@ -46,7 +46,7 @@ const Navbar = () => {
         <NavLink
           className={({ isActive }) =>
             `link_items ${
-              isActive ? "text-blue-500 font-bold underline" : "text-gray-500"
+              isActive ? "text-green-400 font-bold underline" : "text-gray-500"
             }`
           }
           to="/sonidos"
