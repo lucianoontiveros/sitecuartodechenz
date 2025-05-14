@@ -3,7 +3,7 @@ import Button_Copy from "../buttons/Button_copy";
 
 const _card_gallery = ({ name, image }) => {
   return (
-    <Card className="gallery_items max-w-sm">
+    <Card className="gallery_items max-w-sm relative">
       <img
         src={image}
         alt={name}

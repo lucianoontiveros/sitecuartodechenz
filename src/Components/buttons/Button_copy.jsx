@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { Button } from "flowbite-react";
+import "./button_copy.css";
+import sounds from "../../Data/sounds";
+import { useEffect } from "react";
 
 const Button_copy = ({ text }) => {
   const [copiado, setCopiado] = useState(false);
+  const [audio] = useState(new Audio());
 
   const copiarTexto = () => {
     navigator.clipboard
@@ -15,12 +19,24 @@ const Button_copy = ({ text }) => {
       .catch((e) => console.log(e));
   };
 
+  const reproducirSonido = () => {
+    const comando = text.replace('!', '');
+    const rutaSonido = sounds[comando];
+    if (rutaSonido) {
+      audio.src = rutaSonido;
+      audio.play().catch(error => console.error('Error al reproducir sonido:', error));
+    }
+  };
+
   return (
     <>
       <Button
-        onClick={copiarTexto}
+        onClick={(e) => {
+          copiarTexto();
+          reproducirSonido();
+        }}
          type="button"
-        className="mt-[-80px] max-w-[150px] mx-1 py-2.5 px-5 me-1 mb-1 text-sm font-medium focus:outline-none rounded-lg border  focus:ring-gray-700 border-gray-600 hover:bg-gray-700 text-green-200"
+        className="button_card"
       >
         {copiado ? "Copiado" : text}
       </Button>
