@@ -23,7 +23,7 @@ const Navbar = () => {
         >
           INICIO
         </NavLink>
-        <NavLink
+        {<NavLink
           className={({ isActive }) =>
             `link_items ${
               isActive ? "text-green-400 font-bold underline" : "text-gray-500"
@@ -32,8 +32,8 @@ const Navbar = () => {
           to="/avisos"
         >
           AVISOS
-        </NavLink>
-        <NavLink
+        </NavLink>}
+      <NavLink
           className={({ isActive }) =>
             `link_items ${
               isActive ? "text-green-400 font-bold underline" : "text-gray-500"
@@ -42,7 +42,7 @@ const Navbar = () => {
           to="/comandos"
         >
           COMANDOS
-        </NavLink>
+        </NavLink> 
         <NavLink
           className={({ isActive }) =>
             `link_items ${

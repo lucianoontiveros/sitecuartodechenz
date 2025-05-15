@@ -1,5 +1,6 @@
 import abrechetada from "./sounds/!abrachetada.mp3";
 import abuscarla from "./sounds/!abuscarla.mp3";
+import ancrababol from "./sounds/!ancrababol.mp3";
 import acomerla from "./sounds/!comerla.mp3";
 import alight from "./sounds/!alight.mp3";
 import anda from "./sounds/!anda.mp3";
@@ -27,7 +28,6 @@ import eltimer from "./sounds/!eltimer.mp3";
 import empalmo from "./sounds/!empalmo.mp3";
 import empanada from "./sounds/!empanada.mp3";
 import encara from "./sounds/!encara.mp3";
-
 import yaesta from "./sounds/!yaesta.mp3";
 import ese from "./sounds/!ese.mp3";
 import estas from "./sounds/!estas.mp3";
@@ -38,7 +38,7 @@ import fotosintesis from "./sounds/!fotosintesis.mp3";
 import friend from "./sounds/!friend.mp3";
 import grash from "./sounds/!grash.mp3";
 import hicistes from "./sounds/!hicistes.mp3";
-import hacelo from "./sounds/!hacelo.mp3";
+import señalar from "./sounds/!hacelo.mp3";
 import haytiempo from "./sounds/!haytiempo.mp3";
 import hijo from "./sounds/!hijo.mp3";
 import ilegal from "./sounds/!ilegal.mp3";
@@ -157,14 +157,22 @@ import blackpinkritual from "./sounds/!blackpinkritual.mp3";
 import corchazo from "./sounds/!corchazo.mp3";
 import escucharon from "./sounds/!escucharon.mp3";
 import enfocado from "./sounds/!concentrado.mp3";
-
-
+import peta from "./sounds/!peta.mp3";
+import supertuna from "./sounds/!supertuna.mp3";
+import aplausos from "./sounds/!aplausos.mp3";
+import inthearea from "./sounds/!inthearea.mp3";
+import jungkook from "./sounds/!jungkook.mp3";
 
 
 const sounds = {
+  jungkook: jungkook,
+  inthearea: inthearea,
+  aplausos: aplausos,
+  supertuna: supertuna,
   abrechetada: abrechetada,
   abuscarla: abuscarla,
   acomerla: acomerla,
+  ancrababol: ancrababol,
   anda: anda,
   azul: azul,
   asiestamos: asiestamos,
@@ -202,7 +210,7 @@ const sounds = {
   friend: friend,
   grash: grash,
   hicistes: hicistes,
-  hacelo: hacelo,
+  señalar: señalar,
   haytiempo: haytiempo,
   hijo: hijo,
   ilegal: ilegal,
@@ -322,6 +330,7 @@ const sounds = {
   blackpinkritual: blackpinkritual,
   corchazo: corchazo,
   escucharon: escucharon,
+  peta: peta,
 };
 
 export default sounds;
