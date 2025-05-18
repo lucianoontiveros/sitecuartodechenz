@@ -8,7 +8,24 @@
 }
 
 .footer_logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 1.5em;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.footer_logo:hover {
+  transform: translateY(-2px);
+}
+
+.footer_logo svg {
+  transition: transform 0.3s ease;
+}
+
+.footer_logo:hover svg {
+  transform: translateY(2px);
 }
 
 @media (max-width: 1000px) {

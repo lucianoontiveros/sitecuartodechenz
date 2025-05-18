@@ -4,6 +4,7 @@ import Icon_tiktok from "./img_icons/Icon_tiktok";
 import Icon_x from "./img_icons/Icon_x";
 import Icon_youtube from "./img_icons/Icon_youtube";
 import { useRef, useEffect } from "react";
+import IconArrow from "./img/IconArrow";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -16,7 +17,8 @@ const Footer = () => {
   return (
     <footer className="footer_container">
       <div className="footer_logo" onClick={scrollToTop}>
-        STUDY WITH ME
+        <span>STUDY WITH ME</span>
+        <IconArrow />
       </div>
       <div className="footer_social">
         <div className="bar_icon">

@@ -19,10 +19,92 @@ import IconCloud from "../Components/img/IconCloud.jsx";
 import IconMetrics from "../Components/img/IconMetrics.jsx";
 import IconTask from "../Components/img/IconTask.jsx";
 import { NavLink } from "react-router-dom";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 const Inicio = () => {
+  // Hooks para animaciones al hacer scroll
+  const [ref1, isVisible1] = useScrollAnimation();
+  const [ref2, isVisible2] = useScrollAnimation();
+  const [ref3, isVisible3] = useScrollAnimation();
+  const [ref4, isVisible4] = useScrollAnimation();
+  const [ref5, isVisible5] = useScrollAnimation();
+  const [ref6, isVisible6] = useScrollAnimation();
+  const [ref7, isVisible7] = useScrollAnimation();
+  const [ref8, isVisible8] = useScrollAnimation();
+  
   return (
     <>
+      <style jsx global>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        @keyframes fadeInLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        
+        @keyframes fadeInRight {
+          from {
+            opacity: 0;
+            transform: translateX(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        
+        .fade-in-up {
+          opacity: 0;
+          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in-left {
+          opacity: 0;
+          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in-right {
+          opacity: 0;
+          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in-up.visible {
+          opacity: 1;
+          animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .fade-in-left.visible {
+          opacity: 1;
+          animation: fadeInLeft 0.8s ease-out forwards;
+        }
+        
+        .fade-in-right.visible {
+          opacity: 1;
+          animation: fadeInRight 0.8s ease-out forwards;
+        }
+        
+        /* Retrasos para animaciones escalonadas */
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+      `}</style>
+
       {/* Sección de Inicio  */}
       <div className="inicio_container">
         <section className="title_section">
@@ -113,11 +195,11 @@ const Inicio = () => {
       </div>
      
       {/* Presentación del canal  */}
-      <div
-        className="presentation_container"
-       
-      >
-        <div className="presentation_element">
+      <div className="presentation_container">
+        <div 
+          ref={ref1}
+          className={`presentation_element fade-in-up ${isVisible1 ? 'visible' : ''}`}
+        >
           <img
             className="media_element img"
             src={img_presentation}
@@ -144,7 +226,10 @@ const Inicio = () => {
             </p>
           </div>
         </div>
-        <div className="presentation_element_">
+        <div 
+          ref={ref2}
+          className={`presentation_element_ fade-in-up ${isVisible2 ? 'visible delay-1' : ''}`}
+        >
           <div className="presentation_element_card">
             <img
               className="border_element"
@@ -184,7 +269,10 @@ const Inicio = () => {
 
       {/* Presentación del container   */}
       <div className="contenido_conteiner">
-        <div className="contenido_item">
+        <div 
+          ref={ref3}
+          className={`contenido_item fade-in-left ${isVisible3 ? 'visible' : ''}`}
+        >
           <img
             className="img_contenido_element img"
             src={img_cuarto_1}
@@ -219,7 +307,10 @@ const Inicio = () => {
             </p>
           </div>
         </div>
-        <div className="contenido_item_1">
+        <div 
+          ref={ref4}
+          className={`contenido_item_1 fade-in-right ${isVisible4 ? 'visible' : ''}`}
+        >
           <div className="contenido_element">
             <div className="tittle_and_icon">
               <IconCloud />
@@ -254,7 +345,10 @@ const Inicio = () => {
             alt=""
           />
         </div>
-        <div className="contenido_item_2">
+        <div 
+          ref={ref5}
+          className={`contenido_item_2 fade-in-left ${isVisible5 ? 'visible' : ''}`}
+        >
           <img
             className="img_contenido_element img"
             src={img_cuarto_4}
@@ -291,7 +385,10 @@ const Inicio = () => {
       </div>
       {/* Presentación en el horario   */}
       <div className="horario_container">
-        <div className="horario_card">
+        <div 
+          ref={ref6}
+          className={`horario_card fade-in-up ${isVisible6 ? 'visible' : ''}`}
+        >
           <div className="horario_element_card">
             <img
               src={card_1}
@@ -341,7 +438,10 @@ const Inicio = () => {
           className="horario_element_text"
           
         >
-          <div className="horario_card">
+          <div 
+            ref={ref7}
+            className={`horario_card fade-in-up ${isVisible7 ? 'visible delay-1' : ''}`}
+          >
             <div className="text_elements">
               <h3>NUESTROS HORARIOS</h3>
               <p>
@@ -366,7 +466,10 @@ const Inicio = () => {
           </div>
         </div>
 
-        <div className="horario_card">
+        <div 
+          ref={ref8}
+          className={`horario_card fade-in-up ${isVisible8 ? 'visible delay-2' : ''}`}
+        >
           <div className="horario_element_card">
             <img
               src={card_2}
@@ -411,6 +514,14 @@ const Inicio = () => {
           </div>
         </div>
       </div>
+      
+      {/* Agregar estilos para las animaciones */}
+      <style jsx global>{`
+        /* Asegurarse de que las imágenes y textos tengan transición suave */
+        img, p, h1, h2, h3, h4, h5, h6, li {
+          transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+        }
+      `}</style>
     </>
   );
 };

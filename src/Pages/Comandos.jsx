@@ -1,5 +1,6 @@
 import "./comandos.css";
 import { useState } from 'react';
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import Icon_instagram from "../Components/img_icons/Icon_instagram.jsx";
 import Icon_tiktok from "../Components/img_icons/Icon_tiktok.jsx";
 import Icon_x from "../Components/img_icons/Icon_x.jsx";
@@ -13,11 +14,96 @@ import IconDataUser from "../Components/img/IconDataUser.jsx";
 import CommandButton from "../Components/buttons/CommandButton";
 
 const Comandos = () => {
+  // Hooks para animaciones al hacer scroll
+  const [ref1, isVisible1] = useScrollAnimation();
+  const [ref2, isVisible2] = useScrollAnimation();
+  const [ref3, isVisible3] = useScrollAnimation();
+  const [ref4, isVisible4] = useScrollAnimation();
+  const [ref5, isVisible5] = useScrollAnimation();
 
   return (
-    <div className="container_comandos">
+    <>
+      <style jsx global>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        @keyframes fadeInLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        
+        @keyframes fadeInRight {
+          from {
+            opacity: 0;
+            transform: translateX(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        
+        .fade-in-up {
+          opacity: 0;
+          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in-left {
+          opacity: 0;
+          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in-right {
+          opacity: 0;
+          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in-up.visible {
+          opacity: 1;
+          animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .fade-in-left.visible {
+          opacity: 1;
+          animation: fadeInLeft 0.8s ease-out forwards;
+        }
+        
+        .fade-in-right.visible {
+          opacity: 1;
+          animation: fadeInRight 0.8s ease-out forwards;
+        }
+        
+        /* Retrasos para animaciones escalonadas */
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        
+        /* Asegurar que las imágenes y textos tengan transición suave */
+        img, p, h1, h2, h3, h4, h5, h6, li {
+          transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+        }
+      `}</style>
+      <div className="container_comandos">
       {/* inicio  */}
-      <section className="title_container_comandos">
+      <section 
+        ref={ref1}
+        className={`title_container_comandos fade-in-up ${isVisible1 ? 'visible' : ''}`}
+      >
         <h1>CUARTO DE CHENZ</h1>
         <div className="bar_icon">
           <a
@@ -52,8 +138,15 @@ const Comandos = () => {
       </section>
 
       {/* induce */}
-      <section className="container_indice">
-        <div className="container_indice_item" onClick={() => window.scrollTo({ top: document.getElementById('gestion-tareas').offsetTop, behavior: 'smooth' })}>
+      <section 
+        ref={ref2}
+        className={`container_indice fade-in-up ${isVisible2 ? 'visible' : ''}`}
+      >
+        <div 
+          ref={ref3}
+          className={`container_indice_item fade-in-left ${isVisible3 ? 'visible' : ''}`}
+          onClick={() => window.scrollTo({ top: document.getElementById('gestion-tareas').offsetTop, behavior: 'smooth' })}
+        >
           {" "}
           <img
             src={card_comando_tareas}
@@ -79,7 +172,11 @@ const Comandos = () => {
           </div>
         </div>
 
-        <div className="container_indice_item" onClick={() => window.scrollTo({ top: document.getElementById('compartir-actividades').offsetTop, behavior: 'smooth' })}>
+        <div 
+          ref={ref4}
+          className={`container_indice_item fade-in-right ${isVisible4 ? 'visible delay-1' : ''}`}
+          onClick={() => window.scrollTo({ top: document.getElementById('compartir-actividades').offsetTop, behavior: 'smooth' })}
+        >
           {" "}
           <img
             src={card_comando_activities}
@@ -107,7 +204,11 @@ const Comandos = () => {
           </div>
         </div>
 
-        <div className="container_indice_item" onClick={() => window.scrollTo({ top: document.getElementById('personalizar-perfil').offsetTop, behavior: 'smooth' })}>
+        <div 
+          ref={ref5}
+          className={`container_indice_item fade-in-left ${isVisible5 ? 'visible delay-2' : ''}`}
+          onClick={() => window.scrollTo({ top: document.getElementById('personalizar-perfil').offsetTop, behavior: 'smooth' })}
+        >
           {" "}
           <img
             src={card_comando_userdata}
@@ -966,7 +1067,8 @@ const Comandos = () => {
           </ul>{" "}
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 
