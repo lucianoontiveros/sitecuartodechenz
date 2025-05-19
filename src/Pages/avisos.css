@@ -162,7 +162,9 @@
 /* Escritorios */
 @media (min-width: 992px) {
 
-
+  .aviso-principal {
+    max-width: 1200px;
+  }
   .aviso-contenido {
     flex-direction: row;
     align-items: flex-start;
@@ -206,6 +208,7 @@
     padding: 1.25rem;
     margin: 1rem 0;
     border-radius: 8px;
+  
   }
   
   .aviso-titulo {
