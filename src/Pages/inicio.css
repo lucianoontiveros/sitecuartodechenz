@@ -22,12 +22,15 @@
   padding: 3em;
 }
 
+.title_container {
+  margin-top: 1em;
+}
+
 .title_container h1 {
   font-weight: 600;
   font-size: x-large;
   color: rgb(255, 255, 255);
   font-size: 3rem;
-  text-align: center;
 }
 
 .bar_icon {
