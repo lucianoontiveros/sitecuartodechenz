@@ -6,7 +6,7 @@
   box-sizing: border-box;
   font-family: 'Arial', sans-serif;
   color: #ffffff;
-  background-color: orange;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -162,9 +162,7 @@
 /* Escritorios */
 @media (min-width: 992px) {
 
-  .avisos-container {
-    background-color: red;
-  }
+
   .aviso-contenido {
     flex-direction: row;
     align-items: flex-start;
@@ -202,9 +200,7 @@
 
 /* Ajustes para móviles pequeños */
 @media (max-width: 400px) {
-  .avisos-container {
-    background-color: yellow;
-  }
+  
 
   .aviso-principal {
     padding: 1.25rem;
