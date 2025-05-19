@@ -14,7 +14,7 @@
 }
 
 .title_container_comandos {
-  margin: 0;
+  margin: 2em 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
