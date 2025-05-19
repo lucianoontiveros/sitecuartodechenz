@@ -112,6 +112,7 @@ import qpesado from './gallery/sorprendido1.png'
 import supertuna from './gallery/supertuna.png'
 import talleres from './gallery/talleres.png'
 import aplausos from './gallery/aplausos.png'
+import chau from './gallery/chau.png'
 
 
 const galleryImages = [
@@ -230,6 +231,7 @@ const galleryImages = [
   {nombre: "lalala", image: lalala},
   {nombre: "talleres", image: talleres},
   {nombre: "aplausos", image: aplausos},
+  {nombre: "chau", image: chau},
 ];
 
 export default galleryImages;

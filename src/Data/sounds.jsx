@@ -162,6 +162,7 @@ import supertuna from "./sounds/!supertuna.mp3";
 import aplausos from "./sounds/!aplausos.mp3";
 import inthearea from "./sounds/!inthearea.mp3";
 import jungkook from "./sounds/!jungkook.mp3";
+import chau from "./sounds/!chau.mp3";
 
 
 const sounds = {
@@ -331,6 +332,7 @@ const sounds = {
   corchazo: corchazo,
   escucharon: escucharon,
   peta: peta,
+  chau: chau,
 };
 
 export default sounds;
