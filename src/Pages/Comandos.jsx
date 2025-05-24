@@ -639,6 +639,13 @@ const Comandos = () => {
             </li>
             <li>
             <CommandButton 
+                displayText="!platos"
+                command="!platos"
+              />  
+              <p>Lavando platos 🍽️</p>
+            </li>
+            <li>
+            <CommandButton 
                 displayText="!limpiando"
                 command="!limpiando"
               />
