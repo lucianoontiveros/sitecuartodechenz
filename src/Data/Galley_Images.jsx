@@ -113,7 +113,8 @@ import supertuna from './gallery/supertuna.png'
 import talleres from './gallery/talleres.png'
 import aplausos from './gallery/aplausos.png'
 import chau from './gallery/chau.png'
-
+import calypso from './gallery/calypso.png'
+import chenzbrasil from './gallery/chenzbrasil.png'
 
 const galleryImages = [
   { nombre: "abrechetada", image: abrechetada },
@@ -232,6 +233,8 @@ const galleryImages = [
   {nombre: "talleres", image: talleres},
   {nombre: "aplausos", image: aplausos},
   {nombre: "chau", image: chau},
+  {nombre: "chenzbrasil", image: chenzbrasil},
+  {nombre: "calypso", image: calypso},
 ];
 
 export default galleryImages;

@@ -163,6 +163,8 @@ import aplausos from "./sounds/!aplausos.mp3";
 import inthearea from "./sounds/!inthearea.mp3";
 import jungkook from "./sounds/!jungkook.mp3";
 import chau from "./sounds/!chau.mp3";
+import chenzbrasil from "./sounds/!chenzbrasil.mp3";
+import calypso from "./sounds/!calypso.mp3";
 
 
 const sounds = {
@@ -333,6 +335,8 @@ const sounds = {
   escucharon: escucharon,
   peta: peta,
   chau: chau,
+  chenzbrasil: chenzbrasil,
+  calypso: calypso,
 };
 
 export default sounds;
