@@ -38,7 +38,7 @@ import fotosintesis from "./sounds/!fotosintesis.mp3";
 import friend from "./sounds/!friend.mp3";
 import grash from "./sounds/!grash.mp3";
 import hicistes from "./sounds/!hicistes.mp3";
-import señalar from "./sounds/!hacelo.mp3";
+import hacelo from "./sounds/!hacelo.mp3";
 import haytiempo from "./sounds/!haytiempo.mp3";
 import hijo from "./sounds/!hijo.mp3";
 import ilegal from "./sounds/!ilegal.mp3";
@@ -165,9 +165,11 @@ import jungkook from "./sounds/!jungkook.mp3";
 import chau from "./sounds/!chau.mp3";
 import chenzbrasil from "./sounds/!chenzbrasil.mp3";
 import calypso from "./sounds/!calypso.mp3";
+import mecalente from "./sounds/!mecalente.mp3";
 
 
 const sounds = {
+  mecalente: mecalente,
   jungkook: jungkook,
   inthearea: inthearea,
   aplausos: aplausos,
@@ -213,7 +215,7 @@ const sounds = {
   friend: friend,
   grash: grash,
   hicistes: hicistes,
-  señalar: señalar,
+  hacelo: hacelo,
   haytiempo: haytiempo,
   hijo: hijo,
   ilegal: ilegal,

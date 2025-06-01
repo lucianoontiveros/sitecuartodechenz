@@ -101,7 +101,7 @@ import reza from './gallery/reza.png'
 import risa from './gallery/risa.png'
 import rojo from './gallery/rojo.png'
 import sangre from './gallery/sangre.png'
-import señalar from './gallery/señalar.png'
+import hacelo from './gallery/señalar.png'
 import sexo from './gallery/sexo.png'
 import siuuu from './gallery/siuuu.png'
 import siyase from './gallery/siyase.png'
@@ -115,6 +115,7 @@ import aplausos from './gallery/aplausos.png'
 import chau from './gallery/chau.png'
 import calypso from './gallery/calypso.png'
 import chenzbrasil from './gallery/chenzbrasil.png'
+import mecalente from './gallery/mecalente.png'
 
 const galleryImages = [
   { nombre: "abrechetada", image: abrechetada },
@@ -218,7 +219,7 @@ const galleryImages = [
   {nombre: "risa", image: risa},
   {nombre: "rojo", image: rojo},
   {nombre: "sangre", image: sangre},
-  {nombre: "señalar", image: señalar},
+  {nombre: "hacelo", image: hacelo},
   {nombre: "sexo", image: sexo},
   {nombre: "siuuu", image: siuuu},
   {nombre: "siyase", image: siyase},
@@ -235,6 +236,7 @@ const galleryImages = [
   {nombre: "chau", image: chau},
   {nombre: "chenzbrasil", image: chenzbrasil},
   {nombre: "calypso", image: calypso},
+  {nombre: "mecalente", image: mecalente},
 ];
 
 export default galleryImages;
