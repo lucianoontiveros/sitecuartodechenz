@@ -5,6 +5,7 @@ import alight from './gallery/alight.png';
 import ancrababol from './gallery/ancrababol.png';
 import andar from './gallery/anda.png';
 import apaga from './gallery/apaga.png';
+import aplausos from './gallery/aplausos.png';
 import asiestamos from './gallery/asiestamos.png';
 import ayudame from './gallery/ayudame.png';
 import ayuno from './gallery/ayuno.png';
@@ -56,7 +57,7 @@ import hechizo from './gallery/hechizo.png'
 import hicistes from './gallery/hiciste.png'
 import ilegal from './gallery/ilegal.png'
 import inthearea from './gallery/inthearea.png'
-import jojo from './gallery/jojojo.png'
+import jojojo from './gallery/jojojo.png'
 import jugar from './gallery/jugar.png'
 import jungkook from './gallery/jungkook.png'
 import lachancla from './gallery/lachancla.png'
@@ -72,13 +73,14 @@ import licuado from './gallery/licuado.png'
 import llorar from './gallery/llorar.png'
 import lobo from './gallery/lobo.png'
 import luooz from './gallery/loouz.png'
-import hijo from './gallery/mano.png'
+import mano from './gallery/mano.png'
 import mate from './gallery/mate.png'
 import mecrees from './gallery/mecrees.png'
 import menor from './gallery/menor.png'
 import meter from './gallery/meter.png'
 import micho from './gallery/micho.png'
 import mira from './gallery/mira.png'
+import moderador from './gallery/moderador.png'
 import nanana from './gallery/nanana.png'
 import necesito from './gallery/necesito.png'
 import nojuego from './gallery/nojugar.png'
@@ -101,7 +103,7 @@ import reza from './gallery/reza.png'
 import risa from './gallery/risa.png'
 import rojo from './gallery/rojo.png'
 import sangre from './gallery/sangre.png'
-import hacelo from './gallery/señalar.png'
+import señalar from './gallery/señalar.png'
 import sexo from './gallery/sexo.png'
 import siuuu from './gallery/siuuu.png'
 import siyase from './gallery/siyase.png'
@@ -111,11 +113,11 @@ import yaentendi from './gallery/sorprendido.png'
 import qpesado from './gallery/sorprendido1.png'
 import supertuna from './gallery/supertuna.png'
 import talleres from './gallery/talleres.png'
-import aplausos from './gallery/aplausos.png'
-import chau from './gallery/chau.png'
-import calypso from './gallery/calypso.png'
-import chenzbrasil from './gallery/chenzbrasil.png'
-import mecalente from './gallery/mecalente.png'
+import noo from './gallery/noo.png'
+import bingo from './gallery/bingo.png'
+import lek from './gallery/lek.png'
+
+
 
 const galleryImages = [
   { nombre: "abrechetada", image: abrechetada },
@@ -125,6 +127,7 @@ const galleryImages = [
   { nombre: "ancrababol", image: ancrababol },
   { nombre: "anda", image: andar },
   { nombre: "apaga", image: apaga },
+  { nombre: "aplausos", image: aplausos },
   { nombre: "asiestamos", image: asiestamos },
   { nombre: "ayudame", image: ayudame },
   { nombre: "ayuno", image: ayuno },
@@ -176,7 +179,7 @@ const galleryImages = [
   {nombre: "hicistes", image: hicistes},
   {nombre: "ilegal", image: ilegal},
   {nombre: "inthearea", image: inthearea},
-  {nombre: "jojo", image: jojo},
+  {nombre: "jojojo", image: jojojo},
   {nombre: "jugar", image: jugar},
   {nombre: "jungkook", image: jungkook},
   {nombre: "lachancla", image: lachancla},
@@ -192,13 +195,14 @@ const galleryImages = [
   {nombre: "llorar", image: llorar},
   {nombre: "lobo", image: lobo},
   {nombre: "luooz", image: luooz},
-  {nombre: "hijo", image: hijo},
+  {nombre: "mano", image: mano},
   {nombre: "mate", image: mate},
   {nombre: "mecrees", image: mecrees},
   {nombre: "menor", image: menor},
   {nombre: "meter", image: meter},
   {nombre: "micho", image: micho},
   {nombre: "mira", image: mira},
+  {nombre: "moderador", image: moderador},
   {nombre: "nanana", image: nanana},
   {nombre: "necesito", image: necesito},
   {nombre: "nojuego", image: nojuego},
@@ -219,7 +223,7 @@ const galleryImages = [
   {nombre: "risa", image: risa},
   {nombre: "rojo", image: rojo},
   {nombre: "sangre", image: sangre},
-  {nombre: "hacelo", image: hacelo},
+  {nombre: "señalar", image: señalar},
   {nombre: "sexo", image: sexo},
   {nombre: "siuuu", image: siuuu},
   {nombre: "siyase", image: siyase},
@@ -232,11 +236,9 @@ const galleryImages = [
   {nombre: "unite2", image: unite2},
   {nombre: "lalala", image: lalala},
   {nombre: "talleres", image: talleres},
-  {nombre: "aplausos", image: aplausos},
-  {nombre: "chau", image: chau},
-  {nombre: "chenzbrasil", image: chenzbrasil},
-  {nombre: "calypso", image: calypso},
-  {nombre: "mecalente", image: mecalente},
+  {nombre: "noo", image: noo},
+  {nombre: "bingo", image: bingo},
+  {nombre: "lek", image: lek},
 ];
 
 export default galleryImages;

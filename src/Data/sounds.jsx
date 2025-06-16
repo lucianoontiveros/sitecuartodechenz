@@ -166,9 +166,15 @@ import chau from "./sounds/!chau.mp3";
 import chenzbrasil from "./sounds/!chenzbrasil.mp3";
 import calypso from "./sounds/!calypso.mp3";
 import mecalente from "./sounds/!mecalente.mp3";
+import lek from "./sounds/!lek.mp3";
+import bingo from "./sounds/!bingo.mp3";
+import noo from "./sounds/!noo.mp3";
 
 
 const sounds = {
+  noo: noo,
+  bingo: bingo,
+  lek: lek,
   mecalente: mecalente,
   jungkook: jungkook,
   inthearea: inthearea,
