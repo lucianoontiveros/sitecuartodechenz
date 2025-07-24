@@ -497,6 +497,13 @@ const Comandos = () => {
             </li>
             <li>
               <CommandButton 
+                displayText="!editando"
+                command="!editando"
+              />
+              <p>Editando 💻</p>
+            </li>
+            <li>
+              <CommandButton 
                 displayText="!curso"
                 command="!curso"
               />
@@ -664,7 +671,7 @@ const Comandos = () => {
         {/* COMIDA */}
         <div className="container_comandos_card">
           <div>
-            <h3>Comida e infusiones </h3>
+            <h3>Comida, bebidas e infusiones </h3>
           </div>
           <p className="container_comandos_card_p">
             Espacios dedicados a la alimentación y al disfrute de infusiones o
@@ -771,6 +778,34 @@ const Comandos = () => {
               />  
               <p>Tomando un mate cocido 🍵</p>
             </li>
+            <li>
+            <CommandButton 
+                displayText="!cola"
+                command="!cola"
+              />  
+              <p>Tomando una coquita 🥤</p>
+            </li>
+            <li>
+            <CommandButton 
+                displayText="!refresco"
+                command="!refresco"
+              />  
+              <p>Tomando un refresco 🥤</p>
+            </li>
+            <li>
+            <CommandButton 
+                displayText="!gaseosa"
+                command="!gaseosa"
+              />  
+              <p>Tomando una gaseosa 🥤</p>
+            </li>
+            <li>
+            <CommandButton 
+                displayText="!sanguche"
+                command="!sanguche"
+              />  
+              <p>Comiendo sanguche 🥪</p>
+            </li>
             
           </ul>
         </div>
@@ -853,6 +888,13 @@ const Comandos = () => {
             </li>
             <li>
             <CommandButton 
+                displayText="!tramites"
+                command="!tramites"
+              />  
+              <p>Haciendo tramites 📝</p>
+            </li>
+            <li>
+            <CommandButton 
                 displayText="!reunión / !reunion"
                 command="!reunión / !reunion"
               />  
@@ -878,6 +920,27 @@ const Comandos = () => {
                 command="!compras"
               />  
               <p>Comprando 🛒</p>
+            </li>
+            <li>
+            <CommandButton 
+                displayText="!medico"
+                command="!medico"
+              />  
+              <p>En consulta 🏥</p>
+            </li>
+            <li>
+            <CommandButton 
+                displayText="!viajando"
+                command="!viajando"
+              />  
+              <p>En viaje 🚏</p>
+            </li>
+            <li>
+            <CommandButton 
+                displayText="!dentista"
+                command="!dentista"
+              />  
+              <p>En el dentista 🦷</p>
             </li>
           </ul>
         </div>

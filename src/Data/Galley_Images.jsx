@@ -116,6 +116,15 @@ import talleres from './gallery/talleres.png'
 import noo from './gallery/noo.png'
 import bingo from './gallery/bingo.png'
 import lek from './gallery/lek.png'
+import ohparty from './gallery/ohparty.png'
+import vacio from './gallery/vacio.png'   
+import muriendo from './gallery/muriendo.png'
+import delicia from './gallery/delicia.png'
+import distinta from './gallery/distinta.png'
+import kame from './gallery/kame.png'
+import jhope from './gallery/jhope.png'
+import llorando from './gallery/llorando.png'
+
 
 
 
@@ -239,6 +248,14 @@ const galleryImages = [
   {nombre: "noo", image: noo},
   {nombre: "bingo", image: bingo},
   {nombre: "lek", image: lek},
+  {nombre: "ohparty", image: ohparty},
+  {nombre: "vacio", image: vacio},
+  {nombre: "muriendo", image: muriendo},
+  {nombre: "delicia", image: delicia},
+  {nombre: "distinta", image: distinta},
+  {nombre: "kame", image: kame},
+  {nombre: "jhope", image: jhope},
+  {nombre: "llorando", image: llorando},
 ];
 
 export default galleryImages;

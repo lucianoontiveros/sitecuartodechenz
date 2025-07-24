@@ -169,9 +169,17 @@ import mecalente from "./sounds/!mecalente.mp3";
 import lek from "./sounds/!lek.mp3";
 import bingo from "./sounds/!bingo.mp3";
 import noo from "./sounds/!noo.mp3";
-
+import ohparty from "./sounds/!ohparty.mp3";
+import vacio from "./sounds/!vacio.mp3";
+import delicia from "./sounds/!delicia.mp3";
+import muriendo from "./sounds/!muriendo.mp3";
+import distinta from "./sounds/!distinta.mp3";
+import kame from "./sounds/!kame.mp3";
+import jhope from "./sounds/!jhope.mp3";
+import llorando from "./sounds/!llorando.mp3";
 
 const sounds = {
+  ohparty: ohparty,
   noo: noo,
   bingo: bingo,
   lek: lek,
@@ -345,6 +353,13 @@ const sounds = {
   chau: chau,
   chenzbrasil: chenzbrasil,
   calypso: calypso,
+  vacio: vacio,
+  delicia: delicia,
+  muriendo: muriendo,
+  distinta: distinta,
+  kame: kame,
+  jhope: jhope,
+  llorando: llorando,
 };
 
 export default sounds;
