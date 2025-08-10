@@ -1,0 +1,151 @@
+.reglas-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: aquamarine;
+}
+
+.avisos-container {
+  width: 100%;
+  margin-top: 5em;
+  padding: 1rem;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+  color: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title_container_comandos {
+  margin: 2em 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title_container_comandos h1 {
+  text-align: center;
+  font-size: 4em;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.bar_icon {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.icon_bar_element {
+  color: aquamarine;
+  transition: color 0.3s ease;
+}
+
+.icon_bar_element:hover {
+  color: aquamarine;
+}
+
+.reglas-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #2c3e50;
+}
+
+.reglas-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: aquamarine;
+}
+
+.reglas-section {
+  background-color: black;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reglas-section h2 {
+  color: aquamarine;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  border-bottom: 2px solid aquamarine;
+  padding-bottom: 0.5rem;
+}
+
+.reglas-section h3 {
+  color: aquamarine;
+  margin: 1.5rem 0 0.8rem;
+  font-size: 1.4rem;
+}
+
+.reglas-section p, 
+.reglas-section li {
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.reglas-section ul {
+  padding-left: 2rem;
+  margin: 1rem 0;
+}
+
+.reglas-section li {
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .reglas-container {
+    padding: 1rem;
+  }
+  
+  .reglas-header h1 {
+    font-size: 2rem;
+  }
+  
+  .reglas-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .reglas-section h3 {
+    font-size: 1.2rem;
+  }
+  
+  .reglas-section p, 
+  .reglas-section li {
+    font-size: 1rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .reglas-container {
+    color: #e0e0e0;
+    background-color: #121212;
+  }
+  
+  .reglas-header h1,
+  .reglas-section h2 {
+    color: aquamarine;
+  }
+  
+  .reglas-section h3 {
+    color: aquamarine;
+  }
+  
+  .reglas-section {
+    background-color: #1e1e1e;
+    border: 1px solid aquamarine;
+  }
+  
+  .reglas-section h2 {
+    border-bottom-color: aquamarine;
+  }
+}
