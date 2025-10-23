@@ -48,24 +48,24 @@ import lapava from "./sounds/!lapava.mp3";
 import lapaloma from "./sounds/!lapaloma.mp3";
 import lapastillita from "./sounds/!lapastillita.mp3";
 import pantallita from "./sounds/!pantallita.mp3";
-import papapa from "./sounds/!papapa.mp3";    
-import lautaro from "./sounds/!lautaro.mp3";  
+import papapa from "./sounds/!papapa.mp3";
+import lautaro from "./sounds/!lautaro.mp3";
 import licuado from "./sounds/!licuado.mp3";
 import llorar from "./sounds/!llorar.mp3";
 import luooz from "./sounds/!luooz.mp3";
 import mate1 from "./sounds/!mate.mp3";
 import menor from "./sounds/!menor.mp3";
 import mami from "./sounds/!mami.mp3";
-import marcho from "./sounds/!marcho.mp3";  
+import marcho from "./sounds/!marcho.mp3";
 import meter from "./sounds/!meter.mp3";
 import micho from "./sounds/!micho.mp3";
 import mira from "./sounds/!mira.mp3";
 import nojuego from "./sounds/!nojuego.mp3";
-import nomequeme from "./sounds/!nomequeme.mp3";      
+import nomequeme from "./sounds/!nomequeme.mp3";
 import noplan from "./sounds/!noplan.mp3";
 import nose from "./sounds/!nose.mp3";
 import note from "./sounds/!note.mp3";
-import optimo from "./sounds/!optimo.mp3";  
+import optimo from "./sounds/!optimo.mp3";
 import papi from "./sounds/!papi.mp3";
 import paraq from "./sounds/!paraq.mp3";
 import pato from "./sounds/!pato.mp3";
@@ -95,7 +95,7 @@ import tere from "./sounds/!tere1.mp3";
 import tere2 from "./sounds/!tere2.mp3";
 import tere3 from "./sounds/!tere3.mp3";
 import tere4 from "./sounds/!tere4.mp3";
-import tuki from "./sounds/!tuki.mp3";  
+import tuki from "./sounds/!tuki.mp3";
 import tuki1 from "./sounds/!tuki1.mp3";
 import tuki2 from "./sounds/!tuki2.mp3";
 import verde from "./sounds/!verde.mp3";
@@ -177,6 +177,22 @@ import distinta from "./sounds/!distinta.mp3";
 import kame from "./sounds/!kame.mp3";
 import jhope from "./sounds/!jhope.mp3";
 import llorando from "./sounds/!llorando.mp3";
+import desloca from "./sounds/!desloca.mp3";
+import fire from "./sounds/!fire.mp3";
+import kpop from "./sounds/!kpop.mp3";
+import sodapop from "./sounds/!sodapop.mp3";
+import aesovine from "./sounds/!aesovine.mp3";
+import vospodes from "./sounds/!vospodes.mp3";
+import blue from "./sounds/!blue.mp3";
+import malasvibras from "./sounds/!malasvibras.mp3";
+import fantasma from "./sounds/!fantasma.mp3";
+import luz from "./sounds/!luz.mp3";
+import anulo from "./sounds/!anulo.mp3";
+import lacuerpo from "./sounds/!lacuerpo.mp3";
+import gretiado from "./sounds/!gretiado.mp3";
+import power from "./sounds/!power.mp3";
+
+
 
 const sounds = {
   ohparty: ohparty,
@@ -204,8 +220,8 @@ const sounds = {
   buendia: buendia,
   chanchito: chanchito,
   chingona: chingona,
-  chisme : chisme,
-  comerla: comerla, 
+  chisme: chisme,
+  comerla: comerla,
   concentrado: concentrado,
   correperra: correperra,
   encara: encara,
@@ -360,6 +376,20 @@ const sounds = {
   kame: kame,
   jhope: jhope,
   llorando: llorando,
+  desloca: desloca,
+  kpop: kpop,
+  sodapop: sodapop,
+  aesovine: aesovine,
+  fire: fire,
+  vospodes: vospodes,
+  blue: blue,
+  malasvibras: malasvibras,
+  fantasma: fantasma,
+  luz: luz,
+  anulo: anulo,
+  lacuerpo: lacuerpo,
+  gretiado: gretiado,
+  power: power,
 };
 
 export default sounds;

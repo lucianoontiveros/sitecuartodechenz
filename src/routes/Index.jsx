@@ -6,6 +6,7 @@ import Sonidos from "../Pages/Sonidos";
 import Avisos from "../Pages/Avisos";
 import NotFound from "../Pages/NotFound";
 import RoffCoins from "../Pages/RoffCoins";
+import Reglas from "../Pages/Reglas";
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ export const router = createBrowserRouter([
       },
       { path: "/avisos/", element: <Avisos /> },
       { path: "/croquetas/", element: <RoffCoins /> },
+      { path: "/reglas/", element: <Reglas /> },
     ],
   },
 ]);

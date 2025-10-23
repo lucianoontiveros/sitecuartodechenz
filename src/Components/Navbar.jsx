@@ -63,6 +63,16 @@ const Navbar = () => {
         >
           CROQUETAS
         </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            `link_items ${
+              isActive ? "text-green-400 font-bold underline" : "text-gray-500"
+            }`
+          }
+          to="/reglas"
+        >
+          REGLAS
+        </NavLink>
       </>
     );
   };

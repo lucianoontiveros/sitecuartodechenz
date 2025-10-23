@@ -348,6 +348,22 @@ const Comandos = () => {
 
             <li>
             <CommandButton 
+                displayText="✅ !marcar / !check / !v + ID1;ID2;ID3"
+                command="!marcar [Borra aquí y escribe los ID's separados por un punto y coma];"
+              />
+              <p>
+                Marca una tarea como <strong>realizada</strong> usando varios ID...
+              </p>
+              <p>
+                Marks a task as <strong>completed</strong> Using multiple IDs...
+              </p>
+              <p>
+                <strong>Ejemplo / Example:</strong> <code>!check 4tf5tf;6tf</code>
+              </p>
+            </li>
+
+            <li>
+            <CommandButton 
                 displayText="🚀 !realizadas / !pickup"
                 command="!realizadas"
               />
@@ -387,22 +403,29 @@ const Comandos = () => {
               </p>
             </li>
 
+            <li> <CommandButton displayText="🗑️ !eliminar / !borrar / !delete / !x + ID de tarea" command="!eliminar [Borra aquí y escribe el ID de la tarea]" /> <p> Este comando se utiliza para <strong>quitar una tarea</strong>{" "} de tu lista... </p> <p> This command is used to <strong>remove</strong> a task... </p> <p> <strong>Ejemplo / Example:</strong> <code>!delete 2ce</code> </p> </li>
+
             <li>
-            <CommandButton 
-                displayText="🗑️ !eliminar / !borrar / !delete / !x + ID de tarea"
-                command="!eliminar [Borra aquí y escribe el ID de la tarea]"
+              <CommandButton 
+                displayText="🗑️ !eliminar / !borrar / !delete / !x + ID de tarea(s)"
+                command="!eliminar [Escribe aquí uno o varios ID de tareas separados por ;]"
               />
               <p>
-                Este comando se utiliza para <strong>quitar una tarea</strong>{" "}
-                de tu lista...
+                Este comando se utiliza para <strong>quitar una o varias tareas</strong> de tu lista.  
+                Ahora podés borrar múltiples tareas a la vez escribiendo varios ID separados por punto y coma (<code>;</code>).
               </p>
               <p>
-                This command is used to <strong>remove</strong> a task...
+                This command is used to <strong>remove one or multiple tasks</strong> from your list.  
+                You can now delete several tasks at once by separating their IDs with a semicolon (<code>;</code>).
               </p>
               <p>
-                <strong>Ejemplo / Example:</strong> <code>!delete 2ce</code>
+                <strong>Ejemplo / Example:</strong>  
+                <code>!delete 2ce;4af;8bd</code>
               </p>
             </li>
+
+
+            
 
             <li>
             <CommandButton 
@@ -557,6 +580,13 @@ const Comandos = () => {
                 command="!lectura"
               />
               <p>Está leyendo 📖</p>
+            </li>
+            <li>
+              <CommandButton 
+                displayText="!opositando"
+                command="!opositando"
+              />
+              <p>Está opositando ✍🏻</p>
             </li>
           </ul>
         </div>
@@ -752,6 +782,13 @@ const Comandos = () => {
             </li>
             <li>
             <CommandButton 
+                displayText="!matcha"
+                command="!matcha"
+              />  
+              <p>Tomando un matcha 🍵</p>
+            </li>
+            <li>
+            <CommandButton 
                 displayText="!télimon / !telimon "
                 command="!telimon"
               />  
@@ -805,6 +842,20 @@ const Comandos = () => {
                 command="!sanguche"
               />  
               <p>Comiendo sanguche 🥪</p>
+            </li>
+            <li>
+            <CommandButton 
+                displayText="!energizante"
+                command="!energizante"
+              />  
+              <p>Tomando una bebida energizante 🔋</p>
+            </li>
+            <li>
+            <CommandButton 
+                displayText="!chocolate"
+                command="!chocolate"
+              />  
+              <p>Comiendo chocolate 🍫</p>
             </li>
             
           </ul>
@@ -863,6 +914,13 @@ const Comandos = () => {
                 command="!planificando"
               />  
               <p>Estoy planificando 📅</p>
+            </li>
+            <li>
+            <CommandButton 
+                displayText="!pagos"
+                command="!pagos"
+              />  
+              <p>Realizando pagos 💵</p>
             </li>
           </ul>
         </div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import './roffcoins.css';
 
 const RoffCoins = () => {
@@ -91,9 +92,10 @@ const RoffCoins = () => {
       </div>
 
       <div className="roffcoins-container">
-        <h2 className="roffcoins-title">
-          ¡Puntos de Gestión y Croquetas para Brunito!
-        </h2>
+        <AnimatedSection>
+          <h2 className="roffcoins-title">
+            ¡Puntos de Gestión y Croquetas para Brunito!
+          </h2>
 
         <p className="roffcoins-paragraph">
           Si sos usuario del bot de tareas del canal, <span className="roffcoins-highlight">Brunitopet</span>, seguro notaste que al agregar, marcar o gestionar tareas, vas acumulando <span className="roffcoins-highlight">Puntos de Gestión</span>.
@@ -158,10 +160,32 @@ const RoffCoins = () => {
           <span className="roffcoins-email-note">con el asunto: "Reclamando mi fondo personalizado".</span>
         </p>
 
-        <p className="roffcoins-signature">
-          ¡Gracias por sumarte con compromiso y darle amor a Brunito! <span role="img" aria-label="dog and heart">🐶💚</span>
-        </p>
+          <p className="roffcoins-signature">
+            ¡Gracias por sumarte con compromiso y darle amor a Brunito! <span role="img" aria-label="dog and heart">🐶💚</span>
+          </p>
+        </AnimatedSection>
       </div>
+    </div>
+  );
+};
+
+// Componente auxiliar para la animación de scroll
+const AnimatedSection = ({ children }) => {
+  const [ref, isVisible] = useScrollAnimation({
+    threshold: 0.1,
+    once: true
+  });
+
+  return (
+    <div 
+      ref={ref}
+      className={`transition-all duration-700 ease-out transform ${
+        isVisible 
+          ? 'opacity-100 translate-y-0' 
+          : 'opacity-0 translate-y-8'
+      }`}
+    >
+      {children}
     </div>
   );
 };
