@@ -57,7 +57,7 @@ const Reglas = () => {
         <h1>📜 Reglas de Convivencia y Moderación </h1>
       </header>
 
-      <section class="reglas-section">
+      <section className="reglas-section">
   <h2>VIP y Moderadores</h2>
   <p>
     La asignación de VIPs y moderadores se basa en la participación, el respeto y es una decisión completamente subjetiva del streamer. No mantengas expectativas ni presiones para obtener esos roles, ya que la elección depende únicamente del criterio de quien lleva adelante el canal.
@@ -156,7 +156,7 @@ const Reglas = () => {
           <li>No se revierte salvo revisión del streamer.</li>
         </ul>
       </section>
-      <section class="reglas-section">
+      <section className="reglas-section">
   <h2>SOBRE LA REPRESENTACIÓN DEL ESPACIO:</h2>
   <p>
     Les recuerdo que toda comunicación oficial relacionada con este canal, sus decisiones y valores será siempre hecha por mí y desde este entorno. Cualquier comentario o interpretación que circule fuera de este espacio, incluso con la mejor intención, no representa mi voz ni debe tomarse como una postura oficial.

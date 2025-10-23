@@ -1,12 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../Layout/Layout";
-import Inicio from "../Pages/Inicio";
-import Comandos from "../Pages/Comandos";
-import Sonidos from "../Pages/Sonidos";
-import Avisos from "../Pages/Avisos";
 import NotFound from "../Pages/NotFound";
-import RoffCoins from "../Pages/RoffCoins";
-import Reglas from "../Pages/Reglas";
 
 export const router = createBrowserRouter([
   {
@@ -16,19 +10,46 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Inicio />,
+        async lazy() {
+          const m = await import("../Pages/Inicio");
+          return { Component: m.default };
+        },
       },
       {
         path: "/comandos/",
-        element: <Comandos />,
+        async lazy() {
+          const m = await import("../Pages/Comandos");
+          return { Component: m.default };
+        },
       },
       {
         path: "/sonidos/",
-        element: <Sonidos />,
+        async lazy() {
+          const m = await import("../Pages/Sonidos");
+          return { Component: m.default };
+        },
       },
-      { path: "/avisos/", element: <Avisos /> },
-      { path: "/croquetas/", element: <RoffCoins /> },
-      { path: "/reglas/", element: <Reglas /> },
+      {
+        path: "/avisos/",
+        async lazy() {
+          const m = await import("../Pages/Avisos");
+          return { Component: m.default };
+        },
+      },
+      {
+        path: "/croquetas/",
+        async lazy() {
+          const m = await import("../Pages/RoffCoins");
+          return { Component: m.default };
+        },
+      },
+      {
+        path: "/reglas/",
+        async lazy() {
+          const m = await import("../Pages/Reglas");
+          return { Component: m.default };
+        },
+      },
     ],
   },
 ]);
