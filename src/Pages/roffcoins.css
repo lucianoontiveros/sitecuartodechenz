@@ -1,14 +1,46 @@
-/* RoffCoins Component Styles */
+/* RoffCoins Component Styles - Optimizado para rendimiento */
 
-/* New Styles from JSX */
+/* Variables CSS personalizadas */
+:root {
+  --primary-color: #4f46e5;
+  --secondary-color: #818cf8;
+  --accent-color: #f472b6;
+  --text-color: #f3f4f6;
+  --bg-dark: #1f2937;
+  --bg-darker: #111827;
+  --transition: all 0.3s ease;
+  --border-radius: 0.5rem;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Reset y estilos base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-darker);
+  color: var(--text-color);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  font-display: swap;
+}
+
+/* Contenedor principal - Optimizado */
 .roffcoins-container {
-  max-width: 56rem;
+  max-width: 1200px;
   margin: 2rem auto;
   padding: 1.5rem;
-  color: #f3f4f6;
-  border-radius: 0.5rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--text-color);
+  font-family: inherit;
 }
 
 .roffcoins-title {
@@ -598,5 +630,242 @@
     width: 28px;
     height: 28px;
     font-size: 14px;
+  }
+}
+
+/* Menesteres Section Styles */
+.menesteres-section {
+  padding: 60px 20px;
+  background-color: #000000;
+  color: var(--text-color);
+}
+
+.menesteres-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+.menester-card {
+  background: #111111;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menester-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.menester-header {
+  padding: 20px;
+  text-align: center;
+  background: #000000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menester-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.menester-subtitle {
+  font-size: 1rem;
+  color: #a5b4fc;
+  margin-bottom: 0;
+}
+
+.menester-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.menester-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.menester-description {
+  padding: 20px;
+  flex-grow: 1;
+  background: #000000;
+}
+
+.menester-description p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #e5e7eb;
+}
+
+.menester-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* Galería optimizada */
+.gallery-section {
+  max-width: 1200px;
+  margin: 4rem auto 0;
+  padding: 0 1rem;
+}
+
+.gallery-section .menesteres-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(280px, 1fr)); /* 3 columnas flexibles para menesteres */
+  gap: 2rem; /* Mayor separación para menesteres */
+  margin-top: 2rem;
+  justify-content: center; /* Centrar el grid completo */
+  width: 100%; /* Ocupa el 100% del contenedor */
+  max-width: 1200px; /* Ancho máximo óptimo para 3 cards */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery-title {
+  text-align: center;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: 2rem;
+  color: aquamarine;
+  font-weight: 700;
+}
+
+.croquetas-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(250px, 1fr)); /* 4 columnas flexibles que ocupan el 100% */
+  gap: 1.5rem; /* Separación ajustada */
+  margin-top: 2rem;
+  justify-content: center; /* Centrar el grid completo */
+  width: 100%; /* Ocupa el 100% del contenedor */
+  max-width: 1400px; /* Ancho máximo para no estirar demasiado */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery-item {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  position: relative;
+  aspect-ratio: 4/5;
+  background: #000;
+  min-height: 350px;
+  width: 100%; /* Las cards ocupan todo el espacio disponible de su columna */
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+.gallery-item:hover .gallery-image {
+  filter: brightness(0.8);
+}
+
+.croquetas-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  backdrop-filter: blur(8px);
+  white-space: nowrap;
+  z-index: 2;
+  opacity: 0.9;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gallery-item:hover .croquetas-badge {
+  top: 50%;
+  left: 50%;
+  right: auto;
+  transform: translate(-50%, -50%) scale(1.1);
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  border-color: white;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .menesteres-container {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+  
+  .menester-card {
+    max-width: 100%;
+  }
+  
+  .gallery-section .menesteres-grid {
+    grid-template-columns: repeat(2, minmax(220px, 1fr)); /* 2 columnas flexibles para menesteres en tablets */
+    gap: 1.5rem; /* Separación consistente */
+    justify-content: center;
+    max-width: 600px; /* Ancho máximo ajustado */
+  }
+
+  .croquetas-grid {
+    grid-template-columns: repeat(2, minmax(200px, 1fr)); /* 2 columnas flexibles en tablets */
+    gap: 1.5rem; /* Separación consistente */
+    justify-content: center;
+    max-width: 800px; /* Ancho máximo ajustado */
+  }
+
+  .gallery-item {
+    aspect-ratio: 3/4;
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-section .menesteres-grid {
+    grid-template-columns: 1fr; /* 1 columna para menesteres en móviles */
+    gap: 1.5rem; /* Separación consistente */
+    justify-content: center;
+    max-width: 350px; /* Ancho máximo para móviles */
+  }
+  
+  .croquetas-grid {
+    grid-template-columns: 1fr; /* 1 columna en móviles */
+    gap: 1.5rem; /* Separación consistente */
+    justify-content: center;
+    max-width: 400px; /* Ancho máximo para móviles */
+  }
+  
+  .gallery-item {
+    aspect-ratio: 2/3;
+    min-height: 240px;
+  }
+  
+  .menester-title {
+    font-size: 1.3rem;
+  }
+  
+  .menester-subtitle {
+    font-size: 0.9rem;
   }
 }

@@ -11,6 +11,7 @@ import card_comando_userdata from "/card_comandos_3.png";
 import IconList from "../Components/img/IconList.jsx";
 import IconActivities from "../Components/img/IconActivities.jsx";
 import IconDataUser from "../Components/img/IconDataUser.jsx";
+import IconExam from "../Components/img/IconExam.jsx";
 import CommandButton from "../Components/buttons/CommandButton";
 
 const Comandos = () => {
@@ -20,10 +21,11 @@ const Comandos = () => {
   const [ref3, isVisible3] = useScrollAnimation();
   const [ref4, isVisible4] = useScrollAnimation();
   const [ref5, isVisible5] = useScrollAnimation();
+  const [ref6, isVisible6] = useScrollAnimation();
 
   return (
     <>
-      <style jsx global>{`
+      <style>{`
         @keyframes fadeInUp {
           from {
             opacity: 0;
@@ -801,6 +803,15 @@ const Comandos = () => {
               />  
               <p>Tomando café ☕</p>
             </li>
+
+             <li>
+            <CommandButton 
+                displayText="!colacao / !chocolatada "
+                command="!chocolatada"
+              />  
+              <p>Tomando una chocolatada</p>
+            </li>
+
             <li>
             <CommandButton 
                 displayText="!latte"
@@ -1193,6 +1204,197 @@ const Comandos = () => {
               </p>{" "}
             </li>{" "}
           </ul>{" "}
+        </div>
+      </section>
+
+      <div id="gestion-examenes"></div>
+      {/* Comandos de Gestión de Exámenes */}
+      <section className="container_comandos" >
+        <div className="container_comandos_titles">
+          <div className="container_comandos_titles_text">
+            <h3>🎓 Gestión de Exámenes</h3>
+            <p>
+              Administra tus exámenes de forma simple con comandos intuitivos. Registra fechas, consulta tus próximos exámenes y mantén el control académico.
+            </p>
+          </div>
+        </div>
+
+        {/* AGREGAR EXAMEN */}
+        <div className="container_comandos_card">
+          <div>
+            <h3>➕ Agregar Examen</h3>
+          </div>
+          <p className="container_comandos_card_p">
+            Registra un nuevo examen en el sistema con fecha, tipo y descripción.
+          </p>
+          <ul className="container_comandos_card_list">
+            <li>
+              <CommandButton 
+                displayText="!addexam dd-mm TIPO descripción"
+                command="!addexam |Borra aquí y escribe la fecha| |Borra aquí y escribe el tipo| |Borra aquí y escribe la descripción|"
+              />
+              <p>
+                <strong>Formato:</strong> día-mes (<code>dd-mm</code>) → Ej: <code>12-03</code><br/>
+                <strong>Tipo:</strong> <code>FIN</code> (Final), <code>REC</code> (Recuperatorio), <code>PAR</code> (Parcial)<br/>
+                <strong>Descripción:</strong> nombre de la materia
+              </p>
+              <p>
+                <strong>Ejemplos:</strong><br/>
+                <code>!addexam 12-03 FIN Neumonía</code><br/>
+                <code>!addexam 10-09 REC Matemática II</code><br/>
+                <code>!addexam 25-04 PAR Historia Medieval</code>
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        {/* VER EXÁMENES */}
+        <div className="container_comandos_card">
+          <div>
+            <h3>👁️ Ver tus Exámenes</h3>
+          </div>
+          <p className="container_comandos_card_p">
+            Consulta todos tus exámenes pendientes con información detallada.
+          </p>
+          <ul className="container_comandos_card_list">
+            <li>
+              <CommandButton 
+                displayText="!reviewexam"
+                command="!reviewexam"
+              />
+              <p>
+                Muestra tu lista personal de exámenes con:<br/>
+                • ID único de cada examen<br/>
+                • Fecha, tipo y descripción<br/>
+                • Eliminación automática de exámenes vencidos
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        {/* ELIMINAR EXÁMENES */}
+        <div className="container_comandos_card">
+          <div>
+            <h3>🗑️ Eliminar Exámenes</h3>
+          </div>
+          <p className="container_comandos_card_p">
+            Gestiona la eliminación de exámenes de forma individual o masiva.
+          </p>
+          <ul className="container_comandos_card_list">
+            <li>
+              <CommandButton 
+                displayText="!examdelete ID"
+                command="!examdelete [Borra aquí y escribe el ID del examen]"
+              />
+              <p>
+                Elimina un examen específico usando su ID único (obtenido con <code>!reviewexam</code>).<br/><br/>
+                <strong>Ejemplo:</strong> <code>!examdelete abc123</code>
+              </p>
+            </li>
+            <li>
+              <CommandButton 
+                displayText="!deleteallexam"
+                command="!deleteallexam"
+              />
+              <p>
+                Borra toda tu lista de exámenes registrados con confirmación automática.
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        {/* VER RESUMEN GLOBAL */}
+        <div className="container_comandos_card">
+          <div>
+            <h3>🌍 Ver Resumen Global</h3>
+          </div>
+          <p className="container_comandos_card_p">
+            Consulta los exámenes de todos los usuarios de la comunidad.
+          </p>
+          <ul className="container_comandos_card_list">
+            <li>
+              <CommandButton 
+                displayText="!summary"
+                command="!summary"
+              />
+              <p>
+                Muestra los exámenes de los próximos 30 días:<br/>
+                • Ordenados por fecha (más próximos primero)<br/>
+                • Indicadores visuales de urgencia:<br/>
+                &nbsp;&nbsp;🔴 <strong>Urgente:</strong> ≤ 3 días<br/>
+                &nbsp;&nbsp;🟡 <strong>Moderado:</strong> ≤ 7 días<br/>
+                &nbsp;&nbsp;🟢 <strong>Tranquilo:</strong> &gt; 7 días
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        {/* FUNCIONAMIENTO DEL SISTEMA */}
+        <div className="container_comandos_card">
+          <div>
+            <h3>⚙️ Funcionamiento del Sistema</h3>
+          </div>
+          <p className="container_comandos_card_p">
+            Características avanzadas del sistema de gestión de exámenes.
+          </p>
+          <ul className="container_comandos_card_list">
+            <li>
+              <div style={{padding: '1em', color: 'black', backgroundColor: 'aquamarine', borderRadius: '1em', fontSize: '1em', fontWeight: '600', minWidth: '10em', width: 'auto', marginBottom: '1em'}}>
+                Características del Sistema
+              </div>
+              <p>
+                ✅ Eliminación automática de fechas pasadas<br/>
+                ✅ Validación de fechas ingresadas<br/>
+                ✅ Orden automático por proximidad<br/>
+                ✅ Generación de IDs únicos (3 caracteres)<br/>
+                ✅ Confirmaciones automáticas en cada acción<br/>
+                ✅ Acceso global al resumen (<code>!summary</code>)
+              </p>
+            </li>
+            <li>
+              <div style={{padding: '1em', color: 'black', backgroundColor: 'aquamarine', borderRadius: '1em', fontSize: '1em', fontWeight: '600', minWidth: '10em', width: 'auto', marginBottom: '1em'}}>
+                Resumen Rápido
+              </div>
+              <div style={{marginTop: '1em'}}>
+                <table style={{width: '100%', borderCollapse: 'collapse'}}>
+                  <thead>
+                    <tr style={{backgroundColor: 'aquamarine'}}>
+                      <th style={{padding: '0.5em', border: '1px solid #333', textAlign: 'left'}}>Comando</th>
+                      <th style={{padding: '0.5em', border: '1px solid #333', textAlign: 'left'}}>Acción</th>
+                      <th style={{padding: '0.5em', border: '1px solid #333', textAlign: 'left'}}>Alcance</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style={{padding: '0.5em', border: '1px solid #333'}}><code>!addexam</code></td>
+                      <td style={{padding: '0.5em', border: '1px solid #333'}}>Agregar examen</td>
+                      <td style={{padding: '0.5em', border: '1px solid #333'}}>Individual</td>
+                    </tr>
+                    <tr>
+                      <td style={{padding: '0.5em', border: '1px solid #333'}}><code>!reviewexam</code></td>
+                      <td style={{padding: '0.5em', border: '1px solid #333'}}>Revisar exámenes</td>
+                      <td style={{padding: '0.5em', border: '1px solid #333'}}>Individual</td>
+                    </tr>
+                    <tr>
+                      <td style={{padding: '0.5em', border: '1px solid #333'}}><code>!examdelete</code></td>
+                      <td style={{padding: '0.5em', border: '1px solid #333'}}>Eliminar examen específico</td>
+                      <td style={{padding: '0.5em', border: '1px solid #333'}}>Individual</td>
+                    </tr>
+                    <tr>
+                      <td style={{padding: '0.5em', border: '1px solid #333'}}><code>!deleteallexam</code></td>
+                      <td style={{padding: '0.5em', border: '1px solid #333'}}>Eliminar todos los exámenes</td>
+                      <td style={{padding: '0.5em', border: '1px solid #333'}}>Global</td>
+                    </tr>
+                    <tr>
+                      <td style={{padding: '0.5em', border: '1px solid #333'}}><code>!summary</code></td>
+                      <td style={{padding: '0.5em', border: '1px solid #333'}}>Ver resumen</td>
+                      <td style={{padding: '0.5em', border: '1px solid #333'}}>Global</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
       </div>

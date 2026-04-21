@@ -2,8 +2,8 @@ import * as React from "react";
 const Icon_instagram = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="26"
-    height="26"
+    width="28"
+    height="28"
     viewBox="0 0 24 24"
   >
     <circle

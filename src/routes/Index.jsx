@@ -14,6 +14,7 @@ export const router = createBrowserRouter([
           const m = await import("../Pages/Inicio");
           return { Component: m.default };
         },
+        HydrateFallback: () => <div style={{padding:'2rem', textAlign:'center'}}>Cargando…</div>,
       },
       {
         path: "/comandos/",
@@ -21,6 +22,7 @@ export const router = createBrowserRouter([
           const m = await import("../Pages/Comandos");
           return { Component: m.default };
         },
+        HydrateFallback: () => <div style={{padding:'2rem', textAlign:'center'}}>Cargando comandos…</div>,
       },
       {
         path: "/sonidos/",
@@ -28,6 +30,7 @@ export const router = createBrowserRouter([
           const m = await import("../Pages/Sonidos");
           return { Component: m.default };
         },
+        HydrateFallback: () => <div style={{padding:'2rem', textAlign:'center'}}>Cargando sonidos…</div>,
       },
       {
         path: "/avisos/",
@@ -35,6 +38,7 @@ export const router = createBrowserRouter([
           const m = await import("../Pages/Avisos");
           return { Component: m.default };
         },
+        HydrateFallback: () => <div style={{padding:'2rem', textAlign:'center'}}>Cargando avisos…</div>,
       },
       {
         path: "/croquetas/",
@@ -42,6 +46,7 @@ export const router = createBrowserRouter([
           const m = await import("../Pages/RoffCoins");
           return { Component: m.default };
         },
+        HydrateFallback: () => <div style={{padding:'2rem', textAlign:'center'}}>Cargando croquetas...</div>,
       },
       {
         path: "/reglas/",
@@ -49,6 +54,15 @@ export const router = createBrowserRouter([
           const m = await import("../Pages/Reglas");
           return { Component: m.default };
         },
+        HydrateFallback: () => <div style={{padding:'2rem', textAlign:'center'}}>Cargando reglas…</div>,
+      },
+      {
+        path: "/subscription/",
+        async lazy() {
+          const m = await import("../Pages/Subscription");
+          return { Component: m.default };
+        },
+        HydrateFallback: () => <div style={{padding:'2rem', textAlign:'center'}}>Cargando suscripción…</div>,
       },
     ],
   },

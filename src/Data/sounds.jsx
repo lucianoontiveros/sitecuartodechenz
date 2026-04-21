@@ -191,6 +191,38 @@ import anulo from "./sounds/!anulo.mp3";
 import lacuerpo from "./sounds/!lacuerpo.mp3";
 import gretiado from "./sounds/!gretiado.mp3";
 import power from "./sounds/!power.mp3";
+import deque from "./sounds/!deque.mp3";
+import oprem from "./sounds/!oprem.mp3";
+import unapaja from "./sounds/!unapaja.mp3";
+import hey from "./sounds/!hey.mp3";
+import box from "./sounds/!box.mp3"
+import sisepudo from "./sounds/!sisepudo.mp3"
+import ayuda from "./sounds/!ayuda.mp3"
+import besitos from "./sounds/!besitos.mp3"
+import buu from "./sounds/!buu.mp3"
+import calmate from "./sounds/!calmate.mp3"
+import creo from "./sounds/!creo.mp3"
+import derecho from "./sounds/!derecho.mp3" 
+import estirar from "./sounds/!estirar.mp3" 
+import lasalita from "./sounds/!lasalita.mp3" 
+import lee from "./sounds/!lee.mp3" 
+import nonos from "./sounds/!nonos.mp3" 
+import pin from "./sounds/!pin.mp3" 
+import ponele from "./sounds/!ponele.mp3" 
+import quete from "./sounds/!quete.mp3" 
+import quieto from "./sounds/!quieto.mp3" 
+import sahumerio from "./sounds/!sahumerio.mp3" 
+import sali from "./sounds/!sali.mp3" 
+import tastiste from "./sounds/!tastiste.mp3" 
+import tecago from "./sounds/!tecago.mp3" 
+import tequiero from "./sounds/!tequiero.mp3" 
+import yallego from "./sounds/!yallego.mp3" 
+import animochicas from "./sounds/!animochicas.mp3"
+import rotas from "./sounds/!rotas.mp3"
+import mecaigo from "./sounds/!mecaigo.mp3"
+
+
+
 
 
 
@@ -390,6 +422,35 @@ const sounds = {
   lacuerpo: lacuerpo,
   gretiado: gretiado,
   power: power,
+  deque: deque,
+  oprem: oprem,
+  unapaja: unapaja,
+  hey: hey,
+  box: box,
+  sisepudo: sisepudo, 
+  ayuda: ayuda,
+  besitos: besitos,
+  buu: buu,
+  calmate: calmate,
+  creo: creo,
+  derecho: derecho,
+  estirar: estirar,
+  lasalita: lasalita,
+  lee: lee,
+  nonos: nonos,
+  pin: pin,
+  ponele: ponele,
+  quete: quete,
+  quieto: quieto,
+  sahumerio: sahumerio,
+  sali: sali,
+  tastiste: tastiste,
+  tecago: tecago,
+  tequiero: tequiero,
+  yallego: yallego,
+  animochicas: animochicas,
+  rotas: rotas,
+  mecaigo: mecaigo,
 };
 
 export default sounds;

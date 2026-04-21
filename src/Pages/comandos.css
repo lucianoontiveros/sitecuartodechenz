@@ -2,17 +2,7 @@
   margin: 10em 0.3em;
 }
 
-.title_container_comandos {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.title_container_comandos h1 {
-  text-align: center;
-  font-size: 2em;
-}
+/* Estilos específicos de Comandos que no entran en conflicto con los globales */
 
 /* INDICE */
 
@@ -170,21 +160,6 @@
 }
 
 @media (min-width: 700px) {
-  .title_container_comandos {
-    margin: 10em;
-  }
-
-  .title_container_comandos {
-    width: 100vh;
-
-  }
-
-  .title_container_comandos h1 {
-    width: 100vh;
-    text-align: center;
-    font-size: 4em;
-  }
-
   .container_indice_item {
     display: flex;
     flex-direction: row;

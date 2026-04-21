@@ -13,12 +13,7 @@
   align-items: center;
 }
 
-.title_container_comandos {
-  margin: 2em 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+/* Estilos específicos de Avisos que no entran en conflicto con los globales */
 
 /* Sección principal de avisos */
 .aviso-principal {

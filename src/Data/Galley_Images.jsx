@@ -138,6 +138,35 @@ import gretiado from "./gallery/gretiado.png"
 import lacuerpo from "./gallery/lacuerpo.png"
 import anulo from "./gallery/anulo.png"
 import power from "./gallery/power.png"
+import deque from "./gallery/deque.png"
+import oprem from "./gallery/oprem.png"
+import unapaja from "./gallery/unapaja.png"
+import hey from "./gallery/hey.png"
+import box from "./gallery/box.png"
+import sisepudo from "./gallery/sisepudo.png"
+import ayuda from "./gallery/ayuda.png"
+import besitos from "./gallery/besitos.png"
+import buu from "./gallery/buu.png"
+import calmate from "./gallery/calmate.png"
+import creo from "./gallery/creo.png"
+import derecho from "./gallery/derecho.png"
+import estirar from "./gallery/estirar.png"
+import lasalita from "./gallery/lasalita.png"
+import lee from "./gallery/lee.png"
+import nonos from "./gallery/nonos.png"
+import pin from "./gallery/pin.png"
+import ponele from "./gallery/ponele.png"
+import quete from "./gallery/quete.png"
+import quieto from "./gallery/quieto.png"
+import sahumerio from "./gallery/sahumerio.png"
+import sali from "./gallery/sali.png"
+import tastiste from "./gallery/tastiste.png"
+import tecago from "./gallery/tecago.png"
+import tequiero from "./gallery/tequiero.png"
+import yallego from "./gallery/yallego.png"
+import animochicas from "./gallery/animochicas.png"
+import rotas from "./gallery/rotas.png"
+import mecaigo from "./gallery/mecaigo.png"
 
 const galleryImages = [
   { nombre: "abrechetada", image: abrechetada },
@@ -281,6 +310,35 @@ const galleryImages = [
   { nombre: "anulo", image: anulo},
   { nombre: "lacuerpo", image: lacuerpo},
   { nombre: "power", image: power},
+  { nombre: "deque", image: deque},
+  { nombre: "oprem", image: oprem},
+  { nombre: "unapaja", image: unapaja},
+  { nombre: "hey", image: hey},
+  { nombre: "box", image: box},
+  { nombre: "sisepudo", image: sisepudo},
+  { nombre: "ayuda", image: ayuda},
+  { nombre: "besitos", image: besitos},
+  { nombre: "buu", image: buu},
+  { nombre: "calmate", image: calmate},
+  { nombre: "creo", image: creo},
+  { nombre: "derecho", image: derecho},
+  { nombre: "estirar", image: estirar},
+  { nombre: "lasalita", image: lasalita},
+  { nombre: "lee", image: lee},
+  { nombre: "nonos", image: nonos},
+  { nombre: "pin", image: pin},
+  { nombre: "ponele", image: ponele},
+  { nombre: "quete", image: quete},
+  { nombre: "quieto", image: quieto},
+  { nombre: "sahumerio", image: sahumerio},
+  { nombre: "sali", image: sali},
+  { nombre: "tastiste", image: tastiste},
+  { nombre: "tecago", image: tecago},
+  { nombre: "tequiero", image: tequiero},
+  { nombre: "yallego", image: yallego},
+  { nombre: "animochicas", image: animochicas},
+  { nombre: "rotas", image: rotas},
+  { nombre: "mecaigo", image: mecaigo},
 ];
 
 export default galleryImages;

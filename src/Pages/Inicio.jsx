@@ -6,6 +6,8 @@ import Icon_instagram from "../Components/img_icons/Icon_instagram.jsx";
 import Icon_tiktok from "../Components/img_icons/Icon_tiktok.jsx";
 import Icon_x from "../Components/img_icons/Icon_x.jsx";
 import Icon_youtube from "../Components/img_icons/Icon_youtube.jsx";
+import Icon_discord from "../Components/img_icons/Icon_discord.jsx";
+import Icon_whatsapp from "../Components/img_icons/Icon_whatsapp.jsx";
 import img_presentation from "/img_presentation.png";
 import img_card_presentation from "/img_card_presentation.png";
 import img_cuarto_1 from "/img_cuarto_1.jpeg";
@@ -34,7 +36,7 @@ const Inicio = () => {
   
   return (
     <>
-      <style jsx global>{`
+      <style>{`
         @keyframes fadeInUp {
           from {
             opacity: 0;
@@ -395,34 +397,26 @@ const Inicio = () => {
               alt=""
             />
             <div className="card_text">
-              <h3>TURNO MADRUGADA</h3>
+              <h3>UN LUGAR PARA TI</h3>
               <p>
-                Por las mañanas, me dedico completamente a mi trabajo, por lo
-                que las transmisiones se ejecutan automáticamente, replicando un
-                entorno de productividad que respeta tus tiempos. Mantenemos los
-                intervalos de trabajo y descanso, asegurándonos de que puedas
-                continuar con tu rutina sin interrupciones.
+                Este espacio está pensado para acompañarte mientras estudias o trabajas, ofreciendo un ambiente de foco y constancia.
               </p>
               <ul>
-                <li>
-                  <IconTask />
-                  Mayor enfoque
-                </li>
                 <li>
                   <IconTask />
                   Gestion de tareas
                 </li>
                 <li>
                   <IconTask />
-                  comandos para interactuar
+                  Comandos para interactuar
                 </li>
                 <li>
                   <IconTask />
-                  Timer !focus para usaurios
+                  Timer !focus para usuarios
                 </li>
                 <li>
                   <IconTask />
-                  Escenas automáticas
+                  Juegos interactivos con el chat
                 </li>
                 <li>
                   <IconTask />
@@ -444,23 +438,24 @@ const Inicio = () => {
           >
             <div className="text_elements">
               <h3>NUESTROS HORARIOS</h3>
-              <p>
-                Este espacio está pensado para acompañarte mientras estudias o
-                trabajas, ofreciendo un ambiente de foco y constancia. Aunque no
-                esté presente en cada momento, sabes que estamos juntos en esta
-                jornada. Y al final de mi día laboral, estaré aquí para
-                interactuar contigo y compartir un descanso bien merecido.
-              </p>
-              <h5>EMISIONES DIARIAS</h5>
+          
+              <h5>LUNES A JUEVES</h5>
               <ul>
-                <li>Hora en Argentina: 04:00 a 19:00 hs</li>
-                <li>España: 09:00 a 00:00 hs</li>
-                <li>México: 01:00 a 16:00 hs</li>
-                <li>Colombia: 02:00 a 17:00 hs</li>
-                <li>México: 01:00 a 16:00 hs</li>
-                <li>Honduras: 01:00 a 16:00 hs</li>
-                <li>Brasil: 04:00 a 19:00 hs</li>
-                <li>Estados Unidos (Este): 03:00 a 18:00 hs</li>
+                <li>14:00 a 21:00 hs ARG</li>
+                <li>14:00 a 21:00 hs BRA</li>
+                <li>19:00 a 02:00 hs ESP</li>
+                <li>11:00 A 18:00 HS MEX</li>
+                <li>18:00 A 01:00 HS POR</li>
+                <li>12:00 A 19:00 HS COL</li>
+              </ul>
+              <h5>DOMINGOS Y SÁBADOS</h5>
+              <ul>
+                <li>14:00 a 21:00 hs ARG</li>
+                <li>14:00 a 21:00 hs BRA</li>
+                <li>19:00 a 02:00 hs ESP</li>
+                <li>11:00 A 18:00 HS MEX</li>
+                <li>18:00 A 01:00 HS POR</li>
+                <li>12:00 A 19:00 HS COL</li>
               </ul>
             </div>
           </div>
@@ -476,47 +471,38 @@ const Inicio = () => {
               alt=""
             />
             <div className="card_text">
-              <h3>TURNO TARDE - NOCHE</h3>
+              <h3>NOTIFICACIONES Y AVISOS</h3>
               <p>
-                Por las tardes, me uno a los directos para continuar mi
-                formación, explorar nuevo contenido y compartir momentos
-                interactivos con la comunidad. Durante los descansos, aprovecho
-                para conectarme contigo, creando un espacio único para
-                acompañarnos mientras avanzamos en nuestras metas.
+                Podes recibir notificaciones a través de nuestro discord y el grupo de whatsapp
+                para informarte cualquier novedad, también por Instagram por donde Chenz se encuentra más activo.
               </p>
-              <ul>
-                <li>
-                  <IconTask />
-                  Mi presencia durante el resto de la tarde
-                </li>
-                <li>
-                  <IconTask />
-                  Gestion de tareas
-                </li>
-                <li>
-                  <IconTask />
-                  comandos para interactuar
-                </li>
-                <li>
-                  <IconTask />
-                  Timer !focus para usaurios
-                </li>
-                <li>
-                  <IconTask />
-                  Juegos interactivos con el chat
-                </li>
-                <li>
-                  <IconTask />
-                  Música en los descansos
-                </li>
-              </ul>
+              <div className="social_buttons">
+                <button
+                  onClick={() => window.open("https://discord.gg/5NFDjMdkMk", "_blank")}
+                  className="social_button"
+                >
+                  Discord
+                </button>
+                <button
+                  onClick={() => window.open("https://chat.whatsapp.com/BUKr649TEl37GfzdcYd7gf", "_blank")}
+                  className="social_button"
+                >
+                  WhatsApp
+                </button>
+                <button
+                  onClick={() => window.open("https://www.instagram.com/luciano.a.ontiveros/", "_blank")}
+                  className="social_button"
+                >
+                  Instagram
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
       
       {/* Agregar estilos para las animaciones */}
-      <style jsx global>{`
+      <style>{`
         /* Asegurarse de que las imágenes y textos tengan transición suave */
         img, p, h1, h2, h3, h4, h5, h6, li {
           transition: opacity 0.3s ease-out, transform 0.3s ease-out;

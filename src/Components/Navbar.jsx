@@ -73,6 +73,16 @@ const Navbar = () => {
         >
           REGLAS
         </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            `link_items ${
+              isActive ? "text-green-400 font-bold underline" : "text-gray-500"
+            }`
+          }
+          to="/subscription"
+        >
+          SUBSCRIPTION
+        </NavLink>
       </>
     );
   };

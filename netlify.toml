@@ -1,0 +1,17 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Desactivar prerendering heredado
+[context.production]
+  [context.production.environment]
+    NETLIFY_ENABLE_PRERENDER = "false"
+
+# Configuración para SPA (React Router)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
