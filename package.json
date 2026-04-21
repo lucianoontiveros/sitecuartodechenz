@@ -1,18 +1,24 @@
 {
   "name": "12-sitecuartodechenz",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host --open",
     "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
+    "build:analyze": "vite build && npx vite-bundle-analyzer dist",
+    "preview": "vite preview --host --open",
+    "lint": "eslint . --fix",
+    "lint:check": "eslint .",
+    "format": "prettier --write .",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist node_modules/.vite",
     "postinstall": "flowbite-react patch"
   },
   "dependencies": {
     "aos": "^2.3.4",
     "flowbite-react": "^0.11.5",
+    "html-to-image": "^1.11.13",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.4.0",
@@ -29,7 +35,10 @@
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
+    "prettier": "^3.4.2",
     "tailwindcss": "^4.0.17",
-    "vite": "^6.2.2"
+    "typescript": "^5.7.2",
+    "vite": "^6.2.2",
+    "vite-bundle-analyzer": "^0.7.0"
   }
 }
