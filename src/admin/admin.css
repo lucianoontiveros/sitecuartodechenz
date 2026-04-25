@@ -209,6 +209,7 @@
 
 /* Avisos Manager Styles */
 .admin-avisos {
+  margin-top: 3rem;
   min-height: 100vh;
   background: black;
 }
