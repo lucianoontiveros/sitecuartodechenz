@@ -26,7 +26,23 @@ app.use(helmet({
 }));
 
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  origin: function (origin, callback) {
+    // Lista de orígenes permitidos
+    const allowedOrigins = [
+      'http://localhost:5173',
+      'https://cuartodechenzswm.netlify.app',
+      process.env.FRONTEND_URL
+    ].filter(Boolean); // Filtrar valores undefined/null
+    
+    // Permitir solicitudes sin origin (como mobile apps o herramientas de desarrollo)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
 
