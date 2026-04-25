@@ -1,6 +1,6 @@
 # Cuarto de Chenz - Sitio Web Oficial
 
-**Versión:** 1.0.0  
+**Versión:** 2.0.0
 **Estado:** Producción ✅
 
 ## 📝 Descripción
@@ -257,4 +257,4 @@ Este proyecto está bajo licencia MIT. Ver archivo [LICENSE](LICENSE) para más 
 
 ---
 
-**Cuarto de Chenz v1.0.0** - *Donde el esfuerzo se transforma en logros* 🚀
+**Cuarto de Chenz v2.0.0** - *Donde el esfuerzo se transforma en logros* 🚀
