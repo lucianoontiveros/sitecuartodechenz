@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-dotenv.config({ path: '.env.local' });
+dotenv.config();
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
@@ -26,7 +26,7 @@ app.use(helmet({
 }));
 
 app.use(cors({
-  origin: process.env.VITE_FRONTEND_URL || 'http://localhost:5173',
+  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
   credentials: true
 }));
 
@@ -56,7 +56,7 @@ app.use('/api/', apiLimiter);
 
 
 // MongoDB Connection
-const uri = `mongodb+srv://${process.env.VITE_MONGODB_USERNAME}:${process.env.VITE_MONGODB_PASSWORD}@${process.env.VITE_MONGODB_CLUSTER}/${process.env.VITE_MONGODB_DATABASE}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_CLUSTER}/${process.env.MONGODB_DATABASE}?retryWrites=true&w=majority`;
 const client = new MongoClient(uri);
 
 let db;
@@ -65,7 +65,7 @@ async function connectDB() {
   try {
     await client.connect();
     console.log('Connected to MongoDB');
-    db = client.db(process.env.VITE_MONGODB_DATABASE);
+    db = client.db(process.env.MONGODB_DATABASE);
     
     // Crear índice único para googleId en comentarios para prevenir duplicados
     await db.collection('comentarios').createIndex({ googleId: 1 }, { unique: true }).catch(err => {
@@ -82,11 +82,11 @@ connectDB();
 
 // Google OAuth Client
 const oauth2Client = new OAuth2Client(
-  process.env.VITE_GOOGLE_CLIENT_ID
+  process.env.GOOGLE_CLIENT_ID
 );
 
 // Emails autorizados para administración (separados por coma)
-const AUTHORIZED_EMAILS = (process.env.VITE_AUTHORIZED_EMAILS || 'luciano.a.ontiveros@gmail.com')
+const AUTHORIZED_EMAILS = (process.env.AUTHORIZED_EMAILS || 'luciano.a.ontiveros@gmail.com')
   .split(',')
   .map(email => email.trim().toLowerCase());
 
@@ -109,7 +109,7 @@ const authenticateToken = async (req, res, next) => {
     }
 
     // Verificar JWT
-    const decoded = jwt.verify(token, process.env.VITE_JWT_SECRET);
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded;
     req.tokenId = tokenRecord._id;
     next();
@@ -139,7 +139,7 @@ app.post('/api/auth/google-comment', async (req, res) => {
     // Verificar token de Google
     const ticket = await oauth2Client.verifyIdToken({
       idToken: token,
-      audience: process.env.VITE_GOOGLE_CLIENT_ID
+      audience: process.env.GOOGLE_CLIENT_ID
     });
     
     const payload = ticket.getPayload();
@@ -170,7 +170,7 @@ app.post('/api/auth/google', loginLimiter, async (req, res) => {
     // Verificar token de Google
     const ticket = await oauth2Client.verifyIdToken({
       idToken: token,
-      audience: process.env.VITE_GOOGLE_CLIENT_ID
+      audience: process.env.GOOGLE_CLIENT_ID
     });
     
     const payload = ticket.getPayload();
@@ -207,7 +207,7 @@ app.post('/api/auth/google', loginLimiter, async (req, res) => {
         email: user.email, 
         rol: user.rol 
       },
-      process.env.VITE_JWT_SECRET,
+      process.env.JWT_SECRET,
       { expiresIn: '7d' }
     );
     
