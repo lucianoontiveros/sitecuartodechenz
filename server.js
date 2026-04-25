@@ -66,6 +66,13 @@ async function connectDB() {
     await client.connect();
     console.log('Connected to MongoDB');
     db = client.db(process.env.VITE_MONGODB_DATABASE);
+    
+    // Crear índice único para googleId en comentarios para prevenir duplicados
+    await db.collection('comentarios').createIndex({ googleId: 1 }, { unique: true }).catch(err => {
+      if (err.code !== 85) { // Ignorar error si el índice ya existe
+        console.error('Error al crear índice único:', err);
+      }
+    });
   } catch (error) {
     console.error('MongoDB connection error:', error);
   }
@@ -112,6 +119,46 @@ const authenticateToken = async (req, res, next) => {
 };
 
 // Rutas de Autenticación
+app.post('/api/auth/google-comment', async (req, res) => {
+  try {
+    console.log('Recibida solicitud de autenticación de comentarios');
+    
+    if (!db) {
+      console.error('Base de datos no conectada');
+      return res.status(500).json({ error: 'Base de datos no conectada' });
+    }
+
+    const { token } = req.body;
+    
+    if (!token) {
+      console.error('No se proporcionó token');
+      return res.status(400).json({ error: 'No se proporcionó token' });
+    }
+    
+    console.log('Verificando token de Google...');
+    // Verificar token de Google
+    const ticket = await oauth2Client.verifyIdToken({
+      idToken: token,
+      audience: process.env.VITE_GOOGLE_CLIENT_ID
+    });
+    
+    const payload = ticket.getPayload();
+    console.log('Token verificado exitosamente para:', payload.email);
+    
+    // Devolver información del usuario sin restricciones de email
+    res.json({
+      user: {
+        sub: payload.sub, // ID único de Google
+        nombre: payload.name,
+        email: payload.email
+      }
+    });
+  } catch (error) {
+    console.error('Error en autenticación de comentarios:', error);
+    res.status(401).json({ error: 'Token de Google inválido: ' + error.message });
+  }
+});
+
 app.post('/api/auth/google', loginLimiter, async (req, res) => {
   try {
     if (!db) {
@@ -286,6 +333,116 @@ app.delete('/api/avisos/:id', authenticateToken, async (req, res) => {
   } catch (error) {
     console.error('Error al eliminar aviso:', error);
     res.status(500).json({ error: 'Error al eliminar aviso' });
+  }
+});
+
+// Rutas de Comentarios
+app.get('/api/comentarios', async (req, res) => {
+  try {
+    const comentariosCollection = db.collection('comentarios');
+    const comentarios = await comentariosCollection
+      .find({ activo: true })
+      .sort({ fechaCreacion: -1 })
+      .toArray();
+    res.json(comentarios);
+  } catch (error) {
+    console.error('Error al obtener comentarios:', error);
+    res.status(500).json({ error: 'Error al obtener comentarios' });
+  }
+});
+
+app.post('/api/comentarios', async (req, res) => {
+  try {
+    const { googleId, nombre, email, comentario, estrellas } = req.body;
+    
+    console.log('Intento de crear comentario para googleId:', googleId);
+    
+    // Verificar si el usuario ya tiene un comentario
+    const comentariosCollection = db.collection('comentarios');
+    const comentarioExistente = await comentariosCollection.findOne({ googleId });
+    
+    if (comentarioExistente) {
+      console.log('Comentario ya existe para googleId:', googleId);
+      return res.status(400).json({ error: 'Ya tienes un comentario registrado' });
+    }
+    
+    const nuevoComentario = {
+      googleId,
+      nombre,
+      email,
+      comentario,
+      estrellas,
+      fechaCreacion: new Date(),
+      activo: true
+    };
+    
+    console.log('Insertando nuevo comentario para:', nombre);
+    const result = await comentariosCollection.insertOne(nuevoComentario);
+    console.log('Comentario insertado con ID:', result.insertedId);
+    res.json({ ...nuevoComentario, _id: result.insertedId });
+  } catch (error) {
+    console.error('Error al crear comentario:', error);
+    
+    // Si es error de duplicado (código 11000 de MongoDB)
+    if (error.code === 11000) {
+      console.log('Error de duplicado detectado por índice único');
+      return res.status(400).json({ error: 'Ya tienes un comentario registrado' });
+    }
+    
+    res.status(500).json({ error: 'Error al crear comentario' });
+  }
+});
+
+app.put('/api/comentarios/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { googleId, comentario, estrellas } = req.body;
+    const comentariosCollection = db.collection('comentarios');
+    
+    // Verificar que el comentario pertenece al usuario
+    const comentarioExistente = await comentariosCollection.findOne({ _id: new ObjectId(id) });
+    
+    if (!comentarioExistente) {
+      return res.status(404).json({ error: 'Comentario no encontrado' });
+    }
+    
+    if (comentarioExistente.googleId !== googleId) {
+      return res.status(403).json({ error: 'No tienes permiso para editar este comentario' });
+    }
+    
+    const result = await comentariosCollection.updateOne(
+      { _id: new ObjectId(id) },
+      { $set: { comentario, estrellas, fechaActualizacion: new Date() } }
+    );
+    
+    if (result.matchedCount === 0) {
+      return res.status(404).json({ error: 'Comentario no encontrado' });
+    }
+    
+    res.json({ message: 'Comentario actualizado' });
+  } catch (error) {
+    console.error('Error al actualizar comentario:', error);
+    res.status(500).json({ error: 'Error al actualizar comentario' });
+  }
+});
+
+app.delete('/api/comentarios/:id', authenticateToken, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const comentariosCollection = db.collection('comentarios');
+    
+    const result = await comentariosCollection.deleteOne({
+      _id: new ObjectId(id)
+    });
+    
+    if (result.deletedCount === 0) {
+      return res.status(404).json({ error: 'Comentario no encontrado' });
+    }
+    
+    res.json({ message: 'Comentario eliminado' });
+  } catch (error) {
+    console.error('Error al eliminar comentario:', error);
+    res.status(500).json({ error: 'Error al eliminar comentario' });
   }
 });
 

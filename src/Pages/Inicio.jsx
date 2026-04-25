@@ -22,6 +22,7 @@ import IconMetrics from "../Components/img/IconMetrics.jsx";
 import IconTask from "../Components/img/IconTask.jsx";
 import { NavLink } from "react-router-dom";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import CarruselComentarios from "../Components/CarruselComentarios.jsx";
 
 const Inicio = () => {
   // Hooks para animaciones al hacer scroll
@@ -182,7 +183,7 @@ const Inicio = () => {
             </div>
             <div className="slogan_container">
               <h4>SABEMOS EL SIGNIFICADO DE TU ESFUERZO</h4>
-              <a href="#presentation">MI CUARTO</a>
+              <a href="#presentation_element">MI CUARTO</a>
             </div>
           </div>
         </section>
@@ -195,10 +196,14 @@ const Inicio = () => {
         </section>
         <div id="presentation"></div>
       </div>
+
+      {/* Carrusel de Comentarios */}
+      <CarruselComentarios />
      
       {/* Presentación del canal  */}
       <div className="presentation_container">
-        <div 
+        <div
+          id="presentation_element"
           ref={ref1}
           className={`presentation_element fade-in-up ${isVisible1 ? 'visible' : ''}`}
         >
