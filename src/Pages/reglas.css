@@ -1,3 +1,53 @@
+/* Estilos específicos para Reglas - Independientes de index.css */
+
+.title_container_comandos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
+.title_container_comandos h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.title_container_comandos .bar_icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.icon_bar_element {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: aquamarine;
+}
+
+.icon_bar_element:hover {
+  transform: translateY(-2px);
+  color: aquamarine;
+}
+
+.icon_bar_element svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
 .reglas-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -21,17 +71,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-/* Estilos específicos de Reglas que no entran en conflicto con los globales */
-
-.icon_bar_element {
-  color: aquamarine;
-  transition: color 0.3s ease;
-}
-
-.icon_bar_element:hover {
-  color: aquamarine;
 }
 
 .reglas-header {
@@ -84,8 +123,23 @@
   margin-bottom: 0.5rem;
 }
 
-/* Responsive Design */
+/* Responsive Design para Reglas */
 @media (max-width: 768px) {
+  .title_container_comandos h1 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .title_container_comandos .bar_icon {
+    gap: 0.8rem;
+    margin-top: 0.8rem;
+  }
+  
+  .icon_bar_element svg {
+    width: 24px;
+    height: 24px;
+  }
+
   .reglas-container {
     padding: 1rem;
   }
