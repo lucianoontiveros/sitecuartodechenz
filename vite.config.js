@@ -12,9 +12,17 @@ export default defineConfig({
   ],
   server: {
     port: 5173,
+    strictPort: true,
     host: true,
     open: true,
-    cors: true
+    cors: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+        secure: false
+      }
+    }
   },
   build: {
     target: 'es2015',

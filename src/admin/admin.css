@@ -1,0 +1,439 @@
+.admin-login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  
+}
+
+.admin-login-card {
+  padding: 3rem;
+  border: 0.2em solid aquamarine;
+  border-radius: 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+
+
+.admin-login-card h1 {
+  background: black;
+  color: aquamarine;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.admin-login-card p {
+  color: #f1f1f1;
+  margin-bottom: 2rem;
+}
+
+.google-login-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb {
+  background: transparent !important;
+}
+
+.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb * {
+  background: transparent !important;
+}
+
+.nsm7Bb-HzV7m-LgbsSe:hover .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb *,
+.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb:hover * {
+  color: black !important;
+}
+
+.nsm7Bb-HzV7m-LgbsSe:hover .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb svg,
+.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb:hover svg {
+  fill: inherit !important;
+}
+
+.error-message {
+  background: rgba(255, 0, 0, 0.1);
+  color: #ff6b6b;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  border: 0.2em solid #ff6b6b;
+}
+
+.loading-spinner {
+  color: aquamarine;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.login-info {
+  color: aquamarine;
+  font-size: 0.875rem;
+  margin-top: 2rem;
+}
+
+/* Dashboard Styles */
+.admin-dashboard {
+  margin-top: 3rem;
+  min-height: 100vh;
+  background: black;
+}
+
+.admin-header {
+  background: black;
+  padding: 1rem 2rem;
+  border-bottom: 0.2em solid aquamarine;
+}
+
+.admin-header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-header h1 {
+  color: aquamarine;
+  margin: 0;
+}
+
+.admin-user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-user-info span {
+  color: #f1f1f1;
+}
+
+.logout-btn {
+  background: aquamarine;
+  color: black;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.logout-btn:hover {
+  background: #7fffd4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.admin-main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.admin-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.admin-card {
+  background: black;
+  padding: 2rem;
+  border: 0.2em solid aquamarine;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.admin-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(127, 255, 212, 0.3);
+  border-color: #7fffd4;
+}
+
+.admin-card h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  color: aquamarine;
+}
+
+.admin-card p {
+  color: #f1f1f1;
+  margin: 0;
+}
+
+/* Avisos Manager Styles */
+.admin-avisos {
+  min-height: 100vh;
+  background: black;
+}
+
+.back-btn {
+  background: aquamarine;
+  color: black;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.back-btn:hover {
+  background: #7fffd4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.add-btn {
+  background: aquamarine;
+  color: black;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.add-btn:hover {
+  background: #7fffd4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.avisos-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.aviso-card {
+  background: black;
+  padding: 1.5rem;
+  border-radius: 2rem;
+  border: 0.2em solid aquamarine;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.aviso-card.urgente {
+  border-color: #ff6b6b;
+}
+
+.aviso-card.info {
+  border-color: #17a2b8;
+}
+
+.aviso-card.inactive {
+  opacity: 0.6;
+}
+
+.aviso-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.aviso-header h3 {
+  margin: 0;
+  color: aquamarine;
+}
+
+.tipo-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.tipo-badge.normal {
+  background: aquamarine;
+  color: black;
+}
+
+.tipo-badge.urgente {
+  background: #ff6b6b;
+  color: white;
+}
+
+.tipo-badge.info {
+  background: #17a2b8;
+  color: white;
+}
+
+.aviso-card p {
+  color: #f1f1f1;
+  margin: 0 0 1rem 0;
+}
+
+.aviso-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.aviso-actions button {
+  background: aquamarine;
+  color: black;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.aviso-actions button:hover {
+  background: #7fffd4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.aviso-actions .edit-btn:hover {
+  background: #ffc107;
+  color: black;
+}
+
+.aviso-actions .delete-btn:hover {
+  background: #dc3545;
+  color: white;
+}
+
+.toggle-btn {
+  background: #28a745 !important;
+  color: white;
+}
+
+.toggle-btn:hover {
+  background: #218838 !important;
+  color: white;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: black;
+  padding: 2rem;
+  border: 0.2em solid aquamarine;
+  border-radius: 2rem;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-content h2 {
+  margin: 0 0 1.5rem 0;
+  color: aquamarine;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: aquamarine;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 0.2em solid aquamarine;
+  border-radius: 1rem;
+  font-size: 1rem;
+  background: black;
+  color: #f1f1f1;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #7fffd4;
+  box-shadow: 0 0 0 0.2em rgba(127, 255, 212, 0.2);
+}
+
+.form-group label input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.cancel-btn {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  flex: 1;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.cancel-btn:hover {
+  background: #5a6268;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.submit-btn {
+  background: aquamarine;
+  color: black;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  flex: 1;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.submit-btn:hover {
+  background: #7fffd4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: black;
+  color: aquamarine;
+  font-size: 1.25rem;
+}
+
+.no-avisos {
+  text-align: center;
+  color: #f1f1f1;
+  padding: 2rem;
+}

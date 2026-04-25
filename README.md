@@ -20,7 +20,14 @@ Cuarto de Chenz es una plataforma web moderna diseñada para crear una comunidad
 - **Timer Personalizado**: Sistema !focus para usuarios individuales
 - **Juegos Interactivos**: Actividades para mantener el chat activo durante descansos
 
-### 📱 Integración Social
+### � Panel de Administración
+- **Autenticación Google OAuth**: Login seguro con Google
+- **Control de Acceso**: Solo emails autorizados pueden acceder
+- **Gestión de Avisos**: Crear, editar y eliminar avisos del sitio
+- **Sistema de Tokens**: Tokens JWT almacenados en MongoDB con revocación
+- **Seguridad**: Rate limiting, headers de seguridad, validación de tokens activos
+
+### � Integración Social
 - **Discord**: Comunidad principal para interacción y soporte
 - **WhatsApp**: Grupo para notificaciones importantes
 - **Redes Sociales**: Instagram, TikTok, YouTube, Twitter/X
@@ -53,6 +60,16 @@ Cuarto de Chenz es una plataforma web moderna diseñada para crear una comunidad
 - **TailwindCSS** - Framework de estilos
 - **Flowbite React** - Componentes UI
 - **AOS** - Animaciones al hacer scroll
+- **@react-oauth/google** - Autenticación Google OAuth
+
+### Backend
+- **Node.js** - Entorno de ejecución
+- **Express** - Framework de servidor
+- **MongoDB Atlas** - Base de datos NoSQL
+- **JWT** - Autenticación con tokens
+- **Google Auth Library** - Verificación de tokens OAuth
+- **Helmet** - Headers de seguridad
+- **express-rate-limit** - Rate limiting
 
 ### Desarrollo
 - **JavaScript/JSX** - Lenguaje principal
@@ -71,7 +88,7 @@ Cuarto de Chenz es una plataforma web moderna diseñada para crear una comunidad
 src/
 ├── Components/          # Componentes reutilizables
 │   ├── Footer.jsx       # Pie de página
-│   ├── Navbar.jsx       # Barra de navegación
+│   ├── Navbar.jsx       # Barra de navegación con login dinámico
 │   ├── buttons/         # Botones personalizados
 │   ├── card/            # Componentes de tarjetas
 │   ├── img/             # Iconos de imágenes
@@ -84,6 +101,10 @@ src/
 │   ├── Reglas.jsx       # Reglas del canal
 │   ├── RoffCoins.jsx    # Sistema de moneda virtual
 │   └── Subscription.jsx # Sistema de suscripciones
+├── admin/               # Panel de administración
+│   ├── AdminLogin.jsx   # Login con Google OAuth
+│   ├── AdminDashboard.jsx # Dashboard principal
+│   └── AvisosManager.jsx # Gestión de avisos
 ├── Layout/              # Layout principal
 ├── routes/              # Configuración de rutas
 ├── hooks/               # Hooks personalizados
@@ -117,6 +138,8 @@ npm run postinstall
 ```bash
 # Desarrollo
 npm run dev              # Servidor de desarrollo con hot reload
+npm run dev:server       # Servidor backend (Express)
+npm run dev:all          # Iniciar frontend y backend simultáneamente
 
 # Producción
 npm run build            # Build para producción
@@ -142,13 +165,37 @@ Crear archivo `.env.local` en la raíz del proyecto:
 VITE_APP_NAME=Cuarto de Chenz
 VITE_APP_VERSION=1.0.0
 
-# URLs de APIs (si aplica)
-VITE_API_URL=https://api.ejemplo.com
-VITE_DISCORD_WEBHOOK=https://discord.com/api/webhooks/...
+# MongoDB Atlas Configuration
+VITE_MONGODB_USERNAME=tu_usuario
+VITE_MONGODB_PASSWORD=tu_password
+VITE_MONGODB_CLUSTER=tu_cluster.mongodb.net
+VITE_MONGODB_DATABASE=tu_base_de_datos
+
+# Google OAuth Configuration
+VITE_GOOGLE_CLIENT_ID=tu_google_client_id
+VITE_GOOGLE_CLIENT_SECRET=tu_google_client_secret
+
+# JWT Secret (Genera uno seguro)
+VITE_JWT_SECRET=tu_jwt_secret
+
+# Emails autorizados para administración (separados por coma)
+VITE_AUTHORIZED_EMAILS=luciano.a.ontiveros@gmail.com,otro@email.com
+
+# URLs de APIs
+VITE_API_URL=http://localhost:3001/api
+VITE_FRONTEND_URL=http://localhost:5173
 
 # Configuración de analytics (opcional)
 VITE_GA_TRACKING_ID=GA-XXXXXXXXX
 ```
+
+### Configuración de Google OAuth
+1. Ir a [Google Cloud Console](https://console.cloud.google.com/)
+2. Crear un proyecto o seleccionar uno existente
+3. Habilitar Google+ API
+4. Crear credenciales OAuth 2.0 Client ID
+5. Agregar `http://localhost:5173` a Authorized JavaScript origins
+6. Copiar Client ID y Client Secret al `.env.local`
 
 ## 🌐 Despliegue
 

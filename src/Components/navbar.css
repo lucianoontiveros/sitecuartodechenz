@@ -10,6 +10,12 @@
   transition: transform 0.3s ease-in-out;
 }
 
+.link_container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .logo_container {
   padding: 0.3em;
   min-width: 4em;
@@ -47,4 +53,28 @@
   font-size: larger;
 }
 
+.login-button {
+  background-color: aquamarine;
+  color: black !important;
+  border: 2px solid aquamarine;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
 
+
+.login-button:hover {
+  background-color: black;
+  color: white !important;
+}
+
+.login-button:active {
+  background-color: white;
+  color: black !important;
+}
+
+.login-button.active {
+  background-color: white;
+  color: black !important;
+}

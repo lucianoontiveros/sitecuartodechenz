@@ -64,6 +64,30 @@ export const router = createBrowserRouter([
         },
         HydrateFallback: () => <div style={{padding:'2rem', textAlign:'center'}}>Cargando suscripción…</div>,
       },
+      {
+        path: "/admin/login",
+        async lazy() {
+          const m = await import("../admin/AdminLogin");
+          return { Component: m.default };
+        },
+        HydrateFallback: () => <div style={{padding:'2rem', textAlign:'center'}}>Cargando login…</div>,
+      },
+      {
+        path: "/admin/dashboard",
+        async lazy() {
+          const m = await import("../admin/AdminDashboard");
+          return { Component: m.default };
+        },
+        HydrateFallback: () => <div style={{padding:'2rem', textAlign:'center'}}>Cargando dashboard…</div>,
+      },
+      {
+        path: "/admin/avisos",
+        async lazy() {
+          const m = await import("../admin/AvisosManager");
+          return { Component: m.default };
+        },
+        HydrateFallback: () => <div style={{padding:'2rem', textAlign:'center'}}>Cargando avisos…</div>,
+      },
     ],
   },
 ]);

@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import "./navbar.css";
 import { useState, useRef, useEffect } from "react";
 import Menu from "./img/Menu.jsx";
@@ -7,7 +7,9 @@ import OutMenu from "./img/OutMenu.jsx";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [onList, setOnlist] = useState("hidden");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const menuRef = useRef(null); // Referencia al menú
+  const location = useLocation();
 
   const Links_elements = () => {
     return (
@@ -83,6 +85,25 @@ const Navbar = () => {
         >
           SUBSCRIPTION
         </NavLink>
+        {isLoggedIn ? (
+          <NavLink
+            className={({ isActive }) =>
+              `login-button ${isActive ? "active" : ""}`
+            }
+            to="/admin/dashboard"
+          >
+            PANEL
+          </NavLink>
+        ) : (
+          <NavLink
+            className={({ isActive }) =>
+              `login-button ${isActive ? "active" : ""}`
+            }
+            to="/admin/login"
+          >
+            LOGIN
+          </NavLink>
+        )}
       </>
     );
   };
@@ -114,6 +135,27 @@ const Navbar = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  // Verificar si el usuario está logueado
+  useEffect(() => {
+    const checkLoginStatus = () => {
+      const token = localStorage.getItem('adminToken');
+      setIsLoggedIn(!!token);
+    };
+
+    checkLoginStatus();
+
+    // Escuchar cambios en localStorage (para cuando se hace logout desde el panel)
+    const handleStorageChange = () => {
+      checkLoginStatus();
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+    };
+  }, [location]); // Re-verificar cuando cambia la ubicación
 
   return (
     <>

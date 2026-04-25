@@ -15,6 +15,7 @@ export default {
         teal: "#018DA5",
         mintGreen: "#67DDAB",
         darkGreen: "#0B9B8A",
+        aquamarine: "#7FFFD4",
         // Puedes definir más colores según tus necesidades
       },
     },
