@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 import './admin.css';
 
@@ -58,6 +58,32 @@ export default function AdminLogin() {
   const handleGoogleError = () => {
     setError('Error en el login con Google. Por favor intenta nuevamente.');
   };
+
+  // Forzar color negro en el texto del botón de Google al hacer click
+  useEffect(() => {
+    const forceBlackColor = () => {
+      const spans = document.querySelectorAll('.nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb span');
+      spans.forEach(span => {
+        span.style.setProperty('color', 'black', 'important');
+      });
+    };
+
+    const resetColor = () => {
+      const spans = document.querySelectorAll('.nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb span');
+      spans.forEach(span => {
+        span.style.removeProperty('color');
+      });
+    };
+
+    // Aplicar color negro en eventos de mouse
+    document.addEventListener('mousedown', forceBlackColor);
+    document.addEventListener('mouseup', resetColor);
+
+    return () => {
+      document.removeEventListener('mousedown', forceBlackColor);
+      document.removeEventListener('mouseup', resetColor);
+    };
+  }, []);
 
   return (
     <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>

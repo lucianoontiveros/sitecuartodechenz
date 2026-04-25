@@ -45,13 +45,53 @@
   background: transparent !important;
 }
 
+.nsm7Bb-HzV7m-LgbsSe:link .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb *,
+.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb:link * {
+  color: white !important;
+}
+
 .nsm7Bb-HzV7m-LgbsSe:hover .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb *,
 .nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb:hover * {
   color: black !important;
 }
 
+.nsm7Bb-HzV7m-LgbsSe:focus .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb *,
+.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb:focus * {
+  color: black !important;
+}
+
+.nsm7Bb-HzV7m-LgbsSe:active .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb *,
+.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb:active * {
+  color: black !important;
+}
+
+.nsm7Bb-HzV7m-LgbsSe:active .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb span,
+.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb:active span {
+  color: black !important;
+}
+
+.nsm7Bb-HzV7m-LgbsSe:visited .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb *,
+.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb:visited * {
+  color: black !important;
+}
+
+.nsm7Bb-HzV7m-LgbsSe:visited .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb span,
+.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb:visited span {
+  color: black !important;
+}
+
 .nsm7Bb-HzV7m-LgbsSe:hover .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb svg,
 .nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb:hover svg {
+  fill: inherit !important;
+}
+
+.nsm7Bb-HzV7m-LgbsSe:active .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb svg,
+.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb:active svg {
+  fill: inherit !important;
+}
+
+.nsm7Bb-HzV7m-LgbsSe:visited .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb svg,
+.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-bN97Pc-sM5MNb:visited svg {
   fill: inherit !important;
 }
 
