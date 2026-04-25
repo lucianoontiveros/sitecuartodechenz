@@ -12,14 +12,7 @@
   [context.production.environment]
     NETLIFY_ENABLE_PRERENDER = "false"
 
-# Redirigir llamadas API a Netlify Functions (prioridad alta)
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/api"
-  status = 200
-  force = true
-
-# Configuración para SPA (React Router) - fallback
+# Configuración para SPA (React Router)
 [[redirects]]
   from = "/*"
   to = "/index.html"
