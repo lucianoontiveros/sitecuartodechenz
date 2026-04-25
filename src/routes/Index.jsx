@@ -65,6 +65,14 @@ export const router = createBrowserRouter([
         HydrateFallback: () => <div style={{padding:'2rem', textAlign:'center'}}>Cargando suscripción…</div>,
       },
       {
+        path: "/comentario",
+        async lazy() {
+          const m = await import("../Pages/ComentarioForm");
+          return { Component: m.default };
+        },
+        HydrateFallback: () => <div style={{padding:'2rem', textAlign:'center'}}>Cargando formulario…</div>,
+      },
+      {
         path: "/admin/login",
         async lazy() {
           const m = await import("../admin/AdminLogin");
@@ -87,6 +95,14 @@ export const router = createBrowserRouter([
           return { Component: m.default };
         },
         HydrateFallback: () => <div style={{padding:'2rem', textAlign:'center'}}>Cargando avisos…</div>,
+      },
+      {
+        path: "/admin/comentarios",
+        async lazy() {
+          const m = await import("../admin/ComentariosManager");
+          return { Component: m.default };
+        },
+        HydrateFallback: () => <div style={{padding:'2rem', textAlign:'center'}}>Cargando comentarios…</div>,
       },
     ],
   },

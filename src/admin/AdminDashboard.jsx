@@ -71,6 +71,11 @@ export default function AdminDashboard() {
             <p>Gestionar avisos del sitio</p>
           </div>
           
+          <div className="admin-card" onClick={() => navigate('/admin/comentarios')}>
+            <h2>💬 Comentarios</h2>
+            <p>Gestionar comentarios de usuarios</p>
+          </div>
+          
           <div className="admin-card">
             <h2>👥 Usuarios</h2>
             <p>Gestionar usuarios (próximamente)</p>
