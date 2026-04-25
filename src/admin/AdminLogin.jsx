@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 import './admin.css';
+import api from '../services/api';
 
 export default function AdminLogin() {
   const [loading, setLoading] = useState(false);
@@ -11,45 +12,14 @@ export default function AdminLogin() {
     setError('');
     
     try {
-      const res = await fetch('/api/auth/google', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ token: response.credential })
-      });
-      
-      if (!res.ok) {
-        const text = await res.text();
-        try {
-          const errorData = JSON.parse(text);
-          throw new Error(errorData.error || 'Error en autenticación');
-        } catch (parseError) {
-          // Si no es JSON, usar el texto directamente
-          throw new Error(text || 'Error en autenticación');
-        }
-      }
-      
-      const { token, user } = await res.json();
+      const res = await api.post('/auth/google', { token: response.credential });
+      const { token, user } = res.data;
       localStorage.setItem('adminToken', token);
       localStorage.setItem('adminUser', JSON.stringify(user));
       window.location.href = '/admin/dashboard';
     } catch (error) {
       console.error('Error en login:', error);
-      // Extraer solo el mensaje de error, no el JSON completo
-      let errorMessage = 'Error al iniciar sesión. Por favor intenta nuevamente.';
-      if (error.message) {
-        // Si el mensaje contiene comillas dobles, probablemente es JSON
-        if (error.message.includes('"error"')) {
-          try {
-            const parsed = JSON.parse(error.message);
-            errorMessage = parsed.error || errorMessage;
-          } catch {
-            errorMessage = error.message;
-          }
-        } else {
-          errorMessage = error.message;
-        }
-      }
-      setError(errorMessage);
+      setError(error.response?.data?.error || error.message || 'Error al iniciar sesión. Por favor intenta nuevamente.');
     } finally {
       setLoading(false);
     }

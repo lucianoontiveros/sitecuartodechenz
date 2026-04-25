@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 import './comentario-form.css';
+import api from '../services/api';
 
 export default function ComentarioForm() {
   const navigate = useNavigate();
@@ -26,8 +27,8 @@ export default function ComentarioForm() {
 
   const verificarComentarioExistente = async (googleId) => {
     try {
-      const res = await fetch('/api/comentarios');
-      const comentarios = await res.json();
+      const res = await api.get('/comentarios');
+      const comentarios = res.data;
       const existente = comentarios.find(c => c.googleId === googleId);
       if (existente) {
         setComentarioExistente(existente);
@@ -46,18 +47,8 @@ export default function ComentarioForm() {
     setError('');
     
     try {
-      const res = await fetch('/api/auth/google-comment', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ token: response.credential })
-      });
-      
-      if (!res.ok) {
-        const errorData = await res.json();
-        throw new Error(errorData.error || 'Error en autenticación');
-      }
-      
-      const { user: googleUser } = await res.json();
+      const res = await api.post('/auth/google-comment', { token: response.credential });
+      const { user: googleUser } = res.data;
       const userData = {
         sub: googleUser.sub, // Usar el ID real de Google del backend
         nombre: googleUser.nombre,
@@ -69,7 +60,7 @@ export default function ComentarioForm() {
       await verificarComentarioExistente(userData.sub);
     } catch (error) {
       console.error('Error en login:', error);
-      setError(error.message);
+      setError(error.response?.data?.error || error.message || 'Error en autenticación');
     } finally {
       setLoading(false);
     }
@@ -124,24 +115,20 @@ export default function ComentarioForm() {
     setError('');
 
     try {
-      const url = comentarioExistente 
-        ? `/api/comentarios/${comentarioExistente._id}`
-        : '/api/comentarios';
-      const method = comentarioExistente ? 'PUT' : 'POST';
-      
-      const body = comentarioExistente
-        ? { googleId: user.sub, comentario: formData.comentario, estrellas: formData.estrellas }
-        : { googleId: user.sub, nombre: user.nombre, email: user.email, comentario: formData.comentario, estrellas: formData.estrellas };
-      
-      const res = await fetch(url, {
-        method,
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body)
-      });
-
-      if (!res.ok) {
-        const errorData = await res.json();
-        throw new Error(errorData.error || 'Error al guardar comentario');
+      if (comentarioExistente) {
+        await api.put(`/comentarios/${comentarioExistente._id}`, {
+          googleId: user.sub,
+          comentario: formData.comentario,
+          estrellas: formData.estrellas
+        });
+      } else {
+        await api.post('/comentarios', {
+          googleId: user.sub,
+          nombre: user.nombre,
+          email: user.email,
+          comentario: formData.comentario,
+          estrellas: formData.estrellas
+        });
       }
 
       localStorage.removeItem('comentarioUser');
@@ -151,7 +138,7 @@ export default function ComentarioForm() {
       navigate('/');
     } catch (error) {
       console.error('Error al guardar comentario:', error);
-      setError(error.message);
+      setError(error.response?.data?.error || error.message || 'Error al guardar comentario');
     } finally {
       setLoading(false);
       setIsSubmitting(false);

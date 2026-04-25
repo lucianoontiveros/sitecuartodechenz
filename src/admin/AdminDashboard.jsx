@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './admin.css';
+import api from '../services/api';
 
 export default function AdminDashboard() {
   const navigate = useNavigate();
@@ -29,13 +30,7 @@ export default function AdminDashboard() {
       
       if (token) {
         // Llamar al endpoint de logout para revocar el token
-        await fetch('/api/auth/logout', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-          }
-        });
+        await api.post('/auth/logout');
       }
       
       // Limpiar localStorage

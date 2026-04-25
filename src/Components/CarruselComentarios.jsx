@@ -4,6 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useNavigate } from 'react-router-dom';
 import './carrusel-comentarios.css';
+import api from '../services/api';
 
 const CarruselComentarios = () => {
   const [comentarios, setComentarios] = useState([]);
@@ -18,8 +19,8 @@ const CarruselComentarios = () => {
 
   const fetchComentarios = async () => {
     try {
-      const res = await fetch('/api/comentarios');
-      const data = await res.json();
+      const res = await api.get('/comentarios');
+      const data = res.data;
       // Eliminar duplicados basados en _id
       const uniqueComentarios = data.filter((comentario, index, self) =>
         index === self.findIndex((c) => c._id === comentario._id)
