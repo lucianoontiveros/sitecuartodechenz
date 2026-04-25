@@ -15,3 +15,13 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Redirigir llamadas API a Netlify Functions
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+
+# Configuración de Netlify Functions
+[functions]
+  node_bundler = "esbuild"
