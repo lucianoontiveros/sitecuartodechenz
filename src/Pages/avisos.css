@@ -68,8 +68,12 @@
 }
 
 .aviso-texto p {
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.5rem;
   text-align: justify;
+}
+
+.tipo-badge {
+  margin-bottom: 1rem;
 }
 
 .aviso-texto a {

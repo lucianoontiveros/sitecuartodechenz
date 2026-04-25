@@ -12,7 +12,8 @@ export default function AvisosManager() {
     titulo: '',
     contenido: '',
     tipo: 'normal',
-    activo: true
+    activo: true,
+    imagen: ''
   });
 
   useEffect(() => {
@@ -60,7 +61,7 @@ export default function AvisosManager() {
       if (res.ok) {
         setShowForm(false);
         setEditingAviso(null);
-        setFormData({ titulo: '', contenido: '', tipo: 'normal', activo: true });
+        setFormData({ titulo: '', contenido: '', tipo: 'normal', activo: true, imagen: '' });
         fetchAvisos();
       }
     } catch (error) {
@@ -74,7 +75,8 @@ export default function AvisosManager() {
       titulo: aviso.titulo,
       contenido: aviso.contenido,
       tipo: aviso.tipo,
-      activo: aviso.activo
+      activo: aviso.activo,
+      imagen: aviso.imagen || ''
     });
     setShowForm(true);
   };
@@ -159,6 +161,16 @@ export default function AvisosManager() {
                   onChange={(e) => setFormData({...formData, contenido: e.target.value})}
                   required
                   rows={4}
+                />
+              </div>
+              
+              <div className="form-group">
+                <label>Imagen (opcional)</label>
+                <input
+                  type="text"
+                  value={formData.imagen}
+                  onChange={(e) => setFormData({...formData, imagen: e.target.value})}
+                  placeholder="URL de la imagen"
                 />
               </div>
               

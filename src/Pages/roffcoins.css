@@ -48,7 +48,7 @@ body {
   font-weight: 700;
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #ec4899;
+  color: aqua;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,7 +67,7 @@ body {
 
 .roffcoins-highlight {
   font-weight: 600;
-  color: #a78bfa;
+  color: aqua;
 }
 
 .roffcoins-heading {
@@ -76,7 +76,7 @@ body {
   margin: 1.5rem 0 0.5rem;
   display: flex;
   align-items: center;
-  color: #2dd4bf;
+  color: aqua;
 }
 
 .roffcoins-heading-emoji {
@@ -97,7 +97,7 @@ body {
   margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
-  color: #f472b6;
+  color: aqua;
 }
 
 .roffcoins-code {
@@ -105,11 +105,11 @@ body {
   background-color: #111827;
   padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
-  color: #2dd4bf;
+  color: aqua;
 }
 
 .roffcoins-email-link {
-  color: #2dd4bf;
+  color: aqua;
   font-weight: 700;
   font-size: 1.25rem;
   display: flex;
@@ -140,7 +140,7 @@ body {
   font-size: 1.125rem;
   line-height: 1.75;
   font-weight: 600;
-  color: #2dd4bf;
+  color: aqua;
   margin-top: 2rem;
 }
 
@@ -164,7 +164,7 @@ body {
 
 .section-title h2 {
   font-size: 2.5rem;
-  color: aquamarine;
+  color: aqua;
   text-transform: uppercase;
   letter-spacing: 2px;
   position: relative;
@@ -255,7 +255,7 @@ body {
   z-index: 1;
   opacity: 0.9;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  border: 0.1em solid aquamarine;
+  border: 0.1em solid aqua;
   border-radius: 1em;
   overflow: hidden;
   background: white;
@@ -326,7 +326,7 @@ body {
   text-align: center;
   background: black;
   border-radius: 0.5em;
-  border: 0.1em solid aquamarine;
+  border: 0.1em solid aqua;
   margin: 0 auto 20px auto;
   width: 80%;
   box-sizing: border-box;
@@ -342,11 +342,13 @@ body {
 .coin-info h3 {
   margin: 0;
   font-size: 1rem;
-  color: aquamarine;
+  color: aqua;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: all 0.3s ease;
   padding: 5px 0;
+  text-shadow: 0 0 10px gray, 0 0 20px gray, 0 0 30px gray;
+  filter: brightness(1.3);
 }
 
 .card.active .coin-info h3 {
@@ -679,7 +681,7 @@ body {
 
 .menester-subtitle {
   font-size: 1rem;
-  color: #a5b4fc;
+  color: aqua;
   margin-bottom: 0;
 }
 
@@ -735,7 +737,7 @@ body {
   text-align: center;
   font-size: clamp(1.5rem, 4vw, 2rem);
   margin-bottom: 2rem;
-  color: aquamarine;
+  color: aqua;
   font-weight: 700;
 }
 
@@ -794,6 +796,8 @@ body {
   opacity: 0.9;
   transition: var(--transition);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  text-shadow: 0 0 8px gray, 0 0 16px gray;
+  filter: brightness(1.2);
 }
 
 .gallery-item:hover .croquetas-badge {
