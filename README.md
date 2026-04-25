@@ -19,6 +19,7 @@ Cuarto de Chenz es una plataforma web moderna diseñada para crear una comunidad
 - **Galería de Sonidos**: Biblioteca completa con efectos de sonido para notificaciones
 - **Timer Personalizado**: Sistema !focus para usuarios individuales
 - **Juegos Interactivos**: Actividades para mantener el chat activo durante descansos
+- **Sistema de Comentarios**: Carrusel de comentarios con autenticación Google OAuth, edición y eliminación de comentarios, modal para visualización completa
 
 ### � Panel de Administración
 - **Autenticación Google OAuth**: Login seguro con Google
@@ -70,6 +71,7 @@ Cuarto de Chenz es una plataforma web moderna diseñada para crear una comunidad
 - **Google Auth Library** - Verificación de tokens OAuth
 - **Helmet** - Headers de seguridad
 - **express-rate-limit** - Rate limiting
+- **react-slick** - Carrusel de comentarios
 
 ### Desarrollo
 - **JavaScript/JSX** - Lenguaje principal
@@ -89,6 +91,7 @@ src/
 ├── Components/          # Componentes reutilizables
 │   ├── Footer.jsx       # Pie de página
 │   ├── Navbar.jsx       # Barra de navegación con login dinámico
+│   ├── CarruselComentarios.jsx # Carrusel de comentarios con modal
 │   ├── buttons/         # Botones personalizados
 │   ├── card/            # Componentes de tarjetas
 │   ├── img/             # Iconos de imágenes
@@ -98,6 +101,7 @@ src/
 │   ├── Comandos.jsx     # Sistema de comandos
 │   ├── Sonidos.jsx      # Galería de sonidos
 │   ├── Avisos.jsx       # Sistema de notificaciones
+│   ├── ComentarioForm.jsx # Formulario de comentarios con Google OAuth
 │   ├── Reglas.jsx       # Reglas del canal
 │   ├── RoffCoins.jsx    # Sistema de moneda virtual
 │   └── Subscription.jsx # Sistema de suscripciones
