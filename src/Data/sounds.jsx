@@ -220,7 +220,7 @@ import yallego from "./sounds/!yallego.mp3"
 import animochicas from "./sounds/!animochicas.mp3"
 import rotas from "./sounds/!rotas.mp3"
 import mecaigo from "./sounds/!mecaigo.mp3"
-
+import pentakill from "./sounds/!pentakill.mp3"
 
 
 
@@ -451,6 +451,7 @@ const sounds = {
   animochicas: animochicas,
   rotas: rotas,
   mecaigo: mecaigo,
+  pentakill: pentakill,
 };
 
 export default sounds;
