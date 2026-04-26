@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Allow search engines to crawl all content
+Allow: /comandos/
+Allow: /sonidos/
+Allow: /avisos/
+Allow: /reglas/
+Allow: /croquetas/
+Allow: /subscription/
+Allow: /comentario
+
+# Block admin areas from public indexing
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://cuartodechenzswm.netlify.app/sitemap.xml
+
+# Crawl delay (optional, be nice to servers)
+Crawl-delay: 1

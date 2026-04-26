@@ -188,11 +188,15 @@ const Inicio = () => {
           </div>
         </section>
         <section className="img_section">
-          <img
-            src="/img_inicio.png"
-            alt="Inicio"
-            className="img_inicio"
-          />
+          <picture>
+            <source srcSet="/img_inicio.webp" type="image/webp" />
+            <img
+              src="/img_inicio.png"
+              alt="Inicio - Cuarto de Chenz"
+              className="img_inicio"
+              loading="lazy"
+            />
+          </picture>
         </section>
         <div id="presentation"></div>
       </div>
@@ -210,7 +214,8 @@ const Inicio = () => {
           <img
             className="media_element img"
             src={img_presentation}
-            alt="imagen presentación"
+            alt="Presentación - Cuarto de Chenz"
+            loading="lazy"
           />
           <div className="presentation_element_text">
             <div className="tittle_and_icon">

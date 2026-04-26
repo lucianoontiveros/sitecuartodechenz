@@ -66,6 +66,125 @@
       ]
     }
     </script>
+
+    <!-- Core Web Vitals Monitoring -->
+    <script>
+      // Core Web Vitals monitoring implementation
+      (function() {
+        'use strict';
+        
+        // Utility function to send data to console/analytics
+        function sendToAnalytics(metric) {
+          console.log('Core Web Vital:', metric.name, metric.value, metric);
+          
+          // Optional: Send to analytics service
+          if (typeof gtag !== 'undefined') {
+            gtag('event', metric.name, {
+              event_category: 'Web Vitals',
+              event_label: metric.id,
+              value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+              non_interaction: true
+            });
+          }
+        }
+
+        // Largest Contentful Paint (LCP)
+        function observeLCP() {
+          const observer = new PerformanceObserver((entryList) => {
+            const entries = entryList.getEntries();
+            const lastEntry = entries[entries.length - 1];
+            sendToAnalytics({
+              name: 'LCP',
+              value: lastEntry.startTime,
+              id: lastEntry.id
+            });
+          });
+          observer.observe({ entryTypes: ['largest-contentful-paint'] });
+        }
+
+        // First Input Delay (FID) - replaced by INP in newer browsers
+        function observeFID() {
+          const observer = new PerformanceObserver((entryList) => {
+            const entries = entryList.getEntries();
+            entries.forEach(entry => {
+              sendToAnalytics({
+                name: 'FID',
+                value: entry.processingStart - entry.startTime,
+                id: entry.id
+              });
+            });
+          });
+          observer.observe({ entryTypes: ['first-input'] });
+        }
+
+        // Interaction to Next Paint (INP) - newer metric
+        function observeINP() {
+          const observer = new PerformanceObserver((entryList) => {
+            const entries = entryList.getEntries();
+            entries.forEach(entry => {
+              if (entry.interactionId) {
+                sendToAnalytics({
+                  name: 'INP',
+                  value: entry.processingStart - entry.startTime,
+                  id: entry.interactionId
+                });
+              }
+            });
+          });
+          observer.observe({ entryTypes: ['event'] });
+        }
+
+        // Cumulative Layout Shift (CLS)
+        function observeCLS() {
+          let clsValue = 0;
+          let clsEntries = [];
+          
+          const observer = new PerformanceObserver((entryList) => {
+            const entries = entryList.getEntries();
+            entries.forEach(entry => {
+              if (!entry.hadRecentInput) {
+                clsValue += entry.value;
+                clsEntries.push(entry);
+              }
+            });
+            
+            // Send final CLS value after page load
+            if (document.readyState === 'complete') {
+              sendToAnalytics({
+                name: 'CLS',
+                value: clsValue,
+                id: clsEntries.length > 0 ? clsEntries[clsEntries.length - 1].id : 'cls-final'
+              });
+            }
+          });
+          observer.observe({ entryTypes: ['layout-shift'] });
+        }
+
+        // Initialize all observers
+        if ('PerformanceObserver' in window) {
+          observeLCP();
+          observeFID();
+          observeCLS();
+          
+          // Try INP if supported (newer metric)
+          try {
+            observeINP();
+          } catch (e) {
+            console.log('INP not supported, using FID');
+          }
+        }
+
+        // Fallback for browsers without PerformanceObserver
+        window.addEventListener('load', () => {
+          setTimeout(() => {
+            const navigation = performance.getEntriesByType('navigation')[0];
+            if (navigation) {
+              console.log('Page Load Time:', navigation.loadEventEnd - navigation.fetchStart, 'ms');
+            }
+          }, 0);
+        });
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
