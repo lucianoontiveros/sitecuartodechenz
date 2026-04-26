@@ -63,7 +63,12 @@ export default function ComentariosManager() {
   };
 
   if (loading) {
-    return <div className="loading-container">Cargando comentarios...</div>;
+    return (
+      <div className="loading-container">
+        <div className="loading-spinner"></div>
+        <span>Cargando comentarios...</span>
+      </div>
+    );
   }
 
   return (
