@@ -79,8 +79,44 @@
   color: black !important;
 }
 
+/* Desktop and Mobile visibility */
+.desktop-only {
+  display: flex;
+}
+
+.mobile-menu-btn {
+  display: none;
+}
+
+.mobile-menu-btn button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-btn button:hover {
+  background: rgba(127, 255, 212, 0.1);
+}
+
+.mobile-menu-btn button svg {
+  width: 24px;
+  height: 24px;
+  fill: aquamarine;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+  
   .navbar_container {
     padding: 0.75rem 1rem;
   }
