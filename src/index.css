@@ -9,6 +9,24 @@
   background-color: black;
 }
 
+/* Reset cursor to default for all elements */
+* {
+  cursor: auto !important;
+}
+
+/* Specific cursor types for interactive elements */
+button {
+  cursor: pointer !important;
+}
+
+a {
+  cursor: pointer !important;
+}
+
+input, textarea, select {
+  cursor: text !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -56,7 +74,7 @@ ol {
 button {
   background: none;
   border: none;
-  cursor: pointer;
+  cursor: pointer !important;
 }
 
 /* Remove default table styles */
