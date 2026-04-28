@@ -188,15 +188,12 @@ const Inicio = () => {
           </div>
         </section>
         <section className="img_section">
-          <picture>
-            <source srcSet="/img_inicio.webp" type="image/webp" />
-            <img
-              src="/img_inicio.png"
-              alt="Inicio - Cuarto de Chenz"
-              className="img_inicio"
-              loading="lazy"
-            />
-          </picture>
+          <img
+            src="/img_inicio.png"
+            alt="Inicio - Cuarto de Chenz"
+            className="img_inicio"
+            loading="lazy"
+          />
         </section>
         <div id="presentation"></div>
       </div>
