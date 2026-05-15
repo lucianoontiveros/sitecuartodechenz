@@ -168,6 +168,7 @@ import animochicas from "./gallery/animochicas.png"
 import rotas from "./gallery/rotas.png"
 import mecaigo from "./gallery/mecaigo.png"
 import pentakill from "./gallery/pentakill.png"
+import jugada from "./gallery/jugada.png"
 
 const galleryImages = [
   { nombre: "abrechetada", image: abrechetada },
@@ -341,6 +342,7 @@ const galleryImages = [
   { nombre: "rotas", image: rotas},
   { nombre: "mecaigo", image: mecaigo},
   { nombre: "pentakill", image: pentakill},
+  { nombre: "jugada", image: jugada},
 ];
 
 export default galleryImages;
