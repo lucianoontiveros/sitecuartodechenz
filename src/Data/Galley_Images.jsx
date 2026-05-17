@@ -169,6 +169,8 @@ import rotas from "./gallery/rotas.png"
 import mecaigo from "./gallery/mecaigo.png"
 import pentakill from "./gallery/pentakill.png"
 import jugada from "./gallery/jugada.png"
+import elchancho from "./gallery/elchancho.png"
+import paralizado from "./gallery/paralizado.png"
 
 const galleryImages = [
   { nombre: "abrechetada", image: abrechetada },
@@ -343,6 +345,8 @@ const galleryImages = [
   { nombre: "mecaigo", image: mecaigo},
   { nombre: "pentakill", image: pentakill},
   { nombre: "jugada", image: jugada},
+  { nombre: "elchancho", image: elchancho},
+  { nombre: "paralizado", image: paralizado},
 ];
 
 export default galleryImages;

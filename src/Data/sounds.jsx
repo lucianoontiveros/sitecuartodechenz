@@ -222,6 +222,8 @@ import rotas from "./sounds/!rotas.mp3"
 import mecaigo from "./sounds/!mecaigo.mp3"
 import pentakill from "./sounds/!pentakill.mp3"
 import jugada from "./sounds/!jugada.mp3"
+import elchancho from "./sounds/!elchancho.mp3"
+import paralizado from "./sounds/!paralizado.mp3"
 
 
 
@@ -454,6 +456,8 @@ const sounds = {
   mecaigo: mecaigo,
   pentakill: pentakill,
   jugada: jugada,
+  elchancho: elchancho,
+  paralizado: paralizado,
 };
 
 export default sounds;
