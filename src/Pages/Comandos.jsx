@@ -590,6 +590,20 @@ const Comandos = () => {
               />
               <p>Está opositando ✍🏻</p>
             </li>
+            <li>
+              <CommandButton 
+                displayText="!repasando"
+                command="!repasando"
+              />
+              <p>Está repasando 📑</p>
+            </li>
+            <li>
+              <CommandButton 
+                displayText="!pizarra"
+                command="!pizarra"
+              />
+              <p>Usando la pizarra 🖍️</p>
+            </li>
           </ul>
         </div>
 
