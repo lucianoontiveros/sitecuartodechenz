@@ -171,6 +171,8 @@ import pentakill from "./gallery/pentakill.png"
 import jugada from "./gallery/jugada.png"
 import elchancho from "./gallery/elchancho.png"
 import paralizado from "./gallery/paralizado.png"
+import ardillita from "./gallery/ardillita.png"
+import salvaste from "./gallery/salvaste.png"
 
 const galleryImages = [
   { nombre: "abrechetada", image: abrechetada },
@@ -347,6 +349,8 @@ const galleryImages = [
   { nombre: "jugada", image: jugada},
   { nombre: "elchancho", image: elchancho},
   { nombre: "paralizado", image: paralizado},
+  { nombre: "ardillita", image: ardillita},
+  { nombre: "salvaste", image: salvaste},
 ];
 
 export default galleryImages;

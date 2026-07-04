@@ -224,6 +224,8 @@ import pentakill from "./sounds/!pentakill.mp3"
 import jugada from "./sounds/!jugada.mp3"
 import elchancho from "./sounds/!elchancho.mp3"
 import paralizado from "./sounds/!paralizado.mp3"
+import ardillita from "./sounds/!ardillita.mp3"
+import salvaste from "./sounds/!salvaste.mp3"
 
 
 
@@ -458,6 +460,8 @@ const sounds = {
   jugada: jugada,
   elchancho: elchancho,
   paralizado: paralizado,
+  ardillita: ardillita,
+  salvaste: salvaste,
 };
 
 export default sounds;
