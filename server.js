@@ -91,7 +91,7 @@ const comentarioLimiter = rateLimit({
 
 
 // MongoDB Connection
-const uri = `mongodb+srv://${process.env.VITE_MONGODB_USERNAME}:${process.env.VITE_MONGODB_PASSWORD}@${process.env.VITE_MONGODB_CLUSTER}/${process.env.VITE_MONGODB_DATABASE}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_CLUSTER}/${process.env.MONGODB_DATABASE}?retryWrites=true&w=majority`;
 const client = new MongoClient(uri);
 
 let db;
@@ -100,7 +100,7 @@ async function connectDB() {
   try {
     await client.connect();
     console.log('Connected to MongoDB');
-    db = client.db(process.env.VITE_MONGODB_DATABASE);
+    db = client.db(process.env.MONGODB_DATABASE);
     
     // Crear índice único para googleId en comentarios para prevenir duplicados
     await db.collection('comentarios').createIndex({ googleId: 1 }, { unique: true }).catch(err => {

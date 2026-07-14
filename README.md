@@ -165,27 +165,30 @@ npm run clean            # Limpiar build y cache
 Crear archivo `.env.local` en la raíz del proyecto:
 
 ```env
-# Configuración de la aplicación
+# Configuración de la aplicación (frontend)
 VITE_APP_NAME=Cuarto de Chenz
 VITE_APP_VERSION=1.0.0
 
-# MongoDB Atlas Configuration
-VITE_MONGODB_USERNAME=tu_usuario
-VITE_MONGODB_PASSWORD=tu_password
-VITE_MONGODB_CLUSTER=tu_cluster.mongodb.net
-VITE_MONGODB_DATABASE=tu_base_de_datos
+# MongoDB Atlas Configuration (SOLO backend - NUNCA en frontend)
+MONGODB_USERNAME=tu_usuario
+MONGODB_PASSWORD=tu_password
+MONGODB_CLUSTER=tu_cluster.mongodb.net
+MONGODB_DATABASE=tu_base_de_datos
 
 # Google OAuth Configuration
+# Frontend: Solo necesita el Client ID
 VITE_GOOGLE_CLIENT_ID=tu_google_client_id
-VITE_GOOGLE_CLIENT_SECRET=tu_google_client_secret
+# Backend: Verificación de tokens
+GOOGLE_CLIENT_ID=tu_google_client_id
+GOOGLE_CLIENT_SECRET=tu_google_client_secret
 
-# JWT Secret (Genera uno seguro)
-VITE_JWT_SECRET=tu_jwt_secret
+# JWT Secret (SOLO backend - NUNCA en frontend)
+JWT_SECRET=tu_jwt_secret
 
-# Emails autorizados para administración (separados por coma)
-VITE_AUTHORIZED_EMAILS=luciano.a.ontiveros@gmail.com,otro@email.com
+# Emails autorizados para administración (SOLO backend)
+AUTHORIZED_EMAILS=luciano.a.ontiveros@gmail.com,otro@email.com
 
-# URLs de APIs
+# URLs de APIs (frontend)
 VITE_API_URL=http://localhost:3001/api
 VITE_FRONTEND_URL=http://localhost:5173
 
