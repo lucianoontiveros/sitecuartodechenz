@@ -1,5 +1,13 @@
 import dotenv from 'dotenv';
-dotenv.config();
+dotenv.config({ path: '.env.local' });
+
+console.log('Variables de entorno cargadas:');
+console.log('MONGODB_USERNAME:', process.env.MONGODB_USERNAME ? '✓' : '✗');
+console.log('MONGODB_PASSWORD:', process.env.MONGODB_PASSWORD ? '✓' : '✗');
+console.log('MONGODB_CLUSTER:', process.env.MONGODB_CLUSTER ? '✓' : '✗');
+console.log('MONGODB_DATABASE:', process.env.MONGODB_DATABASE ? '✓' : '✗');
+console.log('GOOGLE_CLIENT_ID:', process.env.GOOGLE_CLIENT_ID ? '✓' : '✗');
+console.log('AUTHORIZED_EMAILS:', process.env.AUTHORIZED_EMAILS ? '✓' : '✗');
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
@@ -70,9 +78,20 @@ const apiLimiter = rateLimit({
 
 app.use('/api/', apiLimiter);
 
+// Rate limiting específico para comentarios (más estricto)
+const comentarioLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000, // 1 hora
+  max: 3, // máximo 3 comentarios por hora por IP
+  handler: (req, res) => {
+    res.status(429).json({ error: 'Has excedido el límite de comentarios. Por favor espera 1 hora.' });
+  },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
 
 // MongoDB Connection
-const uri = `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_CLUSTER}/${process.env.MONGODB_DATABASE}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.VITE_MONGODB_USERNAME}:${process.env.VITE_MONGODB_PASSWORD}@${process.env.VITE_MONGODB_CLUSTER}/${process.env.VITE_MONGODB_DATABASE}?retryWrites=true&w=majority`;
 const client = new MongoClient(uri);
 
 let db;
@@ -81,12 +100,27 @@ async function connectDB() {
   try {
     await client.connect();
     console.log('Connected to MongoDB');
-    db = client.db(process.env.MONGODB_DATABASE);
+    db = client.db(process.env.VITE_MONGODB_DATABASE);
     
     // Crear índice único para googleId en comentarios para prevenir duplicados
     await db.collection('comentarios').createIndex({ googleId: 1 }, { unique: true }).catch(err => {
       if (err.code !== 85) { // Ignorar error si el índice ya existe
         console.error('Error al crear índice único:', err);
+      }
+    });
+
+    // Crear índice compuesto para IP y fecha (para tracking de actividad sospechosa)
+    await db.collection('comentarios').createIndex({ ipAddress: 1, fechaCreacion: -1 }).catch(err => {
+      if (err.code !== 85) {
+        console.error('Error al crear índice compuesto IP/fecha:', err);
+      }
+    });
+
+    // Crear colección de IPs bloqueadas si no existe
+    const blacklistedIPs = db.collection('blacklisted_ips');
+    await blacklistedIPs.createIndex({ ipAddress: 1 }, { unique: true }).catch(err => {
+      if (err.code !== 85) {
+        console.error('Error al crear índice único en blacklisted_ips:', err);
       }
     });
   } catch (error) {
@@ -131,6 +165,30 @@ const authenticateToken = async (req, res, next) => {
     next();
   } catch (err) {
     return res.status(403).json({ error: 'Token inválido' });
+  }
+};
+
+// Middleware para verificar si la IP está bloqueada
+const checkBlacklistedIP = async (req, res, next) => {
+  try {
+    const ipAddress = req.ip || req.connection.remoteAddress;
+    const blacklistedIPs = db.collection('blacklisted_ips');
+    const blockedIP = await blacklistedIPs.findOne({ 
+      ipAddress, 
+      activo: true 
+    });
+    
+    if (blockedIP) {
+      console.log(`IP bloqueada intentando acceder: ${ipAddress}`);
+      return res.status(403).json({ 
+        error: 'Tu dirección IP ha sido bloqueada por actividad sospechosa' 
+      });
+    }
+    
+    next();
+  } catch (error) {
+    console.error('Error al verificar IP bloqueada:', error);
+    next(); // Permitir acceso si hay error en la verificación
   }
 };
 
@@ -186,7 +244,7 @@ app.post('/api/auth/google', loginLimiter, async (req, res) => {
     // Verificar token de Google
     const ticket = await oauth2Client.verifyIdToken({
       idToken: token,
-      audience: process.env.GOOGLE_CLIENT_ID
+      audience: process.env.VITE_GOOGLE_CLIENT_ID
     });
     
     const payload = ticket.getPayload();
@@ -367,11 +425,37 @@ app.get('/api/comentarios', async (req, res) => {
   }
 });
 
-app.post('/api/comentarios', async (req, res) => {
+app.post('/api/comentarios', checkBlacklistedIP, comentarioLimiter, async (req, res) => {
   try {
-    const { googleId, nombre, email, comentario, estrellas } = req.body;
+    const { token, googleId, nombre, email, comentario, estrellas } = req.body;
     
     console.log('Intento de crear comentario para googleId:', googleId);
+    
+    // Verificar autenticación con Google
+    if (!token) {
+      console.error('No se proporcionó token de autenticación');
+      return res.status(401).json({ error: 'Autenticación requerida' });
+    }
+
+    // Verificar token de Google
+    const ticket = await oauth2Client.verifyIdToken({
+      idToken: token,
+      audience: process.env.VITE_GOOGLE_CLIENT_ID
+    });
+
+    const payload = ticket.getPayload();
+    
+    // Verificar que el googleId del token coincida con el proporcionado
+    if (payload.sub !== googleId) {
+      console.error('googleId no coincide con el token');
+      return res.status(403).json({ error: 'Autenticación inválida' });
+    }
+
+    // Verificar que el email del token coincida con el proporcionado
+    if (payload.email !== email) {
+      console.error('email no coincide con el token');
+      return res.status(403).json({ error: 'Autenticación inválida' });
+    }
     
     // Verificar si el usuario ya tiene un comentario
     const comentariosCollection = db.collection('comentarios');
@@ -381,6 +465,30 @@ app.post('/api/comentarios', async (req, res) => {
       console.log('Comentario ya existe para googleId:', googleId);
       return res.status(400).json({ error: 'Ya tienes un comentario registrado' });
     }
+
+    // Verificar si hay contenido duplicado (mismo comentario en las últimas 24 horas)
+    const hace24Horas = new Date(Date.now() - 24 * 60 * 60 * 1000);
+    const comentarioDuplicado = await comentariosCollection.findOne({
+      comentario: comentario.trim(),
+      fechaCreacion: { $gte: hace24Horas }
+    });
+
+    if (comentarioDuplicado) {
+      console.log('Comentario duplicado detectado:', comentario);
+      return res.status(400).json({ error: 'Este comentario ya fue registrado recientemente' });
+    }
+
+    // Verificar actividad sospechosa por IP (más de 5 comentarios en 1 hora)
+    const hace1Hora = new Date(Date.now() - 60 * 60 * 1000);
+    const comentariosPorIP = await comentariosCollection.countDocuments({
+      ipAddress: req.ip || req.connection.remoteAddress,
+      fechaCreacion: { $gte: hace1Hora }
+    });
+
+    if (comentariosPorIP >= 5) {
+      console.log('Actividad sospechosa detectada por IP:', req.ip);
+      return res.status(429).json({ error: 'Actividad sospechosa detectada. Por favor contacta al administrador.' });
+    }
     
     const nuevoComentario = {
       googleId,
@@ -389,7 +497,9 @@ app.post('/api/comentarios', async (req, res) => {
       comentario,
       estrellas,
       fechaCreacion: new Date(),
-      activo: true
+      activo: true,
+      ipAddress: req.ip || req.connection.remoteAddress,
+      userAgent: req.headers['user-agent'] || 'unknown'
     };
     
     console.log('Insertando nuevo comentario para:', nombre);
@@ -459,6 +569,179 @@ app.delete('/api/comentarios/:id', authenticateToken, async (req, res) => {
   } catch (error) {
     console.error('Error al eliminar comentario:', error);
     res.status(500).json({ error: 'Error al eliminar comentario' });
+  }
+});
+
+// Endpoint para revisar actividad sospechosa (solo admin)
+app.get('/api/admin/comentarios/sospechosos', authenticateToken, async (req, res) => {
+  try {
+    const comentariosCollection = db.collection('comentarios');
+    
+    // Encontrar IPs con más de 5 comentarios en las últimas 24 horas
+    const hace24Horas = new Date(Date.now() - 24 * 60 * 60 * 1000);
+    const ipsSospechosas = await comentariosCollection.aggregate([
+      {
+        $match: {
+          fechaCreacion: { $gte: hace24Horas }
+        }
+      },
+      {
+        $group: {
+          _id: '$ipAddress',
+          count: { $sum: 1 },
+          comentarios: {
+            $push: {
+              _id: '$_id',
+              nombre: '$nombre',
+              email: '$email',
+              comentario: '$comentario',
+              fechaCreacion: '$fechaCreacion',
+              userAgent: '$userAgent'
+            }
+          }
+        }
+      },
+      {
+        $match: {
+          count: { $gte: 3 }
+        }
+      },
+      { $sort: { count: -1 } }
+    ]).toArray();
+
+    // Encontrar comentarios duplicados
+    const comentariosDuplicados = await comentariosCollection.aggregate([
+      {
+        $match: {
+          fechaCreacion: { $gte: hace24Horas }
+        }
+      },
+      {
+        $group: {
+          _id: '$comentario',
+          count: { $sum: 1 },
+          comentarios: { $push: '$_id' }
+        }
+      },
+      {
+        $match: {
+          count: { $gte: 2 }
+        }
+      }
+    ]).toArray();
+
+    res.json({
+      ipsSospechosas,
+      comentariosDuplicados,
+      totalIPsSospechosas: ipsSospechosas.length,
+      totalComentariosDuplicados: comentariosDuplicados.length
+    });
+  } catch (error) {
+    console.error('Error al obtener actividad sospechosa:', error);
+    res.status(500).json({ error: 'Error al obtener actividad sospechosa' });
+  }
+});
+
+// Endpoint para marcar comentarios como spam (solo admin)
+app.put('/api/admin/comentarios/:id/spam', authenticateToken, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const comentariosCollection = db.collection('comentarios');
+    
+    const result = await comentariosCollection.updateOne(
+      { _id: new ObjectId(id) },
+      { 
+        $set: { 
+          activo: false, 
+          marcadoComoSpam: true, 
+          razon: 'marcado_por_admin',
+          fechaRevision: new Date(),
+          revisadoPor: req.user.email
+        } 
+      }
+    );
+    
+    if (result.matchedCount === 0) {
+      return res.status(404).json({ error: 'Comentario no encontrado' });
+    }
+    
+    res.json({ message: 'Comentario marcado como spam' });
+  } catch (error) {
+    console.error('Error al marcar comentario como spam:', error);
+    res.status(500).json({ error: 'Error al marcar comentario como spam' });
+  }
+});
+
+// Endpoint para agregar IP a blacklist (solo admin)
+app.post('/api/admin/blacklist-ip', authenticateToken, async (req, res) => {
+  try {
+    const { ipAddress, razon } = req.body;
+    
+    if (!ipAddress) {
+      return res.status(400).json({ error: 'IP address es requerida' });
+    }
+    
+    const blacklistedIPs = db.collection('blacklisted_ips');
+    
+    await blacklistedIPs.updateOne(
+      { ipAddress },
+      { 
+        $set: { 
+          ipAddress, 
+          activo: true, 
+          razon: razon || 'actividad_sospechosa',
+          fechaBloqueo: new Date(),
+          bloqueadoPor: req.user.email
+        } 
+      },
+      { upsert: true }
+    );
+    
+    res.json({ message: 'IP agregada a blacklist' });
+  } catch (error) {
+    console.error('Error al agregar IP a blacklist:', error);
+    res.status(500).json({ error: 'Error al agregar IP a blacklist' });
+  }
+});
+
+// Endpoint para remover IP de blacklist (solo admin)
+app.delete('/api/admin/blacklist-ip/:ipAddress', authenticateToken, async (req, res) => {
+  try {
+    const { ipAddress } = req.params;
+    const blacklistedIPs = db.collection('blacklisted_ips');
+    
+    const result = await blacklistedIPs.updateOne(
+      { ipAddress },
+      { 
+        $set: { 
+          activo: false, 
+          fechaDesbloqueo: new Date(),
+          desbloqueadoPor: req.user.email
+        } 
+      }
+    );
+    
+    if (result.matchedCount === 0) {
+      return res.status(404).json({ error: 'IP no encontrada en blacklist' });
+    }
+    
+    res.json({ message: 'IP removida de blacklist' });
+  } catch (error) {
+    console.error('Error al remover IP de blacklist:', error);
+    res.status(500).json({ error: 'Error al remover IP de blacklist' });
+  }
+});
+
+// Endpoint para listar IPs en blacklist (solo admin)
+app.get('/api/admin/blacklist-ip', authenticateToken, async (req, res) => {
+  try {
+    const blacklistedIPs = db.collection('blacklisted_ips');
+    const ips = await blacklistedIPs.find({ activo: true }).toArray();
+    
+    res.json({ ips });
+  } catch (error) {
+    console.error('Error al obtener blacklist:', error);
+    res.status(500).json({ error: 'Error al obtener blacklist' });
   }
 });
 

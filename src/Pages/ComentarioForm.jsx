@@ -7,6 +7,7 @@ import api from '../services/api';
 export default function ComentarioForm() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
+  const [googleToken, setGoogleToken] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [comentarioExistente, setComentarioExistente] = useState(null);
@@ -18,9 +19,13 @@ export default function ComentarioForm() {
 
   useEffect(() => {
     const userData = localStorage.getItem('comentarioUser');
+    const tokenData = localStorage.getItem('comentarioToken');
     if (userData) {
       const parsedUser = JSON.parse(userData);
       setUser(parsedUser);
+      if (tokenData) {
+        setGoogleToken(tokenData);
+      }
       verificarComentarioExistente(parsedUser.sub);
     }
   }, []);
@@ -56,7 +61,9 @@ export default function ComentarioForm() {
       };
       
       localStorage.setItem('comentarioUser', JSON.stringify(userData));
+      localStorage.setItem('comentarioToken', response.credential);
       setUser(userData);
+      setGoogleToken(response.credential);
       await verificarComentarioExistente(userData.sub);
     } catch (error) {
       console.error('Error en login:', error);
@@ -117,12 +124,14 @@ export default function ComentarioForm() {
     try {
       if (comentarioExistente) {
         await api.put(`/comentarios/${comentarioExistente._id}`, {
+          token: googleToken,
           googleId: user.sub,
           comentario: formData.comentario,
           estrellas: formData.estrellas
         });
       } else {
         await api.post('/comentarios', {
+          token: googleToken,
           googleId: user.sub,
           nombre: user.nombre,
           email: user.email,
@@ -132,7 +141,9 @@ export default function ComentarioForm() {
       }
 
       localStorage.removeItem('comentarioUser');
+      localStorage.removeItem('comentarioToken');
       setUser(null);
+      setGoogleToken(null);
       setComentarioExistente(null);
       setFormData({ comentario: '', estrellas: 5 });
       navigate('/');
@@ -148,7 +159,9 @@ export default function ComentarioForm() {
 
   const handleLogout = () => {
     localStorage.removeItem('comentarioUser');
+    localStorage.removeItem('comentarioToken');
     setUser(null);
+    setGoogleToken(null);
     setComentarioExistente(null);
     setFormData({ comentario: '', estrellas: 5 });
   };
