@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
+import { GoogleLogin } from '@react-oauth/google';
 import './comentario-form.css';
 import api from '../services/api';
 
@@ -182,10 +182,9 @@ export default function ComentarioForm() {
   };
 
   return (
-    <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
-      <div className="comentario-form-container">
-        <div className="comentario-form-card">
-          <h1>{comentarioExistente ? 'Editar Comentario' : 'Dejar un Comentario'}</h1>
+    <div className="comentario-form-container">
+      <div className="comentario-form-card">
+        <h1>{comentarioExistente ? 'Editar Comentario' : 'Dejar un Comentario'}</h1>
           <p className="comentario-subtitle">CUARTO DE CHENZ</p>
           
           {error && <div className="error-message">{error}</div>}
@@ -252,6 +251,5 @@ export default function ComentarioForm() {
           )}
         </div>
       </div>
-    </GoogleOAuthProvider>
   );
 }

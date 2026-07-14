@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
+import { GoogleLogin } from '@react-oauth/google';
 import './admin.css';
 import api from '../services/api';
 
@@ -56,29 +56,27 @@ export default function AdminLogin() {
   }, []);
 
   return (
-    <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
-      <div className="admin-login-container">
-        <div className="admin-login-card">
-          <h1>Panel de Administración</h1>
-          <p>CUARTO DE CHENZ</p>
-          
-          {error && <div className="error-message">{error}</div>}
-          
-          <div className="google-login-wrapper">
-            <GoogleLogin
-              onSuccess={handleGoogleSuccess}
-              onError={handleGoogleError}
-              useOneTap
-            />
-          </div>
-          
-          {loading && <div className="loading-spinner">Cargando...</div>}
-          
-          <p className="login-info">
-            Solo usuarios autorizados pueden acceder
-          </p>
+    <div className="admin-login-container">
+      <div className="admin-login-card">
+        <h1>Panel de Administración</h1>
+        <p>CUARTO DE CHENZ</p>
+        
+        {error && <div className="error-message">{error}</div>}
+        
+        <div className="google-login-wrapper">
+          <GoogleLogin
+            onSuccess={handleGoogleSuccess}
+            onError={handleGoogleError}
+            useOneTap
+          />
         </div>
+        
+        {loading && <div className="loading-spinner">Cargando...</div>}
+        
+        <p className="login-info">
+          Solo usuarios autorizados pueden acceder
+        </p>
       </div>
-    </GoogleOAuthProvider>
+    </div>
   );
 }
