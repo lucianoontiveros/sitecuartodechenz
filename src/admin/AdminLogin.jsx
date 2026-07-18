@@ -71,7 +71,7 @@ export default function AdminLogin() {
           />
         </div>
         
-        {loading && <div className="loading-spinner">Cargando...</div>}
+        {loading && <div className="loading-text">Cargando...</div>}
         
         <p className="login-info">
           Solo usuarios autorizados pueden acceder

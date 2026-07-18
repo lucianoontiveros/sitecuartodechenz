@@ -110,7 +110,7 @@ const CarruselComentarios = () => {
       <div className="carrusel-container">
         <h2 className="carrusel-title">Lo que dicen nuestros usuarios</h2>
         <div className="carrusel-loading">
-          <div className="loading-spinner"></div>
+          <div className="spinner-icon"></div>
           <span>Cargando comentarios...</span>
         </div>
       </div>

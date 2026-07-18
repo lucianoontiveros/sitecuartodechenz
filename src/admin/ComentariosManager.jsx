@@ -65,7 +65,7 @@ export default function ComentariosManager() {
   if (loading) {
     return (
       <div className="loading-container">
-        <div className="loading-spinner"></div>
+        <div className="spinner-icon"></div>
         <span>Cargando comentarios...</span>
       </div>
     );

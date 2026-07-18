@@ -192,7 +192,7 @@ export default function ComentarioForm() {
           {!user ? (
             <div className="google-login-wrapper">
               
-              {loading && <div className="loading-spinner">Cargando...</div>}
+              {loading && <div className="loading-text">Cargando...</div>}
               <p className="login-info">
                 Inicia sesión con Google para dejar tu comentario
               </p>

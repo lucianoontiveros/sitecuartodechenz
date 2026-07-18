@@ -443,28 +443,31 @@ const Inicio = () => {
             ref={ref7}
             className={`horario_card fade-in-up ${isVisible7 ? 'visible delay-1' : ''}`}
           >
-            <div className="text_elements">
-              <h3>NUESTROS HORARIOS</h3>
-          
-              <h5>LUNES A JUEVES</h5>
-              <ul>
-                <li>14:00 a 21:00 hs ARG</li>
-                <li>14:00 a 21:00 hs BRA</li>
-                <li>19:00 a 02:00 hs ESP</li>
-                <li>11:00 A 18:00 HS MEX</li>
-                <li>18:00 A 01:00 HS POR</li>
-                <li>12:00 A 19:00 HS COL</li>
-              </ul>
-              <h5>DOMINGOS Y SÁBADOS</h5>
-              <ul>
-                <li>14:00 a 21:00 hs ARG</li>
-                <li>14:00 a 21:00 hs BRA</li>
-                <li>19:00 a 02:00 hs ESP</li>
-                <li>11:00 A 18:00 HS MEX</li>
-                <li>18:00 A 01:00 HS POR</li>
-                <li>12:00 A 19:00 HS COL</li>
-              </ul>
-            </div>
+     
+<div className="text_elements">
+  <h3>NUESTROS HORARIOS</h3>
+  
+  <h5>LUNES A JUEVES</h5>
+  <ul>
+    <li>04:00 a 15:00 hs ARG</li>
+    <li>04:00 a 15:00 hs BRA</li>
+    <li>09:00 a 20:00 hs ESP</li>
+    <li>01:00 A 12:00 HS MEX</li>
+    <li>08:00 A 19:00 HS POR</li>
+    <li>02:00 A 13:00 HS COL</li>
+  </ul>
+  <h5>DOMINGOS Y SÁBADOS</h5>
+  <ul>
+    <li>04:00 a 15:00 hs ARG</li>
+    <li>04:00 a 15:00 hs BRA</li>
+    <li>09:00 a 20:00 hs ESP</li>
+    <li>01:00 A 12:00 HS MEX</li>
+    <li>08:00 A 19:00 HS POR</li>
+    <li>02:00 A 13:00 HS COL</li>
+  </ul>
+</div>
+
+
           </div>
         </div>
 
