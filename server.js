@@ -1,13 +1,16 @@
 import dotenv from 'dotenv';
 dotenv.config({ path: '.env.local' });
 
-console.log('Variables de entorno cargadas:');
-console.log('MONGODB_USERNAME:', process.env.MONGODB_USERNAME ? '✓' : '✗');
-console.log('MONGODB_PASSWORD:', process.env.MONGODB_PASSWORD ? '✓' : '✗');
-console.log('MONGODB_CLUSTER:', process.env.MONGODB_CLUSTER ? '✓' : '✗');
-console.log('MONGODB_DATABASE:', process.env.MONGODB_DATABASE ? '✓' : '✗');
-console.log('GOOGLE_CLIENT_ID:', process.env.GOOGLE_CLIENT_ID ? '✓' : '✗');
-console.log('AUTHORIZED_EMAILS:', process.env.AUTHORIZED_EMAILS ? '✓' : '✗');
+// Solo mostrar logs de variables de entorno en desarrollo
+if (process.env.NODE_ENV !== 'production') {
+  console.log('Variables de entorno cargadas:');
+  console.log('MONGODB_USERNAME:', process.env.MONGODB_USERNAME ? '✓' : '✗');
+  console.log('MONGODB_PASSWORD:', process.env.MONGODB_PASSWORD ? '✓' : '✗');
+  console.log('MONGODB_CLUSTER:', process.env.MONGODB_CLUSTER ? '✓' : '✗');
+  console.log('MONGODB_DATABASE:', process.env.MONGODB_DATABASE ? '✓' : '✗');
+  console.log('GOOGLE_CLIENT_ID:', process.env.GOOGLE_CLIENT_ID ? '✓' : '✗');
+  console.log('AUTHORIZED_EMAILS:', process.env.AUTHORIZED_EMAILS ? '✓' : '✗');
+}
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
@@ -42,8 +45,10 @@ app.use(cors({
       process.env.FRONTEND_URL
     ].filter(Boolean); // Filtrar valores undefined/null
     
-    // Permitir solicitudes sin origin (como mobile apps o herramientas de desarrollo)
-    if (!origin) return callback(null, true);
+    // Requerir origin explícito para mayor seguridad
+    if (!origin) {
+      return callback(new Error('Origin header is required'));
+    }
     
     if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
@@ -244,7 +249,7 @@ app.post('/api/auth/google', loginLimiter, async (req, res) => {
     // Verificar token de Google
     const ticket = await oauth2Client.verifyIdToken({
       idToken: token,
-      audience: process.env.VITE_GOOGLE_CLIENT_ID
+      audience: process.env.GOOGLE_CLIENT_ID
     });
     
     const payload = ticket.getPayload();
@@ -440,7 +445,7 @@ app.post('/api/comentarios', checkBlacklistedIP, comentarioLimiter, async (req, 
     // Verificar token de Google
     const ticket = await oauth2Client.verifyIdToken({
       idToken: token,
-      audience: process.env.VITE_GOOGLE_CLIENT_ID
+      audience: process.env.GOOGLE_CLIENT_ID
     });
 
     const payload = ticket.getPayload();
@@ -522,9 +527,29 @@ app.post('/api/comentarios', checkBlacklistedIP, comentarioLimiter, async (req, 
 app.put('/api/comentarios/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const { googleId, comentario, estrellas } = req.body;
+    const { token, googleId, comentario, estrellas } = req.body;
     const comentariosCollection = db.collection('comentarios');
     
+    // Verificar autenticación con Google
+    if (!token) {
+      console.error('No se proporcionó token de autenticación');
+      return res.status(401).json({ error: 'Autenticación requerida' });
+    }
+
+    // Verificar token de Google
+    const ticket = await oauth2Client.verifyIdToken({
+      idToken: token,
+      audience: process.env.GOOGLE_CLIENT_ID
+    });
+
+    const payload = ticket.getPayload();
+    
+    // Verificar que el googleId del token coincida con el proporcionado
+    if (payload.sub !== googleId) {
+      console.error('googleId no coincide con el token');
+      return res.status(403).json({ error: 'Autenticación inválida' });
+    }
+
     // Verificar que el comentario pertenece al usuario
     const comentarioExistente = await comentariosCollection.findOne({ _id: new ObjectId(id) });
     
@@ -557,6 +582,11 @@ app.delete('/api/comentarios/:id', authenticateToken, async (req, res) => {
     const { id } = req.params;
     const comentariosCollection = db.collection('comentarios');
     
+    // Obtener comentario antes de eliminar para logging
+    const comentarioAEliminar = await comentariosCollection.findOne({
+      _id: new ObjectId(id)
+    });
+    
     const result = await comentariosCollection.deleteOne({
       _id: new ObjectId(id)
     });
@@ -564,6 +594,15 @@ app.delete('/api/comentarios/:id', authenticateToken, async (req, res) => {
     if (result.deletedCount === 0) {
       return res.status(404).json({ error: 'Comentario no encontrado' });
     }
+    
+    // Logging de la acción
+    console.log(`Comentario eliminado por admin: ${req.user.email}`, {
+      comentarioId: id,
+      comentarioAutor: comentarioAEliminar?.nombre,
+      comentarioEmail: comentarioAEliminar?.email,
+      eliminadoPor: req.user.email,
+      fechaEliminacion: new Date()
+    });
     
     res.json({ message: 'Comentario eliminado' });
   } catch (error) {
