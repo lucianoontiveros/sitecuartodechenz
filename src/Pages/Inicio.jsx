@@ -449,21 +449,21 @@ const Inicio = () => {
   
   <h5>LUNES A JUEVES</h5>
   <ul>
-    <li>04:00 a 15:00 hs ARG</li>
-    <li>04:00 a 15:00 hs BRA</li>
-    <li>09:00 a 20:00 hs ESP</li>
-    <li>01:00 A 12:00 HS MEX</li>
-    <li>08:00 A 19:00 HS POR</li>
-    <li>02:00 A 13:00 HS COL</li>
+    <li>ARG: 10:00 a 16:00 hs</li>
+    <li>BRA: 10:00 a 16:00 hs</li>
+    <li>ESP: 15:00 a 21:00 hs</li>
+    <li>MEX: 07:00 a 13:00 hs</li>
+    <li>POR: 14:00 a 20:00 hs</li>
+    <li>COL: 08:00 a 14:00 hs</li>
   </ul>
   <h5>DOMINGOS Y SÁBADOS</h5>
   <ul>
-    <li>04:00 a 15:00 hs ARG</li>
-    <li>04:00 a 15:00 hs BRA</li>
-    <li>09:00 a 20:00 hs ESP</li>
-    <li>01:00 A 12:00 HS MEX</li>
-    <li>08:00 A 19:00 HS POR</li>
-    <li>02:00 A 13:00 HS COL</li>
+    <li>ARG: 10:00 a 16:00 hs</li>
+    <li>BRA: 10:00 a 16:00 hs</li>
+    <li>ESP: 15:00 a 21:00 hs</li>
+    <li>MEX: 07:00 a 13:00 hs</li>
+    <li>POR: 14:00 a 20:00 hs</li>
+    <li>COL: 08:00 a 14:00 hs</li>
   </ul>
 </div>
 
