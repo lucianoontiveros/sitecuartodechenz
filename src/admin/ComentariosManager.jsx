@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './admin.css';
 import api from '../services/api';
+import logger from '../utils/logger';
 
 export default function ComentariosManager() {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ export default function ComentariosManager() {
       const res = await api.get('/comentarios');
       setComentarios(res.data);
     } catch (error) {
-      console.error('Error al cargar comentarios:', error);
+      logger.error('Error al cargar comentarios', error);
     } finally {
       setLoading(false);
     }
@@ -35,7 +36,7 @@ export default function ComentariosManager() {
       await api.delete(`/comentarios/${id}`);
       fetchComentarios();
     } catch (error) {
-      console.error('Error al eliminar comentario:', error);
+      logger.error('Error al eliminar comentario', error);
     }
   };
 

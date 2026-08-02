@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { GoogleLogin } from '@react-oauth/google';
 import './comentario-form.css';
 import api from '../services/api';
+import logger from '../utils/logger';
 
 export default function ComentarioForm() {
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ export default function ComentarioForm() {
         });
       }
     } catch (error) {
-      console.error('Error al verificar comentario:', error);
+      logger.error('Error al verificar comentario', error);
     }
   };
 
@@ -66,7 +67,7 @@ export default function ComentarioForm() {
       setGoogleToken(response.credential);
       await verificarComentarioExistente(userData.sub);
     } catch (error) {
-      console.error('Error en login:', error);
+      logger.error('Error en login', error);
       setError(error.response?.data?.error || error.message || 'Error en autenticación');
     } finally {
       setLoading(false);
@@ -148,7 +149,7 @@ export default function ComentarioForm() {
       setFormData({ comentario: '', estrellas: 5 });
       navigate('/');
     } catch (error) {
-      console.error('Error al guardar comentario:', error);
+      logger.error('Error al guardar comentario', error);
       setError(error.response?.data?.error || error.message || 'Error al guardar comentario');
     } finally {
       setLoading(false);

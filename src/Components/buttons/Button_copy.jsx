@@ -3,6 +3,7 @@ import { Button } from "flowbite-react";
 import "./button_copy.css";
 import sounds from "../../Data/sounds";
 import { useEffect } from "react";
+import logger from '../../utils/logger';
 
 const Button_copy = ({ text }) => {
   const [copiado, setCopiado] = useState(false);
@@ -12,11 +13,11 @@ const Button_copy = ({ text }) => {
     navigator.clipboard
       .writeText(text)
       .then(() => {
-        console.log("Texto copiado");
+        logger.log("Texto copiado");
         setCopiado(true);
         setTimeout(() => setCopiado(false), 2000);
       })
-      .catch((e) => console.log(e));
+      .catch((e) => logger.error("Error al copiar texto", e));
   };
 
   const reproducirSonido = () => {
@@ -24,7 +25,7 @@ const Button_copy = ({ text }) => {
     const rutaSonido = sounds[comando];
     if (rutaSonido) {
       audio.src = rutaSonido;
-      audio.play().catch(error => console.error('Error al reproducir sonido:', error));
+      audio.play().catch(error => logger.error('Error al reproducir sonido', error));
     }
   };
 

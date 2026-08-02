@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { GoogleLogin } from '@react-oauth/google';
 import './admin.css';
 import api from '../services/api';
+import logger from '../utils/logger';
 
 export default function AdminLogin() {
   const [loading, setLoading] = useState(false);
@@ -18,7 +19,7 @@ export default function AdminLogin() {
       localStorage.setItem('adminUser', JSON.stringify(user));
       window.location.href = '/admin/dashboard';
     } catch (error) {
-      console.error('Error en login:', error);
+      logger.error('Error en login', error);
       setError(error.response?.data?.error || error.message || 'Error al iniciar sesión. Por favor intenta nuevamente.');
     } finally {
       setLoading(false);

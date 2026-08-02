@@ -7,6 +7,7 @@ import ScrollAnimation from "../utils/ScrollAnimation";
 import Imagen_Aviso from "/img_aviso.png";
 import "./avisos.css";
 import api from '../services/api';
+import logger from '../utils/logger';
 
 const Avisos = () => {
   const [avisos, setAvisos] = useState([]);
@@ -25,7 +26,7 @@ const Avisos = () => {
         .sort((a, b) => new Date(b.fechaCreacion) - new Date(a.fechaCreacion));
       setAvisos(avisosActivos);
     } catch (error) {
-      console.error('Error al cargar avisos:', error);
+      logger.error('Error al cargar avisos', error);
     } finally {
       setLoading(false);
     }

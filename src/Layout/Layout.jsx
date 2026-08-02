@@ -2,7 +2,6 @@ import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { GoogleOAuthProvider } from '@react-oauth/google';
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import './layaout.css'
@@ -25,15 +24,13 @@ const Layout = () => {
     }, [location.pathname]);
 
     return (
-        <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
-            <div className="layaout_container">
-                <Navbar className="div1"/>
-                <main className="main-content">
-                    <Outlet className="div2" />
-                </main>
-                <Footer className="div3" />
-            </div>
-        </GoogleOAuthProvider>
+        <div className="layaout_container">
+            <Navbar className="div1"/>
+            <main className="main-content">
+                <Outlet className="div2" />
+            </main>
+            <Footer className="div3" />
+        </div>
     )
 }
 

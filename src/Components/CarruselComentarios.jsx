@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { useNavigate } from 'react-router-dom';
 import './carrusel-comentarios.css';
 import api from '../services/api';
+import logger from '../utils/logger';
 
 const CarruselComentarios = () => {
   const [comentarios, setComentarios] = useState([]);
@@ -34,10 +35,10 @@ const CarruselComentarios = () => {
       );
       setComentarios(uniqueComentarios);
     } catch (error) {
-      console.error('Error al cargar comentarios:', error);
+      logger.error('Error al cargar comentarios', error);
       // En caso de error, mostrar mensaje de error específico
       if (error.code === 'ECONNABORTED') {
-        console.error('Timeout al cargar comentarios');
+        logger.error('Timeout al cargar comentarios');
       }
     } finally {
       setLoading(false);

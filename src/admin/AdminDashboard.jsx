@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './admin.css';
 import api from '../services/api';
+import logger from '../utils/logger';
 
 export default function AdminDashboard() {
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ export default function AdminDashboard() {
       localStorage.removeItem('adminUser');
       navigate('/admin/login');
     } catch (error) {
-      console.error('Error al cerrar sesión:', error);
+      logger.error('Error al cerrar sesión', error);
       // Aún así limpiar localStorage y redirigir
       localStorage.removeItem('adminToken');
       localStorage.removeItem('adminUser');
