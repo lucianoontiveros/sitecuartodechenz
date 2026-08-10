@@ -173,6 +173,7 @@ import elchancho from "./gallery/elchancho.png"
 import paralizado from "./gallery/paralizado.png"
 import ardillita from "./gallery/ardillita.png"
 import salvaste from "./gallery/salvaste.png"
+import porsiempre from "./gallery/porsiempre.png"
 
 const galleryImages = [
   { nombre: "abrechetada", image: abrechetada },
@@ -351,6 +352,7 @@ const galleryImages = [
   { nombre: "paralizado", image: paralizado},
   { nombre: "ardillita", image: ardillita},
   { nombre: "salvaste", image: salvaste},
+  { nombre: "porsiempre", image: porsiempre},
 ];
 
 export default galleryImages;

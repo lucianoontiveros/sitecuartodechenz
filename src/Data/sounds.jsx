@@ -226,6 +226,7 @@ import elchancho from "./sounds/!elchancho.mp3"
 import paralizado from "./sounds/!paralizado.mp3"
 import ardillita from "./sounds/!ardillita.mp3"
 import salvaste from "./sounds/!salvaste.mp3"
+import porsiempre from "./sounds/!porsiempre.mp3"
 
 
 
@@ -460,6 +461,7 @@ const sounds = {
   paralizado: paralizado,
   ardillita: ardillita,
   salvaste: salvaste,
+  porsiempre: porsiempre,
 };
 
 export default sounds;
