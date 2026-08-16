@@ -174,6 +174,8 @@ import paralizado from "./gallery/paralizado.png"
 import ardillita from "./gallery/ardillita.png"
 import salvaste from "./gallery/salvaste.png"
 import porsiempre from "./gallery/porsiempre.png"
+import doshoras from "./gallery/doshoras.png"
+import wandaaa from "./gallery/wandaaa.png"
 
 const galleryImages = [
   { nombre: "abrechetada", image: abrechetada },
@@ -353,6 +355,8 @@ const galleryImages = [
   { nombre: "ardillita", image: ardillita},
   { nombre: "salvaste", image: salvaste},
   { nombre: "porsiempre", image: porsiempre},
+  { nombre: "doshoras", image: doshoras},
+  { nombre: "wandaaa", image: wandaaa},
 ];
 
 export default galleryImages;
