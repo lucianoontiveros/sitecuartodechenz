@@ -176,6 +176,9 @@ import salvaste from "./gallery/salvaste.png"
 import porsiempre from "./gallery/porsiempre.png"
 import doshoras from "./gallery/doshoras.png"
 import wandaaa from "./gallery/wandaaa.png"
+import revolucion from "./gallery/revolucion.png"
+import berreta from "./gallery/berreta.png"
+import acusado from "./gallery/acusado.png"
 
 const galleryImages = [
   { nombre: "abrechetada", image: abrechetada },
@@ -357,6 +360,10 @@ const galleryImages = [
   { nombre: "porsiempre", image: porsiempre},
   { nombre: "doshoras", image: doshoras},
   { nombre: "wandaaa", image: wandaaa},
+  { nombre: "berreta", image: berreta},
+  { nombre: "acusado", image: acusado},
+  { nombre: "revolucion", image: revolucion},
+
 ];
 
 export default galleryImages;

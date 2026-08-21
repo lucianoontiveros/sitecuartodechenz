@@ -229,6 +229,10 @@ import salvaste from "./sounds/!salvaste.mp3"
 import porsiempre from "./sounds/!porsiempre.mp3"
 import doshoras from "./sounds/!doshoras.mp3"
 import wandaaa from "./sounds/!wandaaa.mp3"
+import berreta from "./sounds/!berreta.mp3"
+import acusado from "./sounds/!acusado.mp3"
+import revolucion from "./sounds/!revolucion.mp3"
+
 
 
 
@@ -465,6 +469,9 @@ const sounds = {
   porsiempre: porsiempre,
   doshoras: doshoras,
   wandaaa: wandaaa,
+  berreta: berreta,
+  acusado: acusado,
+  revolucion: revolucion,
 };
 
 export default sounds;
