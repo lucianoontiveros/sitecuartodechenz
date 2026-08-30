@@ -600,8 +600,16 @@ const Comandos = () => {
                 <p>Editando 💻</p>
               </li>
               <li>
+                <CommandButton displayText="!dibujando" command="!dibujando" />
+                <p>Está dibujando ✍🏾</p>
+              </li>
+              <li>
+                <CommandButton displayText="!pintando" command="!pintando" />
+                <p>Está pintando 🎨</p>
+              </li>
+              <li>
                 <CommandButton displayText="!curso" command="!curso" />
-                <p>Haciendo curso 💻</p>
+                <p>Está realizando un curso💻</p>
               </li>
               <li>
                 <CommandButton
@@ -975,6 +983,13 @@ const Comandos = () => {
               <li>
                 <CommandButton displayText="!crochet" command="!crochet" />
                 <p>Mi momento del Crochet llegó 🧶</p>
+              </li>
+              <li>
+                <CommandButton
+                  displayText="!descansando"
+                  command="!descansando"
+                />
+                <p>Está descansando ☺️</p>
               </li>
             </ul>
           </div>
