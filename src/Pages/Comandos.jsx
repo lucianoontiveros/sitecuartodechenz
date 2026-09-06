@@ -12,9 +12,11 @@ import IconActivities from '../Components/img/IconActivities.jsx'
 import IconDataUser from '../Components/img/IconDataUser.jsx'
 import IconExam from '../Components/img/IconExam.jsx'
 import CommandButton from '../Components/buttons/CommandButton'
+import CommandExplorer from '../Components/CommandExplorer'
+import shareActivitySection from '../Data/commandsData'
 
 const Comandos = () => {
-  // Hooks para animaciones al hacer scroll
+  // Hooks para animaciones al hacer scroll (se usan en la portada y el índice)
   const [ref1, isVisible1] = useScrollAnimation()
   const [ref2, isVisible2] = useScrollAnimation()
   const [ref3, isVisible3] = useScrollAnimation()
@@ -23,81 +25,6 @@ const Comandos = () => {
 
   return (
     <>
-      <style>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        @keyframes fadeInLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-        
-        @keyframes fadeInRight {
-          from {
-            opacity: 0;
-            transform: translateX(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-        
-        .fade-in-up {
-          opacity: 0;
-          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        
-        .fade-in-left {
-          opacity: 0;
-          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        
-        .fade-in-right {
-          opacity: 0;
-          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        
-        .fade-in-up.visible {
-          opacity: 1;
-          animation: fadeInUp 0.8s ease-out forwards;
-        }
-        
-        .fade-in-left.visible {
-          opacity: 1;
-          animation: fadeInLeft 0.8s ease-out forwards;
-        }
-        
-        .fade-in-right.visible {
-          opacity: 1;
-          animation: fadeInRight 0.8s ease-out forwards;
-        }
-        
-        /* Retrasos para animaciones escalonadas */
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-        .delay-3 { animation-delay: 0.3s; }
-        .delay-4 { animation-delay: 0.4s; }
-        
-        /* Asegurar que las imágenes y textos tengan transición suave */
-        img, p, h1, h2, h3, h4, h5, h6, li {
-          transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-        }
-      `}</style>
       <div className="container_comandos">
         {/* inicio  */}
         <section
@@ -531,468 +458,25 @@ const Comandos = () => {
             </ul>
           </div>
         </section>
-        <div id="compartir-actividades"></div>
 
-        {/* Comandos de actividades   */}
+
+        {/* Comandos de actividades — antes esto era ~460 líneas de JSX
+            repetido a mano, con todas las categorías mostradas de una y
+            un botón ancho por fila. Ahora es un explorador por tabs
+            (CommandExplorer) con buscador, alimentado por
+            shareActivitySection en Data/commandsData.js */}
         <section className="container_comandos">
-          {/* Comandos de actividades   */}
           <div className="container_comandos_titles">
             <IconActivities />
             <div className="container_comandos_titles_text">
-              <h3>Comparte lo que estás haciendo</h3>
+              <h3>{shareActivitySection.heading}</h3>
               <p className="container_comandos_card_p">
-                Haz que la comunidad sepa en qué estás trabajando o disfrutando
-                con comandos instantáneos.
+                {shareActivitySection.intro}
               </p>
             </div>
           </div>
 
-          {/* PRODUCTIVIDAD */}
-          <div className="container_comandos_card">
-            <div>
-              <h3>Productividad</h3>
-            </div>
-            <p>
-              Actividades enfocadas en el desarrollo intelectual, profesional o
-              académico. Esta categoría abarca momentos dedicados al estudio, el
-              trabajo, la creación de contenido, la solución de problemas o el
-              avance hacia metas concretas.
-            </p>
-            <ul className="container_comandos_card_list ul_activities">
-              <li>
-                <CommandButton
-                  displayText="!administrando"
-                  command="!administrando"
-                />
-                <p>Administrando 📑</p>
-              </li>
-              <li>
-                <CommandButton displayText="!tp" command="!tp" />
-                <p>Trabajo práctico 📑</p>
-              </li>
-              <li>
-                <CommandButton displayText="!resumen" command="!resumen" />
-                <p>Haciendo Resumen 📑</p>
-              </li>
-              <li>
-                <CommandButton
-                  displayText="!estudiando"
-                  command="!estudiando"
-                />
-                <p>Estudiando 📓</p>
-              </li>
-              <li>
-                <CommandButton
-                  displayText="programando"
-                  command="!programando"
-                />
-                <p>Programando 💻</p>
-              </li>
-              <li>
-                <CommandButton
-                  displayText="!trabajando"
-                  command="!trabajando"
-                />
-                <p>Trabajando 💻</p>
-              </li>
-              <li>
-                <CommandButton displayText="!editando" command="!editando" />
-                <p>Editando 💻</p>
-              </li>
-              <li>
-                <CommandButton displayText="!dibujando" command="!dibujando" />
-                <p>Está dibujando ✍🏾</p>
-              </li>
-              <li>
-                <CommandButton displayText="!pintando" command="!pintando" />
-                <p>Está pintando 🎨</p>
-              </li>
-              <li>
-                <CommandButton displayText="!curso" command="!curso" />
-                <p>Está realizando un curso💻</p>
-              </li>
-              <li>
-                <CommandButton
-                  displayText="!instruyendo"
-                  command="!instruyendo"
-                />
-                <p>Está instruyendo ✍🏻</p>
-              </li>
-              <li>
-                <CommandButton displayText="!reporte" command="!reporte" />
-                <p>Está generando reportes 📑</p>
-              </li>
-              <li>
-                <CommandButton displayText="!subrayar" command="!subrayar" />
-                <p>Está subrayando 📑</p>
-              </li>
-              <li>
-                <CommandButton displayText="!errores" command="!errores" />
-                <p>Está revisando errores 👓</p>
-              </li>
-              <li>
-                <CommandButton displayText="!diseñando" command="!diseñando" />
-                <p>Me encuentro diseñando 📐</p>
-              </li>
-              <li>
-                <CommandButton
-                  displayText="!desarrollando"
-                  command="!desarrollando"
-                />
-                <p>Desarrollando 💻</p>
-              </li>
-              <li>
-                <CommandButton displayText="!lectura" command="!lectura" />
-                <p>Está leyendo 📖</p>
-              </li>
-              <li>
-                <CommandButton
-                  displayText="!opositando"
-                  command="!opositando"
-                />
-                <p>Está opositando ✍🏻</p>
-              </li>
-              <li>
-                <CommandButton displayText="!repasando" command="!repasando" />
-                <p>Está repasando 📑</p>
-              </li>
-              <li>
-                <CommandButton displayText="!pizarra" command="!pizarra" />
-                <p>Usando la pizarra 🖍️</p>
-              </li>
-            </ul>
-          </div>
-
-          {/* AUTOCUIDADO */}
-          <div className="container_comandos_card">
-            <div>
-              <h3>Autocuidado</h3>
-            </div>
-            <p className="container_comandos_card_p">
-              Prácticas relacionadas con el bienestar físico y mental. Incluye
-              higiene personal, descanso, relajación, movimiento consciente y
-              cualquier actividad que favorezca el equilibrio y el cuidado de
-              uno mismo.
-            </p>
-            <ul className="container_comandos_card_list ul_activities">
-              <li>
-                <CommandButton displayText="!baño" command="!baño" />
-                <p>En el baño 🚽</p>
-              </li>
-              <li>
-                <CommandButton displayText="!ducha" command="!ducha" />
-                <p>Duchándose 🛀🏻</p>
-              </li>
-              <li>
-                <CommandButton displayText="!paseo" command="!paseo" />
-                <p>Dando un paseo 🌳</p>
-              </li>
-
-              <li>
-                <CommandButton displayText="!meditar" command="!meditar" />
-                <p>Meditando 🧘🏻‍♀️</p>
-              </li>
-              <li>
-                <CommandButton displayText="!siesta" command="!siesta" />
-                <p>Mimiendo siesta 🛌🏻</p>
-              </li>
-              <li>
-                <CommandButton displayText="!dormir" command="!dormir" />
-                <p>Mimiendo 🛌🏻</p>
-              </li>
-              <li>
-                <CommandButton displayText="!entrenar" command="!entrenar" />
-                <p>Entrenando 👟</p>
-              </li>
-              <li>
-                <CommandButton displayText="!dientes" command="!dientes" />
-                <p>Cepillando dientes 🪥</p>
-              </li>
-              <li>
-                <CommandButton displayText="!estirar" command="!estirar" />
-                <p>Estirando 🧎🏻‍♂️‍➡️</p>
-              </li>
-              <li>
-                <CommandButton displayText="!lavadora" command="!lavadora" />
-                <p>Lavando 👕</p>
-              </li>
-              <li>
-                <CommandButton displayText="!platos" command="!platos" />
-                <p>Lavando platos 🍽️</p>
-              </li>
-              <li>
-                <CommandButton displayText="!limpiando" command="!limpiando" />
-                <p>Está limpiando 🗑️</p>
-              </li>
-              <li>
-                <CommandButton displayText="!baño" command="!baño" />
-                <p>En el baño 🚽</p>
-              </li>
-            </ul>
-          </div>
-
-          {/* COMIDA */}
-          <div className="container_comandos_card">
-            <div>
-              <h3>Comida, bebidas e infusiones </h3>
-            </div>
-            <p className="container_comandos_card_p">
-              Espacios dedicados a la alimentación y al disfrute de infusiones o
-              bebidas calientes. Incluye momentos de preparación, consumo o
-              pausas reconfortantes para recargar energía.
-            </p>
-            <ul className="container_comandos_card_list ul_activities">
-              <li>
-                <CommandButton displayText="!calentar" command="!calentar" />
-                <p>Calentando 🫖</p>
-              </li>
-              <li>
-                <CommandButton
-                  displayText="!cocina / !cocinando"
-                  command="!cocina / !cocinando"
-                />
-                <p>En la cocina 🍳</p>
-              </li>
-              <li>
-                <CommandButton displayText="!desayunar" command="!desayunar" />
-                <p>Desayunando 🍵</p>
-              </li>
-              <li>
-                <CommandButton displayText="!almorzar" command="!almorzar" />
-                <p>Almorzando 🍽️</p>
-              </li>
-
-              <li>
-                <CommandButton displayText="!merendar" command="!merendar" />
-                <p>Merendando 🍪</p>
-              </li>
-              <li>
-                <CommandButton displayText="!cenar" command="!cenar" />
-                <p>Cenando 🍽️</p>
-              </li>
-              <li>
-                <CommandButton displayText="!fruta" command="!fruta" />
-                <p>Comiendo fruta 🍊</p>
-              </li>
-              <li>
-                <CommandButton displayText="!mate" command="!mate" />
-                <p>Tomando mate 🧉</p>
-              </li>
-              <li>
-                <CommandButton
-                  displayText="!tereré / !terere"
-                  command="!terere"
-                />
-                <p>Tomando un tereré 🧉</p>
-              </li>
-              <li>
-                <CommandButton displayText="!techai" command="!techai" />
-                <p>Tomando un té 🍵</p>
-              </li>
-              <li>
-                <CommandButton displayText="!matcha" command="!matcha" />
-                <p>Tomando un matcha 🍵</p>
-              </li>
-              <li>
-                <CommandButton
-                  displayText="!télimon / !telimon "
-                  command="!telimon"
-                />
-                <p>Tomando un té de limón🍵</p>
-              </li>
-              <li>
-                <CommandButton displayText="!café" command="!café" />
-                <p>Tomando café ☕</p>
-              </li>
-
-              <li>
-                <CommandButton
-                  displayText="!colacao / !chocolatada "
-                  command="!chocolatada"
-                />
-                <p>Tomando una chocolatada</p>
-              </li>
-
-              <li>
-                <CommandButton displayText="!latte" command="!latte" />
-                <p>Tomando café con leche ☕</p>
-              </li>
-              <li>
-                <CommandButton
-                  displayText="!matecocido"
-                  command="!matecocido"
-                />
-                <p>Tomando un mate cocido 🍵</p>
-              </li>
-              <li>
-                <CommandButton displayText="!cola" command="!cola" />
-                <p>Tomando una coquita 🥤</p>
-              </li>
-              <li>
-                <CommandButton displayText="!refresco" command="!refresco" />
-                <p>Tomando un refresco 🥤</p>
-              </li>
-              <li>
-                <CommandButton displayText="!gaseosa" command="!gaseosa" />
-                <p>Tomando una gaseosa 🥤</p>
-              </li>
-              <li>
-                <CommandButton displayText="!sanguche" command="!sanguche" />
-                <p>Comiendo sanguche 🥪</p>
-              </li>
-              <li>
-                <CommandButton
-                  displayText="!energizante"
-                  command="!energizante"
-                />
-                <p>Tomando una bebida energizante 🔋</p>
-              </li>
-              <li>
-                <CommandButton displayText="!chocolate" command="!chocolate" />
-                <p>Comiendo chocolate 🍫</p>
-              </li>
-            </ul>
-          </div>
-
-          {/* ORGANIZACION */}
-          <div className="container_comandos_card">
-            <div>
-              <h3>Organización</h3>
-            </div>
-            <p>
-              Tareas que ayudan a estructurar, planificar y revisar el día a
-              día. Esta categoría reúne actividades como organizar documentos,
-              actualizar agendas, planificar tareas o reflexionar sobre el
-              progreso personal.
-            </p>
-            <ul className="container_comandos_card_list ul_activities">
-              <li>
-                <CommandButton displayText="!organizar" command="!organizar" />
-                <p>Organizando 🧮</p>
-              </li>
-              <li>
-                <CommandButton displayText="!agenda" command="!agenda" />
-                <p>Revisando Agenda 📒</p>
-              </li>
-              <li>
-                <CommandButton displayText="!bitacora" command="!bitacora" />
-                <p>Realizando mi bitácora diaria 🗒️</p>
-              </li>
-              <li>
-                <CommandButton displayText="!revisando" command="!revisando" />
-                <p>Revisando contenido 💻</p>
-              </li>
-              <li>
-                <CommandButton displayText="!mensajes" command="!mensajes" />
-                <p>Revisando Mensajes 📩</p>
-              </li>
-              <li>
-                <CommandButton
-                  displayText="!planificando"
-                  command="!planificando"
-                />
-                <p>Estoy planificando 📅</p>
-              </li>
-              <li>
-                <CommandButton displayText="!pagos" command="!pagos" />
-                <p>Realizando pagos 💵</p>
-              </li>
-            </ul>
-          </div>
-
-          {/* EVENTOS */}
-          <div className="container_comandos_card">
-            <div>
-              <h3>Eventos</h3>
-            </div>
-            <p>
-              Momentos puntuales o compartidos con otros, como reuniones,
-              llamadas, clases o salidas. Representan instancias sincronizadas,
-              presenciales o virtuales, que requieren atención y participación
-              activa.
-            </p>
-            <ul className="container_comandos_card_list ul_activities">
-              <li>
-                <CommandButton displayText="!call" command="!call" />
-                <p>En llamada 📱</p>
-              </li>
-              <li>
-                <CommandButton displayText="!tramites" command="!tramites" />
-                <p>Haciendo tramites 📝</p>
-              </li>
-              <li>
-                <CommandButton
-                  displayText="!reunión / !reunion"
-                  command="!reunión / !reunion"
-                />
-                <p>En reunión 📱</p>
-              </li>
-              <li>
-                <CommandButton displayText="!clases" command="!clases" />
-                <p>En clases 🏫</p>
-              </li>
-              <li>
-                <CommandButton
-                  displayText="!volví / !volvi"
-                  command="!volví / !volvi"
-                />
-                <p>Regresando ☝🏻</p>
-              </li>
-              <li>
-                <CommandButton displayText="!compras" command="!compras" />
-                <p>Comprando 🛒</p>
-              </li>
-              <li>
-                <CommandButton displayText="!medico" command="!medico" />
-                <p>En consulta 🏥</p>
-              </li>
-              <li>
-                <CommandButton displayText="!viajando" command="!viajando" />
-                <p>En viaje 🚏</p>
-              </li>
-              <li>
-                <CommandButton displayText="!dentista" command="!dentista" />
-                <p>En el dentista 🦷</p>
-              </li>
-            </ul>
-          </div>
-
-          {/* OCIO */}
-          <div className="container_comandos_card">
-            <div>
-              <h3>Ocio</h3>
-            </div>
-            <p className="container_comandos_card_p">
-              Actividades recreativas para desconectar, disfrutar o estimular la
-              creatividad. Incluye momentos de entretenimiento, pasatiempos y
-              hobbies que ayudan a equilibrar la rutina.
-            </p>
-            <ul className="container_comandos_card_list ul_activities">
-              <li>
-                <CommandButton displayText="!serie" command="!serie" />
-                <p>Mirando serie 📺</p>
-              </li>
-              <li>
-                <CommandButton displayText="!jugando" command="!jugando" />
-                <p>Jugando 🎮</p>
-              </li>
-              <li>
-                <CommandButton displayText="!musica" command="!musica" />
-                <p>Escuchando música 🎧</p>
-              </li>
-              <li>
-                <CommandButton displayText="!crochet" command="!crochet" />
-                <p>Mi momento del Crochet llegó 🧶</p>
-              </li>
-              <li>
-                <CommandButton
-                  displayText="!descansando"
-                  command="!descansando"
-                />
-                <p>Está descansando ☺️</p>
-              </li>
-            </ul>
-          </div>
+          <CommandExplorer groups={shareActivitySection.groups} />
         </section>
 
         <div id="personalizar-perfil"></div>
@@ -1135,6 +619,7 @@ const Comandos = () => {
             </ul>{' '}
           </div>
         </section>
+
 
         <div id="gestion-examenes"></div>
         {/* Comandos de Gestión de Exámenes */}
@@ -1456,6 +941,7 @@ const Comandos = () => {
             </ul>
           </div>
         </section>
+
       </div>
     </>
   )

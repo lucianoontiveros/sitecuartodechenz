@@ -1,19 +1,33 @@
 .button_card {
-    background-color: rgb(0, 0, 0);   
-    border: 1px solid aquamarine;
-    min-width: 10em;
-    margin-top: -3em;
+  border: 0.2em solid aquamarine;
+  min-width: 10em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+  
 }
 
 .button_card:hover {
-    border: 1px solid black;
+    border: 0.2em solid black;
     background-color: aquamarine;
     color: black;
 }
 
 .button_card:active {
-    border: 1px solid aquamarine;
+    border: 0.2em solid aquamarine;
     background-color: black;
     color: aquamarine;
 }
 
+/* Comandos que todavía no tienen audio cargado: se copian igual,
+   pero se marcan visualmente para no generar la sensación de "botón roto" */
+.button_card--sin-audio {
+    border-style: dashed;
+    opacity: 0.85;
+}
+
+.sin-audio-badge {
+    font-size: 0.9em;
+    line-height: 1;
+}
