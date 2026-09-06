@@ -9,6 +9,15 @@
   background-color: black;
 }
 
+:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+:root {
+  --primary-color: aquamarine; /* o el color que prefieras para el foco */
+}
+
 /* Reset cursor to default for all elements */
 * {
   cursor: auto !important;
@@ -75,6 +84,17 @@ button {
   background: none;
   border: none;
   cursor: pointer !important;
+}
+
+.button_card:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.button_card:focus-visible {
+  outline: 2px solid aquamarine;
+  outline-offset: 2px;
+  box-shadow: none;
 }
 
 /* Remove default table styles */

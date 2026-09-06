@@ -1,5 +1,5 @@
 import Card_Gallery from '../Components/card/Card_Gallery'
-import gallery_Images from '../Data/Galley_Images'
+import soundsData from '../Data/soundsData'
 import ScrollAnimation from '../utils/ScrollAnimation'
 import './sonidos.css'
 
@@ -19,13 +19,13 @@ const Sonidos = () => {
       </ScrollAnimation>
 
       <div className="gallery-grid">
-        {gallery_Images.map((item, index) => (
+        {soundsData.map((item, index) => (
           <ScrollAnimation
-            key={index}
+            key={item.id}
             effect="fade-up"
             delay={150 + getDelay(index)}
           >
-            <Card_Gallery name={item.nombre} image={item.image} />
+            <Card_Gallery id={item.id} image={item.image} audio={item.audio} />
           </ScrollAnimation>
         ))}
       </div>
