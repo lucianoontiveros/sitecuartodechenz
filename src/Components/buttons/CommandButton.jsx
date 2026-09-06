@@ -1,40 +1,40 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
+// Antes: el "copiado" se mostraba escribiendo directo sobre el DOM
+// (buttonRef.style.backgroundColor = 'aquamarine', buttonRef.textContent = ...)
+// dentro de un callback ref. Eso pisa por fuera lo que React ya renderiza,
+// hardcodea el color en vez de usar la clase CSS del tema, y si el usuario
+// hace click varias veces seguidas los setTimeout se pisan entre sí.
+//
+// Ahora "copiado" es simplemente estado de React: el texto y la clase
+// .comando-btn--copiado se resuelven en el render, como corresponde.
 const CommandButton = ({ displayText, command, className = 'comando-btn' }) => {
   const [isCopied, setIsCopied] = useState(false);
+  const timeoutRef = useRef(null);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(command);
     setIsCopied(true);
-    
-    // Limpiar el mensaje después de 2 segundos
-    setTimeout(() => {
-      setIsCopied(false);
-    }, 2000);
+
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => setIsCopied(false), 2000);
   };
 
+  // Limpiar el timeout si el componente se desmonta (por ejemplo al cambiar
+  // de sección) para no intentar actualizar estado de un componente ya destruido.
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
+
   return (
-    <button 
-      className={className}
+    <button
+      className={`${className}${isCopied ? ' comando-btn--copiado' : ''}`}
       onClick={handleCopy}
-      ref={buttonRef => {
-        if (buttonRef) {
-          if (isCopied) {
-            buttonRef.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
-            buttonRef.style.color = 'black';
-            buttonRef.textContent = '¡Comando copiado!';
-            
-            // Restaurar el texto original después de 2 segundos
-            setTimeout(() => {
-              buttonRef.style.backgroundColor = 'aquamarine';
-              buttonRef.style.color = 'black';
-              buttonRef.textContent = displayText || command;
-            }, 2000);
-          }
-        }
-      }}
+      type="button"
     >
-      {displayText || command}
+      {isCopied ? '¡Comando copiado!' : displayText || command}
     </button>
   );
 };

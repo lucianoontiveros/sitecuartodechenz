@@ -190,8 +190,9 @@ const Inicio = () => {
         <section className="img_section">
           <img
             src="/img_inicio.png"
-            alt="Inicio"
+            alt="Inicio - Cuarto de Chenz"
             className="img_inicio"
+            loading="lazy"
           />
         </section>
         <div id="presentation"></div>
@@ -210,7 +211,8 @@ const Inicio = () => {
           <img
             className="media_element img"
             src={img_presentation}
-            alt="imagen presentación"
+            alt="Presentación - Cuarto de Chenz"
+            loading="lazy"
           />
           <div className="presentation_element_text">
             <div className="tittle_and_icon">
@@ -441,28 +443,32 @@ const Inicio = () => {
             ref={ref7}
             className={`horario_card fade-in-up ${isVisible7 ? 'visible delay-1' : ''}`}
           >
-            <div className="text_elements">
-              <h3>NUESTROS HORARIOS</h3>
-          
-              <h5>LUNES A JUEVES</h5>
-              <ul>
-                <li>14:00 a 21:00 hs ARG</li>
-                <li>14:00 a 21:00 hs BRA</li>
-                <li>19:00 a 02:00 hs ESP</li>
-                <li>11:00 A 18:00 HS MEX</li>
-                <li>18:00 A 01:00 HS POR</li>
-                <li>12:00 A 19:00 HS COL</li>
-              </ul>
-              <h5>DOMINGOS Y SÁBADOS</h5>
-              <ul>
-                <li>14:00 a 21:00 hs ARG</li>
-                <li>14:00 a 21:00 hs BRA</li>
-                <li>19:00 a 02:00 hs ESP</li>
-                <li>11:00 A 18:00 HS MEX</li>
-                <li>18:00 A 01:00 HS POR</li>
-                <li>12:00 A 19:00 HS COL</li>
-              </ul>
-            </div>
+     
+<div className="text_elements">
+  <h3>NUESTROS HORARIOS</h3>
+  
+  <h5>LUNES A JUEVES</h5>
+  <ul>
+  <li>🇦🇷 <strong>ARG:</strong> 14:00 a 20:00 hs</li>
+<li>🇧🇷 <strong>BRA:</strong> 14:00 a 20:00 hs</li>
+<li>🇪🇸 <strong>ESP:</strong> 19:00 a 01:00 hs</li>
+<li>🇲🇽 <strong>MEX:</strong> 11:00 a 17:00 hs</li>
+<li>🇵🇹 <strong>POR:</strong> 18:00 a 00:00 hs</li>
+<li>🇨🇴 <strong>COL:</strong> 12:00 a 18:00 hs</li>
+  </ul>
+  <h5>DOMINGOS Y SÁBADOS</h5>
+  <ul>
+  <li>🇦🇷 <strong>ARG:</strong> 14:00 a 20:00 hs</li>
+<li>🇧🇷 <strong>BRA:</strong> 14:00 a 20:00 hs</li>
+<li>🇪🇸 <strong>ESP:</strong> 19:00 a 01:00 hs</li>
+<li>🇲🇽 <strong>MEX:</strong> 11:00 a 17:00 hs</li>
+<li>🇵🇹 <strong>POR:</strong> 18:00 a 00:00 hs</li>
+<li>🇨🇴 <strong>COL:</strong> 12:00 a 18:00 hs</li>
+  </ul>
+</div>
+
+
+
           </div>
         </div>
 

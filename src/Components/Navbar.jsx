@@ -168,10 +168,10 @@ const Navbar = () => {
             <div>CUARTO DE CHENZ</div>
           </NavLink>
 
-          <div className="hidden link_container md:flex">
+          <div className="link_container desktop-only">
             <Links_elements />
           </div>
-          <div className="md:hidden toogle_navbar">
+          <div className="mobile-menu-btn">
             <button onClick={toggleNavBar}>
               {isOpen ? <OutMenu /> : <Menu />}
             </button>

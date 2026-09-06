@@ -6,6 +6,7 @@ import Icon_instagram from "../Components/img_icons/Icon_instagram.jsx";
 import Icon_tiktok from "../Components/img_icons/Icon_tiktok.jsx";
 import Icon_x from "../Components/img_icons/Icon_x.jsx";
 import Icon_youtube from "../Components/img_icons/Icon_youtube.jsx";
+import logger from '../utils/logger';
 
 export default function Subscription() {
   const [image, setImage] = useState('/menester_de_greta.png');
@@ -62,7 +63,7 @@ export default function Subscription() {
       setImageCopied(true);
       setTimeout(() => setImageCopied(false), 2000);
     } catch (error) {
-      console.error('Error al copiar la imagen:', error);
+      logger.error('Error al copiar la imagen', error);
     }
   };
 

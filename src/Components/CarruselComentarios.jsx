@@ -4,6 +4,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useNavigate } from 'react-router-dom';
 import './carrusel-comentarios.css';
+import api from '../services/api';
+import logger from '../utils/logger';
 
 const CarruselComentarios = () => {
   const [comentarios, setComentarios] = useState([]);
@@ -18,15 +20,26 @@ const CarruselComentarios = () => {
 
   const fetchComentarios = async () => {
     try {
-      const res = await fetch('/api/comentarios');
-      const data = await res.json();
+      // Agregar timeout para evitar que se quede colgado
+      const res = await api.get('/comentarios', {
+        timeout: 5000 // 5 segundos de timeout
+      });
+      const data = res.data;
+      
+      // Optimización: limitar a los primeros 10 comentarios para mejor rendimiento
+      const limitedComentarios = data.slice(0, 10);
+      
       // Eliminar duplicados basados en _id
-      const uniqueComentarios = data.filter((comentario, index, self) =>
+      const uniqueComentarios = limitedComentarios.filter((comentario, index, self) =>
         index === self.findIndex((c) => c._id === comentario._id)
       );
       setComentarios(uniqueComentarios);
     } catch (error) {
-      console.error('Error al cargar comentarios:', error);
+      logger.error('Error al cargar comentarios', error);
+      // En caso de error, mostrar mensaje de error específico
+      if (error.code === 'ECONNABORTED') {
+        logger.error('Timeout al cargar comentarios');
+      }
     } finally {
       setLoading(false);
     }
@@ -94,7 +107,15 @@ const CarruselComentarios = () => {
   };
 
   if (loading) {
-    return <div className="carrusel-loading">Cargando comentarios...</div>;
+    return (
+      <div className="carrusel-container">
+        <h2 className="carrusel-title">Lo que dicen nuestros usuarios</h2>
+        <div className="carrusel-loading">
+          <div className="spinner-icon"></div>
+          <span>Cargando comentarios...</span>
+        </div>
+      </div>
+    );
   }
 
   if (comentarios.length === 0) {

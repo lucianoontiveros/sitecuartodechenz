@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './admin.css';
+import api from '../services/api';
+import logger from '../utils/logger';
 
 export default function AvisosManager() {
   const navigate = useNavigate();
@@ -27,16 +29,10 @@ export default function AvisosManager() {
 
   const fetchAvisos = async () => {
     try {
-      const token = localStorage.getItem('adminToken');
-      const res = await fetch('/api/avisos', {
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
-      });
-      const data = await res.json();
-      setAvisos(data);
+      const res = await api.get('/avisos');
+      setAvisos(res.data);
     } catch (error) {
-      console.error('Error al cargar avisos:', error);
+      logger.error('Error al cargar avisos', error);
     } finally {
       setLoading(false);
     }
@@ -45,27 +41,17 @@ export default function AvisosManager() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const token = localStorage.getItem('adminToken');
-      const url = editingAviso ? `/api/avisos/${editingAviso._id}` : '/api/avisos';
-      const method = editingAviso ? 'PUT' : 'POST';
-      
-      const res = await fetch(url, {
-        method,
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
-        },
-        body: JSON.stringify(formData)
-      });
-
-      if (res.ok) {
-        setShowForm(false);
-        setEditingAviso(null);
-        setFormData({ titulo: '', contenido: '', tipo: 'normal', activo: true, imagen: '' });
-        fetchAvisos();
+      if (editingAviso) {
+        await api.put(`/avisos/${editingAviso._id}`, formData);
+      } else {
+        await api.post('/avisos', formData);
       }
+      setShowForm(false);
+      setEditingAviso(null);
+      setFormData({ titulo: '', contenido: '', tipo: 'normal', activo: true, imagen: '' });
+      fetchAvisos();
     } catch (error) {
-      console.error('Error al guardar aviso:', error);
+      logger.error('Error al guardar aviso', error);
     }
   };
 
@@ -85,39 +71,19 @@ export default function AvisosManager() {
     if (!window.confirm('¿Estás seguro de eliminar este aviso?')) return;
     
     try {
-      const token = localStorage.getItem('adminToken');
-      const res = await fetch(`/api/avisos/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
-      });
-
-      if (res.ok) {
-        fetchAvisos();
-      }
+      await api.delete(`/avisos/${id}`);
+      fetchAvisos();
     } catch (error) {
-      console.error('Error al eliminar aviso:', error);
+      logger.error('Error al eliminar aviso', error);
     }
   };
 
   const handleToggleActive = async (id, currentStatus) => {
     try {
-      const token = localStorage.getItem('adminToken');
-      const res = await fetch(`/api/avisos/${id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
-        },
-        body: JSON.stringify({ activo: !currentStatus })
-      });
-
-      if (res.ok) {
-        fetchAvisos();
-      }
+      await api.put(`/avisos/${id}`, { activo: !currentStatus });
+      fetchAvisos();
     } catch (error) {
-      console.error('Error al actualizar aviso:', error);
+      logger.error('Error al actualizar aviso', error);
     }
   };
 

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './admin.css';
+import api from '../services/api';
+import logger from '../utils/logger';
 
 export default function AdminDashboard() {
   const navigate = useNavigate();
@@ -29,13 +31,7 @@ export default function AdminDashboard() {
       
       if (token) {
         // Llamar al endpoint de logout para revocar el token
-        await fetch('/api/auth/logout', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-          }
-        });
+        await api.post('/auth/logout');
       }
       
       // Limpiar localStorage
@@ -43,7 +39,7 @@ export default function AdminDashboard() {
       localStorage.removeItem('adminUser');
       navigate('/admin/login');
     } catch (error) {
-      console.error('Error al cerrar sesión:', error);
+      logger.error('Error al cerrar sesión', error);
       // Aún así limpiar localStorage y redirigir
       localStorage.removeItem('adminToken');
       localStorage.removeItem('adminUser');
@@ -74,6 +70,11 @@ export default function AdminDashboard() {
           <div className="admin-card" onClick={() => navigate('/admin/avisos')}>
             <h2>📢 Avisos</h2>
             <p>Gestionar avisos del sitio</p>
+          </div>
+          
+          <div className="admin-card" onClick={() => navigate('/admin/comentarios')}>
+            <h2>💬 Comentarios</h2>
+            <p>Gestionar comentarios de usuarios</p>
           </div>
           
           <div className="admin-card">

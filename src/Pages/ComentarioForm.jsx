@@ -1,11 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
+import { GoogleLogin } from '@react-oauth/google';
 import './comentario-form.css';
+import api from '../services/api';
+import logger from '../utils/logger';
 
 export default function ComentarioForm() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
+  const [googleToken, setGoogleToken] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [comentarioExistente, setComentarioExistente] = useState(null);
@@ -17,17 +20,21 @@ export default function ComentarioForm() {
 
   useEffect(() => {
     const userData = localStorage.getItem('comentarioUser');
+    const tokenData = localStorage.getItem('comentarioToken');
     if (userData) {
       const parsedUser = JSON.parse(userData);
       setUser(parsedUser);
+      if (tokenData) {
+        setGoogleToken(tokenData);
+      }
       verificarComentarioExistente(parsedUser.sub);
     }
   }, []);
 
   const verificarComentarioExistente = async (googleId) => {
     try {
-      const res = await fetch('/api/comentarios');
-      const comentarios = await res.json();
+      const res = await api.get('/comentarios');
+      const comentarios = res.data;
       const existente = comentarios.find(c => c.googleId === googleId);
       if (existente) {
         setComentarioExistente(existente);
@@ -37,7 +44,7 @@ export default function ComentarioForm() {
         });
       }
     } catch (error) {
-      console.error('Error al verificar comentario:', error);
+      logger.error('Error al verificar comentario', error);
     }
   };
 
@@ -46,18 +53,8 @@ export default function ComentarioForm() {
     setError('');
     
     try {
-      const res = await fetch('/api/auth/google-comment', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ token: response.credential })
-      });
-      
-      if (!res.ok) {
-        const errorData = await res.json();
-        throw new Error(errorData.error || 'Error en autenticación');
-      }
-      
-      const { user: googleUser } = await res.json();
+      const res = await api.post('/auth/google-comment', { token: response.credential });
+      const { user: googleUser } = res.data;
       const userData = {
         sub: googleUser.sub, // Usar el ID real de Google del backend
         nombre: googleUser.nombre,
@@ -65,11 +62,13 @@ export default function ComentarioForm() {
       };
       
       localStorage.setItem('comentarioUser', JSON.stringify(userData));
+      localStorage.setItem('comentarioToken', response.credential);
       setUser(userData);
+      setGoogleToken(response.credential);
       await verificarComentarioExistente(userData.sub);
     } catch (error) {
-      console.error('Error en login:', error);
-      setError(error.message);
+      logger.error('Error en login', error);
+      setError(error.response?.data?.error || error.message || 'Error en autenticación');
     } finally {
       setLoading(false);
     }
@@ -124,34 +123,34 @@ export default function ComentarioForm() {
     setError('');
 
     try {
-      const url = comentarioExistente 
-        ? `/api/comentarios/${comentarioExistente._id}`
-        : '/api/comentarios';
-      const method = comentarioExistente ? 'PUT' : 'POST';
-      
-      const body = comentarioExistente
-        ? { googleId: user.sub, comentario: formData.comentario, estrellas: formData.estrellas }
-        : { googleId: user.sub, nombre: user.nombre, email: user.email, comentario: formData.comentario, estrellas: formData.estrellas };
-      
-      const res = await fetch(url, {
-        method,
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body)
-      });
-
-      if (!res.ok) {
-        const errorData = await res.json();
-        throw new Error(errorData.error || 'Error al guardar comentario');
+      if (comentarioExistente) {
+        await api.put(`/comentarios/${comentarioExistente._id}`, {
+          token: googleToken,
+          googleId: user.sub,
+          comentario: formData.comentario,
+          estrellas: formData.estrellas
+        });
+      } else {
+        await api.post('/comentarios', {
+          token: googleToken,
+          googleId: user.sub,
+          nombre: user.nombre,
+          email: user.email,
+          comentario: formData.comentario,
+          estrellas: formData.estrellas
+        });
       }
 
       localStorage.removeItem('comentarioUser');
+      localStorage.removeItem('comentarioToken');
       setUser(null);
+      setGoogleToken(null);
       setComentarioExistente(null);
       setFormData({ comentario: '', estrellas: 5 });
       navigate('/');
     } catch (error) {
-      console.error('Error al guardar comentario:', error);
-      setError(error.message);
+      logger.error('Error al guardar comentario', error);
+      setError(error.response?.data?.error || error.message || 'Error al guardar comentario');
     } finally {
       setLoading(false);
       setIsSubmitting(false);
@@ -161,7 +160,9 @@ export default function ComentarioForm() {
 
   const handleLogout = () => {
     localStorage.removeItem('comentarioUser');
+    localStorage.removeItem('comentarioToken');
     setUser(null);
+    setGoogleToken(null);
     setComentarioExistente(null);
     setFormData({ comentario: '', estrellas: 5 });
   };
@@ -182,10 +183,9 @@ export default function ComentarioForm() {
   };
 
   return (
-    <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
-      <div className="comentario-form-container">
-        <div className="comentario-form-card">
-          <h1>{comentarioExistente ? 'Editar Comentario' : 'Dejar un Comentario'}</h1>
+    <div className="comentario-form-container">
+      <div className="comentario-form-card">
+        <h1>{comentarioExistente ? 'Editar Comentario' : 'Dejar un Comentario'}</h1>
           <p className="comentario-subtitle">CUARTO DE CHENZ</p>
           
           {error && <div className="error-message">{error}</div>}
@@ -193,7 +193,7 @@ export default function ComentarioForm() {
           {!user ? (
             <div className="google-login-wrapper">
               
-              {loading && <div className="loading-spinner">Cargando...</div>}
+              {loading && <div className="loading-text">Cargando...</div>}
               <p className="login-info">
                 Inicia sesión con Google para dejar tu comentario
               </p>
@@ -252,6 +252,5 @@ export default function ComentarioForm() {
           )}
         </div>
       </div>
-    </GoogleOAuthProvider>
   );
 }
