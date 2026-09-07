@@ -1,22 +1,26 @@
+
 import './comandos.css'
+
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
+
 import Icon_instagram from '../Components/img_icons/Icon_instagram.jsx'
 import Icon_tiktok from '../Components/img_icons/Icon_tiktok.jsx'
 import Icon_x from '../Components/img_icons/Icon_x.jsx'
 import Icon_youtube from '../Components/img_icons/Icon_youtube.jsx'
+
 import card_comando_tareas from '/card_comandos_1.png'
 import card_comando_activities from '/card_comandos_2.png'
 import card_comando_userdata from '/card_comandos_3.png'
+
 import IconList from '../Components/img/IconList.jsx'
 import IconActivities from '../Components/img/IconActivities.jsx'
 import IconDataUser from '../Components/img/IconDataUser.jsx'
-import IconExam from '../Components/img/IconExam.jsx'
-import CommandButton from '../Components/buttons/CommandButton'
+
 import CommandExplorer from '../Components/CommandExplorer'
+
 import shareActivitySection from '../Data/commandsData'
 
 const Comandos = () => {
-  // Hooks para animaciones al hacer scroll (se usan en la portada y el índice)
   const [ref1, isVisible1] = useScrollAnimation()
   const [ref2, isVisible2] = useScrollAnimation()
   const [ref3, isVisible3] = useScrollAnimation()
@@ -24,927 +28,807 @@ const Comandos = () => {
   const [ref5, isVisible5] = useScrollAnimation()
 
   return (
-    <>
-      <div className="container_comandos">
-        {/* inicio  */}
-        <section
-          ref={ref1}
-          className={`title_container_comandos fade-in-up ${isVisible1 ? 'visible' : ''}`}
+    <div className="container_comandos_page">
+
+      {/* =========================================================
+          PORTADA
+      ========================================================= */}
+
+      <section
+        ref={ref1}
+        className={`title_container_comandos fade-in-up ${
+          isVisible1 ? 'visible' : ''
+        }`}
+      >
+        <h1>CUARTO DE CHENZ</h1>
+
+        <div className="bar_icon">
+          <a
+            className="icon_bar_element"
+            href="https://www.instagram.com/luciano.a.ontiveros/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Icon_instagram />
+          </a>
+
+          <a
+            className="icon_bar_element"
+            href="https://www.tiktok.com/@cuartodechenz"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Icon_tiktok />
+          </a>
+
+          <a
+            className="icon_bar_element"
+            href="https://x.com/AgustnOntivero6"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Icon_x />
+          </a>
+
+          <a
+            className="icon_bar_element"
+            href="https://www.youtube.com/@cuartodechenz"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Icon_youtube />
+          </a>
+        </div>
+      </section>
+
+      {/* =========================================================
+          ÍNDICE
+      ========================================================= */}
+
+      <section
+        ref={ref2}
+        className={`container_indice fade-in-up ${
+          isVisible2 ? 'visible' : ''
+        }`}
+      >
+
+        {/* TAREAS */}
+
+        <div
+          ref={ref3}
+          className={`container_indice_item fade-in-left ${
+            isVisible3 ? 'visible' : ''
+          }`}
+          onClick={() =>
+            document
+              .getElementById('gestion-tareas')
+              ?.scrollIntoView({ behavior: 'smooth' })
+          }
         >
-          <h1>CUARTO DE CHENZ</h1>
-          <div className="bar_icon">
-            <a
-              className="icon_bar_element"
-              href="https://www.instagram.com/luciano.a.ontiveros/"
-              target="_blank"
-            >
-              <Icon_instagram />
-            </a>
-            <a
-              className="icon_bar_element"
-              href="https://www.tiktok.com/@cuartodechenz"
-              target="_blank"
-            >
-              <Icon_tiktok />
-            </a>
-            <a
-              className="icon_bar_element"
-              href="https://x.com/AgustnOntivero6"
-              target="_blank"
-            >
-              <Icon_x />
-            </a>
-            <a
-              className="icon_bar_element"
-              href="https://www.youtube.com/@cuartodechenz"
-              target="_blank"
-            >
-              <Icon_youtube />
-            </a>
-          </div>
-        </section>
+          <img
+            src={card_comando_tareas}
+            alt="Gestión de tareas"
+          />
 
-        {/* induce */}
-        <section
-          ref={ref2}
-          className={`container_indice fade-in-up ${isVisible2 ? 'visible' : ''}`}
+          <div>
+            <h3>GESTIÓN DE TAREAS</h3>
+
+            <p>
+              Organizá tus pendientes directamente desde el chat.
+              Agregá, completá, modificá o eliminá tareas usando
+              comandos simples.
+            </p>
+          </div>
+        </div>
+
+        {/* ACTIVIDADES */}
+
+        <div
+          ref={ref4}
+          className={`container_indice_item fade-in-right ${
+            isVisible4 ? 'visible delay-1' : ''
+          }`}
+          onClick={() =>
+            document
+              .getElementById('compartir-actividades')
+              ?.scrollIntoView({ behavior: 'smooth' })
+          }
         >
-          <div
-            ref={ref3}
-            className={`container_indice_item fade-in-left ${isVisible3 ? 'visible' : ''}`}
-            onClick={() =>
-              window.scrollTo({
-                top: document.getElementById('gestion-tareas').offsetTop,
-                behavior: 'smooth',
-              })
-            }
-          >
-            {' '}
-            <img
-              src={card_comando_tareas}
-              alt=""
-              onClick={() =>
-                window.scrollTo({
-                  top: document.getElementById('gestion-tareas').offsetTop,
-                  behavior: 'smooth',
-                })
-              }
-            />{' '}
-            <div
-              onClick={() =>
-                window.scrollTo({
-                  top: document.getElementById('gestion-tareas').offsetTop,
-                  behavior: 'smooth',
-                })
-              }
-            >
-              <h3>GESTIÓN INTELIGENTE DE TAREAS</h3>
-              <p>
-                ✅ 📌 Tomar el control de tus pendientes nunca fue tan fácil. A
-                través de comandos simples, puedes gestionar tu lista de tareas
-                sin distracciones ni complicaciones. ✍️ Agrega nuevas
-                actividades con rapidez, 🛠️ edita los detalles cuando lo
-                necesites, ✅ marca tareas como completadas para llevar un
-                seguimiento preciso y 🗑️ elimina aquellas que ya no sean
-                relevantes. ¿Necesitas un sistema que se adapte a tu ritmo de
-                vida? ¡Aquí lo tienes! Cada tarea puede ser registrada y
-                manipulada en segundos, permitiéndote enfocarte en lo que
-                realmente importa. ⏳ Con esta función, transformarás el caos en
-                productividad, estructurando tu día de manera eficiente sin
-                perder tiempo en procesos tediosos. La organización está al
-                alcance de un comando. 🚀
-              </p>
-            </div>
-          </div>
+          <img
+            src={card_comando_activities}
+            alt="Compartir actividades"
+          />
 
-          <div
-            ref={ref4}
-            className={`container_indice_item fade-in-right ${isVisible4 ? 'visible delay-1' : ''}`}
-            onClick={() =>
-              window.scrollTo({
-                top: document.getElementById('compartir-actividades').offsetTop,
-                behavior: 'smooth',
-              })
-            }
-          >
-            {' '}
-            <img
-              src={card_comando_activities}
-              alt=""
-              onClick={() =>
-                window.scrollTo({
-                  top: document.getElementById('compartir-actividades')
-                    .offsetTop,
-                  behavior: 'smooth',
-                })
-              }
-            />{' '}
-            <div
-              onClick={() =>
-                window.scrollTo({
-                  top: document.getElementById('compartir-actividades')
-                    .offsetTop,
-                  behavior: 'smooth',
-                })
-              }
-            >
-              <h3>COMPARTE LO QUE ESTÁS HACIENDO</h3>
-              <p>
-                💡 La comunidad está viva y en constante movimiento, y ahora
-                puedes ser parte de esa dinámica compartiendo en tiempo real lo
-                que estás haciendo. ⏳ Con un solo comando, puedes anunciar si
-                estás 📖 leyendo, 📚 estudiando, 🍳 cocinando, 😴 descansando o
-                💼 trabajando, entre muchas otras actividades. ¿Por qué es
-                importante esto? 🤝 Porque te permite conectar con personas que
-                están en situaciones similares, generar conversaciones
-                interesantes y hacer que tu presencia en la comunidad sea más
-                auténtica. 💬 ¿Te imaginas una red donde todos intercambian lo
-                que están haciendo en el momento, generando una interacción
-                fluida y espontánea? 🌐 Aquí es posible. Con esta función, no
-                solo te expresas, sino que también descubres qué está pasando en
-                la comunidad de una manera rápida y entretenida. ✨ ¡Ser parte
-                de la conversación nunca fue tan accesible!
-              </p>
-            </div>
-          </div>
+          <div>
+            <h3>COMPARTÍ LO QUE ESTÁS HACIENDO</h3>
 
-          <div
-            ref={ref5}
-            className={`container_indice_item fade-in-left ${isVisible5 ? 'visible delay-2' : ''}`}
-            onClick={() =>
-              window.scrollTo({
-                top: document.getElementById('personalizar-perfil').offsetTop,
-                behavior: 'smooth',
-              })
-            }
-          >
-            {' '}
-            <img
-              src={card_comando_userdata}
-              alt=""
-              onClick={() =>
-                window.scrollTo({
-                  top: document.getElementById('personalizar-perfil').offsetTop,
-                  behavior: 'smooth',
-                })
-              }
-            />{' '}
-            <div
-              onClick={() =>
-                window.scrollTo({
-                  top: document.getElementById('personalizar-perfil').offsetTop,
-                  behavior: 'smooth',
-                })
-              }
-            >
-              <h3>PERSONALIZA TU PERFIL</h3>
-              <p>
-                🏷️ 🆙 Tu identidad es única, y ahora puedes reflejarla dentro de
-                la comunidad con información que te define. 🇦🇷 Registra tu
-                nacionalidad, 🎂 fecha de cumpleaños, 📖 carrera o estudios
-                actuales, e incluso 🔗 tu perfil de Instagram para que otros
-                puedan conocerte mejor y conectar contigo de manera auténtica.
-                💡 Compartir estos detalles permite fortalecer relaciones dentro
-                de la comunidad, crear redes con personas de intereses similares
-                y potenciar tu presencia en un entorno colaborativo. 🤝 La
-                comunidad es un espacio donde cada usuario aporta algo valioso,
-                y tu perfil personalizado es la puerta de entrada para nuevas
-                conexiones. 🌟 Ya sea que busques amistades, compañeros de
-                estudio o simplemente compartir quién eres, esta función te
-                permite hacerlo de manera sencilla y efectiva. 🏆 ¡Haz que tu
-                perfil cobre vida con cada detalle que agregues!
-              </p>
-            </div>
-          </div>
-          <div id="gestion-tareas"></div>
-        </section>
-
-        {/* Comandos de tareas   */}
-        <section className="container_comandos">
-          <div className="container_comandos_titles">
-            <IconList />
-            <div className="container_comandos_titles_text">
-              <h3>Gestión Inteligente de Tareas.</h3>
-              <p>
-                Organiza tu día con comandos simples: agrega, modifica, completa
-                o elimina tus tareas en segundos.{' '}
-              </p>
-            </div>
-          </div>
-
-          <div className="container_comandos_card                                                                                                                                                                                                                                                                                         ">
-            <div>
-              <h3>AGREGAR TAREAS</h3>
-            </div>
-            <ul className="container_comandos_card_list">
-              <li>
-                <CommandButton
-                  displayText="📝 !tarea + descripción"
-                  command="!tarea |Borra aquÍ y escribe la descripción|"
-                />
-                <p>
-                  Estos comandos te permiten agregar una nueva tarea con una
-                  descripción personalizada. Si prefieres una forma más breve,
-                  podés usar la versión corta <strong>!t</strong>. El sistema
-                  permite un máximo de <strong>10 tareas</strong> por usuario.
-                  Si intentás superar ese límite, recibirás un mensaje de
-                  advertencia.
-                </p>
-                <p>
-                  These commands allow you to add a new task with a custom
-                  description. For a shorter version, you can use{' '}
-                  <strong>!t</strong>. The task limit is{' '}
-                  <strong>10 per user</strong>. If you try to exceed it, a
-                  warning will be shown.
-                </p>
-                <p>
-                  <strong>Ejemplo / Example:</strong>{' '}
-                  <code>!tarea Esta es la descripción de la nueva tarea</code>
-                </p>
-              </li>
-
-              <li>
-                <CommandButton
-                  displayText="🧾 Agregar múltiples tareas: !tarea / !add / !task / !t +
-                descripción 1 ; descripción 2 ; descripción 3"
-                  command="!add |Borra aquÍ y escribe la descripción 1| ; |Borra aquÍ y escribe la descripción 2| ; |Borra aquÍ y escribe la descripción 3: puedes agregar hasta 10, siempre que ingreses una punto y coma entre medio []|"
-                />
-                <p>
-                  También es posible agregar varias tareas en un solo mensaje
-                  separándolas con punto y coma (<strong>;</strong>). Cada tarea
-                  será procesada de forma individual, siempre que no superes el
-                  límite total de 10 tareas.
-                </p>
-                <p>
-                  You can also add multiple tasks at once by separating each one
-                  with a semicolon (<strong>;</strong>). Each task will be
-                  handled individually, as long as you don’t exceed the 10-task
-                  limit.
-                </p>
-                <p>
-                  <strong>Ejemplo / Example:</strong>{' '}
-                  <code>
-                    !add Comprar pan; Llamar al médico; Enviar informe;
-                  </code>
-                </p>
-              </li>
-            </ul>
-          </div>
-
-          <div className="container_comandos_card">
-            <div>
-              <h3>REVISAR LISTA Y MARCAR </h3>
-            </div>
-            <ul className="container_comandos_card_list">
-              <li>
-                <CommandButton
-                  displayText="📋 !lista / !list"
-                  command="!lista"
-                />
-                <p>
-                  Este comando muestra en pantalla y en el chat todas las tareas
-                  pendientes que tenés en tu lista...
-                </p>
-                <p>
-                  This command displays all your pending tasks on screen and in
-                  the chat...
-                </p>
-                <p>
-                  <strong>Ejemplo / Example:</strong> <code>!list</code>
-                </p>
-              </li>
-
-              <li>
-                <CommandButton
-                  displayText="✅ !marcar / !check / !v + ID de tarea"
-                  command="!marcar [Borra aquí y escribe el ID de la tarea]"
-                />
-                <p>
-                  Marca una tarea como <strong>realizada</strong> usando su
-                  ID...
-                </p>
-                <p>
-                  Marks a task as <strong>completed</strong> using its ID...
-                </p>
-                <p>
-                  <strong>Ejemplo / Example:</strong> <code>!check 4tf</code>
-                </p>
-              </li>
-
-              <li>
-                <CommandButton
-                  displayText="✅ !marcar / !check / !v + ID1;ID2;ID3"
-                  command="!marcar [Borra aquí y escribe los ID's separados por un punto y coma];"
-                />
-                <p>
-                  Marca una tarea como <strong>realizada</strong> usando varios
-                  ID...
-                </p>
-                <p>
-                  Marks a task as <strong>completed</strong> Using multiple
-                  IDs...
-                </p>
-                <p>
-                  <strong>Ejemplo / Example:</strong>{' '}
-                  <code>!check 4tf5tf;6tf</code>
-                </p>
-              </li>
-
-              <li>
-                <CommandButton
-                  displayText="🚀 !realizadas / !pickup"
-                  command="!realizadas"
-                />
-                <p>
-                  Marca todas tus tareas pendientes como realizadas en un solo
-                  paso...
-                </p>
-                <p>Marks all your pending tasks as completed at once...</p>
-                <p>
-                  <strong>Ejemplo / Example:</strong> <code>!pickup</code>
-                </p>
-              </li>
-            </ul>
-          </div>
-
-          <div className="container_comandos_card">
-            <div>
-              <h3>MODIFICAR Y ELIMINAR TAREAS</h3>
-            </div>
-            <ul className="container_comandos_card_list">
-              <li>
-                <CommandButton
-                  displayText="✏️ !modificar / !cambiar / !change + ID + nueva descripción"
-                  command="!modificar [Borra aquí y escribe el ID de la tarea]"
-                />
-
-                <p>
-                  Este comando te permite <strong>editar o actualizar</strong>{' '}
-                  una tarea...
-                </p>
-                <p>
-                  Use this command to <strong>edit or update</strong> a task...
-                </p>
-                <p>
-                  <strong>Ejemplo / Example:</strong>{' '}
-                  <code>!modificar s3u Estudiar capítulo 5 de matemáticas</code>
-                </p>
-              </li>
-
-              <li>
-                {' '}
-                <CommandButton
-                  displayText="🗑️ !eliminar / !borrar / !delete / !x + ID de tarea"
-                  command="!eliminar [Borra aquí y escribe el ID de la tarea]"
-                />{' '}
-                <p>
-                  {' '}
-                  Este comando se utiliza para <strong>
-                    quitar una tarea
-                  </strong>{' '}
-                  de tu lista...{' '}
-                </p>{' '}
-                <p>
-                  {' '}
-                  This command is used to <strong>remove</strong> a task...{' '}
-                </p>{' '}
-                <p>
-                  {' '}
-                  <strong>Ejemplo / Example:</strong>{' '}
-                  <code>!delete 2ce</code>{' '}
-                </p>{' '}
-              </li>
-
-              <li>
-                <CommandButton
-                  displayText="🗑️ !eliminar / !borrar / !delete / !x + ID de tarea(s)"
-                  command="!eliminar [Escribe aquí uno o varios ID de tareas separados por ;]"
-                />
-                <p>
-                  Este comando se utiliza para{' '}
-                  <strong>quitar una o varias tareas</strong> de tu lista. Ahora
-                  podés borrar múltiples tareas a la vez escribiendo varios ID
-                  separados por punto y coma (<code>;</code>).
-                </p>
-                <p>
-                  This command is used to{' '}
-                  <strong>remove one or multiple tasks</strong> from your list.
-                  You can now delete several tasks at once by separating their
-                  IDs with a semicolon (<code>;</code>).
-                </p>
-                <p>
-                  <strong>Ejemplo / Example:</strong>
-                  <code>!delete 2ce;4af;8bd</code>
-                </p>
-              </li>
-
-              <li>
-                <CommandButton
-                  displayText="🔥 !clear / !borrartodo"
-                  command="!borrartodo"
-                />
-                <p>
-                  Con este comando podés <strong>eliminar todas</strong> las
-                  tareas de tu lista...
-                </p>
-                <p>
-                  This command allows you to <strong>delete all</strong> your
-                  tasks...
-                </p>
-                <p>
-                  <strong>Ejemplo / Example:</strong> <code>!clear</code>
-                </p>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-
-        {/* Comandos de actividades — antes esto era ~460 líneas de JSX
-            repetido a mano, con todas las categorías mostradas de una y
-            un botón ancho por fila. Ahora es un explorador por tabs
-            (CommandExplorer) con buscador, alimentado por
-            shareActivitySection en Data/commandsData.js */}
-        <section className="container_comandos">
-          <div className="container_comandos_titles">
-            <IconActivities />
-            <div className="container_comandos_titles_text">
-              <h3>{shareActivitySection.heading}</h3>
-              <p className="container_comandos_card_p">
-                {shareActivitySection.intro}
-              </p>
-            </div>
-          </div>
-
-          <CommandExplorer groups={shareActivitySection.groups} />
-        </section>
-
-        <div id="personalizar-perfil"></div>
-        {/* Comandos de user data
-         */}
-
-        <section className="container_comandos">
-          <div className="container_comandos_titles">
-            <IconDataUser />
-            <div className="container_comandos_titles_text">
-              <h3>Personaliza tu perfil</h3>
-              <p>
-                Dale vida a tu presencia en la comunidad registrando tu
-                nacionalidad, cumpleaños, estudios y redes sociales.
-              </p>
-            </div>
-          </div>
-
-          {/* INFORMACION*/}
-          <div className="container_comandos_card">
-            {' '}
-            <div>
-              {' '}
-              <h3>Agregar información</h3>{' '}
-            </div>{' '}
-            <p className="container_comandos_card_p">
-              {' '}
-              Usa estos comandos para contarnos más sobre ti: t nacionalidad, tu
-              carrera, tu fecha de nacimiento o tus redes sociales. Esto nos
-              ayuda a conocerte mejor y a generar vínculos dentro de la
-              comunidad.{' '}
-            </p>{' '}
-            <ul className="container_comandos_card_list">
-              {' '}
-              <li>
-                {' '}
-                <CommandButton
-                  displayText="!nacionalidad + tu nacionalidad"
-                  command="!nacionalidad"
-                />
-                <p>
-                  {' '}
-                  Registra tu nacionalidad para que podamos saber de dónde eres
-                  y celebrar la diversidad de la comunidad. Ejemplo:{' '}
-                  <code>!nacionalidad Argentina</code>{' '}
-                </p>{' '}
-              </li>{' '}
-              <li>
-                <CommandButton
-                  displayText="!nacimiento + dd-mm"
-                  command="!nacimiento"
-                />
-                <p>
-                  {' '}
-                  Guarda tu fecha de nacimiento (sin el año) para que podamos
-                  identificar tu signo zodiacal y mostrarlo en tu perfil.
-                  Ejemplo: <code>!nacimiento 10-09</code>{' '}
-                </p>{' '}
-              </li>{' '}
-              <li>
-                <CommandButton
-                  displayText="!estudiopara + tu carrera o área de estudio"
-                  command="!estudiopara"
-                />
-                <p>
-                  {' '}
-                  Comparte con todos qué estás estudiando actualmente o en qué
-                  te estás formando profesionalmente. Ejemplo:{' '}
-                  <code>!estudiopara Medicina</code>{' '}
-                </p>{' '}
-              </li>{' '}
-              <li>
-                <CommandButton
-                  displayText="!opositopara + descripción de la oposición"
-                  command="!opositopara"
-                />
-                <p>
-                  {' '}
-                  Si estás preparando una oposición, puedes especificarla con
-                  este comando para que otros lo sepan y puedan acompañarte.
-                  Ejemplo: <code>!opositopara Auxilio Judicial</code>{' '}
-                </p>{' '}
-              </li>{' '}
-              <li>
-                <CommandButton
-                  displayText="!instagram + tu usuario"
-                  command="!instagram"
-                />
-                <p>
-                  {' '}
-                  Añade tu cuenta de Instagram para que los demás puedan
-                  seguirte. Ejemplo: <code>!instagram @miusuario</code>{' '}
-                </p>{' '}
-              </li>{' '}
-            </ul>{' '}
-          </div>
-
-          {/* REVISAR INFORMACIÓNS*/}
-          <div className="container_comandos_card">
-            {' '}
-            <div>
-              {' '}
-              <h3>Revisar perfil</h3>{' '}
-            </div>{' '}
-            <p className="container_comandos_card_p">
-              {' '}
-              Con estos comandos podrás ver tu perfil o consultar el de otros
-              miembros de la comunidad. Ideal para conectar, recordar qué
-              estudia alguien o simplemente conocernos mejor.{' '}
-            </p>{' '}
-            <ul className="container_comandos_card_list">
-              {' '}
-              <li>
-                <CommandButton displayText="!datos" command="!datos" />
-                <p>
-                  {' '}
-                  Consulta toda tu información personal registrada:
-                  nacionalidad, fecha de nacimiento, estudios, signo zodiacal,
-                  etc.{' '}
-                </p>{' '}
-              </li>{' '}
-              <li>
-                <CommandButton displayText="!info + @usuario" command="!info" />
-                <p>
-                  {' '}
-                  Muestra los datos de otro usuario si este ya registró su
-                  información previamente. Ejemplo:{' '}
-                  <code>!info @Pepita</code>{' '}
-                </p>{' '}
-              </li>{' '}
-              <li>
-                <CommandButton displayText="!croqueta" command="!croqueta" />
-                <p>
-                  {' '}
-                  Si tienes puntos de gestión disponibles, puedes usarlos para
-                  darle una deliciosa croqueta a Brunito. 🐶 ¡Un mimo digital
-                  para nuestra mascota comunitaria!{' '}
-                </p>{' '}
-              </li>{' '}
-            </ul>{' '}
-          </div>
-        </section>
-
-
-        <div id="gestion-examenes"></div>
-        {/* Comandos de Gestión de Exámenes */}
-        <section className="container_comandos">
-          <div className="container_comandos_titles">
-            <div className="container_comandos_titles_text">
-              <h3>🎓 Gestión de Exámenes</h3>
-              <p>
-                Administra tus exámenes de forma simple con comandos intuitivos.
-                Registra fechas, consulta tus próximos exámenes y mantén el
-                control académico.
-              </p>
-            </div>
-          </div>
-
-          {/* AGREGAR EXAMEN */}
-          <div className="container_comandos_card">
-            <div>
-              <h3>➕ Agregar Examen</h3>
-            </div>
-            <p className="container_comandos_card_p">
-              Registra un nuevo examen en el sistema con fecha, tipo y
-              descripción.
+            <p>
+              Contale a la comunidad qué estás haciendo en este
+              momento y descubrí qué están haciendo los demás.
             </p>
-            <ul className="container_comandos_card_list">
-              <li>
-                <CommandButton
-                  displayText="!addexam dd-mm TIPO descripción"
-                  command="!addexam |Borra aquí y escribe la fecha| |Borra aquí y escribe el tipo| |Borra aquí y escribe la descripción|"
-                />
-                <p>
-                  <strong>Formato:</strong> día-mes (<code>dd-mm</code>) → Ej:{' '}
-                  <code>12-03</code>
-                  <br />
-                  <strong>Tipo:</strong> <code>FIN</code> (Final),{' '}
-                  <code>REC</code> (Recuperatorio), <code>PAR</code> (Parcial)
-                  <br />
-                  <strong>Descripción:</strong> nombre de la materia
-                </p>
-                <p>
-                  <strong>Ejemplos:</strong>
-                  <br />
-                  <code>!addexam 12-03 FIN Neumonía</code>
-                  <br />
-                  <code>!addexam 10-09 REC Matemática II</code>
-                  <br />
-                  <code>!addexam 25-04 PAR Historia Medieval</code>
-                </p>
-              </li>
-            </ul>
           </div>
+        </div>
 
-          {/* VER EXÁMENES */}
-          <div className="container_comandos_card">
-            <div>
-              <h3>👁️ Ver tus Exámenes</h3>
-            </div>
-            <p className="container_comandos_card_p">
-              Consulta todos tus exámenes pendientes con información detallada.
+        {/* PERFIL */}
+
+        <div
+          ref={ref5}
+          className={`container_indice_item fade-in-left ${
+            isVisible5 ? 'visible delay-2' : ''
+          }`}
+          onClick={() =>
+            document
+              .getElementById('personalizar-perfil')
+              ?.scrollIntoView({ behavior: 'smooth' })
+          }
+        >
+          <img
+            src={card_comando_userdata}
+            alt="Personalización del perfil"
+          />
+
+          <div>
+            <h3>PERSONALIZÁ TU PERFIL</h3>
+
+            <p>
+              Compartí información sobre vos y personalizá tu
+              presencia dentro de la comunidad.
             </p>
-            <ul className="container_comandos_card_list">
-              <li>
-                <CommandButton
-                  displayText="!reviewexam"
-                  command="!reviewexam"
-                />
-                <p>
-                  Muestra tu lista personal de exámenes con:
-                  <br />
-                  • ID único de cada examen
-                  <br />
-                  • Fecha, tipo y descripción
-                  <br />• Eliminación automática de exámenes vencidos
-                </p>
-              </li>
-            </ul>
           </div>
+        </div>
 
-          {/* ELIMINAR EXÁMENES */}
-          <div className="container_comandos_card">
-            <div>
-              <h3>🗑️ Eliminar Exámenes</h3>
-            </div>
-            <p className="container_comandos_card_p">
-              Gestiona la eliminación de exámenes de forma individual o masiva.
+      </section>
+
+      {/* =========================================================
+          GESTIÓN DE TAREAS
+      ========================================================= */}
+
+      <section
+        id="gestion-tareas"
+        className="command-section"
+      >
+
+        <div className="container_comandos_titles">
+
+          <IconList />
+
+          <div className="container_comandos_titles_text">
+
+            <h3>Gestión inteligente de tareas</h3>
+
+            <p>
+              Organizá tus pendientes directamente desde el chat.
+              Buscá el comando que necesitás y ejecutalo con un solo clic.
             </p>
-            <ul className="container_comandos_card_list">
-              <li>
-                <CommandButton
-                  displayText="!examdelete ID"
-                  command="!examdelete [Borra aquí y escribe el ID del examen]"
-                />
-                <p>
-                  Elimina un examen específico usando su ID único (obtenido con{' '}
-                  <code>!reviewexam</code>).
-                  <br />
-                  <br />
-                  <strong>Ejemplo:</strong> <code>!examdelete abc123</code>
-                </p>
-              </li>
-              <li>
-                <CommandButton
-                  displayText="!deleteallexam"
-                  command="!deleteallexam"
-                />
-                <p>
-                  Borra toda tu lista de exámenes registrados con confirmación
-                  automática.
-                </p>
-              </li>
-            </ul>
+
           </div>
 
-          {/* VER RESUMEN GLOBAL */}
-          <div className="container_comandos_card">
-            <div>
-              <h3>🌍 Ver Resumen Global</h3>
-            </div>
-            <p className="container_comandos_card_p">
-              Consulta los exámenes de todos los usuarios de la comunidad.
+        </div>
+
+        <CommandExplorer
+          groups={taskCommandGroups}
+        />
+
+      </section>
+
+      {/* =========================================================
+          COMPARTIR ACTIVIDADES
+      ========================================================= */}
+
+      <section
+        id="compartir-actividades"
+        className="command-section"
+      >
+
+        <div className="container_comandos_titles">
+
+          <IconActivities />
+
+          <div className="container_comandos_titles_text">
+
+            <h3>{shareActivitySection.heading}</h3>
+
+            <p>
+              {shareActivitySection.intro}
             </p>
-            <ul className="container_comandos_card_list">
-              <li>
-                <CommandButton displayText="!summary" command="!summary" />
-                <p>
-                  Muestra los exámenes de los próximos 30 días:
-                  <br />
-                  • Ordenados por fecha (más próximos primero)
-                  <br />
-                  • Indicadores visuales de urgencia:
-                  <br />
-                  &nbsp;&nbsp;🔴 <strong>Urgente:</strong> ≤ 3 días
-                  <br />
-                  &nbsp;&nbsp;🟡 <strong>Moderado:</strong> ≤ 7 días
-                  <br />
-                  &nbsp;&nbsp;🟢 <strong>Tranquilo:</strong> &gt; 7 días
-                </p>
-              </li>
-            </ul>
+
           </div>
 
-          {/* FUNCIONAMIENTO DEL SISTEMA */}
-          <div className="container_comandos_card">
-            <div>
-              <h3>⚙️ Funcionamiento del Sistema</h3>
-            </div>
-            <p className="container_comandos_card_p">
-              Características avanzadas del sistema de gestión de exámenes.
+        </div>
+
+        <CommandExplorer
+  groups={shareActivitySection.groups}
+  variant="tags"
+/>
+      </section>
+
+      {/* =========================================================
+          PERSONALIZAR PERFIL
+      ========================================================= */}
+
+      <section
+        id="personalizar-perfil"
+        className="command-section"
+      >
+
+        <div className="container_comandos_titles">
+
+          <IconDataUser />
+
+          <div className="container_comandos_titles_text">
+
+            <h3>Personalizá tu perfil</h3>
+
+            <p>
+              Registrá información sobre vos y compartila con la
+              comunidad para que otros puedan conocerte mejor.
             </p>
-            <ul className="container_comandos_card_list">
-              <li>
-                <div
-                  style={{
-                    padding: '1em',
-                    color: 'black',
-                    backgroundColor: 'aquamarine',
-                    borderRadius: '1em',
-                    fontSize: '1em',
-                    fontWeight: '600',
-                    minWidth: '10em',
-                    width: 'auto',
-                    marginBottom: '1em',
-                  }}
-                >
-                  Características del Sistema
-                </div>
-                <p>
-                  ✅ Eliminación automática de fechas pasadas
-                  <br />
-                  ✅ Validación de fechas ingresadas
-                  <br />
-                  ✅ Orden automático por proximidad
-                  <br />
-                  ✅ Generación de IDs únicos (3 caracteres)
-                  <br />
-                  ✅ Confirmaciones automáticas en cada acción
-                  <br />✅ Acceso global al resumen (<code>!summary</code>)
-                </p>
-              </li>
-              <li>
-                <div
-                  style={{
-                    padding: '1em',
-                    color: 'black',
-                    backgroundColor: 'aquamarine',
-                    borderRadius: '1em',
-                    fontSize: '1em',
-                    fontWeight: '600',
-                    minWidth: '10em',
-                    width: 'auto',
-                    marginBottom: '1em',
-                  }}
-                >
-                  Resumen Rápido
-                </div>
-                <div style={{ marginTop: '1em' }}>
-                  <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                    <thead>
-                      <tr style={{ backgroundColor: 'aquamarine' }}>
-                        <th
-                          style={{
-                            padding: '0.5em',
-                            border: '1px solid #333',
-                            textAlign: 'left',
-                          }}
-                        >
-                          Comando
-                        </th>
-                        <th
-                          style={{
-                            padding: '0.5em',
-                            border: '1px solid #333',
-                            textAlign: 'left',
-                          }}
-                        >
-                          Acción
-                        </th>
-                        <th
-                          style={{
-                            padding: '0.5em',
-                            border: '1px solid #333',
-                            textAlign: 'left',
-                          }}
-                        >
-                          Alcance
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td
-                          style={{ padding: '0.5em', border: '1px solid #333' }}
-                        >
-                          <code>!addexam</code>
-                        </td>
-                        <td
-                          style={{ padding: '0.5em', border: '1px solid #333' }}
-                        >
-                          Agregar examen
-                        </td>
-                        <td
-                          style={{ padding: '0.5em', border: '1px solid #333' }}
-                        >
-                          Individual
-                        </td>
-                      </tr>
-                      <tr>
-                        <td
-                          style={{ padding: '0.5em', border: '1px solid #333' }}
-                        >
-                          <code>!reviewexam</code>
-                        </td>
-                        <td
-                          style={{ padding: '0.5em', border: '1px solid #333' }}
-                        >
-                          Revisar exámenes
-                        </td>
-                        <td
-                          style={{ padding: '0.5em', border: '1px solid #333' }}
-                        >
-                          Individual
-                        </td>
-                      </tr>
-                      <tr>
-                        <td
-                          style={{ padding: '0.5em', border: '1px solid #333' }}
-                        >
-                          <code>!examdelete</code>
-                        </td>
-                        <td
-                          style={{ padding: '0.5em', border: '1px solid #333' }}
-                        >
-                          Eliminar examen específico
-                        </td>
-                        <td
-                          style={{ padding: '0.5em', border: '1px solid #333' }}
-                        >
-                          Individual
-                        </td>
-                      </tr>
-                      <tr>
-                        <td
-                          style={{ padding: '0.5em', border: '1px solid #333' }}
-                        >
-                          <code>!deleteallexam</code>
-                        </td>
-                        <td
-                          style={{ padding: '0.5em', border: '1px solid #333' }}
-                        >
-                          Eliminar todos los exámenes
-                        </td>
-                        <td
-                          style={{ padding: '0.5em', border: '1px solid #333' }}
-                        >
-                          Global
-                        </td>
-                      </tr>
-                      <tr>
-                        <td
-                          style={{ padding: '0.5em', border: '1px solid #333' }}
-                        >
-                          <code>!summary</code>
-                        </td>
-                        <td
-                          style={{ padding: '0.5em', border: '1px solid #333' }}
-                        >
-                          Ver resumen
-                        </td>
-                        <td
-                          style={{ padding: '0.5em', border: '1px solid #333' }}
-                        >
-                          Global
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </section>
 
-      </div>
-    </>
+          </div>
+
+        </div>
+
+        <CommandExplorer
+          groups={profileCommandGroups}
+        />
+
+      </section>
+
+      {/* =========================================================
+          GESTIÓN DE EXÁMENES
+      ========================================================= */}
+
+      <section
+        id="gestion-examenes"
+        className="command-section"
+      >
+
+        <div className="container_comandos_titles">
+
+          <div className="command-section-title-icon">
+            🎓
+          </div>
+
+          <div className="container_comandos_titles_text">
+
+            <h3>Gestión de exámenes</h3>
+
+            <p>
+              Registrá, consultá y organizá tus próximos exámenes
+              directamente desde el chat.
+            </p>
+
+          </div>
+
+        </div>
+
+        <CommandExplorer
+          groups={examCommandGroups}
+        />
+
+      </section>
+
+    </div>
   )
 }
 
+
+/* ===============================================================
+   COMANDOS DE TAREAS
+================================================================ */
+
+const taskCommandGroups = [
+
+  {
+    id: 'agregar',
+    label: 'Agregar',
+    icon: '📝',
+
+    commands: [
+
+      {
+        id: 'tarea',
+        command: '!tarea',
+        aliases: ['!t'],
+        title: '!tarea + descripción',
+
+        description:
+          'Agrega una nueva tarea con una descripción personalizada.',
+
+        details:
+          'También podés utilizar la versión corta !t. El sistema permite un máximo de 10 tareas por usuario.',
+
+        example:
+          '!tarea Estudiar React durante una hora',
+      },
+
+      {
+        id: 'multiple',
+        command: '!add',
+        aliases: ['!tarea', '!task', '!t'],
+
+        title: 'Agregar múltiples tareas',
+
+        description:
+          'Agregá varias tareas en un solo mensaje separándolas con punto y coma (;).',
+
+        details:
+          'Cada tarea será procesada individualmente siempre que no superes el límite total de 10 tareas.',
+
+        example:
+          '!add Comprar pan; Estudiar Java; Leer documentación',
+      },
+
+    ],
+  },
+
+
+  {
+    id: 'revisar',
+    label: 'Revisar',
+    icon: '📋',
+
+    commands: [
+
+      {
+        id: 'lista',
+
+        command: '!lista',
+
+        aliases: ['!list'],
+
+        title: '!lista / !list',
+
+        description:
+          'Muestra tus tareas pendientes en pantalla y en el chat.',
+
+        example:
+          '!list',
+      },
+
+      {
+        id: 'marcar',
+
+        command: '!marcar',
+
+        aliases: ['!check', '!v'],
+
+        title: '!marcar + ID',
+
+        description:
+          'Marca una tarea como realizada utilizando su ID.',
+
+        example:
+          '!check 4tf',
+      },
+
+      {
+        id: 'marcar-multiples',
+
+        command: '!marcar',
+
+        aliases: ['!check', '!v'],
+
+        title: 'Marcar varias tareas',
+
+        description:
+          'Marca varias tareas como realizadas utilizando sus IDs separados por punto y coma.',
+
+        example:
+          '!check 4tf;6tf;8bd',
+      },
+
+      {
+        id: 'realizadas',
+
+        command: '!realizadas',
+
+        aliases: ['!pickup'],
+
+        title: '!realizadas / !pickup',
+
+        description:
+          'Marca todas tus tareas pendientes como realizadas en un solo paso.',
+
+        example:
+          '!pickup',
+      },
+
+    ],
+  },
+
+
+  {
+    id: 'modificar',
+    label: 'Modificar',
+    icon: '✏️',
+
+    commands: [
+
+      {
+        id: 'modificar',
+
+        command: '!modificar',
+
+        aliases: ['!cambiar', '!change'],
+
+        title: '!modificar + ID + descripción',
+
+        description:
+          'Editá o actualizá una tarea existente.',
+
+        example:
+          '!modificar s3u Estudiar capítulo 5 de matemáticas',
+      },
+
+    ],
+  },
+
+
+  {
+    id: 'eliminar',
+    label: 'Eliminar',
+    icon: '🗑️',
+
+    commands: [
+
+      {
+        id: 'eliminar',
+
+        command: '!eliminar',
+
+        aliases: ['!borrar', '!delete', '!x'],
+
+        title: '!eliminar + ID',
+
+        description:
+          'Eliminá una tarea específica utilizando su ID.',
+
+        example:
+          '!delete 2ce',
+      },
+
+      {
+        id: 'eliminar-multiples',
+
+        command: '!eliminar',
+
+        aliases: ['!borrar', '!delete', '!x'],
+
+        title: 'Eliminar varias tareas',
+
+        description:
+          'Eliminá varias tareas utilizando sus IDs separados por punto y coma.',
+
+        example:
+          '!delete 2ce;4af;8bd',
+      },
+
+      {
+        id: 'borrar-todo',
+
+        command: '!borrartodo',
+
+        aliases: ['!clear'],
+
+        title: '!borrartodo / !clear',
+
+        description:
+          'Eliminá todas las tareas de tu lista.',
+
+        example:
+          '!clear',
+      },
+
+    ],
+  },
+
+]
+
+
+/* ===============================================================
+   COMANDOS DE PERFIL
+================================================================ */
+
+const profileCommandGroups = [
+
+  {
+    id: 'informacion',
+    label: 'Información',
+    icon: '👤',
+
+    commands: [
+
+      {
+        id: 'nacionalidad',
+
+        command: '!nacionalidad',
+
+        title: '!nacionalidad + país',
+
+        description:
+          'Registrá tu nacionalidad para mostrarla en tu perfil.',
+
+        example:
+          '!nacionalidad Argentina',
+      },
+
+      {
+        id: 'nacimiento',
+
+        command: '!nacimiento',
+
+        title: '!nacimiento + dd-mm',
+
+        description:
+          'Guardá tu fecha de nacimiento sin indicar el año.',
+
+        details:
+          'El sistema utiliza esta información para identificar tu signo zodiacal.',
+
+        example:
+          '!nacimiento 10-09',
+      },
+
+      {
+        id: 'estudiopara',
+
+        command: '!estudiopara',
+
+        title: '!estudiopara + carrera',
+
+        description:
+          'Compartí qué estás estudiando actualmente o en qué área te estás formando.',
+
+        example:
+          '!estudiopara Medicina',
+      },
+
+      {
+        id: 'opositopara',
+
+        command: '!opositopara',
+
+        title: '!opositopara + descripción',
+
+        description:
+          'Indicá si estás preparando una oposición y cuál.',
+
+        example:
+          '!opositopara Auxilio Judicial',
+      },
+
+      {
+        id: 'instagram',
+
+        command: '!instagram',
+
+        title: '!instagram + usuario',
+
+        description:
+          'Añadí tu cuenta de Instagram para que otros miembros puedan encontrarte.',
+
+        example:
+          '!instagram @miusuario',
+      },
+
+    ],
+  },
+
+
+  {
+    id: 'consultar',
+    label: 'Consultar',
+    icon: '🔎',
+
+    commands: [
+
+      {
+        id: 'datos',
+
+        command: '!datos',
+
+        title: '!datos',
+
+        description:
+          'Consultá toda la información personal que registraste en tu perfil.',
+
+        example:
+          '!datos',
+      },
+
+      {
+        id: 'info',
+
+        command: '!info',
+
+        title: '!info + @usuario',
+
+        description:
+          'Consultá la información pública registrada por otro miembro de la comunidad.',
+
+        example:
+          '!info @Pepita',
+      },
+
+    ],
+  },
+
+
+  {
+    id: 'comunidad',
+    label: 'Comunidad',
+    icon: '🐶',
+
+    commands: [
+
+      {
+        id: 'croqueta',
+
+        command: '!croqueta',
+
+        title: '!croqueta',
+
+        description:
+          'Usá tus puntos de gestión para darle una croqueta a Brunito.',
+
+        example:
+          '!croqueta',
+      },
+
+    ],
+  },
+
+]
+
+
+/* ===============================================================
+   COMANDOS DE EXÁMENES
+================================================================ */
+
+const examCommandGroups = [
+
+  {
+    id: 'agregar',
+    label: 'Agregar',
+    icon: '➕',
+
+    commands: [
+
+      {
+        id: 'addexam',
+
+        command: '!addexam',
+
+        title: '!addexam + fecha + tipo + descripción',
+
+        description:
+          'Registrá un nuevo examen indicando la fecha, el tipo y la materia.',
+
+        details:
+          'La fecha utiliza el formato dd-mm. Los tipos disponibles son FIN (Final), REC (Recuperatorio) y PAR (Parcial).',
+
+        example:
+          '!addexam 12-03 FIN Matemática II',
+      },
+
+    ],
+  },
+
+
+  {
+    id: 'consultar',
+    label: 'Consultar',
+    icon: '👁️',
+
+    commands: [
+
+      {
+        id: 'reviewexam',
+
+        command: '!reviewexam',
+
+        title: '!reviewexam',
+
+        description:
+          'Consultá todos tus exámenes pendientes.',
+
+        details:
+          'La lista muestra el ID, fecha, tipo y descripción. Los exámenes vencidos se eliminan automáticamente.',
+
+        example:
+          '!reviewexam',
+      },
+
+      {
+        id: 'summary',
+
+        command: '!summary',
+
+        title: '!summary',
+
+        description:
+          'Consultá los exámenes próximos de toda la comunidad.',
+
+        details:
+          'Muestra los exámenes de los próximos 30 días ordenados por proximidad.',
+
+        example:
+          '!summary',
+      },
+
+    ],
+  },
+
+
+  {
+    id: 'eliminar',
+    label: 'Eliminar',
+    icon: '🗑️',
+
+    commands: [
+
+      {
+        id: 'examdelete',
+
+        command: '!examdelete',
+
+        title: '!examdelete + ID',
+
+        description:
+          'Eliminá un examen específico utilizando su ID.',
+
+        example:
+          '!examdelete abc123',
+      },
+
+      {
+        id: 'deleteallexam',
+
+        command: '!deleteallexam',
+
+        title: '!deleteallexam',
+
+        description:
+          'Eliminá todos tus exámenes registrados.',
+
+        example:
+          '!deleteallexam',
+      },
+
+    ],
+  },
+
+
+  {
+    id: 'sistema',
+    label: 'Sistema',
+    icon: '⚙️',
+
+    commands: [
+
+      {
+        id: 'funcionamiento',
+
+        command: '!summary',
+
+        title: 'Características del sistema',
+
+        description:
+          'El sistema valida las fechas, elimina automáticamente los exámenes vencidos, ordena los resultados por proximidad y genera IDs únicos.',
+
+        details:
+          'También dispone de confirmaciones automáticas y un resumen global mediante !summary.',
+
+        example:
+          '!summary',
+      },
+
+    ],
+  },
+
+]
+
+
 export default Comandos
+

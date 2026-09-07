@@ -376,6 +376,360 @@ img, p, h1, h2, h3, h4, h5, h6, li {
   flex: 0 1 auto;
 }
 
+/* ---------------------------------------------------------------
+   Explorador de comandos
+   --------------------------------------------------------------- */
+
+.command-explorer {
+  width: 100%;
+  max-width: 55em;
+  margin: 1.5em auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+/* ===============================================================
+   CATEGORÍAS
+   =============================================================== */
+
+.command-tab {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+  padding: 0.6em 1.1em;
+  border: 1px solid aquamarine;
+  border-radius: 999px;
+  background-color: transparent;
+  color: aquamarine;
+  font-weight: 600;
+  font-size: 0.95em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.command-tab:hover {
+  transform: translateY(-2px);
+}
+
+/* CATEGORÍA SELECCIONADA */
+.command-tab--active {
+  background-color: aquamarine;
+  color: black !important;
+}
+
+/* También fuerza el color de icono y texto */
+.command-tab--active span,
+.command-tab--active .command-tab-icon {
+  color: black !important;
+}
+
+/* Estados del navegador */
+.command-tab:focus,
+.command-tab:active,
+.command-tab:focus-visible {
+  background-color: aquamarine;
+  border-color: rgb(255, 255, 255);
+  color: black !important;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Evita estilos inesperados en el contenido */
+.command-tab span,
+.command-tab-icon {
+  background: transparent;
+}
+
+.command-tab-icon {
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+/* ===============================================================
+   BUSCADOR
+   =============================================================== */
+
+.command-explorer-search {
+  width: 100%;
+}
+
+.command-explorer-search input {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 0.75em 1em;
+
+  border: 1px solid aquamarine;
+  border-radius: 999px;
+
+  background-color: black;
+  color: white;
+
+  font: inherit;
+  font-size: 0.95em;
+}
+
+.command-explorer-search input::placeholder {
+  color: rgba(127, 255, 212, 0.6);
+}
+
+.command-explorer-search input:focus-visible {
+  outline: 2px solid aquamarine;
+  outline-offset: 2px;
+}
+
+/* ===============================================================
+   PANEL
+   =============================================================== */
+
+.command-explorer-panel {
+  width: 100%;
+  box-sizing: border-box;
+
+  border: 1px solid aquamarine;
+  border-radius: 1.5em;
+
+  padding: 1.5em;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+.command-explorer-description {
+  margin: 0;
+
+  text-align: start;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+/* ===============================================================
+   LISTA DETALLADA
+   =============================================================== */
+
+.command-explorer-list {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+/* Cada comando funciona como una fila independiente */
+.command-explorer-item {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 1.25em 0;
+
+  border-bottom: 1px solid rgba(127, 255, 212, 0.35);
+}
+
+.command-explorer-item:first-child {
+  padding-top: 0;
+}
+
+.command-explorer-item:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+/* ===============================================================
+   CABECERA DEL COMANDO
+   =============================================================== */
+
+.command-explorer-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1em;
+
+  width: 100%;
+}
+
+.command-explorer-item-title {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.command-explorer-item-title h4 {
+  margin: 0;
+
+  font-size: 1.05em;
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+/* ===============================================================
+   ALIAS
+   =============================================================== */
+
+.command-explorer-aliases {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+
+  margin-top: 0.4em;
+}
+
+.command-explorer-aliases code {
+  padding: 0.2em 0.5em;
+
+  border: 1px solid rgba(127, 255, 212, 0.35);
+  border-radius: 0.5em;
+
+  font-family: monospace;
+  font-size: 0.8em;
+
+  opacity: 0.8;
+}
+
+/* ===============================================================
+   BOTÓN DEL COMANDO
+   =============================================================== */
+
+.command-explorer-item-header .comando-btn {
+  flex: 0 0 auto;
+
+  min-width: 10em;
+  width: auto;
+
+  padding: 0.75em 1em;
+}
+
+/* ===============================================================
+   DESCRIPCIÓN DEL COMANDO
+   =============================================================== */
+
+.command-explorer-item-description {
+  margin: 0.8em 0 0;
+
+  line-height: 1.6;
+  text-align: start;
+}
+
+/* Información adicional */
+.command-explorer-item-details {
+  margin: 0.5em 0 0;
+
+  line-height: 1.6;
+  text-align: start;
+
+  opacity: 0.8;
+}
+
+/* ===============================================================
+   EJEMPLO
+   =============================================================== */
+
+.command-explorer-example {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+
+  margin-top: 0.8em;
+  padding: 0.7em 0.9em;
+
+  border-left: 3px solid aquamarine;
+
+  background-color: rgba(127, 255, 212, 0.05);
+
+  border-radius: 0 0.5em 0.5em 0;
+}
+
+.command-explorer-example span {
+  flex: 0 0 auto;
+
+  font-size: 0.8em;
+  font-weight: 600;
+
+  opacity: 0.7;
+}
+
+.command-explorer-example code {
+  font-family: monospace;
+  font-size: 0.9em;
+
+  word-break: break-word;
+}
+
+/* ===============================================================
+   SIN RESULTADOS
+   =============================================================== */
+
+.command-explorer-empty {
+  margin: 0;
+
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* ===============================================================
+   NUBE DE ACTIVIDADES
+   =============================================================== */
+
+.comandos-tag-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 0.6em;
+
+  width: 100%;
+}
+
+.comandos-tag-grid .comando-btn {
+  width: auto;
+  min-width: 0;
+
+  padding: 0.65em 1.2em;
+
+  font-size: 0.95em;
+
+  flex: 0 1 auto;
+}
+
+/* ===============================================================
+   RESPONSIVE
+   =============================================================== */
+
+@media (max-width: 600px) {
+  .command-explorer {
+    max-width: 100%;
+  }
+
+  .command-explorer-panel {
+    padding: 1.2em;
+    border-radius: 1.25em;
+  }
+
+  .command-explorer-item-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .command-explorer-item-header .comando-btn {
+    min-width: 0;
+    width: auto;
+  }
+
+  .command-explorer-example {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.3em;
+  }
+}
+
 @media (min-width: 700px) {
   .container_indice_item {
     display: flex;

@@ -1,89 +1,212 @@
-import { useMemo, useState } from 'react';
-import CommandButton from './buttons/CommandButton';
+import { useMemo, useState } from 'react'
+import CommandButton from './buttons/CommandButton'
 
-// Reemplaza a CommandCategory.jsx (que mostraba TODAS las categorías, una
-// abajo de la otra, con botones de ancho fijo). Ahora se navega por tabs:
-// se ve una categoría a la vez, con su descripción y un buscador para
-// encontrar un comando puntual sin scrollear una pared de botones.
-//
-// Los chips (antes "botones anchos que ocupan toda la card") ahora se
-// dibujan con flex-wrap: cada uno mide lo que mide su texto, no el 100%
-// del contenedor, así que varios entran por fila incluso en un celular.
-const CommandExplorer = ({ groups }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [query, setQuery] = useState('');
+const CommandExplorer = ({ groups = [], variant = 'detailed' }) => {
+  const [activeGroupId, setActiveGroupId] = useState(groups[0]?.id ?? '')
+  const [search, setSearch] = useState('')
 
-  const activeGroup = groups[activeIndex];
+  const activeGroup = useMemo(
+    () =>
+      groups.find((group) => group.id === activeGroupId) ?? groups[0],
+    [groups, activeGroupId],
+  )
+
+  const normalizedSearch = search.trim().toLowerCase()
 
   const filteredCommands = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (!q) return activeGroup.commands;
-    return activeGroup.commands.filter(
-      (cmd) =>
-        cmd.label.toLowerCase().includes(q) ||
-        cmd.command.toLowerCase().includes(q)
-    );
-  }, [activeGroup, query]);
+    if (!activeGroup) return []
 
-  const handleSelectTab = (index) => {
-    setActiveIndex(index);
-    setQuery('');
-  };
+    if (!normalizedSearch) {
+      return activeGroup.commands ?? []
+    }
+
+    return (activeGroup.commands ?? []).filter((item) => {
+      const searchableText = [
+        item.command,
+        item.label,
+        item.title,
+        item.description,
+        item.details,
+        item.example,
+        ...(item.aliases ?? []),
+      ]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase()
+
+      return searchableText.includes(normalizedSearch)
+    })
+  }, [activeGroup, normalizedSearch])
+
+  if (!groups.length) {
+    return null
+  }
+
+  const isTagVariant = variant === 'tags'
+
+  const handleGroupChange = (groupId) => {
+    setActiveGroupId(groupId)
+    setSearch('')
+  }
 
   return (
     <div className="command-explorer">
-      <div className="command-explorer-tabs" role="tablist" aria-label="Categorías de comandos">
-        {groups.map((group, index) => {
-          const isActive = index === activeIndex;
+      {/* =====================================================
+          CATEGORÍAS
+          ===================================================== */}
+
+      <div
+        className="command-explorer-tabs"
+        role="tablist"
+        aria-label="Categorías de comandos"
+      >
+        {groups.map((group) => {
+          const isActive = group.id === activeGroup?.id
+
           return (
             <button
-              key={group.title}
+              key={group.id}
               type="button"
               role="tab"
               aria-selected={isActive}
-              className={`command-tab${isActive ? ' command-tab--active' : ''}`}
-              onClick={() => handleSelectTab(index)}
+              className={`command-tab ${
+                isActive ? 'command-tab--active' : ''
+              }`}
+              onClick={() => handleGroupChange(group.id)}
             >
-              <span className="command-tab-icon" aria-hidden="true">
-                {group.icon}
-              </span>
-              {group.title}
+              {group.icon && (
+                <span
+                  className="command-tab-icon"
+                  aria-hidden="true"
+                >
+                  {group.icon}
+                </span>
+              )}
+
+              <span>{group.label}</span>
             </button>
-          );
+          )
         })}
       </div>
 
-      <div className="command-explorer-panel">
-        <p className="command-explorer-description">{activeGroup.description}</p>
+      {/* =====================================================
+          BUSCADOR
+          ===================================================== */}
 
-        <label className="command-explorer-search">
-          <span className="sr-only">Buscar comando en {activeGroup.title}</span>
-          <input
-            type="text"
-            placeholder={`Buscar en ${activeGroup.title.toLowerCase()}…`}
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
+      <div className="command-explorer-search">
+        <label
+          htmlFor={`command-search-${activeGroup?.id}`}
+          className="sr-only"
+        >
+          Buscar comando
         </label>
 
-        <div className="comandos-tag-grid">
-          {filteredCommands.length > 0 ? (
-            filteredCommands.map((cmd) => (
-              <CommandButton
-                key={cmd.command}
-                displayText={cmd.label}
-                command={cmd.command}
-              />
-            ))
+        <input
+          id={`command-search-${activeGroup?.id}`}
+          type="search"
+          value={search}
+          onChange={(event) => setSearch(event.target.value)}
+          placeholder="🔎 Buscar comando..."
+          autoComplete="off"
+        />
+      </div>
+
+      {/* =====================================================
+          PANEL
+          ===================================================== */}
+
+      <div className="command-explorer-panel" role="tabpanel">
+        {activeGroup?.description && (
+          <p className="command-explorer-description">
+            {activeGroup.description}
+          </p>
+        )}
+
+        {/* ===================================================
+            VARIANTE TAGS
+            Se utiliza para Actividades.
+            =================================================== */}
+
+        {isTagVariant ? (
+          filteredCommands.length > 0 ? (
+            <div className="comandos-tag-grid">
+              {filteredCommands.map((item) => (
+                <CommandButton
+                  key={item.id}
+                  displayText={item.label || item.command}
+                  command={item.command}
+                />
+              ))}
+            </div>
           ) : (
             <p className="command-explorer-empty">
-              No hay comandos que coincidan con “{query}”.
+              No encontramos comandos que coincidan con tu búsqueda.
             </p>
-          )}
-        </div>
+          )
+        ) : (
+          /* =================================================
+             VARIANTE DETALLADA
+             Se utiliza para Tareas, Perfil y Exámenes.
+             ================================================= */
+
+          filteredCommands.length > 0 ? (
+            <div className="command-explorer-list">
+              {filteredCommands.map((item) => (
+                <article
+                  key={item.id}
+                  className="command-explorer-item"
+                >
+                  <div className="command-explorer-item-header">
+                    <div className="command-explorer-item-title">
+                      <h4>
+                        {item.title || item.label || item.command}
+                      </h4>
+
+                      {item.aliases?.length > 0 && (
+                        <div className="command-explorer-aliases">
+                          {item.aliases.map((alias) => (
+                            <code key={alias}>{alias}</code>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+
+                    <CommandButton
+                      displayText={item.command}
+                      command={item.example || item.command}
+                    />
+                  </div>
+
+                  {item.description && (
+                    <p className="command-explorer-item-description">
+                      {item.description}
+                    </p>
+                  )}
+
+                  {item.details && (
+                    <p className="command-explorer-item-details">
+                      {item.details}
+                    </p>
+                  )}
+
+                  {item.example && (
+                    <div className="command-explorer-example">
+                      <span>Ejemplo</span>
+                      <code>{item.example}</code>
+                    </div>
+                  )}
+                </article>
+              ))}
+            </div>
+          ) : (
+            <p className="command-explorer-empty">
+              No encontramos comandos que coincidan con tu búsqueda.
+            </p>
+          )
+        )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CommandExplorer;
+export default CommandExplorer
