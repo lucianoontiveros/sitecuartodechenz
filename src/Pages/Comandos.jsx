@@ -1,4 +1,3 @@
-
 import './comandos.css'
 
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
@@ -94,8 +93,9 @@ const Comandos = () => {
 
         {/* TAREAS */}
 
-        <div
+        <button
           ref={ref3}
+          type="button"
           className={`container_indice_item fade-in-left ${
             isVisible3 ? 'visible' : ''
           }`}
@@ -105,12 +105,9 @@ const Comandos = () => {
               ?.scrollIntoView({ behavior: 'smooth' })
           }
         >
-          <img
-            src={card_comando_tareas}
-            alt="Gestión de tareas"
-          />
+          <img src={card_comando_tareas} alt="" />
 
-          <div>
+          <div className="container_indice_item_overlay">
             <h3>GESTIÓN DE TAREAS</h3>
 
             <p>
@@ -119,12 +116,13 @@ const Comandos = () => {
               comandos simples.
             </p>
           </div>
-        </div>
+        </button>
 
         {/* ACTIVIDADES */}
 
-        <div
+        <button
           ref={ref4}
+          type="button"
           className={`container_indice_item fade-in-right ${
             isVisible4 ? 'visible delay-1' : ''
           }`}
@@ -134,12 +132,9 @@ const Comandos = () => {
               ?.scrollIntoView({ behavior: 'smooth' })
           }
         >
-          <img
-            src={card_comando_activities}
-            alt="Compartir actividades"
-          />
+          <img src={card_comando_activities} alt="" />
 
-          <div>
+          <div className="container_indice_item_overlay">
             <h3>COMPARTÍ LO QUE ESTÁS HACIENDO</h3>
 
             <p>
@@ -147,12 +142,13 @@ const Comandos = () => {
               momento y descubrí qué están haciendo los demás.
             </p>
           </div>
-        </div>
+        </button>
 
         {/* PERFIL */}
 
-        <div
+        <button
           ref={ref5}
+          type="button"
           className={`container_indice_item fade-in-left ${
             isVisible5 ? 'visible delay-2' : ''
           }`}
@@ -162,12 +158,9 @@ const Comandos = () => {
               ?.scrollIntoView({ behavior: 'smooth' })
           }
         >
-          <img
-            src={card_comando_userdata}
-            alt="Personalización del perfil"
-          />
+          <img src={card_comando_userdata} alt="" />
 
-          <div>
+          <div className="container_indice_item_overlay">
             <h3>PERSONALIZÁ TU PERFIL</h3>
 
             <p>
@@ -175,7 +168,7 @@ const Comandos = () => {
               presencia dentro de la comunidad.
             </p>
           </div>
-        </div>
+        </button>
 
       </section>
 
@@ -831,4 +824,3 @@ const examCommandGroups = [
 
 
 export default Comandos
-

@@ -1,13 +1,35 @@
-.container_comandos {
+/* Contenedor general de la página (antes se llamaba .container_comandos,
+   igual que cada <section> individual — mismo nombre para dos cosas
+   distintas, confuso). Ahora está separado: esto es el wrapper de toda
+   la página... */
+.container_comandos_page {
   margin: 10em 0.3em;
+}
+
+/* ...y esto es cada sección individual (Tareas / Actividades / Perfil /
+     Exámenes). Antes cada <section> repetía el margin de 10em de arriba
+     (heredado de compartir el mismo nombre de clase que el wrapper), lo que
+     dejaba huecos enormes entre secciones. Ahora tiene un margen propio,
+     más razonable. */
+.command-section {
+  width: 100%;
+  margin: 3em 0;
+}
+
+/* Ícono de la sección de Exámenes: antes era el SVG <IconExam />, ahora es
+     el emoji 🎓 directo en el JSX. Sin esto quedaría del tamaño del texto
+     normal en vez del tamaño de los íconos de las otras 3 secciones. */
+.command-section-title-icon {
+  font-size: 3em;
+  line-height: 1;
 }
 
 /* Estilos específicos de Comandos que no entran en conflicto con los globales */
 
 /* Animaciones al hacer scroll. Antes estaban en un <style>{`...`}</style>
-   dentro de Comandos.jsx: eso mete un <style> global nuevo en el <head>
-   cada vez que el componente se monta y saca las animaciones de este archivo,
-   que es donde vive el resto del CSS de la página. Ahora viven acá. */
+     dentro de Comandos.jsx: eso mete un <style> global nuevo en el <head>
+     cada vez que el componente se monta y saca las animaciones de este archivo,
+     que es donde vive el resto del CSS de la página. Ahora viven acá. */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -43,17 +65,23 @@
 
 .fade-in-up {
   opacity: 0;
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
 }
 
 .fade-in-left {
   opacity: 0;
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
 }
 
 .fade-in-right {
   opacity: 0;
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
 }
 
 .fade-in-up.visible {
@@ -71,50 +99,112 @@
   animation: fadeInRight 0.8s ease-out forwards;
 }
 
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
-.delay-3 { animation-delay: 0.3s; }
-.delay-4 { animation-delay: 0.4s; }
-
-img, p, h1, h2, h3, h4, h5, h6, li {
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+.delay-1 {
+  animation-delay: 0.1s;
+}
+.delay-2 {
+  animation-delay: 0.2s;
+}
+.delay-3 {
+  animation-delay: 0.3s;
+}
+.delay-4 {
+  animation-delay: 0.4s;
 }
 
-/* INDICE */
+img,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li {
+  transition:
+    opacity 0.3s ease-out,
+    transform 0.3s ease-out;
+}
+
+/* INDICE
+     Antes: imagen chica (30% del ancho) + texto en un <div> aparte debajo.
+     Con textos cortos eso dejaba mucho espacio vacío alrededor de la imagen.
+     Ahora: cada card es un <button> a pantalla completa dentro de su celda,
+     con la imagen de fondo cubriendo todo el espacio (object-fit: cover) y
+     el texto superpuesto sobre un degradado oscuro abajo para que se lea. */
 
 .container_indice {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
   margin: 0;
-  padding: 0;
+  padding: 0 0.3em;
 }
 
 .container_indice_item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 2em;
+  overflow: hidden;
   cursor: pointer;
+  background: none;
+  font: inherit;
+  text-align: left;
 }
 
 .container_indice_item img {
-  min-width: 30%;
-  min-height: 30%;
-  background-color: aquamarine;
-  border-radius: 2em;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
-.container_indice_item div {
-  margin: 2em 0em;
+.container_indice_item:hover img,
+.container_indice_item:focus-visible img {
+  transform: scale(1.06);
 }
 
-.container_indice_item div h3 {
+.container_indice_item:focus-visible {
+  outline: 3px solid aquamarine;
+  outline-offset: 3px;
+}
+
+.container_indice_item_overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5em;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.88) 0%,
+    rgba(0, 0, 0, 0.5) 45%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.container_indice_item_overlay h3 {
   color: aquamarine;
-  text-align: center;
-  font-size: 1.2em;
-  margin: 1em;
+  text-align: left;
+  font-size: 1.25em;
+  margin: 0 0 0.4em;
 }
 
-.container_indice_item div p {
-  padding: 0.4em;
-  margin-bottom: 1em;
+.container_indice_item_overlay p {
+  color: white;
+  text-align: left;
+  font-size: 0.9em;
+  opacity: 0.9;
+  margin: 0;
+  padding: 0;
 }
 
 /* COMANDO PARA TAREAS */
@@ -218,16 +308,41 @@ img, p, h1, h2, h3, h4, h5, h6, li {
   font-weight: 600;
   min-width: 10em;
   width: auto;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .comando-btn:hover {
   text-decoration: underline;
 }
 
+/* index.css define `* { background-color: black; }` como reset global del
+     sitio. Eso hace que CUALQUIER <span>/<code> sin su propio background
+     (el label de una tab, el ícono de "sin audio", el "Ejemplo" del bloque
+     de código, etc.) pinte su propia cajita negra detrás del texto, encima
+     del aquamarine del botón/tab. Esta regla lo neutraliza para todo hijo de
+     un botón de comando, una tab o el bloque de ejemplo — cubre los casos de
+     hoy y cualquier <span> que se agregue después. */
+/* index.css define `* { background-color: black; color: #f1f1f1; }` como
+     reset global del sitio. Eso pisa DOS cosas en cualquier hijo (<span>,
+     <code>) de un botón/tab de comando: pinta su propia cajita negra detrás
+     del texto (background-color) Y le devuelve el gris clarito del reset en
+     vez del negro que necesita sobre fondo aquamarine (color) — la herencia
+     del color:black del botón padre siempre pierde contra una regla que
+     apunta directo al hijo, aunque sea el selector universal `*`. Esta regla
+     neutraliza ambas cosas para todo hijo de un botón de comando, una tab o
+     el bloque de ejemplo. */
+.comando-btn *,
+.command-tab *,
+.command-explorer-example * {
+  background-color: transparent;
+  color: inherit;
+}
+
 /* Estado "copiado": antes se pisaba a mano con buttonRef.style.backgroundColor
-   desde JS (siempre "aquamarine" fijo, ignorando el tema). Ahora es una clase
-   normal que sigue el mismo lenguaje visual que el resto de los botones. */
+     desde JS (siempre "aquamarine" fijo, ignorando el tema). Ahora es una clase
+     normal que sigue el mismo lenguaje visual que el resto de los botones. */
 .comando-btn--copiado {
   background-color: rgba(255, 255, 255, 0.9);
   color: black;
@@ -243,7 +358,7 @@ img, p, h1, h2, h3, h4, h5, h6, li {
 }
 
 /* Utilidad para textos que solo deben leer los lectores de pantalla
-   (labels de accesibilidad del buscador del explorador de comandos). */
+     (el label del buscador del explorador de comandos). */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -256,21 +371,24 @@ img, p, h1, h2, h3, h4, h5, h6, li {
   border: 0;
 }
 
-/* ---------------------------------------------------------------
-   Explorador de comandos (sección "Comparte lo que estás haciendo")
-   --------------------------------------------------------------- */
+/* ===============================================================
+     EXPLORADOR DE COMANDOS
+     Usado por las 3 secciones "reorganizadas": Comparte lo que estás
+     haciendo (variant="tags"), Gestión de Tareas y Personaliza tu perfil
+     (variant="detailed").
+     =============================================================== */
 
 .command-explorer {
   width: 100%;
-  max-width: 48em;
-  margin: 1em auto 0;
+  max-width: 55em;
+  margin: 1.5em auto 0;
   display: flex;
   flex-direction: column;
-  gap: 1.2em;
+  gap: 1em;
 }
 
-/* Tabs de categorías: fila horizontal con scroll propio en mobile,
-   para no apilar 6 categorías en columna antes de llegar a los comandos. */
+/* --- Tabs de categorías --- */
+
 .command-explorer-tabs {
   display: flex;
   flex-wrap: nowrap;
@@ -283,115 +401,6 @@ img, p, h1, h2, h3, h4, h5, h6, li {
 .command-explorer-tabs::-webkit-scrollbar {
   height: 6px;
 }
-
-.command-tab {
-  flex: 0 0 auto;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
-  padding: 0.6em 1.1em;
-  border: 1px solid aquamarine;
-  border-radius: 999px;
-  background-color: transparent;
-  color: aquamarine;
-  font-weight: 600;
-  font-size: 0.95em;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
-}
-
-.command-tab:hover {
-  transform: translateY(-2px);
-}
-
-.command-tab--active {
-  background-color: aquamarine;
-  color: black;
-}
-
-.command-tab-icon {
-  font-size: 1.1em;
-  line-height: 1;
-}
-
-/* Panel de la categoría activa: reusa la misma card con borde aquamarine
-   que ya tenía el resto del sitio, para que se sienta parte del mismo tema. */
-.command-explorer-panel {
-  border: 1px solid aquamarine;
-  border-radius: 1.5em;
-  padding: 1.5em;
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-}
-
-.command-explorer-description {
-  margin: 0;
-  text-align: start;
-}
-
-.command-explorer-search input {
-  width: 100%;
-  padding: 0.7em 1em;
-  border: 1px solid aquamarine;
-  border-radius: 999px;
-  background-color: black;
-  color: white;
-}
-
-.command-explorer-search input::placeholder {
-  color: rgba(127, 255, 212, 0.6);
-}
-
-.command-explorer-search input:focus-visible {
-  outline: 2px solid aquamarine;
-  outline-offset: 2px;
-}
-
-.command-explorer-empty {
-  margin: 0;
-  opacity: 0.8;
-  font-style: italic;
-}
-
-/* Nube de comandos: antes era un grid de columnas de ancho mínimo fijo,
-   lo que forzaba a cada botón a estirarse hasta ocupar toda su columna
-   (el "botón ancho ocupando toda la card" que se veía mal en mobile).
-   Con flex-wrap cada chip mide lo que mide su propio texto, así que
-   "!tp" y "!pizarra" no ocupan el mismo ancho, y entran varios por fila
-   incluso en una pantalla angosta. */
-.comandos-tag-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6em;
-  width: 100%;
-}
-
-.comandos-tag-grid .comando-btn {
-  width: auto;
-  min-width: 0;
-  padding: 0.65em 1.2em;
-  font-size: 0.95em;
-  flex: 0 1 auto;
-}
-
-/* ---------------------------------------------------------------
-   Explorador de comandos
-   --------------------------------------------------------------- */
-
-.command-explorer {
-  width: 100%;
-  max-width: 55em;
-  margin: 1.5em auto 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-}
-
-/* ===============================================================
-   CATEGORÍAS
-   =============================================================== */
 
 .command-tab {
   flex: 0 0 auto;
@@ -418,33 +427,11 @@ img, p, h1, h2, h3, h4, h5, h6, li {
   transform: translateY(-2px);
 }
 
-/* CATEGORÍA SELECCIONADA */
-.command-tab--active {
+.command-tab--active,
+.command-tab--active:hover,
+.command-tab--active:focus-visible {
   background-color: aquamarine;
-  color: black !important;
-}
-
-/* También fuerza el color de icono y texto */
-.command-tab--active span,
-.command-tab--active .command-tab-icon {
-  color: black !important;
-}
-
-/* Estados del navegador */
-.command-tab:focus,
-.command-tab:active,
-.command-tab:focus-visible {
-  background-color: aquamarine;
-  border-color: rgb(255, 255, 255);
-  color: black !important;
-  outline: none;
-  box-shadow: none;
-}
-
-/* Evita estilos inesperados en el contenido */
-.command-tab span,
-.command-tab-icon {
-  background: transparent;
+  color: black;
 }
 
 .command-tab-icon {
@@ -452,9 +439,7 @@ img, p, h1, h2, h3, h4, h5, h6, li {
   line-height: 1;
 }
 
-/* ===============================================================
-   BUSCADOR
-   =============================================================== */
+/* --- Buscador --- */
 
 .command-explorer-search {
   width: 100%;
@@ -463,15 +448,11 @@ img, p, h1, h2, h3, h4, h5, h6, li {
 .command-explorer-search input {
   width: 100%;
   box-sizing: border-box;
-
   padding: 0.75em 1em;
-
   border: 1px solid aquamarine;
   border-radius: 999px;
-
   background-color: black;
   color: white;
-
   font: inherit;
   font-size: 0.95em;
 }
@@ -485,19 +466,14 @@ img, p, h1, h2, h3, h4, h5, h6, li {
   outline-offset: 2px;
 }
 
-/* ===============================================================
-   PANEL
-   =============================================================== */
+/* --- Panel de la categoría activa --- */
 
 .command-explorer-panel {
   width: 100%;
   box-sizing: border-box;
-
   border: 1px solid aquamarine;
   border-radius: 1.5em;
-
   padding: 1.5em;
-
   display: flex;
   flex-direction: column;
   gap: 1.2em;
@@ -505,30 +481,50 @@ img, p, h1, h2, h3, h4, h5, h6, li {
 
 .command-explorer-description {
   margin: 0;
-
   text-align: start;
   line-height: 1.6;
   opacity: 0.85;
 }
 
-/* ===============================================================
-   LISTA DETALLADA
-   =============================================================== */
+.command-explorer-empty {
+  margin: 0;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* --- variant="tags": nube de comandos cortos ---
+     Antes era un grid de columnas de ancho mínimo fijo, lo que forzaba a cada
+     botón a estirarse hasta ocupar toda su columna (la "barra ancha" que se
+     veía mal en mobile). Con flex-wrap cada chip mide lo que mide su propio
+     texto, así que "!tp" y "!pizarra" no ocupan el mismo ancho, y entran
+     varios por fila incluso en una pantalla angosta. */
+.comandos-tag-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6em;
+  width: 100%;
+}
+
+.comandos-tag-grid .comando-btn {
+  width: auto;
+  min-width: 0;
+  padding: 0.65em 1.2em;
+  font-size: 0.95em;
+  flex: 0 1 auto;
+}
+
+/* --- variant="detailed": lista de comandos con explicación --- */
 
 .command-explorer-list {
   display: flex;
   flex-direction: column;
-
   width: 100%;
 }
 
-/* Cada comando funciona como una fila independiente */
 .command-explorer-item {
   width: 100%;
   box-sizing: border-box;
-
   padding: 1.25em 0;
-
   border-bottom: 1px solid rgba(127, 255, 212, 0.35);
 }
 
@@ -541,167 +537,89 @@ img, p, h1, h2, h3, h4, h5, h6, li {
   border-bottom: none;
 }
 
-/* ===============================================================
-   CABECERA DEL COMANDO
-   =============================================================== */
-
 .command-explorer-item-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   gap: 1em;
-
   width: 100%;
 }
 
 .command-explorer-item-title {
   display: flex;
   flex-direction: column;
-
   min-width: 0;
 }
 
 .command-explorer-item-title h4 {
   margin: 0;
-
   font-size: 1.05em;
   font-weight: 600;
-
   line-height: 1.4;
+  text-align: start;
 }
-
-/* ===============================================================
-   ALIAS
-   =============================================================== */
 
 .command-explorer-aliases {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4em;
-
   margin-top: 0.4em;
 }
 
 .command-explorer-aliases code {
   padding: 0.2em 0.5em;
-
   border: 1px solid rgba(127, 255, 212, 0.35);
   border-radius: 0.5em;
-
   font-family: monospace;
   font-size: 0.8em;
-
   opacity: 0.8;
 }
-
-/* ===============================================================
-   BOTÓN DEL COMANDO
-   =============================================================== */
 
 .command-explorer-item-header .comando-btn {
   flex: 0 0 auto;
-
-  min-width: 10em;
+  min-width: 9em;
   width: auto;
-
-  padding: 0.75em 1em;
+  padding: 0.7em 1em;
+  font-size: 0.9em;
 }
-
-/* ===============================================================
-   DESCRIPCIÓN DEL COMANDO
-   =============================================================== */
 
 .command-explorer-item-description {
   margin: 0.8em 0 0;
-
   line-height: 1.6;
   text-align: start;
 }
 
-/* Información adicional */
 .command-explorer-item-details {
   margin: 0.5em 0 0;
-
   line-height: 1.6;
   text-align: start;
-
-  opacity: 0.8;
+  opacity: 0.75;
+  font-size: 0.95em;
 }
-
-/* ===============================================================
-   EJEMPLO
-   =============================================================== */
 
 .command-explorer-example {
   display: flex;
   align-items: center;
   gap: 0.7em;
-
   margin-top: 0.8em;
   padding: 0.7em 0.9em;
-
   border-left: 3px solid aquamarine;
-
   background-color: rgba(127, 255, 212, 0.05);
-
   border-radius: 0 0.5em 0.5em 0;
 }
 
 .command-explorer-example span {
   flex: 0 0 auto;
-
   font-size: 0.8em;
   font-weight: 600;
-
   opacity: 0.7;
 }
 
 .command-explorer-example code {
   font-family: monospace;
   font-size: 0.9em;
-
   word-break: break-word;
 }
-
-/* ===============================================================
-   SIN RESULTADOS
-   =============================================================== */
-
-.command-explorer-empty {
-  margin: 0;
-
-  opacity: 0.8;
-  font-style: italic;
-}
-
-/* ===============================================================
-   NUBE DE ACTIVIDADES
-   =============================================================== */
-
-.comandos-tag-grid {
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 0.6em;
-
-  width: 100%;
-}
-
-.comandos-tag-grid .comando-btn {
-  width: auto;
-  min-width: 0;
-
-  padding: 0.65em 1.2em;
-
-  font-size: 0.95em;
-
-  flex: 0 1 auto;
-}
-
-/* ===============================================================
-   RESPONSIVE
-   =============================================================== */
 
 @media (max-width: 600px) {
   .command-explorer {
@@ -731,39 +649,30 @@ img, p, h1, h2, h3, h4, h5, h6, li {
 }
 
 @media (min-width: 700px) {
-  .container_indice_item {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
+  .container_indice {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5em;
     margin: 2em;
+    padding: 0;
   }
 
-  .container_indice_item div {
-    max-width: 55em;
-    margin: 1em 1em;
-  }
-  .container_indice_item img {
-    min-width: 30em;
-    max-height: auto;
-    background-color: aquamarine;
-    border-radius: 2em;
+  .container_indice_item {
+    aspect-ratio: 3 / 4;
   }
 
-  .container_indice_item div h3 {
-    color: aquamarine;
-    text-align: center;
-    font-size: 2.2em;
-    margin: 1em;
+  .container_indice_item_overlay {
+    padding: 1.8em;
   }
 
-  .container_indice_item div p {
-    padding: 0.6em;
-    font-size: 1.2em;
-    margin-bottom: 1em;
+  .container_indice_item_overlay h3 {
+    font-size: 1.5em;
   }
 
-  .container_comandos {
+  .container_indice_item_overlay p {
+    font-size: 1em;
+  }
+
+  .container_comandos_page {
     display: flex;
     flex-direction: row;
     justify-content: center;
