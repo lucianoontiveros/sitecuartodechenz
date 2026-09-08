@@ -1,40 +1,101 @@
-/* Estilos específicos para Reglas - Independientes de index.css */
+/* ===============================================================
+   REGLAS — ESTILOS PRINCIPALES
+   =============================================================== */
 
-.title_container_comandos {
+/* ---------------------------------------------------------------
+   CONTENEDOR PRINCIPAL
+   --------------------------------------------------------------- */
+
+.reglas-container {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 2rem 1.5rem;
+
+  box-sizing: border-box;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+
+  color: aquamarine;
+  background-color: #000;
+
+  /* Evita desbordamientos horizontales */
+  overflow-x: hidden;
+}
+
+/* ===============================================================
+     ENCABEZADO — CUARTO DE CHENZ
+     =============================================================== */
+
+.avisos-container {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 5em auto 3rem;
+  padding: 1rem;
+
+  box-sizing: border-box;
+
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background-color: #000;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+/* ---------------------------------------------------------------
+     TÍTULO
+     --------------------------------------------------------------- */
+
+.title_container_comandos {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   text-align: center;
-  margin-top: 5rem;
-  margin-bottom: 3rem;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
 }
 
 .title_container_comandos h1 {
+  margin: 0 0 1rem;
+
   text-align: center;
   font-size: 3rem;
-  color: white;
-  margin-bottom: 1rem;
+  line-height: 1.2;
+
+  color: #fff;
 }
+
+/* ---------------------------------------------------------------
+     REDES SOCIALES
+     --------------------------------------------------------------- */
 
 .title_container_comandos .bar_icon {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
+
   gap: 1rem;
   margin-top: 1rem;
 }
 
 .icon_bar_element {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  transition: transform 0.3s ease, color 0.3s ease;
+
   color: aquamarine;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
 }
 
 .icon_bar_element:hover {
@@ -45,145 +106,227 @@
 .icon_bar_element svg {
   width: 28px;
   height: 28px;
+
   fill: currentColor;
 }
 
-.reglas-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  color: aquamarine;
-  background-color: black;
-}
-
-.avisos-container {
-  width: 100%;
-  margin-top: 5em;
-  padding: 1rem;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
-  color: #ffffff;
-  background-color: black;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+/* ===============================================================
+     HEADER — TÍTULO DE REGLAS
+     =============================================================== */
 
 .reglas-header {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto 2.5rem;
+  padding: 0;
+
+  box-sizing: border-box;
+
   text-align: center;
-  margin-bottom: 2.5rem;
-  color: #2c3e50;
 }
 
 .reglas-header h1 {
+  margin: 0;
+
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  line-height: 1.3;
+
   color: aquamarine;
 }
+
+/* ===============================================================
+     SECCIONES DE REGLAS
+     =============================================================== */
 
 .reglas-section {
-  background-color: black;
-  border-radius: 8px;
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto 2rem;
   padding: 1.5rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  box-sizing: border-box;
+
+  background-color: #000;
+
+  border: 1px solid rgba(127, 255, 212, 0.25);
+  border-radius: 8px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
+
+/* ---------------------------------------------------------------
+     TÍTULOS H2
+     --------------------------------------------------------------- */
 
 .reglas-section h2 {
-  color: aquamarine;
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
-  border-bottom: 2px solid aquamarine;
+  margin: 0 0 1rem;
   padding-bottom: 0.5rem;
+
+  font-size: 1.8rem;
+  line-height: 1.3;
+
+  color: aquamarine;
+
+  border-bottom: 2px solid aquamarine;
 }
+
+/* ---------------------------------------------------------------
+     TÍTULOS H3
+     --------------------------------------------------------------- */
 
 .reglas-section h3 {
-  color: aquamarine;
   margin: 1.5rem 0 0.8rem;
+
   font-size: 1.4rem;
+  line-height: 1.4;
+
+  color: aquamarine;
 }
 
-.reglas-section p, 
+/* ---------------------------------------------------------------
+     PÁRRAFOS Y LISTAS
+     --------------------------------------------------------------- */
+
+.reglas-section p,
 .reglas-section li {
   margin-bottom: 0.8rem;
+
   font-size: 1.1rem;
   line-height: 1.7;
+
+  color: aquamarine;
 }
 
+/* ---------------------------------------------------------------
+     LISTAS
+     --------------------------------------------------------------- */
+
 .reglas-section ul {
-  padding-left: 2rem;
   margin: 1rem 0;
+  padding-left: 2rem;
 }
 
 .reglas-section li {
   margin-bottom: 0.5rem;
 }
 
-/* Responsive Design para Reglas */
+/* ===============================================================
+     RESPONSIVE — TABLETS Y CELULARES
+     =============================================================== */
+
 @media (max-width: 768px) {
+  .reglas-container {
+    padding: 1.5rem 1rem;
+  }
+
+  /* -------------------------------------------------------------
+       ENCABEZADO
+       ------------------------------------------------------------- */
+
+  .avisos-container {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+  }
+
   .title_container_comandos h1 {
     font-size: 2rem;
     margin-bottom: 0.8rem;
   }
-  
+
+  /* -------------------------------------------------------------
+       REDES
+       ------------------------------------------------------------- */
+
   .title_container_comandos .bar_icon {
     gap: 0.8rem;
     margin-top: 0.8rem;
   }
-  
+
   .icon_bar_element svg {
     width: 24px;
     height: 24px;
   }
 
-  .reglas-container {
-    padding: 1rem;
+  /* -------------------------------------------------------------
+       TÍTULO DE REGLAS
+       ------------------------------------------------------------- */
+
+  .reglas-header {
+    margin-bottom: 2rem;
   }
-  
+
   .reglas-header h1 {
     font-size: 2rem;
   }
-  
+
+  /* -------------------------------------------------------------
+       SECCIONES
+       ------------------------------------------------------------- */
+
+  .reglas-section {
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
   .reglas-section h2 {
     font-size: 1.5rem;
   }
-  
+
   .reglas-section h3 {
     font-size: 1.2rem;
   }
-  
-  .reglas-section p, 
+
+  .reglas-section p,
   .reglas-section li {
     font-size: 1rem;
+    line-height: 1.6;
   }
 }
 
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
+/* ===============================================================
+     RESPONSIVE — CELULARES PEQUEÑOS
+     =============================================================== */
+
+@media (max-width: 480px) {
   .reglas-container {
-    color: #e0e0e0;
-    background-color: #121212;
+    padding: 1rem 0.75rem;
   }
-  
-  .reglas-header h1,
-  .reglas-section h2 {
-    color: aquamarine;
+
+  .avisos-container {
+    margin-top: 2rem;
+    padding: 0;
   }
-  
-  .reglas-section h3 {
-    color: aquamarine;
+
+  .title_container_comandos h1 {
+    font-size: 1.7rem;
   }
-  
+
+  .reglas-header h1 {
+    font-size: 1.6rem;
+  }
+
   .reglas-section {
-    background-color: #000;
-    border: 1px solid aquamarine;
+    padding: 1rem;
+    border-radius: 6px;
   }
-  
+
   .reglas-section h2 {
-    border-bottom-color: aquamarine;
+    font-size: 1.3rem;
+  }
+
+  .reglas-section h3 {
+    font-size: 1.1rem;
+  }
+
+  .reglas-section p,
+  .reglas-section li {
+    font-size: 0.95rem;
+  }
+
+  .reglas-section ul {
+    padding-left: 1.5rem;
   }
 }
