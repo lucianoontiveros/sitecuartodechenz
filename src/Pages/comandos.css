@@ -6,6 +6,21 @@
   margin: 10em 0.3em;
 }
 
+/* .title_container_comandos (definida en index.css, global) usa
+     `width: 100vw; margin-left: calc(-50vw + 50%);` para hacer el header
+     "full-bleed" (ocupar todo el ancho de pantalla escapando del padding del
+     contenedor). El problema: 100vw incluye el ancho de la scrollbar del
+     navegador, que 100% no incluye — en cualquier página con scroll vertical
+     eso corre el header unos pixeles hacia un lado, dando la sensación de que
+     el título y los íconos no están centrados. Se pisa acá con 100% (ya
+     estamos dentro de .container_comandos_page, que ya es full width, así
+     que no hace falta escapar de nada). */
+.title_container_comandos {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 /* ...y esto es cada sección individual (Tareas / Actividades / Perfil /
      Exámenes). Antes cada <section> repetía el margin de 10em de arriba
      (heredado de compartir el mismo nombre de clase que el wrapper), lo que
@@ -208,14 +223,6 @@ li {
 }
 
 /* COMANDO PARA TAREAS */
-
-.container_comandos_titles {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  align-items: center;
-  margin: 0.5em;
-}
 
 .container_comandos_titles svg {
   margin: 0;
@@ -685,8 +692,10 @@ li {
     flex-direction: column;
     justify-content: center;
     align-self: flex-end;
+    align-items: center;
     width: 100%;
-    margin: 3em;
+    margin-top: 02em;
+    margin-bottom: 03em;
   }
 
   .container_comandos_card {
