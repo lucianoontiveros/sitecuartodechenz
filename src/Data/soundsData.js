@@ -197,6 +197,7 @@ import acusado from './gallery/acusado.png'
 import revolucion from './gallery/revolucion.png'
 import hijo from './gallery/mano.png'
 import paraq from './gallery/default.png'
+import trabaja from './gallery/trabaja.png'
 
 import abrechetadaAudio from './sounds/!abrachetada.mp3'
 import abuscarlaAudio from './sounds/!abuscarla.mp3'
@@ -381,6 +382,7 @@ import berretaAudio from './sounds/!berreta.mp3'
 import acusadoAudio from './sounds/!acusado.mp3'
 import revolucionAudio from './sounds/!revolucion.mp3'
 import pantallitaAudio from './sounds/!pantallita.mp3'
+import trabajaAudio from './sounds/!trabaja.mp3'
 
 const soundsData = [
   { id: 'abrechetada', image: abrechetada, audio: abrechetadaAudio },
@@ -571,6 +573,7 @@ const soundsData = [
   { id: 'berreta', image: berreta, audio: berretaAudio },
   { id: 'acusado', image: acusado, audio: acusadoAudio },
   { id: 'revolucion', image: revolucion, audio: revolucionAudio },
+  {id: "trabaja", image: trabaja, audio: trabajaAudio}
 ]
 
 export default soundsData
