@@ -205,6 +205,7 @@ const shareActivitySection = {
         createCommand('musica', '!musica'),
         createCommand('crochet', '!crochet'),
         createCommand('descansando', '!descansando'),
+        createCommand('pelicula', '!pelicula'),
       ],
     },
   ],
