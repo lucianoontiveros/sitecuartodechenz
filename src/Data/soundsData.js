@@ -203,6 +203,8 @@ import misamores from './gallery/misamores.png'
 import alegrin from './gallery/alegrin.gif'
 import oing from './gallery/oing.png'
 import misahorros from './gallery/misahorros.png'
+import cell from './gallery/cell.png'
+import pedro from './gallery/pedro.gif'
 
 
 import abrechetadaAudio from './sounds/!abrachetada.mp3'
@@ -394,6 +396,8 @@ import misamoresAudio from './sounds/!misamores.mp3'
 import alegrinAudio from './sounds/!alegrin.mp3'
 import oingAudio from './sounds/!oing.mp3'
 import misahorrosAudio from './sounds/!misahorros.mp3'
+import cellAudio from './sounds/!cell.mp3'
+import pedroAudio from './sounds/!pedro.mp3'
 
 const soundsData = [
   { id: 'abrechetada', image: abrechetada, audio: abrechetadaAudio },
@@ -589,7 +593,9 @@ const soundsData = [
   { id: "alegrin", image: alegrin, audio: alegrinAudio},
   { id: "misamores", image: misamores, audio: misamoresAudio},
   {id: "oing", image: oing, audio: oingAudio},
-  {id: "misahorros", image: misahorros, audio: misahorrosAudio}
+  {id: "misahorros", image: misahorros, audio: misahorrosAudio},
+  {id: "cell", image: cell, audio: cellAudio},
+  {id: "pedro", image: pedro, audio: pedroAudio}
 
 ]
 
