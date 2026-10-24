@@ -205,6 +205,8 @@ import oing from './gallery/oing.png'
 import misahorros from './gallery/misahorros.png'
 import cell from './gallery/cell.png'
 import pedro from './gallery/pedro.gif'
+import acabou from './gallery/acabou.png'
+import callate from './gallery/callate.png'
 
 
 import abrechetadaAudio from './sounds/!abrachetada.mp3'
@@ -398,6 +400,8 @@ import oingAudio from './sounds/!oing.mp3'
 import misahorrosAudio from './sounds/!misahorros.mp3'
 import cellAudio from './sounds/!cell.mp3'
 import pedroAudio from './sounds/!pedro.mp3'
+import acabouAudio from './sounds/!acabou.mp3'
+import callateAudio from './sounds/!callate.mp3'
 
 const soundsData = [
   { id: 'abrechetada', image: abrechetada, audio: abrechetadaAudio },
@@ -595,7 +599,9 @@ const soundsData = [
   {id: "oing", image: oing, audio: oingAudio},
   {id: "misahorros", image: misahorros, audio: misahorrosAudio},
   {id: "cell", image: cell, audio: cellAudio},
-  {id: "pedro", image: pedro, audio: pedroAudio}
+  {id: "pedro", image: pedro, audio: pedroAudio},
+  {id: "acabou", image: acabou, audio: acabouAudio},
+  {id: "callate", image: callate, audio: callateAudio}
 
 ]
 
