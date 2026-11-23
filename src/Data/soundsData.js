@@ -207,6 +207,7 @@ import cell from './gallery/cell.png'
 import pedro from './gallery/pedro.gif'
 import acabou from './gallery/acabou.png'
 import callate from './gallery/callate.png'
+import arreglado from './gallery/arreglado.png'
 
 
 import abrechetadaAudio from './sounds/!abrachetada.mp3'
@@ -402,6 +403,7 @@ import cellAudio from './sounds/!cell.mp3'
 import pedroAudio from './sounds/!pedro.mp3'
 import acabouAudio from './sounds/!acabou.mp3'
 import callateAudio from './sounds/!callate.mp3'
+import arregladoAudio from './sounds/!arreglado.mp3'
 
 const soundsData = [
   { id: 'abrechetada', image: abrechetada, audio: abrechetadaAudio },
@@ -601,7 +603,8 @@ const soundsData = [
   {id: "cell", image: cell, audio: cellAudio},
   {id: "pedro", image: pedro, audio: pedroAudio},
   {id: "acabou", image: acabou, audio: acabouAudio},
-  {id: "callate", image: callate, audio: callateAudio}
+  {id: "callate", image: callate, audio: callateAudio},
+  {id: "arreglado", image: arreglado, audio: arregladoAudio}
 
 ]
 
